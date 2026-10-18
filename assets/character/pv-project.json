@@ -1,0 +1,20 @@
+{
+ "schema_version":"1.0",
+ "project":{"title":"Stellar Echo","type":"character","duration_seconds":10,"width":1920,"height":1080,"fps":30,"aspect_ratio":"16:9","platforms":["character-pv"],"language":"en","audio_required":false,"captions_required":false},
+ "assets":[
+  {"id":"html","path":"pv.html","role":"designed-motion-source","source":"Original character key-art direction and timeline; video-pv-cli","rights_status":"cleared","status":"draft"},
+  {"id":"art","path":"astral-knight.png","role":"character-reference","source":"Original fictional adult character generated with built-in imagegen on 2026-10-18; prompt and usage notes in ASSET-SOURCES.md","rights_status":"pending","status":"draft"},
+  {"id":"shader","path":"character.frag","role":"shader-source","source":"Original GLSL image compositor and aura; Apache-2.0","rights_status":"cleared","status":"draft"},
+  {"id":"library","path":"library.glsl","role":"shader-source","source":"Original local GLSL function library; Apache-2.0","rights_status":"cleared","status":"draft"},
+  {"id":"runtime","path":"shader-runtime.js","role":"shader-source","source":"Original deterministic WebGL2 loader; Apache-2.0","rights_status":"cleared","status":"draft"},
+  {"id":"font","path":"cinzel.ttf","role":"font","source":"Google Fonts / Cinzel, SIL Open Font License; FONT-OFL.txt","rights_status":"cleared","status":"draft"}
+ ],
+ "claims":[],
+ "shots":[
+  {"id":"vow","start_seconds":0,"end_seconds":2.5,"beat":"A quiet vow and a close composition establish the tone","role":"hook","visual_description":"Generated fictional character art with a deliberate camera drift","asset_ids":["html","art","shader","library","runtime","font"],"claim_ids":[],"status":"draft"},
+  {"id":"identity","start_seconds":2.5,"end_seconds":6.7,"beat":"Name and signature astral energy emerge","role":"reveal","visual_description":"Controlled shader aura around the astrolabe, with readable character typography","asset_ids":["html","art","shader","library","runtime","font"],"claim_ids":[],"status":"draft"},
+  {"id":"payoff","start_seconds":6.7,"end_seconds":10,"beat":"Land on the fictional title and a held key visual","role":"payoff","visual_description":"Soft title transition and settled composition; not a character acting demo","asset_ids":["html","art","shader","library","runtime","font"],"claim_ids":[],"status":"draft"}
+ ],
+ "delivery":{"video_path":"deliverables/master.mp4","container":"mp4","video_codec":"h264","pixel_format":"yuv420p"},
+ "review":{"creative_approved":false,"reviewer":"","approved_at":""}
+}

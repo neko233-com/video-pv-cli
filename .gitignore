@@ -1,0 +1,14 @@
+/video-pv-cli
+/video-pv-cli.exe
+/dist/
+/logs/
+/.cache/
+/node_modules/
+/out/
+/renders/
+/qa/
+/deliverables/
+/work/
+*.test
+*.test.exe
+coverage.out

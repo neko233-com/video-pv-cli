@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0",
+  "project": {
+    "title": "Sample Game PV Plan",
+    "type": "game",
+    "duration_seconds": 30,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "aspect_ratio": "16:9",
+    "platforms": ["store-page"],
+    "language": "en",
+    "audio_required": true,
+    "captions_required": true
+  },
+  "assets": [
+    {
+      "id": "brief",
+      "path": "source-notes.md",
+      "role": "reference",
+      "source": "Sample notes bundled with this skill",
+      "rights_status": "unknown",
+      "status": "draft"
+    }
+  ],
+  "claims": [],
+  "shots": [
+    {
+      "id": "shot-01",
+      "start_seconds": 0,
+      "end_seconds": 8,
+      "beat": "Hook: establish the game's central fantasy",
+      "role": "hook",
+      "visual_description": "Proposed silhouette reveal over an approved environment; replace with captured or approved source imagery.",
+      "asset_ids": ["brief"],
+      "claim_ids": [],
+      "status": "planned"
+    },
+    {
+      "id": "shot-02",
+      "start_seconds": 8,
+      "end_seconds": 21,
+      "beat": "Show the central player action",
+      "role": "proof",
+      "visual_description": "Plan a capture from the actual build; record its build number and capture date before claiming gameplay.",
+      "asset_ids": ["brief"],
+      "claim_ids": [],
+      "status": "planned"
+    },
+    {
+      "id": "shot-03",
+      "start_seconds": 21,
+      "end_seconds": 30,
+      "beat": "Land the emotional payoff and approved CTA",
+      "role": "payoff",
+      "visual_description": "End on an approved key visual and verified call to action.",
+      "asset_ids": ["brief"],
+      "claim_ids": [],
+      "status": "planned"
+    }
+  ],
+  "delivery": {
+    "video_path": "deliverables/master.mp4",
+    "container": "mp4",
+    "video_codec": "h264",
+    "audio_codec": "aac"
+  },
+  "review": {
+    "creative_approved": false,
+    "reviewer": "",
+    "approved_at": ""
+  }
+}

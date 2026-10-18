@@ -1,0 +1,13 @@
+* text=auto
+*.go text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.js text eol=lf
+*.html text eol=lf
+*.glsl text eol=lf
+*.frag text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.png -text
+*.ttf -text
+*.mp4 -text

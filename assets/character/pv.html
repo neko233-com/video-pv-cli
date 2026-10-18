@@ -1,0 +1,33 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Asteria — character key-art motion study</title>
+<link rel="stylesheet" href="/multiplane/runtime/shot.css">
+<style>
+@font-face{font-family:PVDisplay;src:url('./cinzel.ttf')}*{box-sizing:border-box}
+#stage{width:1920px;height:1080px;background:#040812;color:#e4edf1;overflow:hidden;font-family:PVDisplay,serif}
+canvas{position:absolute;inset:0;width:100%;height:100%}.frame{position:absolute;inset:54px;border:1px solid #b1c7d52a}
+.edition{position:absolute;left:110px;top:100px;letter-spacing:7px;font-size:16px;color:#a7bbcb}
+.beat{position:absolute;left:140px;top:400px;width:820px}.role{font-size:17px;letter-spacing:6px;color:#cfb47e;margin-bottom:22px}
+h1{font-size:105px;letter-spacing:8px;font-weight:500;line-height:1.1;margin:0;text-shadow:0 5px 30px #0008}h1 span{display:block;margin-left:80px}
+.rule{width:82px;height:1px;background:#bfa375;margin:32px 0}.line{font-size:22px;letter-spacing:2px;color:#c2d1dc}
+.opening{font-size:37px;line-height:1.7;letter-spacing:5px}.footer{position:absolute;left:110px;bottom:96px;font-size:12px;letter-spacing:3px;color:#8fa6ba}
+.number{position:absolute;right:110px;bottom:96px;font-size:17px;letter-spacing:5px;color:#a6bac8}
+</style>
+<div id="stage"><canvas id="sky"></canvas><div class="frame"></div><div class="edition">STELLAR ECHO / CHARACTER STUDY</div>
+ <div class="beat" id="opening"><div class="role">A VOW BENEATH THE STARS</div><div class="opening">THE NIGHT<br>REMEMBERS.</div></div>
+ <div class="beat" id="identity"><div class="role">KEEPER OF THE LAST ORBIT</div><h1>ASTERIA</h1><div class="rule"></div><div class="line">Even the dark has a guiding star.</div></div>
+ <div class="beat" id="title"><div class="role">AN ORIGINAL FANTASY</div><h1>STELLAR<span>ECHO</span></h1><div class="rule"></div><div class="line">BEYOND THE LAST HORIZON</div></div>
+ <div class="footer">GENERATED KEY ART · SHADER MOTION STUDY · NO GAMEPLAY FOOTAGE</div><div class="number">01 / ASTERIA</div>
+</div>
+<script src="/multiplane/runtime/shot.js"></script>
+<script type="module">
+import {createShader} from './shader-runtime.js';
+let shader;const beats=['opening','identity','title'].map(id=>document.getElementById(id));
+function smooth(a,b,t){const x=Math.max(0,Math.min(1,(t-a)/(b-a)));return x*x*(3-2*x);}
+Shot.define({duration:10,fps:30,fonts:[['500 105px PVDisplay']],post:{motionBlur:1,grain:0},
+ setup:async()=>{shader=await createShader(document.getElementById('sky'),'./character.frag',{textures:{u_character:'./astral-knight.png'}});},
+ render(t){
+  shader.render(t);
+  const visibility=[smooth(0,0.8,t)*(1-smooth(2.0,2.6,t)),smooth(2.5,3.2,t)*(1-smooth(6.1,6.8,t)),smooth(6.7,7.5,t)];
+  beats.forEach((element,index)=>{element.style.opacity=String(visibility[index]);element.style.transform=`translateY(${(1-visibility[index])*16}px)`;});
+ },meta:{kind:'anime-keyart-study',truth:'Original generated still artwork with camera motion and procedural effects, not rigged character acting',character:'Asteria',beats:[0,2.5,6.7]}
+});
+</script></html>

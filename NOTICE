@@ -1,0 +1,16 @@
+video-pv-cli
+Original Go CLI, templates and shader helpers: Apache License 2.0.
+
+The Cinzel font is distributed under the SIL Open Font License 1.1.
+Its copyright and full license are retained in assets/starter/FONT-OFL.txt.
+Source: https://github.com/google/fonts/tree/main/ofl/cinzel
+
+The sample character illustration is generated artwork. Its generation prompt,
+provenance and release-review status are documented in
+assets/character/ASSET-SOURCES.md. The code license does not assert copyright
+status or override the image provider's applicable terms.
+
+Multiplane is installed separately from npm and retains its Apache-2.0 license.
+FFmpeg is installed separately; preserve the selected build's licensing terms.
+Third-party shader libraries described in the references are optional and are
+not redistributed as part of the original GLSL helper.

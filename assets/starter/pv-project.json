@@ -1,0 +1,15 @@
+{
+ "schema_version":"1.0",
+ "project":{"title":"Stellar Echo","type":"game","duration_seconds":6,"width":1920,"height":1080,"fps":30,"aspect_ratio":"16:9","platforms":["website-hero"],"language":"en","audio_required":false,"captions_required":false},
+ "assets":[
+  {"id":"html","path":"pv.html","role":"designed-motion-source","source":"Original shader demonstration bundled with video-pv-cli; fictional title, no gameplay claims","rights_status":"cleared","status":"draft"},
+  {"id":"shader","path":"portal.frag","role":"shader-source","source":"Original GLSL procedural portal; Apache-2.0","rights_status":"cleared","status":"draft"},
+  {"id":"library","path":"library.glsl","role":"shader-source","source":"Original local GLSL noise and tone mapping functions; Apache-2.0","rights_status":"cleared","status":"draft"},
+  {"id":"runtime","path":"shader-runtime.js","role":"shader-source","source":"Original deterministic WebGL2 loader; Apache-2.0","rights_status":"cleared","status":"draft"},
+  {"id":"font","path":"cinzel.ttf","role":"font","source":"Google Fonts / Cinzel, SIL Open Font License; see FONT-OFL.txt","rights_status":"cleared","status":"draft"}
+ ],
+ "claims":[],
+ "shots":[{"id":"opening","start_seconds":0,"end_seconds":6,"beat":"A portal opens, the fictional title emerges, and the image settles into a looping website hero","role":"reveal","visual_description":"Original WebGL procedural portal and dimensional typography; an export demonstration, not gameplay or a finished commercial PV","asset_ids":["html","shader","library","runtime","font"],"claim_ids":[],"status":"draft"}],
+ "delivery":{"video_path":"deliverables/master.mp4","container":"mp4","video_codec":"h264","pixel_format":"yuv420p"},
+ "review":{"creative_approved":false,"reviewer":"","approved_at":""}
+}

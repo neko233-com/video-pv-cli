@@ -3,6 +3,8 @@ package main
 import (
 	"archive/zip"
 	"bytes"
+	"crypto/sha256"
+	"encoding/hex"
 	"encoding/json"
 	"fmt"
 	"math"
@@ -12,8 +14,47 @@ import (
 	"strconv"
 	"strings"
 	"testing"
-	"time"
 )
+
+func TestFullTimelineVerificationAndExplicitSampling(t *testing.T) {
+	p := ProjectInfo{DurationSeconds: 16.8, FPS: 30}
+	times, full, err := verificationTimes(p, "")
+	if err != nil || !full || len(times) != 504 || times[0] != "0.000000000000" || times[503] != "16.766666666667" {
+		t.Fatalf("not full coverage: %d %v %v", len(times), full, err)
+	}
+	for _, input := range []string{"NaN", "-1", "16.8", "0,0", "0.01", "Inf", ""} {
+		if input == "" {
+			continue
+		}
+		if _, _, err := verificationTimes(p, input); err == nil {
+			t.Fatalf("invalid times accepted: %s", input)
+		}
+	}
+	times, full, err = verificationTimes(p, "0,1,2")
+	if err != nil || full || len(times) != 3 {
+		t.Fatal("partial coverage was misreported")
+	}
+}
+
+func TestCaptureBridgeIsBoundedIdempotentAndRejectsUnknownSources(t *testing.T) {
+	original := []byte(captureCallback + "\n" + captureRender)
+	hash := sha256.Sum256(original)
+	expected := hex.EncodeToString(hash[:])
+	patched, err := bridgeCaptureSource(original, expected)
+	if err != nil || !bytes.Contains(patched, []byte("await globalThis.__PV_WEBGPU_FLUSH()")) {
+		t.Fatal("missing GPU barrier", err)
+	}
+	again, err := bridgeCaptureSource(patched, expected)
+	if err != nil || !bytes.Equal(patched, again) {
+		t.Fatal("bridge is not idempotent", err)
+	}
+	if _, err := bridgeCaptureSource(append(patched, 'x'), expected); err == nil {
+		t.Fatal("modified renderer accepted")
+	}
+	if _, err := bridgeCaptureSource([]byte("unrecognized"), expected); err == nil {
+		t.Fatal("unknown renderer accepted")
+	}
+}
 
 func TestInitIsSelfContainedAndPreservesExistingProjects(t *testing.T) {
 	target := filepath.Join(t.TempDir(), "project with spaces & symbols")
@@ -24,7 +65,7 @@ func TestInitIsSelfContainedAndPreservesExistingProjects(t *testing.T) {
 	if reportHasFailure(r) || p.Project.Type != "character" || p.Project.Title != "Character PV" {
 		t.Fatalf("bad initialized manifest: %+v", r)
 	}
-	for _, path := range []string{"package-lock.json", "portal.frag", "library.glsl", "shader-runtime.js", "cinzel.ttf", "FONT-OFL.txt"} {
+	for _, path := range []string{"package-lock.json", "catalog.wgsl", "library.wgsl", "webgpu-runtime.js", "cinzel.ttf", "FONT-OFL.txt"} {
 		if _, err := os.Stat(filepath.Join(target, path)); err != nil {
 			t.Fatal(err)
 		}
@@ -84,7 +125,7 @@ func TestSkillInstallAndArchiveAreUsableModules(t *testing.T) {
 			t.Fatal("unexpected development artifacts in package")
 		}
 	}
-	if !found["pv-production/SKILL.md"] || !found["pv-production/assets/starter/portal.frag"] {
+	if !found["pv-production/SKILL.md"] || !found["pv-production/assets/starter/catalog.wgsl"] {
 		t.Fatal("archive missing skill or shader")
 	}
 }
@@ -107,7 +148,7 @@ func TestRendererProtocolFailsClosed(t *testing.T) {
 
 func TestInspectSpecMustMatchDeclaredMaster(t *testing.T) {
 	p := validManifest().Project
-	good := fmt.Sprintf(`{"stage":{"width":%d,"height":%d},"duration":%g,"fps":%g}`, p.Width, p.Height, p.DurationSeconds, p.FPS)
+	good := fmt.Sprintf(`{"stage":{"width":%d,"height":%d},"duration":%g,"fps":%g,"meta":{"gpu":{"backend":"webgpu","shaderLanguage":"wgsl"}}}`, p.Width, p.Height, p.DurationSeconds, p.FPS)
 	if err := compareShotSpec([]byte(good), p); err != nil {
 		t.Fatal(err)
 	}
@@ -116,6 +157,9 @@ func TestInspectSpecMustMatchDeclaredMaster(t *testing.T) {
 	}
 	if err := compareShotSpec([]byte(`{}`), p); err == nil {
 		t.Fatal("missing spec accepted")
+	}
+	if err := compareShotSpec([]byte(strings.Replace(good, "webgpu", "unsupported", 1)), p); err == nil {
+		t.Fatal("unsupported backend accepted")
 	}
 }
 
@@ -179,15 +223,37 @@ func TestMediaVideoDurationAndPixelFormatAreIndependent(t *testing.T) {
 }
 
 func TestIntegrationShaderMP4AndFailureGates(t *testing.T) {
-	root := os.Getenv("PV_INTEGRATION_PROJECT")
-	if root == "" {
-		t.Skip("set PV_INTEGRATION_PROJECT to a project prepared by init and setup")
+	runtimeProject := os.Getenv("PV_INTEGRATION_RUNTIME")
+	if runtimeProject == "" {
+		runtimeProject = os.Getenv("PV_INTEGRATION_PROJECT")
 	}
-	root, err := filepath.Abs(root)
+	if runtimeProject == "" {
+		t.Skip("set PV_INTEGRATION_RUNTIME to a prepared renderer; fixtures clean themselves")
+	}
+	runtimeProject, err := filepath.Abs(runtimeProject)
 	if err != nil {
 		t.Fatal(err)
 	}
+	templates, transitions, err := readCatalog()
+	if err != nil {
+		t.Fatal(err)
+	}
+	fixture := templates["character-reveal-midnight"]
+	fixture.ID = "integration-fixture"
+	fixture.Scenes = append([]SceneData(nil), fixture.Scenes[:1]...)
+	fixture.Scenes[0].Duration = 1
+	fixture.Scenes[0].TransitionDuration = 0
+	root := filepath.Join(t.TempDir(), "isolated-pv")
+	if err := initializeDataProject(root, fixture, transitions, fixture.ProjectTitle); err != nil {
+		t.Fatal(err)
+	}
 	var stdout, stderr bytes.Buffer
+	runCLI := func(args []string) int {
+		if len(args) > 0 && args[0] == "render" {
+			args = append(args, "--renderer-project", runtimeProject)
+		}
+		return realMain(args, &stdout, &stderr)
+	}
 	tools, err := resolveMediaTools("ffprobe", "ffmpeg", true, false, "", false, false)
 	if err != nil {
 		t.Fatal(err)
@@ -213,10 +279,14 @@ func TestIntegrationShaderMP4AndFailureGates(t *testing.T) {
 	if err := os.WriteFile(manifestPath, updated, 0644); err != nil {
 		t.Fatal(err)
 	}
-	suffix := fmt.Sprintf("%d", time.Now().UnixNano())
+	suffix := "fixture"
 	out := "deliverables/test-" + suffix + ".mp4"
-	args := []string{"render", "--project", root, "--raster", "software", "--out", out, "--report", "qa/test-" + suffix + ".json", "--auto-install=false", "--audio", "test-tone.wav"}
-	if code := realMain(args, &stdout, &stderr); code != 0 {
+	raster := os.Getenv("PV_INTEGRATION_RASTER")
+	if raster == "" {
+		raster = "gpu"
+	}
+	args := []string{"render", "--project", root, "--raster", raster, "--out", out, "--report", "qa/test-" + suffix + ".json", "--auto-install=false", "--audio", "test-tone.wav"}
+	if code := runCLI(args); code != 0 {
 		t.Fatalf("real shader render: %d %s", code, stderr.String())
 	}
 	reportData, err := os.ReadFile(filepath.Join(root, "qa", "test-"+suffix+".json"))
@@ -227,7 +297,7 @@ func TestIntegrationShaderMP4AndFailureGates(t *testing.T) {
 	if err := json.Unmarshal(reportData, &report); err != nil {
 		t.Fatal(err)
 	}
-	if !report.Passed || len(report.Steps) != 5 || report.Validation == nil || !hasCheck(*report.Validation, "media.decode", "pass") {
+	if !report.Passed || len(report.Steps) < 5 || report.Validation == nil || !hasCheck(*report.Validation, "media.decode", "pass") || !report.VerificationFullTimeline || report.VerificationSamples != int(math.Round(manifest.Project.DurationSeconds*manifest.Project.FPS)) || report.CaptureBridge != captureBridgeID {
 		t.Fatalf("incomplete pipeline evidence: %+v", report)
 	}
 	media := report.Validation.Media
@@ -235,11 +305,11 @@ func TestIntegrationShaderMP4AndFailureGates(t *testing.T) {
 		t.Fatalf("unexpected actual MP4: %+v", media)
 	}
 	stderr.Reset()
-	if code := realMain([]string{"check", "--manifest", filepath.Join(root, "pv-project.json"), "--media", filepath.Join(root, out), "--release", "--auto-install=false"}, &stdout, &stderr); code != 1 {
+	if code := runCLI([]string{"check", "--manifest", filepath.Join(root, "pv-project.json"), "--media", filepath.Join(root, out), "--release", "--auto-install=false"}); code != 1 {
 		t.Fatal("draft unexpectedly released")
 	}
 	// Verify a shader compiler error cannot yield a successful MP4.
-	shaderName := "portal.frag"
+	shaderName := "catalog.wgsl"
 	for _, asset := range manifest.Assets {
 		if asset.ID == "shader" {
 			shaderName = asset.Path
@@ -251,10 +321,10 @@ func TestIntegrationShaderMP4AndFailureGates(t *testing.T) {
 		t.Fatal(err)
 	}
 	defer os.WriteFile(shaderPath, original, 0644)
-	_ = os.WriteFile(shaderPath, []byte("THIS IS NOT GLSL"), 0644)
+	_ = os.WriteFile(shaderPath, []byte("THIS IS NOT WGSL"), 0644)
 	stderr.Reset()
 	badOut := "deliverables/invalid-" + suffix + ".mp4"
-	if code := realMain([]string{"render", "--project", root, "--out", badOut, "--report", "qa/invalid-" + suffix + ".json", "--auto-install=false"}, &stdout, &stderr); code == 0 {
+	if code := runCLI([]string{"render", "--project", root, "--out", badOut, "--report", "qa/invalid-" + suffix + ".json", "--auto-install=false"}); code == 0 {
 		t.Fatal("broken shader succeeded")
 	}
 	if _, err := os.Stat(filepath.Join(root, badOut)); !os.IsNotExist(err) {
@@ -270,15 +340,19 @@ func TestIntegrationShaderMP4AndFailureGates(t *testing.T) {
 	}
 	defer os.WriteFile(htmlPath, html, 0644)
 	changed := strings.Replace(string(html), "Shot.define(", "let pvCounter=0;\nShot.define(", 1)
-	changed = strings.Replace(changed, "shader.render(t);", "shader.render(t); document.getElementById('sky').style.opacity=(++pvCounter%2)?'0.15':'1';", 1)
-	if changed == string(html) {
+	marker := "player.render(t);"
+	if !strings.Contains(changed, marker) {
+		marker = "shader.render(t);"
+	}
+	if !strings.Contains(changed, marker) {
 		t.Fatal("nondeterminism fixture failed to modify source")
 	}
+	changed = strings.Replace(changed, marker, marker+" document.getElementById('sky').style.opacity=(++pvCounter%2)?'0.15':'1';", 1)
 	_ = os.WriteFile(htmlPath, []byte(changed), 0644)
 	stderr.Reset()
 	badOut = "deliverables/nondeterministic-" + suffix + ".mp4"
 	badReport := "qa/nondeterministic-" + suffix + ".json"
-	if code := realMain([]string{"render", "--project", root, "--out", badOut, "--report", badReport, "--raster", "software", "--auto-install=false"}, &stdout, &stderr); code == 0 {
+	if code := runCLI([]string{"render", "--project", root, "--out", badOut, "--report", badReport, "--raster", raster, "--auto-install=false"}); code == 0 {
 		t.Fatal("stateful animation succeeded")
 	}
 	data, _ := os.ReadFile(filepath.Join(root, badReport))
@@ -287,5 +361,28 @@ func TestIntegrationShaderMP4AndFailureGates(t *testing.T) {
 	}
 	if _, err := os.Stat(filepath.Join(root, badOut)); !os.IsNotExist(err) {
 		t.Fatal("nondeterministic shader produced output")
+	}
+	for name, injection := range map[string]string{
+		"webgpu-unavailable": "Object.defineProperty(navigator,'gpu',{value:undefined});",
+		"webgpu-device-lost": "const originalRequestDevice=GPUAdapter.prototype.requestDevice;GPUAdapter.prototype.requestDevice=async function(...args){const device=await originalRequestDevice.apply(this,args);device.destroy();return device;};",
+	} {
+		t.Run(name, func(t *testing.T) {
+			changed := strings.Replace(string(html), "Shot.define(", injection+"\nShot.define(", 1)
+			if changed == string(html) {
+				t.Fatal("fixture marker missing")
+			}
+			if err := os.WriteFile(htmlPath, []byte(changed), 0644); err != nil {
+				t.Fatal(err)
+			}
+			defer os.WriteFile(htmlPath, html, 0644)
+			badOut := "deliverables/" + name + "-" + suffix + ".mp4"
+			stderr.Reset()
+			if code := runCLI([]string{"render", "--project", root, "--out", badOut, "--report", "qa/" + name + "-" + suffix + ".json", "--auto-install=false"}); code == 0 {
+				t.Fatal("unusable WebGPU device accepted")
+			}
+			if _, err := os.Stat(filepath.Join(root, badOut)); !os.IsNotExist(err) {
+				t.Fatal("unusable WebGPU produced output")
+			}
+		})
 	}
 }

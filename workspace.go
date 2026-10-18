@@ -8,7 +8,6 @@ import (
 	"errors"
 	"flag"
 	"fmt"
-	"html"
 	"io"
 	"io/fs"
 	"os"
@@ -21,7 +20,7 @@ import (
 	"time"
 )
 
-//go:embed SKILL.md agents/*.yaml references/*.md assets/starter/* assets/character/* *.go go.mod README.md LICENSE NOTICE examples/*
+//go:embed SKILL.md agents/*.yaml references/*.md assets/starter/* assets/character/* assets/catalog assets/preview/* assets/delivery/* docs/*.md docs/validation/*.json *.go go.mod README.md LICENSE NOTICE examples/*
 var bundled embed.FS
 
 func parseFlags(f *flag.FlagSet, args []string) int {
@@ -43,7 +42,9 @@ func runInit(args []string, stdout, stderr io.Writer) int {
 	f.SetOutput(stderr)
 	dir := f.String("dir", "my-pv", "new project directory (must not exist)")
 	kind := f.String("type", "game", "game, character, or product")
-	title := f.String("title", "Stellar Echo", "project title")
+	title := f.String("title", "", "project title override (default uses template copy)")
+	templateID := f.String("template", "", "catalog template ID (catalog list shows all independent presets)")
+	backgroundOnly := f.Bool("background-only", false, "remove baked copy from a periodic website template")
 	if code := parseFlags(f, args); code >= 0 {
 		return code
 	}
@@ -53,7 +54,40 @@ func runInit(args []string, stdout, stderr io.Writer) int {
 	}
 	target, err := filepath.Abs(*dir)
 	if err == nil {
-		err = initializeProject(target, *kind, *title)
+		if *templateID == "" {
+			if *backgroundOnly {
+				err = fmt.Errorf("--background-only requires an explicit website template")
+			} else {
+				err = initializeProject(target, *kind, *title)
+			}
+		} else {
+			templates, transitions, readErr := readCatalog()
+			if readErr != nil {
+				err = readErr
+			} else if item, ok := templates[*templateID]; !ok {
+				err = fmt.Errorf("unknown template %s", *templateID)
+			} else {
+				if *backgroundOnly {
+					if item.Category != "website" || !item.Loop {
+						fmt.Fprintln(stderr, "background-only requires a periodic website template")
+						return 2
+					}
+					item.Scenes = append([]SceneData(nil), item.Scenes...)
+					for i := range item.Scenes {
+						item.Scenes[i].Title = ""
+						item.Scenes[i].Subtitle = ""
+						item.Scenes[i].Overline = ""
+					}
+				}
+				customTitle := ""
+				f.Visit(func(v *flag.Flag) {
+					if v.Name == "title" {
+						customTitle = *title
+					}
+				})
+				err = initializeDataProject(target, item, transitions, customTitle)
+			}
+		}
 	}
 	if err != nil {
 		fmt.Fprintln(stderr, err)
@@ -64,6 +98,26 @@ func runInit(args []string, stdout, stderr io.Writer) int {
 }
 
 func initializeProject(target, kind, title string) error {
+	templates, transitions, err := readCatalog()
+	if err != nil {
+		return err
+	}
+	id := "game-launch-midnight"
+	if kind == "character" {
+		id = "character-reveal-midnight"
+	} else if kind == "product" {
+		id = "keynote-product-porcelain"
+	}
+	t := templates[id]
+	return initializeDataProject(target, t, transitions, title)
+}
+
+func initializeDataProject(target string, template TemplateData, transitions map[string]TransitionData, title string) error {
+	if title != "" {
+		template.ProjectTitle = title
+	} else {
+		title = template.ProjectTitle
+	}
 	if strings.TrimSpace(title) == "" {
 		return errors.New("project title must not be empty")
 	}
@@ -84,38 +138,19 @@ func initializeProject(target, kind, title string) error {
 	if err := copyBundled("assets/starter", stage); err != nil {
 		return err
 	}
-	if kind == "character" {
+	if templateNeedsImage(template) {
 		if err := copyBundled("assets/character", stage); err != nil {
 			return err
 		}
 	}
-	if title != "Stellar Echo" {
-		path := filepath.Join(stage, "pv.html")
-		source, err := os.ReadFile(path)
+	for path, value := range map[string]any{"template.json": template, "transitions.json": transitions, "pv-project.json": manifestForTemplate(template)} {
+		data, err := json.MarshalIndent(value, "", "  ")
 		if err != nil {
 			return err
 		}
-		source = []byte(strings.Replace(string(source), "STELLAR<span>ECHO</span>", html.EscapeString(title), 1))
-		if err := os.WriteFile(path, source, 0644); err != nil {
+		if err := os.WriteFile(filepath.Join(stage, path), append(data, '\n'), 0644); err != nil {
 			return err
 		}
-	}
-	data, err := os.ReadFile(filepath.Join(stage, "pv-project.json"))
-	if err != nil {
-		return err
-	}
-	var p ProjectFile
-	if err = json.Unmarshal(data, &p); err != nil {
-		return err
-	}
-	p.Project.Type = kind
-	p.Project.Title = title
-	data, err = json.MarshalIndent(p, "", "  ")
-	if err != nil {
-		return err
-	}
-	if err = os.WriteFile(filepath.Join(stage, "pv-project.json"), append(data, '\n'), 0644); err != nil {
-		return err
 	}
 	return os.Rename(stage, target)
 }
@@ -145,12 +180,20 @@ func runSetup(args []string, stdout, stderr io.Writer) int {
 	f := flag.NewFlagSet("setup", flag.ContinueOnError)
 	f.SetOutput(stderr)
 	project := f.String("project", ".", "PV project directory")
+	shared := f.Bool("shared", false, "prepare/reuse the current-user pinned runtime cache")
+	refresh := f.Bool("refresh", false, "reinstall dependencies even when the shared runtime is ready")
 	skip := f.Bool("skip-browser", false, "skip Chromium installation")
 	timeout := f.Duration("timeout", 15*time.Minute, "setup timeout")
 	if code := parseFlags(f, args); code >= 0 {
 		return code
 	}
 	root, err := filepath.Abs(*project)
+	if *shared {
+		root, err = sharedRuntimeRoot()
+		if err == nil {
+			err = prepareSharedRuntime(root)
+		}
+	}
 	if err != nil {
 		fmt.Fprintln(stderr, err)
 		return 2
@@ -190,7 +233,16 @@ func runSetup(args []string, stdout, stderr io.Writer) int {
 	if _, err := os.Stat(filepath.Join(root, "package-lock.json")); err == nil {
 		install = "ci"
 	}
-	if err := runNodeCommand(ctx, root, node, []string{npm, install, "--ignore-scripts", "--no-audit", "--no-fund"}, stdout, stderr); err != nil {
+	_, preparedErr := rendererPath(root)
+	if !*shared || *refresh || preparedErr != nil {
+		if err := runNodeCommand(ctx, root, node, []string{npm, install, "--ignore-scripts", "--no-audit", "--no-fund"}, stdout, stderr); err != nil {
+			fmt.Fprintln(stderr, err)
+			return 1
+		}
+	} else {
+		fmt.Fprintln(stdout, "Reusing pinned current-user runtime:", root)
+	}
+	if _, err := ensureWebGPUCaptureBridge(root); err != nil {
 		fmt.Fprintln(stderr, err)
 		return 1
 	}
@@ -201,6 +253,7 @@ func runSetup(args []string, stdout, stderr io.Writer) int {
 		}
 	}
 	fmt.Fprintln(stdout, "Renderer dependencies are ready. FFmpeg will be resolved by render (Windows x64 can use the user cache).")
+	fmt.Fprintln(stdout, "Renderer project:", root)
 	return 0
 }
 
@@ -263,13 +316,14 @@ func rendererPath(root string) (string, error) {
 		return "", fmt.Errorf("local Multiplane is missing; run video-pv-cli setup --project %q", root)
 	}
 	var pkg struct {
-		Name string            `json:"name"`
-		Bin  map[string]string `json:"bin"`
+		Name    string            `json:"name"`
+		Version string            `json:"version"`
+		Bin     map[string]string `json:"bin"`
 	}
 	if err = json.Unmarshal(data, &pkg); err != nil {
 		return "", err
 	}
-	if pkg.Name != "multiplane" || pkg.Bin["multiplane"] == "" {
+	if pkg.Name != "multiplane" || pkg.Version != "0.3.10" || pkg.Bin["multiplane"] == "" {
 		return "", errors.New("invalid local Multiplane package")
 	}
 	return confinedPath(filepath.Join(root, "node_modules", "multiplane"), pkg.Bin["multiplane"])

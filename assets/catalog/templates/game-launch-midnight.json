@@ -1,0 +1,262 @@
+{
+  "category": "game",
+  "description": "Independent editable cinematic sequence; theme, copy, images, scene rhythm and transitions live in this JSON. Fictional sample content, not product/gameplay evidence.",
+  "fps": 30,
+  "height": 1080,
+  "id": "game-launch-midnight",
+  "loop": false,
+  "name": "游戏 · 发售宣传 / 深海",
+  "project_title": "STELLAR ECHO",
+  "scenes": [
+    {
+      "background": "fluid",
+      "duration": 4.4,
+      "id": "scene-01",
+      "image": "astral-knight.png",
+      "items": [
+        {
+          "body": "Refined from every angle.",
+          "title": "Form",
+          "value": "01"
+        },
+        {
+          "body": "A controlled focal point.",
+          "title": "Light",
+          "value": "02"
+        },
+        {
+          "body": "Every beat with intention.",
+          "title": "Motion",
+          "value": "03"
+        },
+        {
+          "body": "Make the important visible.",
+          "title": "Detail",
+          "value": "04"
+        }
+      ],
+      "layout": "asymmetric",
+      "motion": {
+        "ease": "settle",
+        "name": "rise",
+        "strength": 0.45
+      },
+      "overline": "ORIGINAL MOTION STUDY",
+      "subtitle": "Design. Motion. Possibility.",
+      "title": "{{title}}",
+      "transition": "slide-down-left",
+      "transition_duration": 0.7,
+      "type": "image-hero"
+    },
+    {
+      "background": "prism",
+      "duration": 3.6,
+      "id": "scene-02",
+      "image": "astral-knight.png",
+      "items": [
+        {
+          "body": "Refined from every angle.",
+          "title": "Form",
+          "value": "01"
+        },
+        {
+          "body": "A controlled focal point.",
+          "title": "Light",
+          "value": "02"
+        },
+        {
+          "body": "Every beat with intention.",
+          "title": "Motion",
+          "value": "03"
+        },
+        {
+          "body": "Make the important visible.",
+          "title": "Detail",
+          "value": "04"
+        }
+      ],
+      "layout": "center",
+      "motion": {
+        "ease": "inOutCubic",
+        "name": "stagger",
+        "strength": 0.45
+      },
+      "overline": "CHAPTER 01",
+      "subtitle": "Design. Motion. Possibility.",
+      "title": "THE WORLD BEYOND",
+      "transition": "push-right",
+      "transition_duration": 0.7,
+      "type": "chapter"
+    },
+    {
+      "background": "horizon",
+      "duration": 4,
+      "id": "scene-03",
+      "image": "astral-knight.png",
+      "items": [
+        {
+          "body": "Refined from every angle.",
+          "title": "Form",
+          "value": "01"
+        },
+        {
+          "body": "A controlled focal point.",
+          "title": "Light",
+          "value": "02"
+        },
+        {
+          "body": "Every beat with intention.",
+          "title": "Motion",
+          "value": "03"
+        },
+        {
+          "body": "Make the important visible.",
+          "title": "Detail",
+          "value": "04"
+        }
+      ],
+      "layout": "left",
+      "motion": {
+        "ease": "outExpo",
+        "name": "push-in",
+        "strength": 0.45
+      },
+      "overline": "ORIGINAL MOTION STUDY",
+      "subtitle": "Design. Motion. Possibility.",
+      "title": "{{title}}",
+      "transition": "push-up-left",
+      "transition_duration": 0.7,
+      "type": "action-panel"
+    },
+    {
+      "background": "silk",
+      "duration": 4.4,
+      "id": "scene-04",
+      "image": "astral-knight.png",
+      "items": [
+        {
+          "body": "Refined from every angle.",
+          "title": "Form",
+          "value": "01"
+        },
+        {
+          "body": "A controlled focal point.",
+          "title": "Light",
+          "value": "02"
+        },
+        {
+          "body": "Every beat with intention.",
+          "title": "Motion",
+          "value": "03"
+        },
+        {
+          "body": "Make the important visible.",
+          "title": "Detail",
+          "value": "04"
+        }
+      ],
+      "layout": "right",
+      "motion": {
+        "ease": "inOutQuint",
+        "name": "pull-out",
+        "strength": 0.45
+      },
+      "overline": "ORIGINAL MOTION STUDY",
+      "subtitle": "Design. Motion. Possibility.",
+      "title": "Everything, in harmony.",
+      "transition": "push-down-right",
+      "transition_duration": 0.7,
+      "type": "bento"
+    },
+    {
+      "background": "solid",
+      "duration": 3.6,
+      "id": "scene-05",
+      "image": "astral-knight.png",
+      "items": [
+        {
+          "body": "Refined from every angle.",
+          "title": "Form",
+          "value": "01"
+        },
+        {
+          "body": "A controlled focal point.",
+          "title": "Light",
+          "value": "02"
+        },
+        {
+          "body": "Every beat with intention.",
+          "title": "Motion",
+          "value": "03"
+        },
+        {
+          "body": "Make the important visible.",
+          "title": "Detail",
+          "value": "04"
+        }
+      ],
+      "layout": "asymmetric",
+      "motion": {
+        "ease": "settle",
+        "name": "drift-left",
+        "strength": 0.45
+      },
+      "overline": "ORIGINAL MOTION STUDY",
+      "subtitle": "Design. Motion. Possibility.",
+      "title": "{{title}}",
+      "transition": "cover-up",
+      "transition_duration": 0.7,
+      "type": "title"
+    },
+    {
+      "background": "mesh",
+      "duration": 4,
+      "id": "scene-06",
+      "image": "astral-knight.png",
+      "items": [
+        {
+          "body": "Refined from every angle.",
+          "title": "Form",
+          "value": "01"
+        },
+        {
+          "body": "A controlled focal point.",
+          "title": "Light",
+          "value": "02"
+        },
+        {
+          "body": "Every beat with intention.",
+          "title": "Motion",
+          "value": "03"
+        },
+        {
+          "body": "Make the important visible.",
+          "title": "Detail",
+          "value": "04"
+        }
+      ],
+      "layout": "center",
+      "motion": {
+        "ease": "inOutCubic",
+        "name": "drift-right",
+        "strength": 0.45
+      },
+      "overline": "ORIGINAL MOTION STUDY",
+      "subtitle": "A FICTIONAL CONCEPT / SOURCE-EDITABLE TEMPLATE",
+      "title": "{{title}}",
+      "transition": "cover-up-right",
+      "transition_duration": 0.7,
+      "type": "endcard"
+    }
+  ],
+  "schema_version": "1.0",
+  "theme": {
+    "accent": "#77cef2",
+    "background": "#040b16",
+    "font": "sans",
+    "foreground": "#e1edf3",
+    "secondary": "#bca579",
+    "surface": "#13293c"
+  },
+  "width": 1920
+}

@@ -39,23 +39,28 @@ type RenderEvent struct {
 	Data json.RawMessage `json:"data,omitempty"`
 }
 type RenderStep struct {
-	Command string            `json:"command"`
-	Result  RenderEvent       `json:"result"`
-	Notices []json.RawMessage `json:"notices,omitempty"`
+	Command   string            `json:"command"`
+	Result    RenderEvent       `json:"result"`
+	Notices   []json.RawMessage `json:"notices,omitempty"`
+	StderrLog string            `json:"stderr_log,omitempty"`
 }
 type BuildReport struct {
-	Draft       bool              `json:"draft"`
-	Schema      string            `json:"schema"`
-	Passed      bool              `json:"passed"`
-	Error       string            `json:"error,omitempty"`
-	Started     string            `json:"started_at"`
-	Node        string            `json:"node"`
-	Renderer    string            `json:"renderer_version,omitempty"`
-	FFmpeg      string            `json:"ffmpeg,omitempty"`
-	Output      string            `json:"output"`
-	InputSHA256 map[string]string `json:"input_sha256"`
-	Steps       []RenderStep      `json:"steps"`
-	Validation  *Report           `json:"validation,omitempty"`
+	Draft                    bool              `json:"draft"`
+	Schema                   string            `json:"schema"`
+	Passed                   bool              `json:"passed"`
+	Error                    string            `json:"error,omitempty"`
+	Started                  string            `json:"started_at"`
+	Node                     string            `json:"node"`
+	Renderer                 string            `json:"renderer_version,omitempty"`
+	FFmpeg                   string            `json:"ffmpeg,omitempty"`
+	Output                   string            `json:"output"`
+	InputSHA256              map[string]string `json:"input_sha256"`
+	Steps                    []RenderStep      `json:"steps"`
+	Validation               *Report           `json:"validation,omitempty"`
+	VerificationSamples      int               `json:"verification_samples"`
+	VerificationFullTimeline bool              `json:"verification_full_timeline"`
+	CaptureBridge            string            `json:"capture_bridge"`
+	CaptureSHA256            string            `json:"capture_sha256"`
 }
 
 func runRendererDoctor(args []string, stdout, stderr io.Writer) int {
@@ -67,7 +72,7 @@ func runRendererDoctor(args []string, stdout, stderr io.Writer) int {
 		return code
 	}
 	code := runDoctor(stdout, stderr, *toolsDir)
-	root, err := filepath.Abs(*project)
+	root, err := preparedRuntimeRoot("", *project)
 	if err != nil {
 		fmt.Fprintln(stderr, err)
 		return 2
@@ -101,13 +106,16 @@ func runRender(args []string, stdout, stderr io.Writer) int {
 	f := flag.NewFlagSet("render", flag.ContinueOnError)
 	f.SetOutput(stderr)
 	projectDir := f.String("project", ".", "PV project directory")
+	rendererProject := f.String("renderer-project", "", "reuse dependencies from another local project (no download)")
+	verifyAt := f.String("verify-at", "", "explicit comma-separated frame times for determinism checks")
+	stillsEvery := f.Float64("stills-every", 0, "sampling interval; 0 chooses eight representative frames")
 	manifestName := f.String("manifest", "pv-project.json", "manifest path relative to project")
 	shot := f.String("shot", "pv.html", "full-timeline HTML path relative to project")
 	out := f.String("out", "", "MP4 output relative to project (default delivery.video_path)")
 	reportName := f.String("report", "qa/render-report.json", "JSON report relative to project")
 	audio := f.String("audio", "", "local mixed soundtrack relative to project")
 	workers := f.Int("workers", 2, "Chromium worker count (1-16)")
-	raster := f.String("raster", "gpu", "gpu or software rasterization")
+	raster := f.String("raster", "gpu", "gpu or software browser rasterization; the PV backend is always WebGPU")
 	quality := f.String("quality", "standard", "fast, standard, or high sampling quality (art direction remains source-driven)")
 	blur := f.Int("motion-blur", 0, "override temporal samples (1-256); 0 uses shot defaults")
 	draft := f.Bool("draft", false, "low resolution preview; never release-ready")
@@ -235,11 +243,20 @@ func runRender(args []string, stdout, stderr io.Writer) int {
 		return fail(err)
 	}
 	build.Node = node
-	renderer, err := rendererPath(root)
+	runtimeRoot, err := preparedRuntimeRoot(*rendererProject, root)
 	if err != nil {
 		return fail(err)
 	}
-	data, _ := os.ReadFile(filepath.Join(root, "node_modules", "multiplane", "package.json"))
+	renderer, err := rendererPath(runtimeRoot)
+	if err != nil {
+		return fail(err)
+	}
+	build.CaptureSHA256, err = ensureWebGPUCaptureBridge(runtimeRoot)
+	if err != nil {
+		return fail(err)
+	}
+	build.CaptureBridge = captureBridgeID
+	data, _ := os.ReadFile(filepath.Join(runtimeRoot, "node_modules", "multiplane", "package.json"))
 	var pkg struct {
 		Version string `json:"version"`
 	}
@@ -264,11 +281,20 @@ func runRender(args []string, stdout, stderr io.Writer) int {
 	if err = os.MkdirAll(jobDir, 0755); err != nil {
 		return fail(err)
 	}
+	verifyPass := 0
 	run := func(command string, options ...string) error {
 		fmt.Fprintln(stderr, "video-pv-cli: "+command)
 		arguments := []string{command, filepath.ToSlash(*shot), "--root", root, "--json"}
 		arguments = append(arguments, options...)
-		step, err := runMultiplane(ctx, root, node, renderer, jobDir, command, arguments, stderr)
+		logDir := jobDir
+		if command == "verify" {
+			verifyPass++
+			logDir = filepath.Join(jobDir, fmt.Sprintf("verify-%03d", verifyPass))
+			if err := os.MkdirAll(logDir, 0755); err != nil {
+				return err
+			}
+		}
+		step, err := runMultiplane(ctx, root, node, renderer, logDir, command, arguments, stderr)
 		build.Steps = append(build.Steps, step)
 		return err
 	}
@@ -285,11 +311,29 @@ func runRender(args []string, stdout, stderr io.Writer) int {
 	if *blur > 0 {
 		common = append(common, "--motion-blur", strconv.Itoa(*blur))
 	}
-	if err = run("verify", append(append([]string{}, common...), "--workers", strconv.Itoa(*workers))...); err != nil {
+	times, full, err := verificationTimes(p.Project, *verifyAt)
+	if err != nil {
 		return fail(err)
 	}
+	build.VerificationSamples = len(times)
+	build.VerificationFullTimeline = full
+	// Bound Windows command-line length and per-process reference image memory.
+	for first := 0; first < len(times); first += 128 {
+		end := first + 128
+		if end > len(times) {
+			end = len(times)
+		}
+		verifyArgs := append(append([]string{}, common...), "--workers", strconv.Itoa(*workers), "--at", strings.Join(times[first:end], ","))
+		if err = run("verify", verifyArgs...); err != nil {
+			return fail(err)
+		}
+	}
 	stillArgs := append([]string{}, common...)
-	stillArgs = append(stillArgs, "--every", strconv.FormatFloat(math.Max(p.Project.DurationSeconds/8, 1/p.Project.FPS), 'f', 6, 64), "--out", filepath.Join(jobDir, "stills"))
+	interval := *stillsEvery
+	if interval <= 0 {
+		interval = math.Max(p.Project.DurationSeconds/8, 1/p.Project.FPS)
+	}
+	stillArgs = append(stillArgs, "--every", strconv.FormatFloat(interval, 'f', 9, 64), "--out", filepath.Join(jobDir, "stills"))
 	if err = run("stills", stillArgs...); err != nil {
 		return fail(err)
 	}
@@ -338,6 +382,35 @@ func runRender(args []string, stdout, stderr io.Writer) int {
 	return 0
 }
 
+func verificationTimes(p ProjectInfo, explicit string) ([]string, bool, error) {
+	n := math.Ceil(p.DurationSeconds*p.FPS - 1e-8)
+	if !finitePositive(n) || n > 1000000 {
+		return nil, false, fmt.Errorf("invalid or excessively long verification timeline")
+	}
+	count := int(n)
+	times := []string{}
+	seen := map[int]bool{}
+	if explicit == "" {
+		for i := 0; i < count; i++ {
+			times = append(times, strconv.FormatFloat(float64(i)/p.FPS, 'f', 12, 64))
+		}
+		return times, true, nil
+	}
+	for _, part := range strings.Split(explicit, ",") {
+		value, err := strconv.ParseFloat(strings.TrimSpace(part), 64)
+		if err != nil || !finiteNonNegative(value) || value >= p.DurationSeconds || math.Abs(value*p.FPS-math.Round(value*p.FPS)) > 1e-7 {
+			return nil, false, fmt.Errorf("--verify-at times must be finite, inside the shot and frame-aligned")
+		}
+		frame := int(math.Round(value * p.FPS))
+		if seen[frame] {
+			return nil, false, fmt.Errorf("duplicate --verify-at frame")
+		}
+		seen[frame] = true
+		times = append(times, strconv.FormatFloat(float64(frame)/p.FPS, 'f', 12, 64))
+	}
+	return times, len(seen) == count, nil
+}
+
 func reportHasFailures(r Report) bool {
 	for _, c := range r.Checks {
 		if c.Status == "fail" {
@@ -354,12 +427,21 @@ func compareShotSpec(data []byte, p ProjectInfo) error {
 		} `json:"stage"`
 		Duration float64 `json:"duration"`
 		FPS      float64 `json:"fps"`
+		Meta     struct {
+			GPU struct {
+				Backend        string `json:"backend"`
+				ShaderLanguage string `json:"shaderLanguage"`
+			} `json:"gpu"`
+		} `json:"meta"`
 	}
 	if err := json.Unmarshal(data, &d); err != nil {
 		return err
 	}
 	if d.Stage.Width != p.Width || d.Stage.Height != p.Height || math.Abs(d.Duration-p.DurationSeconds) > 0.001 || math.Abs(d.FPS-p.FPS) > 0.001 {
 		return fmt.Errorf("HTML shot spec %dx%d %.3f fps %.3fs differs from manifest %dx%d %.3f fps %.3fs", d.Stage.Width, d.Stage.Height, d.FPS, d.Duration, p.Width, p.Height, p.FPS, p.DurationSeconds)
+	}
+	if d.Meta.GPU.Backend != "webgpu" || d.Meta.GPU.ShaderLanguage != "wgsl" {
+		return fmt.Errorf("PV requires native WebGPU/WGSL metadata from the active device; unsupported or missing backend")
 	}
 	return nil
 }
@@ -382,11 +464,17 @@ func runMultiplane(ctx context.Context, root, node, renderer, jobDir, command st
 		return step, err
 	}
 	defer log.Close()
+	diagnostics, err := os.Create(filepath.Join(jobDir, command+".stderr.log"))
+	if err != nil {
+		return step, err
+	}
+	defer diagnostics.Close()
+	step.StderrLog = diagnostics.Name()
 	buffer := &limitedBuffer{Max: 32 << 20}
 	cmd := exec.CommandContext(ctx, node, append([]string{renderer}, args...)...)
 	cmd.Dir = root
 	cmd.Stdout = io.MultiWriter(log, buffer)
-	cmd.Stderr = stderr
+	cmd.Stderr = io.MultiWriter(stderr, diagnostics)
 	configureProcess(cmd)
 	runErr := cmd.Run()
 	parseErr := parseRenderEvents(buffer.Bytes(), command, &step)

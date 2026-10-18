@@ -155,6 +155,7 @@ func validateManifest(path string, release bool) (ProjectFile, Report) {
 	}
 	validateProjectFields(project, &report, release)
 	validateAssets(root, project.Assets, &report, release)
+	validateTemplateFiles(root, project, &report)
 	validateClaimsAndShots(project, &report, release)
 	validateCaptions(root, project, &report, release)
 	validateReview(project.Review, &report, release)

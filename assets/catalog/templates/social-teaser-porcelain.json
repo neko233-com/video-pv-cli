@@ -1,0 +1,182 @@
+{
+  "category": "social",
+  "description": "Independent editable cinematic sequence; theme, copy, images, scene rhythm and transitions live in this JSON. Fictional sample content, not product/gameplay evidence.",
+  "fps": 30,
+  "height": 1080,
+  "id": "social-teaser-porcelain",
+  "loop": false,
+  "name": "社媒 · 短篇预告 / 瓷白",
+  "project_title": "MAKE IT COUNT",
+  "scenes": [
+    {
+      "background": "nebula",
+      "duration": 4.4,
+      "id": "scene-01",
+      "image": "",
+      "items": [
+        {
+          "body": "Refined from every angle.",
+          "title": "Form",
+          "value": "01"
+        },
+        {
+          "body": "A controlled focal point.",
+          "title": "Light",
+          "value": "02"
+        },
+        {
+          "body": "Every beat with intention.",
+          "title": "Motion",
+          "value": "03"
+        },
+        {
+          "body": "Make the important visible.",
+          "title": "Detail",
+          "value": "04"
+        }
+      ],
+      "layout": "left",
+      "motion": {
+        "ease": "outExpo",
+        "name": "orbit",
+        "strength": 0.6
+      },
+      "overline": "ORIGINAL MOTION STUDY",
+      "subtitle": "Design. Motion. Possibility.",
+      "title": "{{title}}",
+      "transition": "zoom-out",
+      "transition_duration": 0.7,
+      "type": "giant-type"
+    },
+    {
+      "background": "grid",
+      "duration": 3.6,
+      "id": "scene-02",
+      "image": "astral-knight.png",
+      "items": [
+        {
+          "body": "Refined from every angle.",
+          "title": "Form",
+          "value": "01"
+        },
+        {
+          "body": "A controlled focal point.",
+          "title": "Light",
+          "value": "02"
+        },
+        {
+          "body": "Every beat with intention.",
+          "title": "Motion",
+          "value": "03"
+        },
+        {
+          "body": "Make the important visible.",
+          "title": "Detail",
+          "value": "04"
+        }
+      ],
+      "layout": "right",
+      "motion": {
+        "ease": "inOutQuint",
+        "name": "float",
+        "strength": 0.6
+      },
+      "overline": "ORIGINAL MOTION STUDY",
+      "subtitle": "Design. Motion. Possibility.",
+      "title": "{{title}}",
+      "transition": "diagonal",
+      "transition_duration": 0.7,
+      "type": "image-hero"
+    },
+    {
+      "background": "particles",
+      "duration": 4,
+      "id": "scene-03",
+      "image": "",
+      "items": [
+        {
+          "body": "Refined from every angle.",
+          "title": "Form",
+          "value": "01"
+        },
+        {
+          "body": "A controlled focal point.",
+          "title": "Light",
+          "value": "02"
+        },
+        {
+          "body": "Every beat with intention.",
+          "title": "Motion",
+          "value": "03"
+        },
+        {
+          "body": "Make the important visible.",
+          "title": "Detail",
+          "value": "04"
+        }
+      ],
+      "layout": "asymmetric",
+      "motion": {
+        "ease": "settle",
+        "name": "tilt",
+        "strength": 0.6
+      },
+      "overline": "ORIGINAL MOTION STUDY",
+      "subtitle": "Design. Motion. Possibility.",
+      "title": "{{title}}",
+      "transition": "pixelate",
+      "transition_duration": 0.7,
+      "type": "impact"
+    },
+    {
+      "background": "rings",
+      "duration": 4.4,
+      "id": "scene-04",
+      "image": "",
+      "items": [
+        {
+          "body": "Refined from every angle.",
+          "title": "Form",
+          "value": "01"
+        },
+        {
+          "body": "A controlled focal point.",
+          "title": "Light",
+          "value": "02"
+        },
+        {
+          "body": "Every beat with intention.",
+          "title": "Motion",
+          "value": "03"
+        },
+        {
+          "body": "Make the important visible.",
+          "title": "Detail",
+          "value": "04"
+        }
+      ],
+      "layout": "center",
+      "motion": {
+        "ease": "inOutCubic",
+        "name": "rise",
+        "strength": 0.6
+      },
+      "overline": "ORIGINAL MOTION STUDY",
+      "subtitle": "A FICTIONAL CONCEPT / SOURCE-EDITABLE TEMPLATE",
+      "title": "{{title}}",
+      "transition": "swirl",
+      "transition_duration": 0.7,
+      "type": "endcard"
+    }
+  ],
+  "schema_version": "1.0",
+  "theme": {
+    "accent": "#1368de",
+    "background": "#f2f3f5",
+    "font": "sans",
+    "foreground": "#17191e",
+    "secondary": "#8caef8",
+    "surface": "#ffffff"
+  },
+  "width": 1920
+}

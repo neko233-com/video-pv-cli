@@ -1,55 +1,44 @@
-# Shader cinematography and MP4 export
+# Native WebGPU shader production
 
-Use shaders to support the shot's subject: elemental energy behind a character, controlled volumetric atmosphere, water/refraction, portal or logo reveals, particle depth, dissolve/mask transitions, film treatment, and restrained bloom. Set the subject's identity, story beat, palette and focal point first. An animated gradient by itself is not a complete game or character PV.
+The supported graphics backend is **WebGPU only**, using WGSL. There is no WebGL fallback. Set the subject, camera, palette and beat first; atmosphere and transitions support the film's direction. A procedural background or a pan over one illustration does not establish gameplay, character acting or product performance.
 
-## Renderer choices
+## Runtime contract
 
-| Path | Appropriate use | Export requirement |
-| --- | --- | --- |
-| Original GLSL + native WebGL2 | Custom full-screen atmosphere, distortions, procedural textures; minimal dependencies | Use the starter's local include loader, compile/link checks, synchronous `render(t)` and MP4 validation |
-| Paper Shaders (`@paper-design/shaders`) | Designed website textures, gradients, image treatments | Pin the selected release, bundle locally with LICENSE/NOTICE, stop automatic animation and drive its public `setFrame(t * 1000)` in zero-speed mode; verify the exact bundle before delivery |
-| Three.js `ShaderMaterial` / `RawShaderMaterial` | Lit 3D objects, image cards, meshes and camera-driven composition | Pin a version compatible with the selected Multiplane release; set uniforms and camera from `t`; render explicitly |
-| `multiplane/three` | Image cards, depth of field, dimensional UI | Follow that release's three.js version requirement; no independent animation loop |
-| ShaderGradient | Website atmosphere or a designed background | Disable automatic animation (`animate='off'`), set `uTime` from `t`, disable pointer/scroll/spring state, and use a manually advanced render loop; prove out-of-order determinism before adopting |
-| LYGIA or other shader function collections | Reusable math, noise, filters, SDFs | Check the exact revision's license, vendor required modules locally, resolve includes before compilation and keep notices |
+`webgpu-runtime.js` requests an adapter/device, checks shader compilation messages, creates an asynchronous render pipeline during setup, and records actual adapter information. Missing secure context/API/adapter, pipeline failures, device loss and uncaptured GPU errors fail the job. Unsupported hardware must not produce a successful blank export.
 
-ShaderGradient's upstream README lists MIT; LYGIA's current LICENSE is Prosperity Public License 3.0.0 with a commercial trial limit. Do not assume either a project name or an old license covers a commercial game trailer. Confirm the selected revision and obtain appropriate rights when needed. Shadertoy examples also have author-specific terms; a publicly visible shader is not automatically reusable. The included original GLSL has no LYGIA or ShaderGradient dependency.
+`catalog.wgsl` contains the full-screen vertex/fragment pipeline and 48 transition modes. `library.wgsl` contains original noise/math functions. Setup expands local `// @include "library.wgsl"` directives; these are a project preprocessor convention, not WGSL syntax. Include cycles/depth and remote origins are rejected.
 
-Paper Shaders upstream explicitly permits commercial end products under Apache-2.0 and asks redistributors to preserve LICENSE/NOTICE. Its vanilla `ShaderMount` supports `speed=0` and `setFrame` in milliseconds; it also contains internal wall-clock and resize-observer code. Keep speed zero, finish sizing before ready, set a known frame for every `render(t)`, and inspect the vendored source and lint findings. Do not globally suppress wall-clock findings or assume a live React component will be deterministic. The bundled templates test the original native-WebGL helper; Paper/Three/ShaderGradient are optional integrations that need their own verified shot, not blanket compatibility promises.
+The composition painter uses CPU Canvas 2D for font layout and local artwork. It uploads explicit pixel arrays to GPU textures; final compositing, backgrounds and transition shaders run through WebGPU. This is not a second graphics backend. Browser `--raster gpu/software` controls Chromium's raster policy; it does not change `getContext('webgpu')` to another API. The inspect gate requires `meta.gpu.backend='webgpu'` and `shaderLanguage='wgsl'` from the initialized runtime.
 
-## Deterministic WebGL contract
+Every `render(t)` must set complete state synchronously and submit GPU commands for that time. Upstream Multiplane does not await an async `render`. This CLI applies a small **SHA-256 guarded capture bridge** to pinned Multiplane 0.3.10: the capture callback awaits `__PV_WEBGPU_FLUSH()` before every screenshot. The helper waits for `device.queue.onSubmittedWorkDone()` and checks fatal GPU errors. Unknown/modified upstream capture sources are rejected. The render report records bridge ID and patched source hash; `npm ci` restores upstream code and the next render safely reapplies the bridge. Custom shots must expose this completion hook too.
 
-- Load shader sources, includes, textures, geometry and local fonts during `setup()`/`ready`. Fail on failed requests, include cycles, shader compile/link errors, lost WebGL contexts or GL errors. Never replace an unavailable shader with an unnoticed blank canvas.
-- Set `u_time = t` and `u_resolution` to the actual framebuffer dimensions for every frame/subsample. Use explicit fixed seeds. Device pixel ratio affects canvas backing storage, not the shot's logical composition dimensions.
-- Derive camera transforms, material uniforms, particles and animation clip pose directly from `t`. Do not call an elapsed-time clock, start `requestAnimationFrame`, accumulate positions, or rely on React's asynchronous state commit before the screenshot. Reset all mutable state on each call.
-- Temporal effects need special handling. Replace feedback trails, TAA history, physics and interactive pointer effects with a deterministic precomputation or a closed-form function. Reset bloom/compositor/render-target state between sampled frames. Verify at hard cuts, at the fastest action, near the ending and after arbitrary time jumps.
-- Use a consistent linear lighting/tone-mapping pipeline and a known display transform. Avoid double gamma conversion. Review glow clipping, banding, moire, HDR-looking highlights flattened into SDR, and transparent edge halos in the encoded MP4.
-- Keep render resources offline. Native WebGL does not resolve `#include` itself; the starter's JS loader resolves local nested includes in setup. Bundle third-party code in advance rather than fetching a CDN during frame rendering.
+Pipeline creation, asset decoding, buffer creation and asynchronous preparation belong in setup. Never start RAF/timers, use wall-clock deltas or accumulate simulation state between frames. Queued uploads/draws execute in order. Verify repeated, reordered, reloaded, worker and range captures to detect stale state. Returning a promise from `Shot.render` does not extend the capture contract.
 
-The built-in helper creates WebGL2 with a preserved drawing buffer, checks compile/link status and GL errors, and renders once per explicit `t`. The CLI runs Multiplane `verify` to test repeated/reordered calls and worker consistency. Small GPU/environment differences can still exist across computers; record the browser and renderer versions and inspect warnings. WebGPU/TSL is a separate path: only claim it is supported after the target browser, adapter, renderer and MP4 export have been exercised. This project currently exercises WebGL2.
+The uniform buffer has a fixed 112-byte layout, mirrored in the WGSL `Params` struct and JS offsets. Resolution/time/progress/mode/strength/softness/tiles/direction/background IDs, padded colors and loop duration are reset explicitly. Review alignment whenever adding a uniform. Textures are RGBA8 unorm with unpremultiplied image data; the shader composites alpha onto an opaque background. Review color conversion, banding and transparent edges in the encoded SDR file.
+
+## Extending the shader library
+
+For an original effect, add a local WGSL module and data parameters, declare every module/texture in the manifest, then implement explicit-time evaluation. A new transition needs its own data file, a unique supported mode, renderer branch, validation range update and endpoint/midpoint coverage. Update the 48-mode coverage test only after adding the implementation and evidence. Keep effects configurable rather than copying another template's JS.
+
+WebGPU also provides compute pipelines, storage buffers/textures, render bundles and 3D render passes. For particles, skinning, fluid simulation or a 3D scene, create resources in setup and submit compute/render passes on the same device queue. Derive state analytically from `t`, precompute a fixed simulation cache, or recompute from a deterministic initial state for each frame; a simulation that advances once per callback fails out-of-order capture. Clear intermediate render targets and avoid temporal feedback from a previous sampled frame. Additional compute/3D effects require their own tested pipeline; the bundled compositor does not claim to provide a complete game engine or physical fluid solver.
+
+Do not import a shader library merely because its name matches a visual effect. Verify its backend, exact revision, license, initialization, time control and actual MP4 output. A GLSL shader must be ported to WGSL; GLSL, Paper Shaders, ShaderGradient and a WebGL material cannot execute directly in this runtime. A future Three.js WebGPU/TSL integration must disable fallback, use an explicit-time renderer, pin compatible versions and pass the same Windows export checks before it is supported. The bundled engine currently has no such dependency. Commercial source licenses and per-asset rights must be recorded separately from this project's Apache-2.0 code license.
 
 ## Verification ladder
 
-1. Run a short representative shader shot at final resolution. Inspect the hero frame before building the full cut.
-2. Run lint and inspection; confirm local resources, stage size, exact FPS and duration match the manifest.
-3. Run determinism verification. Fix failures before exporting. A visual match at only the opening frame is insufficient.
-4. Render stills at transitions, focal changes, extremes of movement and the last encoded frame. Examine copy, face/hair edges, weapons/hands, bloom, grain and fine detail at 100%.
-5. Export H.264 MP4 with yuv420p for the declared SDR delivery profile. MP4 does not carry alpha; composite transparent MOV/WebM layers before the final export. Use even target dimensions for 4:2:0.
-6. Fully decode the result and check stream size, FPS, duration, frame count and audio/caption requirements. Watch the actual MP4 with sound, including full-screen and mobile framing. A passing shader compile does not prove a good encoded image.
+1. Compile and render one representative shot at the target resolution. Inspect the subject, not only the background.
+2. Match dimensions, FPS and runtime; verify actual WebGPU metadata and all local resources.
+3. Test reordered times, reloads, worker counts and subranges. Preserve and fix failures; do not loosen pixel thresholds to hide stateful output.
+4. Sample transitions, fastest movement, face/hair edges, fine typography, glow and the last frame. Check actual MP4 compression.
+5. Export H.264/yuv420p MP4, then fully decode video/audio and check frame count, duration, dimensions, codec and required streams.
+6. For loops, compare `t=0` and `t=duration` and also watch the final encoded frame `[duration-1/fps]` returning to zero. Endpoint equality alone does not prove smooth velocity or a perceptually invisible seam.
+7. Watch the complete film with sound; record the review before using `--release`.
 
-## Game, anime and website direction
-
-For a game trailer, connect atmosphere to real player verbs and stakes. Use actual gameplay as proof; place designed titles and transitions around the capture. Convert video to a controlled frame sequence if it must be sampled inside a deterministic HTML shot; ordinary `<video>` playback is not controlled by `render(t)`.
-
-For anime character PVs, build a continuity sheet covering face, hair silhouette, costume, accessory position, proportions, eye color and signature weapon. Use approved layered artwork or real rigged animation for character action. Direct close-up, silhouette, signature action and emotional payoff as distinct beats. A camera pan over one illustration may be suitable for an introductory moment; do not present it as finished character animation. Keep effects behind face/eyes and preserve line-art clarity. See [cinematic-direction.md](cinematic-direction.md).
-
-For website hero loops, make the loop join a deliberate shot requirement. A six-second loop uses frames `[0, 6)`; confirm the transition from the final encoded frame to the first has no perceptible jump. Use periodic shader motion, restrained typography and enough dark/quiet space for actual website copy. Deliver a static poster plus an optimized silent MP4 variant; review site overlays and reduced-motion treatment separately. Native HTML preview alone does not prove a good website video.
+The default built-in samples are designed motion/key art. Use real captured gameplay/product behavior as evidence, and approved layered/rigged animation for character performance. Decode source video to a controlled frame sequence before using it inside explicit-time HTML; live `<video>` playback is unsuitable.
 
 ## Primary references
 
-- [Multiplane shot and determinism contract](https://github.com/LBEILC/Multiplane/blob/main/skills/multiplane/SKILL.md)
-- [Three.js ShaderMaterial](https://threejs.org/docs/pages/ShaderMaterial.html)
-- [ShaderGradient upstream README](https://github.com/ruucm/shadergradient)
-- [Paper Shaders upstream README and license](https://github.com/paper-design/shaders)
-- [Paper ShaderMount time control](https://github.com/paper-design/shaders/blob/main/packages/shaders/src/shader-mount.ts)
-- [LYGIA upstream license](https://github.com/patriciogonzalezvivo/lygia/blob/main/LICENSE.md)
+- [WebGPU specification](https://www.w3.org/TR/webgpu/)
+- [WGSL specification](https://www.w3.org/TR/WGSL/)
+- [Chrome WebGPU troubleshooting and Windows limitations](https://developer.chrome.com/docs/web-platform/webgpu/troubleshooting-tips)
+- [Multiplane shot contract](https://github.com/LBEILC/Multiplane/blob/main/skills/multiplane/SKILL.md)

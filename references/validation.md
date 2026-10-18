@@ -28,7 +28,7 @@ Manifest-only validation has no FFmpeg or network requirement. Use `--json` for 
 
 ## What the automated checks cover
 
-`video-pv-cli render --project <project>` executes five logged Multiplane steps (`lint`, `inspect`, `verify`, `stills`, `render`) and then the Go media gate with full decode. `inspect` must match the manifest's master dimensions/FPS/runtime before rendering. Local source, shader/library/texture assets, package manifest and lockfile hashes are recorded and checked again after the render. Outputs cannot replace declared inputs; existing MP4s require a new path. NDJSON without a valid final result, a command mismatch or a nonzero renderer exit fails the build. A report is written on pipeline failures where possible.
+`video-pv-cli render --project <project>` executes five types of logged Multiplane steps (`lint`, `inspect`, one or more `verify` groups, `stills`, `render`) and then the Go media gate with full decode. `inspect` must match the manifest's master dimensions/FPS/runtime before rendering. Local source, shader/library/texture assets, package manifest and lockfile hashes are recorded and checked again after the render. Outputs cannot replace declared inputs; existing MP4s require a new path. NDJSON without a valid final result, a command mismatch or a nonzero renderer exit fails the build. A report is written on pipeline failures where possible.
 
 The `render` input HTML describes a full-timeline master. The CLI accepts `--audio` for one pre-mixed local soundtrack, declared as a manifest asset, and lets the renderer mux it into MP4. Mix VO/music/SFX in the chosen audio tool first. Set `audio_required` to enforce an audio stream. `--draft` is a preview mode and cannot be combined with `--release`. Use `--quality`/`--motion-blur` for sampling control; visual taste and narrative quality come from the source direction.
 
@@ -40,7 +40,7 @@ The `render` input HTML describes a full-timeline master. The CLI accepts `--aud
 - With `ffprobe`: readable stream metadata, container, dimensions, frame rate, codecs, optional pixel format, encoded frame count when available, container/video duration tolerance, and required audio stream. A long audio/container duration does not conceal a short video stream.
 - In release mode (or with `--decode`): full video/audio decode through FFmpeg to catch damaged or unreadable streams.
 - FFmpeg setup: missing Windows x64 tools are placed in the current-user cache after checksum verification and archive path validation.
-- A JSON report suitable for CI or a later production step.
+- A JSON report for Windows local automation or a later production step. This repository does not use GitHub Actions.
 
 Warnings can indicate that a plan is incomplete but still structurally useful. Release mode turns applicable warnings into failures. A passing report means only that the automated checks passed; it is not a legal opinion or proof that the film is compelling or faithful.
 

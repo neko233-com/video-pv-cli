@@ -1,0 +1,15 @@
+{
+  "category": "geometry",
+  "direction": [
+    1,
+    -1
+  ],
+  "ease": "inOutQuint",
+  "id": "cover-up-right",
+  "mode": 6,
+  "name": "层叠覆盖 · 右上",
+  "schema_version": "1.0",
+  "softness": 0.065,
+  "strength": 0.65,
+  "tiles": 12
+}

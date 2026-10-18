@@ -1,0 +1,182 @@
+{
+  "category": "brand",
+  "description": "Independent editable cinematic sequence; theme, copy, images, scene rhythm and transitions live in this JSON. Fictional sample content, not product/gameplay evidence.",
+  "fps": 30,
+  "height": 1080,
+  "id": "brand-logo-ember",
+  "loop": false,
+  "name": "品牌 · 标识演绎 / 余烬",
+  "project_title": "ORBIT",
+  "scenes": [
+    {
+      "background": "fluid",
+      "duration": 3.6,
+      "id": "scene-01",
+      "image": "",
+      "items": [
+        {
+          "body": "Refined from every angle.",
+          "title": "Form",
+          "value": "01"
+        },
+        {
+          "body": "A controlled focal point.",
+          "title": "Light",
+          "value": "02"
+        },
+        {
+          "body": "Every beat with intention.",
+          "title": "Motion",
+          "value": "03"
+        },
+        {
+          "body": "Make the important visible.",
+          "title": "Detail",
+          "value": "04"
+        }
+      ],
+      "layout": "left",
+      "motion": {
+        "ease": "outExpo",
+        "name": "push-in",
+        "strength": 0.75
+      },
+      "overline": "ORIGINAL MOTION STUDY",
+      "subtitle": "Design. Motion. Possibility.",
+      "title": "{{title}}",
+      "transition": "dip-black",
+      "transition_duration": 0.7,
+      "type": "logo"
+    },
+    {
+      "background": "prism",
+      "duration": 4,
+      "id": "scene-02",
+      "image": "",
+      "items": [
+        {
+          "body": "Refined from every angle.",
+          "title": "Form",
+          "value": "01"
+        },
+        {
+          "body": "A controlled focal point.",
+          "title": "Light",
+          "value": "02"
+        },
+        {
+          "body": "Every beat with intention.",
+          "title": "Motion",
+          "value": "03"
+        },
+        {
+          "body": "Make the important visible.",
+          "title": "Detail",
+          "value": "04"
+        }
+      ],
+      "layout": "right",
+      "motion": {
+        "ease": "inOutQuint",
+        "name": "pull-out",
+        "strength": 0.75
+      },
+      "overline": "ORIGINAL MOTION STUDY",
+      "subtitle": "Design. Motion. Possibility.",
+      "title": "{{title}}",
+      "transition": "slide-right",
+      "transition_duration": 0.7,
+      "type": "monogram"
+    },
+    {
+      "background": "horizon",
+      "duration": 4.4,
+      "id": "scene-03",
+      "image": "",
+      "items": [
+        {
+          "body": "Refined from every angle.",
+          "title": "Form",
+          "value": "01"
+        },
+        {
+          "body": "A controlled focal point.",
+          "title": "Light",
+          "value": "02"
+        },
+        {
+          "body": "Every beat with intention.",
+          "title": "Motion",
+          "value": "03"
+        },
+        {
+          "body": "Make the important visible.",
+          "title": "Detail",
+          "value": "04"
+        }
+      ],
+      "layout": "asymmetric",
+      "motion": {
+        "ease": "settle",
+        "name": "drift-left",
+        "strength": 0.75
+      },
+      "overline": "ORIGINAL MOTION STUDY",
+      "subtitle": "Design. Motion. Possibility.",
+      "title": "{{title}}",
+      "transition": "slide-up-left",
+      "transition_duration": 0.7,
+      "type": "title"
+    },
+    {
+      "background": "silk",
+      "duration": 3.6,
+      "id": "scene-04",
+      "image": "",
+      "items": [
+        {
+          "body": "Refined from every angle.",
+          "title": "Form",
+          "value": "01"
+        },
+        {
+          "body": "A controlled focal point.",
+          "title": "Light",
+          "value": "02"
+        },
+        {
+          "body": "Every beat with intention.",
+          "title": "Motion",
+          "value": "03"
+        },
+        {
+          "body": "Make the important visible.",
+          "title": "Detail",
+          "value": "04"
+        }
+      ],
+      "layout": "center",
+      "motion": {
+        "ease": "inOutCubic",
+        "name": "drift-right",
+        "strength": 0.75
+      },
+      "overline": "ORIGINAL MOTION STUDY",
+      "subtitle": "A FICTIONAL CONCEPT / SOURCE-EDITABLE TEMPLATE",
+      "title": "{{title}}",
+      "transition": "slide-down-right",
+      "transition_duration": 0.7,
+      "type": "endcard"
+    }
+  ],
+  "schema_version": "1.0",
+  "theme": {
+    "accent": "#ffa76c",
+    "background": "#160b0a",
+    "font": "sans",
+    "foreground": "#fff0df",
+    "secondary": "#e65a63",
+    "surface": "#35201c"
+  },
+  "width": 1920
+}

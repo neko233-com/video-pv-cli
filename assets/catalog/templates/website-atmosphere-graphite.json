@@ -1,0 +1,62 @@
+{
+  "category": "website",
+  "description": "Independent editable cinematic sequence; theme, copy, images, scene rhythm and transitions live in this JSON. Fictional sample content, not product/gameplay evidence.",
+  "fps": 30,
+  "height": 1080,
+  "id": "website-atmosphere-graphite",
+  "loop": true,
+  "name": "官网 · 氛围循环 / 石墨",
+  "project_title": "STELLAR ECHO",
+  "scenes": [
+    {
+      "background": "aurora",
+      "duration": 6,
+      "id": "scene-01",
+      "image": "",
+      "items": [
+        {
+          "body": "Refined from every angle.",
+          "title": "Form",
+          "value": "01"
+        },
+        {
+          "body": "A controlled focal point.",
+          "title": "Light",
+          "value": "02"
+        },
+        {
+          "body": "Every beat with intention.",
+          "title": "Motion",
+          "value": "03"
+        },
+        {
+          "body": "Make the important visible.",
+          "title": "Detail",
+          "value": "04"
+        }
+      ],
+      "layout": "right",
+      "motion": {
+        "ease": "inOutQuint",
+        "name": "drift-up",
+        "strength": 0.75
+      },
+      "overline": "ORIGINAL MOTION STUDY",
+      "subtitle": "Design. Motion. Possibility.",
+      "title": "{{title}}",
+      "transition": "push-down-left",
+      "transition_duration": 0,
+      "type": "ambient"
+    }
+  ],
+  "schema_version": "1.0",
+  "theme": {
+    "accent": "#c5c9cf",
+    "background": "#171a1d",
+    "font": "sans",
+    "foreground": "#eceff1",
+    "secondary": "#7c8c9f",
+    "surface": "#282e35"
+  },
+  "width": 1920
+}

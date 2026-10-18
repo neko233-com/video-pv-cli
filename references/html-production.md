@@ -1,77 +1,55 @@
-# HTML motion and Multiplane rendering
+# HTML, WebGPU and Multiplane production
 
-Use this path when a shot needs exact copy, Chinese/Japanese/Korean text, branded typography, product UI, diagrams, data animation, title cards, controlled transitions, or layered 2.5D motion. HTML/CSS/JS gives direct layout and timing control; it does not create truthful gameplay or product proof, and it does not replace a full nonlinear editor when the PV mixes many live-action/game captures, sound layers, or complex editorial timing.
+Use HTML for controlled typography, diagrams, title cards, product presentation and layered designed motion. Use native WebGPU/WGSL for compositing and GPU effects. Capture actual gameplay/product behavior from the real build; assemble mixed footage, sound and graphics in an editor when that fits the brief.
 
-## Tool roles
+## Start a data project
 
-- **Multiplane** renders HTML shots into MP4 and provides shot inspection, stills/contact sheets, linting, and deterministic frame verification. It is Apache-2.0. Check its current release notes before installing; its API is pre-1.0 and can change.
-- **Go 1.27 `video-pv-cli check`** validates the project manifest, captions, and final encoded file. Keep it as the final delivery gate; it is complementary to Multiplane's shot-level checks.
-- **A human reviewer** checks message, aesthetics, claims, likeness, readability, and the complete cut. A deterministic render can still be visually wrong.
-
-## Set up a local project
-
-The supported bundled route is:
-
-```sh
-video-pv-cli init --dir my-pv --type character
+```powershell
+video-pv-cli catalog list
+video-pv-cli init --dir my-pv --template character-reveal-midnight
 video-pv-cli setup --project my-pv
 video-pv-cli doctor --project my-pv
 video-pv-cli render --project my-pv
 ```
 
-If the CLI is not on PATH, use `go -C <installed-skill-folder> run .` in place of `video-pv-cli`. `init` refuses an existing directory. `setup` installs the template's pinned Multiplane dependency and Chromium; subsequent setup uses `npm ci` with the bundled lockfile. The CLI calls Node and the local renderer directly, avoiding shell interpolation and implicit npx downloads. `render` connects the same resolved FFmpeg binary to Multiplane and final QA, including the Windows x64 user cache when needed.
+From the installed skill folder, `go run .` can replace the CLI executable. Go 1.27 builds the tools. Rendering needs Node.js 24+, the exact pinned Multiplane 0.3.10 dependency, Playwright Chromium, a working WebGPU adapter, and FFmpeg with libx264. `setup` uses the checked-in package lock with `npm ci --ignore-scripts`, then explicitly installs Chromium. It invokes Node/local CLI paths directly. Windows x64 can install checksum-verified FFmpeg into the current-user cache; it does not modify PATH.
 
-The HTML is a full-timeline master whose resolution, FPS and duration must match its manifest. For independently rendered shots, use separate shot manifests or the upstream CLI and assemble them in the editor before final `check`. All inputs (including shader includes and textures) should be declared as assets so input hashes and rights review include them.
+`init` refuses existing directories. It copies common runtime resources and writes one `template.json`, a local `transitions.json` and a manifest. Edit content, rhythm and styling in the data file; see [template-catalog.md](template-catalog.md). Use `catalog sync` after changing derived timing/profile/image fields. Declare every external asset, module, font and texture in the manifest so hashes and rights checks cover it.
 
-The original starter is a six-second WebGL2 website hero study. It exercises a custom fragment shader and local `#include` resolution; it is not a finished anime character performance or gameplay trailer. Replace the sample's direction and material with approved assets for the actual brief. See [shader-production.md](shader-production.md).
+## Shot contract
 
-Check npm package metadata and GitHub release notes for the version you are installing; the README's displayed version can lag the npm package. The documented CLI workflow requires Node.js 24+, Playwright Chromium, and an FFmpeg build with `libx264`; Multiplane does not bundle FFmpeg. Pin the Multiplane version with `--save-exact` and commit the package lock so future renders use a known toolchain. On Linux, install Chromium system dependencies if `doctor` reports them missing.
+A fixed-size `#stage` contains the WebGPU canvas. `Shot.define` exposes duration, FPS, setup, cuts and synchronous `render(t)`. Load fonts, images, WGSL modules and GPU pipelines before readiness. Every frame must derive from time `t`, with no RAF, CSS animation, timers, unseeded randomness or prior-frame history. Hard-cut metadata prevents unwanted temporal blending.
 
-```sh
-npm init -y
-npm install --save-exact multiplane
-npx playwright install chromium
-npx multiplane doctor
-```
+The shared renderer reads JSON data; it does not bake copy into HTML. Canvas 2D prepares text/artwork textures and WebGPU performs final compositing. Local fonts are pinned; CJK projects must provide and load a suitable licensed local font rather than relying on machine fallback. Custom WebGPU/compute/3D work follows [shader-production.md](shader-production.md).
 
-Use a project-local `package.json` and `package-lock.json`; `--save-exact` records the resolved package version, and the lockfile records the full dependency graph. Check the package's current version, repository, license, and runtime requirements before installation. Keep source art, fonts, audio, HTML shots, and renders in the PV project; do not check in `node_modules` or browser caches. Use local assets and fonts so rendering does not depend on network availability or remote content changes.
+The CLI's HTML input represents the full master timeline. For individual shots, use separate manifests and assemble their exports before the final media check. MP4 has no alpha; use a suitable intermediate format/editor for transparent layers before producing the final H.264 master. Do not claim this MP4 CLI produces transparent MP4.
 
-## Author shots for deterministic rendering
+## Logged production gate
 
-Each shot is a fixed-size `#stage` and a `Shot.define({ duration, fps, render(t) { ... } })` function. `render(t)` must synchronously set the complete visual state from time `t`; the same time must always produce the same frame. Load local fonts/images in `setup()` or the runtime's ready phase before frames render. Declare hard cuts so motion blur does not blend across them. Avoid wall-clock time, unseeded randomness, CSS animations, timers, and network-loaded resources. Let `multiplane lint` identify additional nondeterministic patterns.
-
-Structure authored shots around the beat sheet. Use one HTML file per designed shot when that makes iteration and approval clearer; a single page may contain a full motion-graphics timeline when all content is designed motion. For mixed PVs, render HTML graphics as independent shots or transparent overlays, then assemble them with captured gameplay/product footage in the chosen editor. MP4 has no alpha; use Multiplane's transparent MOV or WebM output for overlays when the target editor supports the codec.
-
-Keep gameplay and observed product behavior as original captures. Label engine cinematics, simulations, and generated scenes in the shot plan and disclose them in the edit where viewers might mistake them for proof. HTML may frame or annotate authentic evidence, but must not fabricate interface states, metrics, features, customer results, or player actions.
-
-## Render and verify
-
-Run these from the PV project directory; choose a new output path for each iteration.
-
-```sh
-npx multiplane inspect shots/reveal.html
-npx multiplane lint shots/reveal.html
-npx multiplane stills shots/reveal.html --every 0.5 --out renders/reveal-stills
-npx multiplane verify shots/reveal.html
-npx multiplane render shots/reveal.html --out renders/reveal.mp4
-```
-
-`render`, `stills`, and `verify` run lint automatically, but keep the explicit lint step in CI or a logged production run so its result is visible. `inspect` checks the shot's declared timing and stage; `verify` compares pixels rendered under different orders, page reloads, and worker counts. Review the stills/contact sheet for copy, line breaks, safe areas, missing assets, clipping, identity, and beat transitions before rendering a long/high-quality pass. For a smaller proof render, use `--draft`; do not use draft output as the release master.
-
-Capture the Multiplane version, Node, Chromium, FFmpeg build, render command, output path, and result/job ID in a render record. If any input asset changes, rerun lint, verify, stills review, and render. If the renderer reports a nondeterministic frame, fix the source instead of waiving the check for the final master.
-
-## Final master gate
-
-After edit assembly and caption/audio work, validate the actual final MP4 with the Go checker:
+`render` runs manifest/data preflight, then five logged Multiplane steps: lint, inspect, verify, stills and render. Inspect must match the manifest profile and identify native WebGPU/WGSL. Verify tests frame determinism; it cannot approve visual taste. Stills/contact sheets and actual MP4 remain review artifacts. The final Go gate probes and fully decodes the export. Input hashes are checked again after rendering; source changes fail the build.
 
 ```powershell
-go -C <skill-root> run . check --manifest <pv-project.json> --media <final.mp4> --release --report <release-qa.json>
+video-pv-cli render --project my-pv --out deliverables/revision-02.mp4
+video-pv-cli render --project my-pv --draft --out deliverables/preview.mp4
+video-pv-cli render --project my-pv --audio soundtrack.wav --quality high
+video-pv-cli check --manifest my-pv/pv-project.json --media my-pv/deliverables/master.mp4 --decode
 ```
 
-Use a project manifest whose duration, dimensions, frame rate, audio/caption requirements, claims, and approvals match the final master. `--release` probes stream metadata and fully decodes video and audio. Do not mark human review approved until the complete master and its variants have been watched and the visual, factual, accessibility, and rights checklist in [validation.md](validation.md) is complete.
+Audio must be declared as a manifest asset; prepare a mixed VO/music/SFX track before muxing. `audio_required` enforces a stream. Existing exports are refused. Drafts cannot be released. `--verify-at` deliberately restricts deterministic sampling; a short selection must not be described as full-frame verification. The default verifies the whole timeline. `--renderer-project` reuses dependencies from another prepared local project without installing another copy.
 
-## References
+Logs, job IDs, renderer events, input SHA-256, device metadata and technical checks are retained. A SHA-256 guarded bridge makes pinned Multiplane await GPU completion before capturing each frame. Compiler/resource/device failures block success. `--raster software` still requires WebGPU and may expose no adapter in Chromium headless shell; it is not an API fallback. Preserve failed evidence and rerun the same cases after a fix; do not waive the determinism gate.
 
-- [Multiplane repository and current README](https://github.com/LBEILC/Multiplane)
-- [Multiplane agent skill](https://github.com/LBEILC/Multiplane/blob/main/skills/multiplane/SKILL.md)
-- [PV technical and creative release checks](validation.md)
+Default determinism checks explicitly cover every output-frame time, in groups of at most 128 to bound reference-image memory and Windows argument length. Multiplane's own default samples four times; the CLI overrides that default. Reports record the selected sample count and whether it covers the whole timeline. `--verify-at` opts into a smaller explicit selection. Each group retains its own logs and result.
+
+## Windows local validation and release
+
+```powershell
+go test -count=1 ./...
+go vet ./...
+video-pv-cli catalog validate
+video-pv-cli catalog verify --runtime-project my-pv --mode deep --out work/catalog-validation
+```
+
+No GitHub Actions are used. After watching the final master and recording actual approvals/rights/reviewer details, run `check --release`. Review story, identity, claims, copy, flashes, safe areas, captions, sound, loop seams and platform variants. Automated checks cannot certify creative quality or legal clearance.
+
+Reference: [Multiplane upstream](https://github.com/LBEILC/Multiplane), [delivery checklist](validation.md).

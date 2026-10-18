@@ -1,0 +1,14 @@
+{
+  "gpu_integration_two_run_seconds": 200.848,
+  "gpu_integration_separate_runs": 3,
+  "schema": "video-pv-cli/go-test-summary/1",
+  "failed_events": 0,
+  "passed_test_events": 114,
+  "passed": true,
+  "temporary_integration_directories_remaining": 0,
+  "gpu_user_cache_run_seconds": 92.071,
+  "repeat": 2,
+  "go_version": "go version go1.27.0 windows/amd64",
+  "media_bundle_integration": true,
+  "skipped_test_events": 2
+}

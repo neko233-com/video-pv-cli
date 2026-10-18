@@ -1,0 +1,62 @@
+{
+  "category": "website",
+  "description": "Independent editable cinematic sequence; theme, copy, images, scene rhythm and transitions live in this JSON. Fictional sample content, not product/gameplay evidence.",
+  "fps": 30,
+  "height": 1080,
+  "id": "website-product-monochrome",
+  "loop": true,
+  "name": "官网 · 产品主视觉 / 黑白",
+  "project_title": "AURA",
+  "scenes": [
+    {
+      "background": "fluid",
+      "duration": 6,
+      "id": "scene-01",
+      "image": "",
+      "items": [
+        {
+          "body": "Refined from every angle.",
+          "title": "Form",
+          "value": "01"
+        },
+        {
+          "body": "A controlled focal point.",
+          "title": "Light",
+          "value": "02"
+        },
+        {
+          "body": "Every beat with intention.",
+          "title": "Motion",
+          "value": "03"
+        },
+        {
+          "body": "Make the important visible.",
+          "title": "Detail",
+          "value": "04"
+        }
+      ],
+      "layout": "asymmetric",
+      "motion": {
+        "ease": "settle",
+        "name": "push-in",
+        "strength": 0.6
+      },
+      "overline": "ORIGINAL MOTION STUDY",
+      "subtitle": "Design. Motion. Possibility.",
+      "title": "{{title}}",
+      "transition": "cells",
+      "transition_duration": 0,
+      "type": "orbital"
+    }
+  ],
+  "schema_version": "1.0",
+  "theme": {
+    "accent": "#ffffff",
+    "background": "#060606",
+    "font": "sans",
+    "foreground": "#fafafa",
+    "secondary": "#8e8e8e",
+    "surface": "#202020"
+  },
+  "width": 1920
+}

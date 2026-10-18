@@ -1,0 +1,62 @@
+{
+  "category": "website",
+  "description": "Independent editable cinematic sequence; theme, copy, images, scene rhythm and transitions live in this JSON. Fictional sample content, not product/gameplay evidence.",
+  "fps": 30,
+  "height": 1080,
+  "id": "website-product-aurora",
+  "loop": true,
+  "name": "官网 · 产品主视觉 / 极光",
+  "project_title": "AURA",
+  "scenes": [
+    {
+      "background": "particles",
+      "duration": 6,
+      "id": "scene-01",
+      "image": "",
+      "items": [
+        {
+          "body": "Refined from every angle.",
+          "title": "Form",
+          "value": "01"
+        },
+        {
+          "body": "A controlled focal point.",
+          "title": "Light",
+          "value": "02"
+        },
+        {
+          "body": "Every beat with intention.",
+          "title": "Motion",
+          "value": "03"
+        },
+        {
+          "body": "Make the important visible.",
+          "title": "Detail",
+          "value": "04"
+        }
+      ],
+      "layout": "center",
+      "motion": {
+        "ease": "inOutCubic",
+        "name": "tilt",
+        "strength": 0.6
+      },
+      "overline": "ORIGINAL MOTION STUDY",
+      "subtitle": "Design. Motion. Possibility.",
+      "title": "{{title}}",
+      "transition": "ripple",
+      "transition_duration": 0,
+      "type": "orbital"
+    }
+  ],
+  "schema_version": "1.0",
+  "theme": {
+    "accent": "#6aebbd",
+    "background": "#051616",
+    "font": "sans",
+    "foreground": "#edfff8",
+    "secondary": "#7a80e8",
+    "surface": "#143836"
+  },
+  "width": 1920
+}

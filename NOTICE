@@ -5,12 +5,20 @@ The Cinzel font is distributed under the SIL Open Font License 1.1.
 Its copyright and full license are retained in assets/starter/FONT-OFL.txt.
 Source: https://github.com/google/fonts/tree/main/ofl/cinzel
 
+The Manrope font is distributed under the SIL Open Font License 1.1.
+Its full license is retained in assets/starter/MANROPE-OFL.txt.
+Source: https://github.com/google/fonts/tree/main/ofl/manrope
+
 The sample character illustration is generated artwork. Its generation prompt,
 provenance and release-review status are documented in
 assets/character/ASSET-SOURCES.md. The code license does not assert copyright
 status or override the image provider's applicable terms.
 
 Multiplane is installed separately from npm and retains its Apache-2.0 license.
+Local modification: video-pv-cli applies a SHA-256 guarded WebGPU queue barrier
+to Multiplane 0.3.10 src/capture.mjs before rendering. Its original package,
+copyright and licenses remain installed. Bridge ID and source hash are recorded
+in every render report. The bridge is implemented in webgpu_bridge.go.
 FFmpeg is installed separately; preserve the selected build's licensing terms.
 Third-party shader libraries described in the references are optional and are
-not redistributed as part of the original GLSL helper.
+not redistributed as part of the original WGSL helper.

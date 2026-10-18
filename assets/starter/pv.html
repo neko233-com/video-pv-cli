@@ -1,41 +1,12 @@
-<!doctype html>
-<html lang="en">
-<meta charset="utf-8"><title>Stellar Echo — original shader PV demo</title>
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Data-driven PV composition</title>
 <link rel="stylesheet" href="/multiplane/runtime/shot.css">
-<style>
-@font-face{font-family:PVDisplay;src:url('./cinzel.ttf')}*{box-sizing:border-box}
-#stage{width:1920px;height:1080px;overflow:hidden;background:#040812;color:#e7e9e8;font-family:PVDisplay,serif}
-canvas{position:absolute;inset:0;width:100%;height:100%}
-.frame{position:absolute;inset:56px;border:1px solid #a3c3d226}.frame:before,.frame:after{content:'';position:absolute;width:80px;height:1px;background:#c3aa78;top:-1px}.frame:after{right:0;top:auto;bottom:-1px}
-.edition{position:absolute;left:104px;top:92px;font-size:17px;letter-spacing:7px;color:#a9bbc4}
-.copy{position:absolute;left:155px;top:322px;width:950px}.eyebrow{color:#bf9b63;font-size:18px;letter-spacing:7px;margin-bottom:32px}
-h1{font-size:118px;font-weight:500;line-height:1.02;letter-spacing:4px;margin:0;text-shadow:0 4px 30px #0008}h1 span{display:block;margin-left:105px;color:#cbdbe4}
-.line{height:1px;width:92px;background:#bfa477;margin:40px 0 26px}.tagline{font-size:21px;letter-spacing:4px;color:#a6b8c6}
-.index{position:absolute;right:104px;bottom:112px;font-size:18px;letter-spacing:5px;color:#bed2de}
-.foot{position:absolute;left:104px;bottom:100px;font-size:13px;letter-spacing:3px;color:#7b8f9f}
-.sigil{position:absolute;left:1210px;top:270px;width:460px;height:520px;filter:drop-shadow(0 0 20px #4da3d070)}
-.sigil svg{width:100%;height:100%}.vignette{position:absolute;inset:0;background:linear-gradient(90deg,#04081280,transparent 60%);pointer-events:none}
-</style>
-<div id="stage">
- <canvas id="sky"></canvas><div class="vignette"></div><div class="frame"></div>
- <div class="edition">AN ORIGINAL MOTION STUDY / 001</div>
- <div class="sigil"><svg viewBox="0 0 460 520" fill="none" aria-label="Original astral sigil"><path d="M230 20 385 175 230 500 75 175Z" stroke="#adc8d7" stroke-width="1"/><path d="M230 85 330 185 230 395 130 185Z" stroke="#bfa375" stroke-width="2"/><path d="M230 20V500M75 175H385M130 185 230 85 330 185 230 395Z" stroke="#adc8d7" stroke-opacity=".35"/><circle cx="230" cy="190" r="48" stroke="#dbe8e8"/><path d="M230 135V245M175 190H285" stroke="#dbe8e8"/></svg></div>
- <div class="copy"><div class="eyebrow">BEYOND THE LAST HORIZON</div><h1>STELLAR<span>ECHO</span></h1><div class="line"></div><div class="tagline">A WORLD WAITING TO AWAKEN</div></div>
- <div class="index">VI / MMXXVI</div><div class="foot">FICTIONAL TITLE · WEBGL EXPORT DEMONSTRATION</div>
-</div>
+<style>@font-face{font-family:PVSans;src:url('./manrope.ttf')}@font-face{font-family:PVDisplay;src:url('./cinzel.ttf')}#stage{width:1920px;height:1080px;overflow:hidden;background:#08090d}canvas{position:absolute;inset:0;width:100%;height:100%}</style>
+<div id="stage"><canvas id="sky"></canvas></div>
 <script src="/multiplane/runtime/shot.js"></script>
 <script type="module">
-import {createShader} from './shader-runtime.js';
-let shader;const copy=document.querySelector('.copy'),sigil=document.querySelector('.sigil');
-Shot.define({duration:6,fps:30,fonts:[['500 118px PVDisplay']],post:{motionBlur:1,grain:0},
- setup:async()=>{shader=await createShader(document.querySelector('#sky'),'./portal.frag');},
- render(t){
-  const phase=t*Math.PI*2/6;
-  shader.render(t);
-  copy.style.transform=`translateY(${Math.sin(phase)*5}px)`;
-  sigil.style.transform=`translateY(${Math.sin(phase)*10}px) scale(${1+Math.sin(phase)*0.012})`;
- },
- meta:{kind:'shader-hero',loopSeconds:6,truth:'Original fictional shader study; no gameplay or character likeness claims',shader:'portal.frag'}
-});
-</script>
-</html>
+import {createCatalogPlayer} from './catalog-runtime.js';
+let player;const meta={kind:'data-driven-pv'};
+Shot.define({get duration(){return player?.duration||1;},fps:30,fonts:[['500 100px PVSans'],['500 100px PVDisplay']],
+ setup:async()=>{player=await createCatalogPlayer(document.getElementById('sky'));window.SHOT.fps=player.fps;Object.assign(meta,player.meta);},
+ get cuts(){return player?.cuts||[];},render(t){if(player)player.render(t);},meta,post:{motionBlur:1,grain:0}});
+</script></html>

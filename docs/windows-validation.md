@@ -1,6 +1,6 @@
 # Windows 验证记录 · 2026-10-18
 
-版本 0.3.0。Windows x64，Go 1.27.0，Node 24.14.0，Multiplane 0.3.10，Playwright 1.63.0 / Chromium 153.0.8010.12，Edge 155，FFmpeg 9.0.2。实际原生 WebGPU 适配器为 NVIDIA / blackwell（RTX 5070 Ti，非 fallback adapter）。只使用 WebGPU / WGSL，不运行 GitHub Actions。
+版本 0.3.1。完整渲染/Windows QA 对应 0.3.0 的相同渲染器与案例输入；0.3.1 修正 Git 分发时三个案例 JSON 的换行字节保留，另外重复验证源码安装与打包。Windows x64，Go 1.27.0，Node 24.14.0，Multiplane 0.3.10，Playwright 1.63.0 / Chromium 153.0.8010.12，Edge 155，FFmpeg 9.0.2。实际原生 WebGPU 适配器为 NVIDIA / blackwell（RTX 5070 Ti，非 fallback adapter）。只使用 WebGPU / WGSL，不运行 GitHub Actions。
 
 ## 可重建案例
 

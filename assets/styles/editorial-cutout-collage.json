@@ -1,18 +1,15 @@
 {
-  "avoid": [
-    "unmotivated decorative motion",
-    "unreadable small copy",
-    "invented product or gameplay proof"
-  ],
-  "beat_plan": [
-    "Hook: cutout image",
-    "Establish: overlap deliberate paper-like crops around one product proof",
-    "Prove: use an approved local capture or truthful designed-motion detail",
-    "Payoff: editorial glue with one clear final identity"
-  ],
-  "best_for": [
-    "editorial promotional video",
-    "product or character identity reveal"
+  "schema": "web2video/style/1",
+  "id": "editorial-cutout-collage",
+  "name": "剪贴拼版",
+  "family": "editorial",
+  "keywords": [
+    "cutout image",
+    "layered paper",
+    "offset crop",
+    "tactile collage",
+    "playful juxtaposition",
+    "editorial glue"
   ],
   "direction": {
     "camera": "Guide attention with cutout image; use a deliberate hold, a measured approach and a stable payoff.",
@@ -23,65 +20,34 @@
     "sound": "Create a restrained rhythm around playful juxtaposition; place licensed accents on intentional cuts and keep speech clear.",
     "typography": "Use cutout image,layered paper,offset crop,tactile collage,playful juxtaposition,editorial glue as hierarchy cues; keep display copy short and body copy readable at final delivery size."
   },
-  "family": "editorial",
-  "id": "editorial-cutout-collage",
-  "keywords": [
-    "cutout image",
-    "layered paper",
-    "offset crop",
-    "tactile collage",
-    "playful juxtaposition",
-    "editorial glue"
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
   ],
-  "name": "剪贴拼版",
-  "reference_ids": [
-    "hyperframes-creative",
-    "hyperframes-product-launch",
-    "video-shotcraft",
-    "product-demo-video"
-  ],
-  "render": {
-    "backgrounds": [
-      "mesh",
-      "fluid"
-    ],
-    "base_template": "keynote-gallery-porcelain",
-    "graphics": {
-      "line_width": 1.4,
-      "opacity": 0.076,
-      "overlay": "corner-ticks",
-      "panel_radius": 0
-    },
-    "layouts": [
-      "center",
-      "left"
-    ],
-    "motion": {
-      "ease": "inOutCubic",
-      "name": "float",
-      "strength": 0.48000000000000004
-    },
-    "overlap_ratio": 0.18,
-    "theme": {
-      "accent": "#aa4f3f",
-      "background": "#ebe3d6",
-      "font": "sans",
-      "foreground": "#2c323a",
-      "secondary": "#548b8a",
-      "surface": "#fcf4e7"
-    },
-    "transitions": [
-      "cut",
-      "page-turn",
-      "crossfade"
-    ],
-    "typography": {
-      "leading": 1.23,
-      "scale": 0.9,
-      "tracking": 0.9,
-      "weight_offset": 70
-    }
+  "palette": {
+    "accent": "#aa4f3f",
+    "background": "#ebe3d6",
+    "font": "sans",
+    "foreground": "#2c323a",
+    "secondary": "#548b8a",
+    "surface": "#fcf4e7"
   },
-  "schema_version": "1.0",
-  "summary": "剪贴拼版：overlap deliberate paper-like crops around one product proof. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+  "typography": {
+    "leading": 1.23,
+    "scale": 0.9,
+    "tracking": 0.9,
+    "weight_offset": 70
+  },
+  "motion": {
+    "ease": "inOutCubic",
+    "name": "float",
+    "strength": 0.48000000000000004
+  },
+  "graphics": {
+    "line_width": 1.4,
+    "opacity": 0.076,
+    "overlay": "corner-ticks",
+    "panel_radius": 0
+  }
 }

@@ -1,18 +1,15 @@
 {
-  "avoid": [
-    "unmotivated decorative motion",
-    "unreadable small copy",
-    "invented product or gameplay proof"
-  ],
-  "beat_plan": [
-    "Hook: speed framing",
-    "Establish: push the eye along a strong horizontal racing line",
-    "Prove: use an approved local capture or truthful designed-motion detail",
-    "Payoff: clean telemetry with one clear final identity"
-  ],
-  "best_for": [
-    "game promotional video",
-    "product or character identity reveal"
+  "schema": "web2video/style/1",
+  "id": "game-racing-redline",
+  "name": "竞速红线",
+  "family": "game",
+  "keywords": [
+    "speed framing",
+    "low camera",
+    "red accent",
+    "hard cut",
+    "directional force",
+    "clean telemetry"
   ],
   "direction": {
     "camera": "Guide attention with speed framing; use a deliberate hold, a measured approach and a stable payoff.",
@@ -23,65 +20,34 @@
     "sound": "Create a restrained rhythm around directional force; place licensed accents on intentional cuts and keep speech clear.",
     "typography": "Use speed framing,low camera,red accent,hard cut,directional force,clean telemetry as hierarchy cues; keep display copy short and body copy readable at final delivery size."
   },
-  "family": "game",
-  "id": "game-racing-redline",
-  "keywords": [
-    "speed framing",
-    "low camera",
-    "red accent",
-    "hard cut",
-    "directional force",
-    "clean telemetry"
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
   ],
-  "name": "竞速红线",
-  "reference_ids": [
-    "hyperframes-creative",
-    "hyperframes-product-launch",
-    "video-shotcraft",
-    "product-demo-video"
-  ],
-  "render": {
-    "backgrounds": [
-      "particles",
-      "horizon"
-    ],
-    "base_template": "game-combat-ember",
-    "graphics": {
-      "line_width": 2,
-      "opacity": 0.08499999999999999,
-      "overlay": "dot-field",
-      "panel_radius": 18
-    },
-    "layouts": [
-      "left",
-      "right"
-    ],
-    "motion": {
-      "ease": "inOutQuint",
-      "name": "rise",
-      "strength": 0.55
-    },
-    "overlap_ratio": 0.08,
-    "theme": {
-      "accent": "#f27477",
-      "background": "#140c10",
-      "font": "sans",
-      "foreground": "#f8edf0",
-      "secondary": "#b4889a",
-      "surface": "#321922"
-    },
-    "transitions": [
-      "chromatic",
-      "cut",
-      "shutter"
-    ],
-    "typography": {
-      "leading": 1.11,
-      "scale": 0.925,
-      "tracking": 1.8,
-      "weight_offset": 120
-    }
+  "palette": {
+    "accent": "#f27477",
+    "background": "#140c10",
+    "font": "sans",
+    "foreground": "#f8edf0",
+    "secondary": "#b4889a",
+    "surface": "#321922"
   },
-  "schema_version": "1.0",
-  "summary": "竞速红线：push the eye along a strong horizontal racing line. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+  "typography": {
+    "leading": 1.11,
+    "scale": 0.925,
+    "tracking": 1.8,
+    "weight_offset": 120
+  },
+  "motion": {
+    "ease": "inOutQuint",
+    "name": "rise",
+    "strength": 0.55
+  },
+  "graphics": {
+    "line_width": 2,
+    "opacity": 0.08499999999999999,
+    "overlay": "dot-field",
+    "panel_radius": 18
+  }
 }

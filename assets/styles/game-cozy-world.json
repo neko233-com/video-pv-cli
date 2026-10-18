@@ -1,18 +1,15 @@
 {
-  "avoid": [
-    "unmotivated decorative motion",
-    "unreadable small copy",
-    "invented product or gameplay proof"
-  ],
-  "beat_plan": [
-    "Hook: soft adventure",
-    "Establish: invite entry through a warm and readable world frame",
-    "Prove: use an approved local capture or truthful designed-motion detail",
-    "Payoff: open horizon with one clear final identity"
-  ],
-  "best_for": [
-    "game promotional video",
-    "product or character identity reveal"
+  "schema": "web2video/style/1",
+  "id": "game-cozy-world",
+  "name": "治愈世界",
+  "family": "game",
+  "keywords": [
+    "soft adventure",
+    "warm dawn",
+    "rounded shapes",
+    "gentle drift",
+    "friendly scale",
+    "open horizon"
   ],
   "direction": {
     "camera": "Guide attention with soft adventure; use a deliberate hold, a measured approach and a stable payoff.",
@@ -23,65 +20,34 @@
     "sound": "Create a restrained rhythm around friendly scale; place licensed accents on intentional cuts and keep speech clear.",
     "typography": "Use soft adventure,warm dawn,rounded shapes,gentle drift,friendly scale,open horizon as hierarchy cues; keep display copy short and body copy readable at final delivery size."
   },
-  "family": "game",
-  "id": "game-cozy-world",
-  "keywords": [
-    "soft adventure",
-    "warm dawn",
-    "rounded shapes",
-    "gentle drift",
-    "friendly scale",
-    "open horizon"
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
   ],
-  "name": "治愈世界",
-  "reference_ids": [
-    "hyperframes-creative",
-    "hyperframes-product-launch",
-    "video-shotcraft",
-    "product-demo-video"
-  ],
-  "render": {
-    "backgrounds": [
-      "grid",
-      "prism"
-    ],
-    "base_template": "game-launch-midnight",
-    "graphics": {
-      "line_width": 1.7,
-      "opacity": 0.076,
-      "overlay": "contours",
-      "panel_radius": 7
-    },
-    "layouts": [
-      "center",
-      "asymmetric"
-    ],
-    "motion": {
-      "ease": "outExpo",
-      "name": "tilt",
-      "strength": 0.48000000000000004
-    },
-    "overlap_ratio": 0.18,
-    "theme": {
-      "accent": "#6b8f5a",
-      "background": "#edf0df",
-      "font": "sans",
-      "foreground": "#344332",
-      "secondary": "#d1ac73",
-      "surface": "#fffbed"
-    },
-    "transitions": [
-      "cut",
-      "chromatic",
-      "shutter"
-    ],
-    "typography": {
-      "leading": 1.05,
-      "scale": 0.9,
-      "tracking": 1.35,
-      "weight_offset": 100
-    }
+  "palette": {
+    "accent": "#6b8f5a",
+    "background": "#edf0df",
+    "font": "sans",
+    "foreground": "#344332",
+    "secondary": "#d1ac73",
+    "surface": "#fffbed"
   },
-  "schema_version": "1.0",
-  "summary": "治愈世界：invite entry through a warm and readable world frame. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+  "typography": {
+    "leading": 1.05,
+    "scale": 0.9,
+    "tracking": 1.35,
+    "weight_offset": 100
+  },
+  "motion": {
+    "ease": "outExpo",
+    "name": "tilt",
+    "strength": 0.48000000000000004
+  },
+  "graphics": {
+    "line_width": 1.7,
+    "opacity": 0.076,
+    "overlay": "contours",
+    "panel_radius": 7
+  }
 }

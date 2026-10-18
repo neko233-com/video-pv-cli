@@ -1,18 +1,15 @@
 {
-  "avoid": [
-    "unmotivated decorative motion",
-    "unreadable small copy",
-    "invented product or gameplay proof"
-  ],
-  "beat_plan": [
-    "Hook: contact sheet",
-    "Establish: build a numbered image sequence around one lead frame",
-    "Prove: use an approved local capture or truthful designed-motion detail",
-    "Payoff: documentary restraint with one clear final identity"
-  ],
-  "best_for": [
-    "editorial promotional video",
-    "product or character identity reveal"
+  "schema": "web2video/style/1",
+  "id": "editorial-archive-contact",
+  "name": "档案接触表",
+  "family": "editorial",
+  "keywords": [
+    "contact sheet",
+    "archive numbering",
+    "photographic rhythm",
+    "small annotation",
+    "measured crop",
+    "documentary restraint"
   ],
   "direction": {
     "camera": "Guide attention with contact sheet; use a deliberate hold, a measured approach and a stable payoff.",
@@ -23,65 +20,34 @@
     "sound": "Create a restrained rhythm around measured crop; place licensed accents on intentional cuts and keep speech clear.",
     "typography": "Use contact sheet,archive numbering,photographic rhythm,small annotation,measured crop,documentary restraint as hierarchy cues; keep display copy short and body copy readable at final delivery size."
   },
-  "family": "editorial",
-  "id": "editorial-archive-contact",
-  "keywords": [
-    "contact sheet",
-    "archive numbering",
-    "photographic rhythm",
-    "small annotation",
-    "measured crop",
-    "documentary restraint"
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
   ],
-  "name": "档案接触表",
-  "reference_ids": [
-    "hyperframes-creative",
-    "hyperframes-product-launch",
-    "video-shotcraft",
-    "product-demo-video"
-  ],
-  "render": {
-    "backgrounds": [
-      "rings",
-      "mesh"
-    ],
-    "base_template": "keynote-type-porcelain",
-    "graphics": {
-      "line_width": 1.4,
-      "opacity": 0.121,
-      "overlay": "registration",
-      "panel_radius": 55
-    },
-    "layouts": [
-      "left",
-      "right"
-    ],
-    "motion": {
-      "ease": "spring",
-      "name": "pull-out",
-      "strength": 0.8300000000000001
-    },
-    "overlap_ratio": 0.18,
-    "theme": {
-      "accent": "#5b6571",
-      "background": "#d9d7cf",
-      "font": "sans",
-      "foreground": "#242628",
-      "secondary": "#a89a81",
-      "surface": "#efeee8"
-    },
-    "transitions": [
-      "page-turn",
-      "cut",
-      "crossfade"
-    ],
-    "typography": {
-      "leading": 1.05,
-      "scale": 1.0250000000000001,
-      "tracking": 0.9,
-      "weight_offset": -80
-    }
+  "palette": {
+    "accent": "#5b6571",
+    "background": "#d9d7cf",
+    "font": "sans",
+    "foreground": "#242628",
+    "secondary": "#a89a81",
+    "surface": "#efeee8"
   },
-  "schema_version": "1.0",
-  "summary": "档案接触表：build a numbered image sequence around one lead frame. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+  "typography": {
+    "leading": 1.05,
+    "scale": 1.0250000000000001,
+    "tracking": 0.9,
+    "weight_offset": -80
+  },
+  "motion": {
+    "ease": "spring",
+    "name": "pull-out",
+    "strength": 0.8300000000000001
+  },
+  "graphics": {
+    "line_width": 1.4,
+    "opacity": 0.121,
+    "overlay": "registration",
+    "panel_radius": 55
+  }
 }

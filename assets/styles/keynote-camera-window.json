@@ -1,18 +1,15 @@
 {
-  "avoid": [
-    "unmotivated decorative motion",
-    "unreadable small copy",
-    "invented product or gameplay proof"
-  ],
-  "beat_plan": [
-    "Hook: camera aperture",
-    "Establish: use one window as the bridge between overview and detail",
-    "Prove: use an approved local capture or truthful designed-motion detail",
-    "Payoff: focus exchange with one clear final identity"
-  ],
-  "best_for": [
-    "keynote promotional video",
-    "product or character identity reveal"
+  "schema": "web2video/style/1",
+  "id": "keynote-camera-window",
+  "name": "视窗推镜",
+  "family": "keynote",
+  "keywords": [
+    "camera aperture",
+    "framed reveal",
+    "screen detail",
+    "depth cue",
+    "smooth zoom",
+    "focus exchange"
   ],
   "direction": {
     "camera": "Guide attention with camera aperture; use a deliberate hold, a measured approach and a stable payoff.",
@@ -23,65 +20,34 @@
     "sound": "Create a restrained rhythm around smooth zoom; place licensed accents on intentional cuts and keep speech clear.",
     "typography": "Use camera aperture,framed reveal,screen detail,depth cue,smooth zoom,focus exchange as hierarchy cues; keep display copy short and body copy readable at final delivery size."
   },
-  "family": "keynote",
-  "id": "keynote-camera-window",
-  "keywords": [
-    "camera aperture",
-    "framed reveal",
-    "screen detail",
-    "depth cue",
-    "smooth zoom",
-    "focus exchange"
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
   ],
-  "name": "视窗推镜",
-  "reference_ids": [
-    "hyperframes-creative",
-    "hyperframes-product-launch",
-    "video-shotcraft",
-    "product-demo-video"
-  ],
-  "render": {
-    "backgrounds": [
-      "rings",
-      "caustics"
-    ],
-    "base_template": "keynote-type-porcelain",
-    "graphics": {
-      "line_width": 1.1,
-      "opacity": 0.094,
-      "overlay": "crosshair",
-      "panel_radius": 1
-    },
-    "layouts": [
-      "left",
-      "asymmetric"
-    ],
-    "motion": {
-      "ease": "linear",
-      "name": "orbit",
-      "strength": 0.6200000000000001
-    },
-    "overlap_ratio": 0.10500000000000001,
-    "theme": {
-      "accent": "#356d9b",
-      "background": "#e9eff5",
-      "font": "sans",
-      "foreground": "#172b3c",
-      "secondary": "#93c4d9",
-      "surface": "#f9fcff"
-    },
-    "transitions": [
-      "crossfade",
-      "blur-cross",
-      "zoom-in"
-    ],
-    "typography": {
-      "leading": 1.17,
-      "scale": 0.9500000000000001,
-      "tracking": 0.45,
-      "weight_offset": 20
-    }
+  "palette": {
+    "accent": "#356d9b",
+    "background": "#e9eff5",
+    "font": "sans",
+    "foreground": "#172b3c",
+    "secondary": "#93c4d9",
+    "surface": "#f9fcff"
   },
-  "schema_version": "1.0",
-  "summary": "视窗推镜：use one window as the bridge between overview and detail. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+  "typography": {
+    "leading": 1.17,
+    "scale": 0.9500000000000001,
+    "tracking": 0.45,
+    "weight_offset": 20
+  },
+  "motion": {
+    "ease": "linear",
+    "name": "orbit",
+    "strength": 0.6200000000000001
+  },
+  "graphics": {
+    "line_width": 1.1,
+    "opacity": 0.094,
+    "overlay": "crosshair",
+    "panel_radius": 1
+  }
 }

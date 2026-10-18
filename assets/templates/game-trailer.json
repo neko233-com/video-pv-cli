@@ -1,0 +1,9 @@
+{
+  "schema":"web2video/project/1","title":"STELLAR ECHO — Beyond the horizon","template":"game-trailer","style":"game-epic-fantasy","width":1920,"height":1080,"fps":30,"loop":false,
+  "scenes":[
+    {"id":"world","duration":3.5,"layout":"hero","kicker":"AN ORIGINAL WORLD","title":"Beyond\nthe horizon.","subtitle":"Where the sky remembers.","image":"assets/world.png","zoom":1.03,"x":0.5,"y":0.5,"transition":"crossfade"},
+    {"id":"hero","duration":3,"layout":"character","kicker":"ONE LAST PROMISE","title":"Rise\namong stars.","subtitle":"A journey through a forgotten age.","image":"assets/character.png","zoom":1.25,"x":0.65,"y":0.4,"transition":"push-left"},
+    {"id":"promise","duration":2.5,"layout":"statement","kicker":"THE WORLD REMEMBERS","title":"FIND YOUR\nWAY HOME.","subtitle":"","image":"assets/world.png","zoom":1.2,"x":0.7,"y":0.4,"transition":"dip-black"},
+    {"id":"title","duration":3,"layout":"hero","kicker":"CONCEPT TRAILER / ORIGINAL IP","title":"STELLAR\nECHO","subtitle":"A world waiting to be discovered.","image":"assets/world.png","zoom":1,"x":0.5,"y":0.5,"transition":"crossfade"}
+  ]
+}

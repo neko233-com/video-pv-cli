@@ -1,18 +1,15 @@
 {
-  "avoid": [
-    "unmotivated decorative motion",
-    "unreadable small copy",
-    "invented product or gameplay proof"
-  ],
-  "beat_plan": [
-    "Hook: exploded hierarchy",
-    "Establish: separate conceptual product layers along one readable axis",
-    "Prove: use an approved local capture or truthful designed-motion detail",
-    "Payoff: depth separation with one clear final identity"
-  ],
-  "best_for": [
-    "tech promotional video",
-    "product or character identity reveal"
+  "schema": "web2video/style/1",
+  "id": "tech-device-exploded",
+  "name": "分层器件",
+  "family": "tech",
+  "keywords": [
+    "exploded hierarchy",
+    "component stack",
+    "assembly order",
+    "precise spacing",
+    "mechanical clarity",
+    "depth separation"
   ],
   "direction": {
     "camera": "Guide attention with exploded hierarchy; use a deliberate hold, a measured approach and a stable payoff.",
@@ -23,65 +20,34 @@
     "sound": "Create a restrained rhythm around mechanical clarity; place licensed accents on intentional cuts and keep speech clear.",
     "typography": "Use exploded hierarchy,component stack,assembly order,precise spacing,mechanical clarity,depth separation as hierarchy cues; keep display copy short and body copy readable at final delivery size."
   },
-  "family": "tech",
-  "id": "tech-device-exploded",
-  "keywords": [
-    "exploded hierarchy",
-    "component stack",
-    "assembly order",
-    "precise spacing",
-    "mechanical clarity",
-    "depth separation"
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
   ],
-  "name": "分层器件",
-  "reference_ids": [
-    "hyperframes-creative",
-    "hyperframes-product-launch",
-    "video-shotcraft",
-    "product-demo-video"
-  ],
-  "render": {
-    "backgrounds": [
-      "mesh",
-      "horizon"
-    ],
-    "base_template": "keynote-product-midnight",
-    "graphics": {
-      "line_width": 2,
-      "opacity": 0.10300000000000001,
-      "overlay": "dot-field",
-      "panel_radius": 26
-    },
-    "layouts": [
-      "left",
-      "right"
-    ],
-    "motion": {
-      "ease": "inOutQuint",
-      "name": "rise",
-      "strength": 0.6900000000000001
-    },
-    "overlap_ratio": 0.13,
-    "theme": {
-      "accent": "#4677b5",
-      "background": "#e5eaf0",
-      "font": "sans",
-      "foreground": "#223142",
-      "secondary": "#90acc6",
-      "surface": "#f8fafc"
-    },
-    "transitions": [
-      "center-wipe",
-      "soft-wipe",
-      "lens"
-    ],
-    "typography": {
-      "leading": 1.11,
-      "scale": 0.9750000000000001,
-      "tracking": 1.8,
-      "weight_offset": 100
-    }
+  "palette": {
+    "accent": "#4677b5",
+    "background": "#e5eaf0",
+    "font": "sans",
+    "foreground": "#223142",
+    "secondary": "#90acc6",
+    "surface": "#f8fafc"
   },
-  "schema_version": "1.0",
-  "summary": "分层器件：separate conceptual product layers along one readable axis. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+  "typography": {
+    "leading": 1.11,
+    "scale": 0.9750000000000001,
+    "tracking": 1.8,
+    "weight_offset": 100
+  },
+  "motion": {
+    "ease": "inOutQuint",
+    "name": "rise",
+    "strength": 0.6900000000000001
+  },
+  "graphics": {
+    "line_width": 2,
+    "opacity": 0.10300000000000001,
+    "overlay": "dot-field",
+    "panel_radius": 26
+  }
 }

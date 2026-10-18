@@ -1,18 +1,15 @@
 {
-  "avoid": [
-    "unmotivated decorative motion",
-    "unreadable small copy",
-    "invented product or gameplay proof"
-  ],
-  "beat_plan": [
-    "Hook: thick boundary",
-    "Establish: stack a small number of strong rectangular proof surfaces",
-    "Prove: use an approved local capture or truthful designed-motion detail",
-    "Payoff: graphic snap with one clear final identity"
-  ],
-  "best_for": [
-    "graphic promotional video",
-    "product or character identity reveal"
+  "schema": "web2video/style/1",
+  "id": "graphic-neo-brutal-blocks",
+  "name": "新粗野块面",
+  "family": "graphic",
+  "keywords": [
+    "thick boundary",
+    "offset block",
+    "poster hierarchy",
+    "punchy accent",
+    "clear grid",
+    "graphic snap"
   ],
   "direction": {
     "camera": "Guide attention with thick boundary; use a deliberate hold, a measured approach and a stable payoff.",
@@ -23,65 +20,34 @@
     "sound": "Create a restrained rhythm around clear grid; place licensed accents on intentional cuts and keep speech clear.",
     "typography": "Use thick boundary,offset block,poster hierarchy,punchy accent,clear grid,graphic snap as hierarchy cues; keep display copy short and body copy readable at final delivery size."
   },
-  "family": "graphic",
-  "id": "graphic-neo-brutal-blocks",
-  "keywords": [
-    "thick boundary",
-    "offset block",
-    "poster hierarchy",
-    "punchy accent",
-    "clear grid",
-    "graphic snap"
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
   ],
-  "name": "新粗野块面",
-  "reference_ids": [
-    "hyperframes-creative",
-    "hyperframes-product-launch",
-    "video-shotcraft",
-    "product-demo-video"
-  ],
-  "render": {
-    "backgrounds": [
-      "fluid",
-      "particles"
-    ],
-    "base_template": "social-teaser-ember",
-    "graphics": {
-      "line_width": 1.1,
-      "opacity": 0.11199999999999999,
-      "overlay": "crosshair",
-      "panel_radius": 14
-    },
-    "layouts": [
-      "left",
-      "asymmetric"
-    ],
-    "motion": {
-      "ease": "inOutQuint",
-      "name": "orbit",
-      "strength": 0.76
-    },
-    "overlap_ratio": 0.15500000000000003,
-    "theme": {
-      "accent": "#a9533f",
-      "background": "#dbe7df",
-      "font": "sans",
-      "foreground": "#202d34",
-      "secondary": "#5d83ac",
-      "surface": "#f4fcf5"
-    },
-    "transitions": [
-      "split",
-      "diagonal",
-      "pixelate"
-    ],
-    "typography": {
-      "leading": 1.05,
-      "scale": 1,
-      "tracking": 0.45,
-      "weight_offset": 50
-    }
+  "palette": {
+    "accent": "#a9533f",
+    "background": "#dbe7df",
+    "font": "sans",
+    "foreground": "#202d34",
+    "secondary": "#5d83ac",
+    "surface": "#f4fcf5"
   },
-  "schema_version": "1.0",
-  "summary": "新粗野块面：stack a small number of strong rectangular proof surfaces. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+  "typography": {
+    "leading": 1.05,
+    "scale": 1,
+    "tracking": 0.45,
+    "weight_offset": 50
+  },
+  "motion": {
+    "ease": "inOutQuint",
+    "name": "orbit",
+    "strength": 0.76
+  },
+  "graphics": {
+    "line_width": 1.1,
+    "opacity": 0.11199999999999999,
+    "overlay": "crosshair",
+    "panel_radius": 14
+  }
 }

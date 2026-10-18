@@ -51,7 +51,7 @@ func defaultFFmpegCacheDir() (string, error) {
 	if err != nil {
 		return "", fmt.Errorf("locate current-user cache: %w", err)
 	}
-	return filepath.Join(root, "pv-production", "ffmpeg"), nil
+	return filepath.Join(root, "web2video", "ffmpeg"), nil
 }
 
 func resolveFFmpegCacheDir(override string) (string, error) {
@@ -102,6 +102,12 @@ func resolveMediaTools(ffprobeName, ffmpegName string, needDecode, autoInstall b
 	cacheDir, cacheErr := resolveFFmpegCacheDir(toolsDir)
 	if cacheErr == nil {
 		cached, err := findCachedFFmpegTools(cacheDir)
+		// Reuse an already verified pre-rename tool cache without copying binaries.
+		if err != nil && toolsDir == "" {
+			if base, e := os.UserCacheDir(); e == nil {
+				cached, err = findCachedFFmpegTools(filepath.Join(base, "pv-production", "ffmpeg"))
+			}
+		}
 		if err == nil {
 			if probeErr != nil && !explicitFFprobe {
 				tools.FFprobe = cached.FFprobe

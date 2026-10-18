@@ -1,0 +1,5 @@
+.web2video/
+.hyperframes/
+node_modules/
+renders/
+*.[mM][pP]4

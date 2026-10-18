@@ -1,18 +1,15 @@
 {
-  "avoid": [
-    "unmotivated decorative motion",
-    "unreadable small copy",
-    "invented product or gameplay proof"
-  ],
-  "beat_plan": [
-    "Hook: retro console",
-    "Establish: frame the product as an optimistic instrument from another future",
-    "Prove: use an approved local capture or truthful designed-motion detail",
-    "Payoff: warm future with one clear final identity"
-  ],
-  "best_for": [
-    "graphic promotional video",
-    "product or character identity reveal"
+  "schema": "web2video/style/1",
+  "id": "graphic-retrofuturism",
+  "name": "复古未来",
+  "family": "graphic",
+  "keywords": [
+    "retro console",
+    "space-age curve",
+    "optimistic signal",
+    "geometric label",
+    "clean orbit",
+    "warm future"
   ],
   "direction": {
     "camera": "Guide attention with retro console; use a deliberate hold, a measured approach and a stable payoff.",
@@ -23,65 +20,34 @@
     "sound": "Create a restrained rhythm around clean orbit; place licensed accents on intentional cuts and keep speech clear.",
     "typography": "Use retro console,space-age curve,optimistic signal,geometric label,clean orbit,warm future as hierarchy cues; keep display copy short and body copy readable at final delivery size."
   },
-  "family": "graphic",
-  "id": "graphic-retrofuturism",
-  "keywords": [
-    "retro console",
-    "space-age curve",
-    "optimistic signal",
-    "geometric label",
-    "clean orbit",
-    "warm future"
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
   ],
-  "name": "复古未来",
-  "reference_ids": [
-    "hyperframes-creative",
-    "hyperframes-product-launch",
-    "video-shotcraft",
-    "product-demo-video"
-  ],
-  "render": {
-    "backgrounds": [
-      "particles",
-      "aurora"
-    ],
-    "base_template": "social-teaser-ember",
-    "graphics": {
-      "line_width": 1.7,
-      "opacity": 0.08499999999999999,
-      "overlay": "scanlines",
-      "panel_radius": 46
-    },
-    "layouts": [
-      "left",
-      "asymmetric"
-    ],
-    "motion": {
-      "ease": "linear",
-      "name": "drift-left",
-      "strength": 0.55
-    },
-    "overlap_ratio": 0.08,
-    "theme": {
-      "accent": "#a66143",
-      "background": "#d9e8e3",
-      "font": "sans",
-      "foreground": "#293f45",
-      "secondary": "#6899a3",
-      "surface": "#f1f9ed"
-    },
-    "transitions": [
-      "diagonal",
-      "split",
-      "pixelate"
-    ],
-    "typography": {
-      "leading": 1.11,
-      "scale": 0.925,
-      "tracking": 1.35,
-      "weight_offset": -10
-    }
+  "palette": {
+    "accent": "#a66143",
+    "background": "#d9e8e3",
+    "font": "sans",
+    "foreground": "#293f45",
+    "secondary": "#6899a3",
+    "surface": "#f1f9ed"
   },
-  "schema_version": "1.0",
-  "summary": "复古未来：frame the product as an optimistic instrument from another future. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+  "typography": {
+    "leading": 1.11,
+    "scale": 0.925,
+    "tracking": 1.35,
+    "weight_offset": -10
+  },
+  "motion": {
+    "ease": "linear",
+    "name": "drift-left",
+    "strength": 0.55
+  },
+  "graphics": {
+    "line_width": 1.7,
+    "opacity": 0.08499999999999999,
+    "overlay": "scanlines",
+    "panel_radius": 46
+  }
 }

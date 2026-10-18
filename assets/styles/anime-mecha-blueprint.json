@@ -1,18 +1,15 @@
 {
-  "avoid": [
-    "unmotivated decorative motion",
-    "unreadable small copy",
-    "invented product or gameplay proof"
-  ],
-  "beat_plan": [
-    "Hook: blueprint crop",
-    "Establish: combine a character or unit portrait with a readable technical index",
-    "Prove: use an approved local capture or truthful designed-motion detail",
-    "Payoff: precise reveal with one clear final identity"
-  ],
-  "best_for": [
-    "anime promotional video",
-    "product or character identity reveal"
+  "schema": "web2video/style/1",
+  "id": "anime-mecha-blueprint",
+  "name": "机甲设定",
+  "family": "anime",
+  "keywords": [
+    "blueprint crop",
+    "mechanical annotation",
+    "character dossier",
+    "cool edge",
+    "technical rhythm",
+    "precise reveal"
   ],
   "direction": {
     "camera": "Guide attention with blueprint crop; use a deliberate hold, a measured approach and a stable payoff.",
@@ -23,65 +20,34 @@
     "sound": "Create a restrained rhythm around technical rhythm; place licensed accents on intentional cuts and keep speech clear.",
     "typography": "Use blueprint crop,mechanical annotation,character dossier,cool edge,technical rhythm,precise reveal as hierarchy cues; keep display copy short and body copy readable at final delivery size."
   },
-  "family": "anime",
-  "id": "anime-mecha-blueprint",
-  "keywords": [
-    "blueprint crop",
-    "mechanical annotation",
-    "character dossier",
-    "cool edge",
-    "technical rhythm",
-    "precise reveal"
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
   ],
-  "name": "机甲设定",
-  "reference_ids": [
-    "hyperframes-creative",
-    "hyperframes-product-launch",
-    "video-shotcraft",
-    "product-demo-video"
-  ],
-  "render": {
-    "backgrounds": [
-      "rings",
-      "prism"
-    ],
-    "base_template": "character-reveal-midnight",
-    "graphics": {
-      "line_width": 1.7,
-      "opacity": 0.067,
-      "overlay": "contours",
-      "panel_radius": 3
-    },
-    "layouts": [
-      "center",
-      "asymmetric"
-    ],
-    "motion": {
-      "ease": "outExpo",
-      "name": "tilt",
-      "strength": 0.41000000000000003
-    },
-    "overlap_ratio": 0.15500000000000003,
-    "theme": {
-      "accent": "#8bc7f4",
-      "background": "#0a1729",
-      "font": "display",
-      "foreground": "#edf6ff",
-      "secondary": "#6b91c1",
-      "surface": "#1a314d"
-    },
-    "transitions": [
-      "prism",
-      "ink",
-      "crossfade"
-    ],
-    "typography": {
-      "leading": 1.05,
-      "scale": 0.875,
-      "tracking": 1.35,
-      "weight_offset": 110
-    }
+  "palette": {
+    "accent": "#8bc7f4",
+    "background": "#0a1729",
+    "font": "display",
+    "foreground": "#edf6ff",
+    "secondary": "#6b91c1",
+    "surface": "#1a314d"
   },
-  "schema_version": "1.0",
-  "summary": "机甲设定：combine a character or unit portrait with a readable technical index. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+  "typography": {
+    "leading": 1.05,
+    "scale": 0.875,
+    "tracking": 1.35,
+    "weight_offset": 110
+  },
+  "motion": {
+    "ease": "outExpo",
+    "name": "tilt",
+    "strength": 0.41000000000000003
+  },
+  "graphics": {
+    "line_width": 1.7,
+    "opacity": 0.067,
+    "overlay": "contours",
+    "panel_radius": 3
+  }
 }

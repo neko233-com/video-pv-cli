@@ -1,18 +1,15 @@
 {
-  "avoid": [
-    "unmotivated decorative motion",
-    "unreadable small copy",
-    "invented product or gameplay proof"
-  ],
-  "beat_plan": [
-    "Hook: watercolor edge",
-    "Establish: use a portrait as a soft memory surrounded by quiet paper space",
-    "Prove: use an approved local capture or truthful designed-motion detail",
-    "Payoff: restrained color with one clear final identity"
-  ],
-  "best_for": [
-    "anime promotional video",
-    "product or character identity reveal"
+  "schema": "web2video/style/1",
+  "id": "anime-watercolor-memory",
+  "name": "水彩记忆",
+  "family": "anime",
+  "keywords": [
+    "watercolor edge",
+    "paper atmosphere",
+    "gentle memory",
+    "soft contour",
+    "poetic pause",
+    "restrained color"
   ],
   "direction": {
     "camera": "Guide attention with watercolor edge; use a deliberate hold, a measured approach and a stable payoff.",
@@ -23,65 +20,34 @@
     "sound": "Create a restrained rhythm around poetic pause; place licensed accents on intentional cuts and keep speech clear.",
     "typography": "Use watercolor edge,paper atmosphere,gentle memory,soft contour,poetic pause,restrained color as hierarchy cues; keep display copy short and body copy readable at final delivery size."
   },
-  "family": "anime",
-  "id": "anime-watercolor-memory",
-  "keywords": [
-    "watercolor edge",
-    "paper atmosphere",
-    "gentle memory",
-    "soft contour",
-    "poetic pause",
-    "restrained color"
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
   ],
-  "name": "水彩记忆",
-  "reference_ids": [
-    "hyperframes-creative",
-    "hyperframes-product-launch",
-    "video-shotcraft",
-    "product-demo-video"
-  ],
-  "render": {
-    "backgrounds": [
-      "prism",
-      "solid"
-    ],
-    "base_template": "character-reveal-midnight",
-    "graphics": {
-      "line_width": 1.1,
-      "opacity": 0.094,
-      "overlay": "frame",
-      "panel_radius": 36
-    },
-    "layouts": [
-      "asymmetric",
-      "center"
-    ],
-    "motion": {
-      "ease": "settle",
-      "name": "push-in",
-      "strength": 0.6200000000000001
-    },
-    "overlap_ratio": 0.10500000000000001,
-    "theme": {
-      "accent": "#718d8c",
-      "background": "#f0e9db",
-      "font": "display",
-      "foreground": "#4a5350",
-      "secondary": "#c3a797",
-      "surface": "#fff9ec"
-    },
-    "transitions": [
-      "ink",
-      "prism",
-      "crossfade"
-    ],
-    "typography": {
-      "leading": 1.23,
-      "scale": 0.9500000000000001,
-      "tracking": 0.45,
-      "weight_offset": -80
-    }
+  "palette": {
+    "accent": "#718d8c",
+    "background": "#f0e9db",
+    "font": "display",
+    "foreground": "#4a5350",
+    "secondary": "#c3a797",
+    "surface": "#fff9ec"
   },
-  "schema_version": "1.0",
-  "summary": "水彩记忆：use a portrait as a soft memory surrounded by quiet paper space. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+  "typography": {
+    "leading": 1.23,
+    "scale": 0.9500000000000001,
+    "tracking": 0.45,
+    "weight_offset": -80
+  },
+  "motion": {
+    "ease": "settle",
+    "name": "push-in",
+    "strength": 0.6200000000000001
+  },
+  "graphics": {
+    "line_width": 1.1,
+    "opacity": 0.094,
+    "overlay": "frame",
+    "panel_radius": 36
+  }
 }

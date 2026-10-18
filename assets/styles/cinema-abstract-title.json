@@ -1,18 +1,15 @@
 {
-  "avoid": [
-    "unmotivated decorative motion",
-    "unreadable small copy",
-    "invented product or gameplay proof"
-  ],
-  "beat_plan": [
-    "Hook: abstract geometry",
-    "Establish: turn a meaningful symbol into a title-sized abstract composition",
-    "Prove: use an approved local capture or truthful designed-motion detail",
-    "Payoff: controlled texture with one clear final identity"
-  ],
-  "best_for": [
-    "cinema promotional video",
-    "product or character identity reveal"
+  "schema": "web2video/style/1",
+  "id": "cinema-abstract-title",
+  "name": "抽象片头",
+  "family": "cinema",
+  "keywords": [
+    "abstract geometry",
+    "title sequence",
+    "layered symbol",
+    "graphic mystery",
+    "precise rhythm",
+    "controlled texture"
   ],
   "direction": {
     "camera": "Guide attention with abstract geometry; use a deliberate hold, a measured approach and a stable payoff.",
@@ -23,65 +20,34 @@
     "sound": "Create a restrained rhythm around precise rhythm; place licensed accents on intentional cuts and keep speech clear.",
     "typography": "Use abstract geometry,title sequence,layered symbol,graphic mystery,precise rhythm,controlled texture as hierarchy cues; keep display copy short and body copy readable at final delivery size."
   },
-  "family": "cinema",
-  "id": "cinema-abstract-title",
-  "keywords": [
-    "abstract geometry",
-    "title sequence",
-    "layered symbol",
-    "graphic mystery",
-    "precise rhythm",
-    "controlled texture"
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
   ],
-  "name": "抽象片头",
-  "reference_ids": [
-    "hyperframes-creative",
-    "hyperframes-product-launch",
-    "video-shotcraft",
-    "product-demo-video"
-  ],
-  "render": {
-    "backgrounds": [
-      "nebula",
-      "grid"
-    ],
-    "base_template": "game-world-graphite",
-    "graphics": {
-      "line_width": 0.8,
-      "opacity": 0.121,
-      "overlay": "letterbox",
-      "panel_radius": 11
-    },
-    "layouts": [
-      "left",
-      "center"
-    ],
-    "motion": {
-      "ease": "outExpo",
-      "name": "drift-up",
-      "strength": 0.8300000000000001
-    },
-    "overlap_ratio": 0.18,
-    "theme": {
-      "accent": "#b09edc",
-      "background": "#171327",
-      "font": "display",
-      "foreground": "#f1ebfb",
-      "secondary": "#7ebbc7",
-      "surface": "#302843"
-    },
-    "transitions": [
-      "crossfade",
-      "dip-black",
-      "exposure"
-    ],
-    "typography": {
-      "leading": 1.23,
-      "scale": 1.0250000000000001,
-      "tracking": 0,
-      "weight_offset": 10
-    }
+  "palette": {
+    "accent": "#b09edc",
+    "background": "#171327",
+    "font": "display",
+    "foreground": "#f1ebfb",
+    "secondary": "#7ebbc7",
+    "surface": "#302843"
   },
-  "schema_version": "1.0",
-  "summary": "抽象片头：turn a meaningful symbol into a title-sized abstract composition. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+  "typography": {
+    "leading": 1.23,
+    "scale": 1.0250000000000001,
+    "tracking": 0,
+    "weight_offset": 10
+  },
+  "motion": {
+    "ease": "outExpo",
+    "name": "drift-up",
+    "strength": 0.8300000000000001
+  },
+  "graphics": {
+    "line_width": 0.8,
+    "opacity": 0.121,
+    "overlay": "letterbox",
+    "panel_radius": 11
+  }
 }

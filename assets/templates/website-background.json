@@ -1,0 +1,6 @@
+{
+  "schema":"web2video/project/1","title":"Celestial — ambient website loop","template":"website-background","style":"organic-underwater-caustics","width":1920,"height":1080,"fps":30,"loop":true,
+  "scenes":[
+    {"id":"ambient","duration":6,"layout":"ambient","kicker":"","title":"","subtitle":"","image":"assets/world.png","zoom":1.06,"x":0.5,"y":0.5,"transition":"crossfade"}
+  ]
+}

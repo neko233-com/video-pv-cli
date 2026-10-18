@@ -1,18 +1,15 @@
 {
-  "avoid": [
-    "unmotivated decorative motion",
-    "unreadable small copy",
-    "invented product or gameplay proof"
-  ],
-  "beat_plan": [
-    "Hook: dashboard focus",
-    "Establish: isolate one meaningful metric from a larger factual dashboard",
-    "Prove: use an approved local capture or truthful designed-motion detail",
-    "Payoff: precise callout with one clear final identity"
-  ],
-  "best_for": [
-    "digital promotional video",
-    "product or character identity reveal"
+  "schema": "web2video/style/1",
+  "id": "digital-dashboard-signal",
+  "name": "仪表信号",
+  "family": "digital",
+  "keywords": [
+    "dashboard focus",
+    "large metric",
+    "quiet grid",
+    "credible data",
+    "signal hierarchy",
+    "precise callout"
   ],
   "direction": {
     "camera": "Guide attention with dashboard focus; use a deliberate hold, a measured approach and a stable payoff.",
@@ -23,65 +20,34 @@
     "sound": "Create a restrained rhythm around signal hierarchy; place licensed accents on intentional cuts and keep speech clear.",
     "typography": "Use dashboard focus,large metric,quiet grid,credible data,signal hierarchy,precise callout as hierarchy cues; keep display copy short and body copy readable at final delivery size."
   },
-  "family": "digital",
-  "id": "digital-dashboard-signal",
-  "keywords": [
-    "dashboard focus",
-    "large metric",
-    "quiet grid",
-    "credible data",
-    "signal hierarchy",
-    "precise callout"
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
   ],
-  "name": "仪表信号",
-  "reference_ids": [
-    "hyperframes-creative",
-    "hyperframes-product-launch",
-    "video-shotcraft",
-    "product-demo-video"
-  ],
-  "render": {
-    "backgrounds": [
-      "rings",
-      "mesh"
-    ],
-    "base_template": "keynote-features-porcelain",
-    "graphics": {
-      "line_width": 1.4,
-      "opacity": 0.067,
-      "overlay": "registration",
-      "panel_radius": 31
-    },
-    "layouts": [
-      "left",
-      "right"
-    ],
-    "motion": {
-      "ease": "spring",
-      "name": "pull-out",
-      "strength": 0.41000000000000003
-    },
-    "overlap_ratio": 0.15500000000000003,
-    "theme": {
-      "accent": "#a2c3f4",
-      "background": "#101928",
-      "font": "sans",
-      "foreground": "#edf2fc",
-      "secondary": "#80bdb3",
-      "surface": "#24354d"
-    },
-    "transitions": [
-      "zoom-in",
-      "push-left",
-      "crossfade"
-    ],
-    "typography": {
-      "leading": 1.05,
-      "scale": 0.875,
-      "tracking": 0.9,
-      "weight_offset": -20
-    }
+  "palette": {
+    "accent": "#a2c3f4",
+    "background": "#101928",
+    "font": "sans",
+    "foreground": "#edf2fc",
+    "secondary": "#80bdb3",
+    "surface": "#24354d"
   },
-  "schema_version": "1.0",
-  "summary": "仪表信号：isolate one meaningful metric from a larger factual dashboard. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+  "typography": {
+    "leading": 1.05,
+    "scale": 0.875,
+    "tracking": 0.9,
+    "weight_offset": -20
+  },
+  "motion": {
+    "ease": "spring",
+    "name": "pull-out",
+    "strength": 0.41000000000000003
+  },
+  "graphics": {
+    "line_width": 1.4,
+    "opacity": 0.067,
+    "overlay": "registration",
+    "panel_radius": 31
+  }
 }

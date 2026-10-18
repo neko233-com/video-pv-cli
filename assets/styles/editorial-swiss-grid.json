@@ -1,18 +1,15 @@
 {
-  "avoid": [
-    "unmotivated decorative motion",
-    "unreadable small copy",
-    "invented product or gameplay proof"
-  ],
-  "beat_plan": [
-    "Hook: swiss grid",
-    "Establish: lock type and product evidence to a strict column grid",
-    "Prove: use an approved local capture or truthful designed-motion detail",
-    "Payoff: precise rules with one clear final identity"
-  ],
-  "best_for": [
-    "editorial promotional video",
-    "product or character identity reveal"
+  "schema": "web2video/style/1",
+  "id": "editorial-swiss-grid",
+  "name": "瑞士网格",
+  "family": "editorial",
+  "keywords": [
+    "swiss grid",
+    "objective type",
+    "baseline rhythm",
+    "asymmetric balance",
+    "clear numbering",
+    "precise rules"
   ],
   "direction": {
     "camera": "Guide attention with swiss grid; use a deliberate hold, a measured approach and a stable payoff.",
@@ -23,65 +20,34 @@
     "sound": "Create a restrained rhythm around clear numbering; place licensed accents on intentional cuts and keep speech clear.",
     "typography": "Use swiss grid,objective type,baseline rhythm,asymmetric balance,clear numbering,precise rules as hierarchy cues; keep display copy short and body copy readable at final delivery size."
   },
-  "family": "editorial",
-  "id": "editorial-swiss-grid",
-  "keywords": [
-    "swiss grid",
-    "objective type",
-    "baseline rhythm",
-    "asymmetric balance",
-    "clear numbering",
-    "precise rules"
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
   ],
-  "name": "瑞士网格",
-  "reference_ids": [
-    "hyperframes-creative",
-    "hyperframes-product-launch",
-    "video-shotcraft",
-    "product-demo-video"
-  ],
-  "render": {
-    "backgrounds": [
-      "prism",
-      "grid"
-    ],
-    "base_template": "keynote-type-porcelain",
-    "graphics": {
-      "line_width": 1.7,
-      "opacity": 0.04,
-      "overlay": "scanlines",
-      "panel_radius": 21
-    },
-    "layouts": [
-      "left",
-      "asymmetric"
-    ],
-    "motion": {
-      "ease": "swift",
-      "name": "drift-left",
-      "strength": 0.2
-    },
-    "overlap_ratio": 0.08,
-    "theme": {
-      "accent": "#b3432f",
-      "background": "#eeeae1",
-      "font": "sans",
-      "foreground": "#22201d",
-      "secondary": "#91816d",
-      "surface": "#fffdf6"
-    },
-    "transitions": [
-      "cut",
-      "page-turn",
-      "crossfade"
-    ],
-    "typography": {
-      "leading": 1.23,
-      "scale": 0.8,
-      "tracking": 1.35,
-      "weight_offset": -10
-    }
+  "palette": {
+    "accent": "#b3432f",
+    "background": "#eeeae1",
+    "font": "sans",
+    "foreground": "#22201d",
+    "secondary": "#91816d",
+    "surface": "#fffdf6"
   },
-  "schema_version": "1.0",
-  "summary": "瑞士网格：lock type and product evidence to a strict column grid. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+  "typography": {
+    "leading": 1.23,
+    "scale": 0.8,
+    "tracking": 1.35,
+    "weight_offset": -10
+  },
+  "motion": {
+    "ease": "swift",
+    "name": "drift-left",
+    "strength": 0.2
+  },
+  "graphics": {
+    "line_width": 1.7,
+    "opacity": 0.04,
+    "overlay": "scanlines",
+    "panel_radius": 21
+  }
 }

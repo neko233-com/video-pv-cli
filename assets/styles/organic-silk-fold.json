@@ -1,18 +1,15 @@
 {
-  "avoid": [
-    "unmotivated decorative motion",
-    "unreadable small copy",
-    "invented product or gameplay proof"
-  ],
-  "beat_plan": [
-    "Hook: silk fold",
-    "Establish: use broad fabric-like folds to cradle a hero shape",
-    "Prove: use an approved local capture or truthful designed-motion detail",
-    "Payoff: flowing contour with one clear final identity"
-  ],
-  "best_for": [
-    "organic promotional video",
-    "product or character identity reveal"
+  "schema": "web2video/style/1",
+  "id": "organic-silk-fold",
+  "name": "丝绸褶光",
+  "family": "organic",
+  "keywords": [
+    "silk fold",
+    "soft gradient",
+    "tactile depth",
+    "gentle orbit",
+    "quiet sheen",
+    "flowing contour"
   ],
   "direction": {
     "camera": "Guide attention with silk fold; use a deliberate hold, a measured approach and a stable payoff.",
@@ -23,65 +20,34 @@
     "sound": "Create a restrained rhythm around quiet sheen; place licensed accents on intentional cuts and keep speech clear.",
     "typography": "Use silk fold,soft gradient,tactile depth,gentle orbit,quiet sheen,flowing contour as hierarchy cues; keep display copy short and body copy readable at final delivery size."
   },
-  "family": "organic",
-  "id": "organic-silk-fold",
-  "keywords": [
-    "silk fold",
-    "soft gradient",
-    "tactile depth",
-    "gentle orbit",
-    "quiet sheen",
-    "flowing contour"
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
   ],
-  "name": "丝绸褶光",
-  "reference_ids": [
-    "hyperframes-creative",
-    "hyperframes-product-launch",
-    "video-shotcraft",
-    "product-demo-video"
-  ],
-  "render": {
-    "backgrounds": [
-      "solid",
-      "silk"
-    ],
-    "base_template": "keynote-material-porcelain",
-    "graphics": {
-      "line_width": 0.8,
-      "opacity": 0.067,
-      "overlay": "none",
-      "panel_radius": 17
-    },
-    "layouts": [
-      "center",
-      "left"
-    ],
-    "motion": {
-      "ease": "swift",
-      "name": "none",
-      "strength": 0.41000000000000003
-    },
-    "overlap_ratio": 0.15500000000000003,
-    "theme": {
-      "accent": "#a9788c",
-      "background": "#f0e6e4",
-      "font": "sans",
-      "foreground": "#4b3a42",
-      "secondary": "#c8acb5",
-      "surface": "#fff8f6"
-    },
-    "transitions": [
-      "noise-dissolve",
-      "ripple",
-      "soft-wipe"
-    ],
-    "typography": {
-      "leading": 1.17,
-      "scale": 0.875,
-      "tracking": 0,
-      "weight_offset": -80
-    }
+  "palette": {
+    "accent": "#a9788c",
+    "background": "#f0e6e4",
+    "font": "sans",
+    "foreground": "#4b3a42",
+    "secondary": "#c8acb5",
+    "surface": "#fff8f6"
   },
-  "schema_version": "1.0",
-  "summary": "丝绸褶光：use broad fabric-like folds to cradle a hero shape. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+  "typography": {
+    "leading": 1.17,
+    "scale": 0.875,
+    "tracking": 0,
+    "weight_offset": -80
+  },
+  "motion": {
+    "ease": "swift",
+    "name": "none",
+    "strength": 0.41000000000000003
+  },
+  "graphics": {
+    "line_width": 0.8,
+    "opacity": 0.067,
+    "overlay": "none",
+    "panel_radius": 17
+  }
 }

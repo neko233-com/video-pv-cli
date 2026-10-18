@@ -9,13 +9,14 @@ go.mod text eol=lf
 *.md text eol=lf
 *.json text eol=lf
 *.js text eol=lf
+*.css text eol=lf
 *.html text eol=lf
 *.wgsl text eol=lf
 *.yml text eol=lf
 *.yaml text eol=lf
-# Keep authored demo data byte-identical to its recorded render input hashes.
-demo/*/template.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
-.pv-gallery-owner text eol=lf
+*.cmd text eol=lf
 *.png -text
 *.ttf -text
 *.mp4 -text
+# Preserve the upstream GSAP distribution and license header byte for byte.
+demo/*/gsap.min.js -text whitespace=-blank-at-eol,-blank-at-eof

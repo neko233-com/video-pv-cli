@@ -1,18 +1,15 @@
 {
-  "avoid": [
-    "unmotivated decorative motion",
-    "unreadable small copy",
-    "invented product or gameplay proof"
-  ],
-  "beat_plan": [
-    "Hook: ice facet",
-    "Establish: use a faceted subject and sparse cold negative space",
-    "Prove: use an approved local capture or truthful designed-motion detail",
-    "Payoff: blue white with one clear final identity"
-  ],
-  "best_for": [
-    "organic promotional video",
-    "product or character identity reveal"
+  "schema": "web2video/style/1",
+  "id": "organic-ice-crystal",
+  "name": "冰晶秩序",
+  "family": "organic",
+  "keywords": [
+    "ice facet",
+    "cold clarity",
+    "prismatic edge",
+    "slow glint",
+    "quiet geometry",
+    "blue white"
   ],
   "direction": {
     "camera": "Guide attention with ice facet; use a deliberate hold, a measured approach and a stable payoff.",
@@ -23,65 +20,34 @@
     "sound": "Create a restrained rhythm around quiet geometry; place licensed accents on intentional cuts and keep speech clear.",
     "typography": "Use ice facet,cold clarity,prismatic edge,slow glint,quiet geometry,blue white as hierarchy cues; keep display copy short and body copy readable at final delivery size."
   },
-  "family": "organic",
-  "id": "organic-ice-crystal",
-  "keywords": [
-    "ice facet",
-    "cold clarity",
-    "prismatic edge",
-    "slow glint",
-    "quiet geometry",
-    "blue white"
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
   ],
-  "name": "冰晶秩序",
-  "reference_ids": [
-    "hyperframes-creative",
-    "hyperframes-product-launch",
-    "video-shotcraft",
-    "product-demo-video"
-  ],
-  "render": {
-    "backgrounds": [
-      "grid",
-      "nebula"
-    ],
-    "base_template": "keynote-product-porcelain",
-    "graphics": {
-      "line_width": 2,
-      "opacity": 0.10300000000000001,
-      "overlay": "halftone",
-      "panel_radius": 61
-    },
-    "layouts": [
-      "asymmetric",
-      "left"
-    ],
-    "motion": {
-      "ease": "inOutCubic",
-      "name": "drift-right",
-      "strength": 0.6900000000000001
-    },
-    "overlap_ratio": 0.13,
-    "theme": {
-      "accent": "#598bad",
-      "background": "#e4f0f6",
-      "font": "sans",
-      "foreground": "#2d475e",
-      "secondary": "#b0c5da",
-      "surface": "#f9fdff"
-    },
-    "transitions": [
-      "noise-dissolve",
-      "ripple",
-      "soft-wipe"
-    ],
-    "typography": {
-      "leading": 1.17,
-      "scale": 0.9750000000000001,
-      "tracking": 1.8,
-      "weight_offset": 0
-    }
+  "palette": {
+    "accent": "#598bad",
+    "background": "#e4f0f6",
+    "font": "sans",
+    "foreground": "#2d475e",
+    "secondary": "#b0c5da",
+    "surface": "#f9fdff"
   },
-  "schema_version": "1.0",
-  "summary": "冰晶秩序：use a faceted subject and sparse cold negative space. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+  "typography": {
+    "leading": 1.17,
+    "scale": 0.9750000000000001,
+    "tracking": 1.8,
+    "weight_offset": 0
+  },
+  "motion": {
+    "ease": "inOutCubic",
+    "name": "drift-right",
+    "strength": 0.6900000000000001
+  },
+  "graphics": {
+    "line_width": 2,
+    "opacity": 0.10300000000000001,
+    "overlay": "halftone",
+    "panel_radius": 61
+  }
 }

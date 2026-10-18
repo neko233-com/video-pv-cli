@@ -1,18 +1,15 @@
 {
-  "avoid": [
-    "unmotivated decorative motion",
-    "unreadable small copy",
-    "invented product or gameplay proof"
-  ],
-  "beat_plan": [
-    "Hook: directed flow",
-    "Establish: lead the eye along one energized route into the subject",
-    "Prove: use an approved local capture or truthful designed-motion detail",
-    "Payoff: signal trail with one clear final identity"
-  ],
-  "best_for": [
-    "tech promotional video",
-    "product or character identity reveal"
+  "schema": "web2video/style/1",
+  "id": "tech-energy-flow",
+  "name": "能量流线",
+  "family": "tech",
+  "keywords": [
+    "directed flow",
+    "charged contour",
+    "high contrast",
+    "measured surge",
+    "technical reveal",
+    "signal trail"
   ],
   "direction": {
     "camera": "Guide attention with directed flow; use a deliberate hold, a measured approach and a stable payoff.",
@@ -23,65 +20,34 @@
     "sound": "Create a restrained rhythm around technical reveal; place licensed accents on intentional cuts and keep speech clear.",
     "typography": "Use directed flow,charged contour,high contrast,measured surge,technical reveal,signal trail as hierarchy cues; keep display copy short and body copy readable at final delivery size."
   },
-  "family": "tech",
-  "id": "tech-energy-flow",
-  "keywords": [
-    "directed flow",
-    "charged contour",
-    "high contrast",
-    "measured surge",
-    "technical reveal",
-    "signal trail"
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
   ],
-  "name": "能量流线",
-  "reference_ids": [
-    "hyperframes-creative",
-    "hyperframes-product-launch",
-    "video-shotcraft",
-    "product-demo-video"
-  ],
-  "render": {
-    "backgrounds": [
-      "solid",
-      "prism"
-    ],
-    "base_template": "keynote-features-graphite",
-    "graphics": {
-      "line_width": 1.7,
-      "opacity": 0.094,
-      "overlay": "contours",
-      "panel_radius": 15
-    },
-    "layouts": [
-      "center",
-      "asymmetric"
-    ],
-    "motion": {
-      "ease": "outExpo",
-      "name": "tilt",
-      "strength": 0.6200000000000001
-    },
-    "overlap_ratio": 0.10500000000000001,
-    "theme": {
-      "accent": "#b7ed90",
-      "background": "#110e22",
-      "font": "sans",
-      "foreground": "#f4eeff",
-      "secondary": "#9f8fe1",
-      "surface": "#27203d"
-    },
-    "transitions": [
-      "soft-wipe",
-      "center-wipe",
-      "lens"
-    ],
-    "typography": {
-      "leading": 1.05,
-      "scale": 0.9500000000000001,
-      "tracking": 1.35,
-      "weight_offset": 80
-    }
+  "palette": {
+    "accent": "#b7ed90",
+    "background": "#110e22",
+    "font": "sans",
+    "foreground": "#f4eeff",
+    "secondary": "#9f8fe1",
+    "surface": "#27203d"
   },
-  "schema_version": "1.0",
-  "summary": "能量流线：lead the eye along one energized route into the subject. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+  "typography": {
+    "leading": 1.05,
+    "scale": 0.9500000000000001,
+    "tracking": 1.35,
+    "weight_offset": 80
+  },
+  "motion": {
+    "ease": "outExpo",
+    "name": "tilt",
+    "strength": 0.6200000000000001
+  },
+  "graphics": {
+    "line_width": 1.7,
+    "opacity": 0.094,
+    "overlay": "contours",
+    "panel_radius": 15
+  }
 }

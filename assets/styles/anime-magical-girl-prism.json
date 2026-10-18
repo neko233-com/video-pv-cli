@@ -1,18 +1,15 @@
 {
-  "avoid": [
-    "unmotivated decorative motion",
-    "unreadable small copy",
-    "invented product or gameplay proof"
-  ],
-  "beat_plan": [
-    "Hook: prismatic accent",
-    "Establish: organize the identity around a single prismatic emblem",
-    "Prove: use an approved local capture or truthful designed-motion detail",
-    "Payoff: lyrical rhythm with one clear final identity"
-  ],
-  "best_for": [
-    "anime promotional video",
-    "product or character identity reveal"
+  "schema": "web2video/style/1",
+  "id": "anime-magical-girl-prism",
+  "name": "棱彩变身",
+  "family": "anime",
+  "keywords": [
+    "prismatic accent",
+    "hero emblem",
+    "bright confidence",
+    "layered reveal",
+    "crystal motif",
+    "lyrical rhythm"
   ],
   "direction": {
     "camera": "Guide attention with prismatic accent; use a deliberate hold, a measured approach and a stable payoff.",
@@ -23,65 +20,34 @@
     "sound": "Create a restrained rhythm around crystal motif; place licensed accents on intentional cuts and keep speech clear.",
     "typography": "Use prismatic accent,hero emblem,bright confidence,layered reveal,crystal motif,lyrical rhythm as hierarchy cues; keep display copy short and body copy readable at final delivery size."
   },
-  "family": "anime",
-  "id": "anime-magical-girl-prism",
-  "keywords": [
-    "prismatic accent",
-    "hero emblem",
-    "bright confidence",
-    "layered reveal",
-    "crystal motif",
-    "lyrical rhythm"
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
   ],
-  "name": "棱彩变身",
-  "reference_ids": [
-    "hyperframes-creative",
-    "hyperframes-product-launch",
-    "video-shotcraft",
-    "product-demo-video"
-  ],
-  "render": {
-    "backgrounds": [
-      "silk",
-      "aurora"
-    ],
-    "base_template": "character-profile-midnight",
-    "graphics": {
-      "line_width": 1.7,
-      "opacity": 0.11199999999999999,
-      "overlay": "scanlines",
-      "panel_radius": 58
-    },
-    "layouts": [
-      "left",
-      "asymmetric"
-    ],
-    "motion": {
-      "ease": "linear",
-      "name": "drift-left",
-      "strength": 0.76
-    },
-    "overlap_ratio": 0.15500000000000003,
-    "theme": {
-      "accent": "#9f69ad",
-      "background": "#f3edf9",
-      "font": "display",
-      "foreground": "#4f3d61",
-      "secondary": "#8eb5d4",
-      "surface": "#ffffff"
-    },
-    "transitions": [
-      "ink",
-      "prism",
-      "crossfade"
-    ],
-    "typography": {
-      "leading": 1.11,
-      "scale": 1,
-      "tracking": 1.35,
-      "weight_offset": -40
-    }
+  "palette": {
+    "accent": "#9f69ad",
+    "background": "#f3edf9",
+    "font": "display",
+    "foreground": "#4f3d61",
+    "secondary": "#8eb5d4",
+    "surface": "#ffffff"
   },
-  "schema_version": "1.0",
-  "summary": "棱彩变身：organize the identity around a single prismatic emblem. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+  "typography": {
+    "leading": 1.11,
+    "scale": 1,
+    "tracking": 1.35,
+    "weight_offset": -40
+  },
+  "motion": {
+    "ease": "linear",
+    "name": "drift-left",
+    "strength": 0.76
+  },
+  "graphics": {
+    "line_width": 1.7,
+    "opacity": 0.11199999999999999,
+    "overlay": "scanlines",
+    "panel_radius": 58
+  }
 }

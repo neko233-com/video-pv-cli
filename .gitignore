@@ -1,5 +1,9 @@
-/video-pv-cli
-/video-pv-cli.exe
+/web2video
+/web2video.exe
+node_modules/
+.web2video/
+.hyperframes/
+.transcode-cache/
 /dist/
 /logs/
 /.cache/

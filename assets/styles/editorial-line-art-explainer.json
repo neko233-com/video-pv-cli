@@ -1,18 +1,15 @@
 {
-  "avoid": [
-    "unmotivated decorative motion",
-    "unreadable small copy",
-    "invented product or gameplay proof"
-  ],
-  "beat_plan": [
-    "Hook: line drawing",
-    "Establish: one line diagram explains a single product relationship",
-    "Prove: use an approved local capture or truthful designed-motion detail",
-    "Payoff: gentle reveal with one clear final identity"
-  ],
-  "best_for": [
-    "editorial promotional video",
-    "product or character identity reveal"
+  "schema": "web2video/style/1",
+  "id": "editorial-line-art-explainer",
+  "name": "线描讲解",
+  "family": "editorial",
+  "keywords": [
+    "line drawing",
+    "diagram logic",
+    "sparse color",
+    "stepwise proof",
+    "readable annotation",
+    "gentle reveal"
   ],
   "direction": {
     "camera": "Guide attention with line drawing; use a deliberate hold, a measured approach and a stable payoff.",
@@ -23,65 +20,34 @@
     "sound": "Create a restrained rhythm around readable annotation; place licensed accents on intentional cuts and keep speech clear.",
     "typography": "Use line drawing,diagram logic,sparse color,stepwise proof,readable annotation,gentle reveal as hierarchy cues; keep display copy short and body copy readable at final delivery size."
   },
-  "family": "editorial",
-  "id": "editorial-line-art-explainer",
-  "keywords": [
-    "line drawing",
-    "diagram logic",
-    "sparse color",
-    "stepwise proof",
-    "readable annotation",
-    "gentle reveal"
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
   ],
-  "name": "线描讲解",
-  "reference_ids": [
-    "hyperframes-creative",
-    "hyperframes-product-launch",
-    "video-shotcraft",
-    "product-demo-video"
-  ],
-  "render": {
-    "backgrounds": [
-      "particles",
-      "solid"
-    ],
-    "base_template": "keynote-features-monochrome",
-    "graphics": {
-      "line_width": 1.1,
-      "opacity": 0.11199999999999999,
-      "overlay": "frame",
-      "panel_radius": 44
-    },
-    "layouts": [
-      "asymmetric",
-      "center"
-    ],
-    "motion": {
-      "ease": "settle",
-      "name": "push-in",
-      "strength": 0.76
-    },
-    "overlap_ratio": 0.15500000000000003,
-    "theme": {
-      "accent": "#538568",
-      "background": "#eff2ec",
-      "font": "sans",
-      "foreground": "#27392e",
-      "secondary": "#99b8a2",
-      "surface": "#ffffff"
-    },
-    "transitions": [
-      "cut",
-      "page-turn",
-      "crossfade"
-    ],
-    "typography": {
-      "leading": 1.23,
-      "scale": 1,
-      "tracking": 0.45,
-      "weight_offset": -100
-    }
+  "palette": {
+    "accent": "#538568",
+    "background": "#eff2ec",
+    "font": "sans",
+    "foreground": "#27392e",
+    "secondary": "#99b8a2",
+    "surface": "#ffffff"
   },
-  "schema_version": "1.0",
-  "summary": "线描讲解：one line diagram explains a single product relationship. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+  "typography": {
+    "leading": 1.23,
+    "scale": 1,
+    "tracking": 0.45,
+    "weight_offset": -100
+  },
+  "motion": {
+    "ease": "settle",
+    "name": "push-in",
+    "strength": 0.76
+  },
+  "graphics": {
+    "line_width": 1.1,
+    "opacity": 0.11199999999999999,
+    "overlay": "frame",
+    "panel_radius": 44
+  }
 }

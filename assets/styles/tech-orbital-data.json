@@ -1,18 +1,15 @@
 {
-  "avoid": [
-    "unmotivated decorative motion",
-    "unreadable small copy",
-    "invented product or gameplay proof"
-  ],
-  "beat_plan": [
-    "Hook: orbit diagram",
-    "Establish: place a main metric inside an ordered orbital system",
-    "Prove: use an approved local capture or truthful designed-motion detail",
-    "Payoff: spatial signal with one clear final identity"
-  ],
-  "best_for": [
-    "tech promotional video",
-    "product or character identity reveal"
+  "schema": "web2video/style/1",
+  "id": "tech-orbital-data",
+  "name": "轨道数据",
+  "family": "tech",
+  "keywords": [
+    "orbit diagram",
+    "radial hierarchy",
+    "telemetry ring",
+    "measured rotation",
+    "clean numerals",
+    "spatial signal"
   ],
   "direction": {
     "camera": "Guide attention with orbit diagram; use a deliberate hold, a measured approach and a stable payoff.",
@@ -23,65 +20,34 @@
     "sound": "Create a restrained rhythm around clean numerals; place licensed accents on intentional cuts and keep speech clear.",
     "typography": "Use orbit diagram,radial hierarchy,telemetry ring,measured rotation,clean numerals,spatial signal as hierarchy cues; keep display copy short and body copy readable at final delivery size."
   },
-  "family": "tech",
-  "id": "tech-orbital-data",
-  "keywords": [
-    "orbit diagram",
-    "radial hierarchy",
-    "telemetry ring",
-    "measured rotation",
-    "clean numerals",
-    "spatial signal"
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
   ],
-  "name": "轨道数据",
-  "reference_ids": [
-    "hyperframes-creative",
-    "hyperframes-product-launch",
-    "video-shotcraft",
-    "product-demo-video"
-  ],
-  "render": {
-    "backgrounds": [
-      "horizon",
-      "caustics"
-    ],
-    "base_template": "keynote-product-midnight",
-    "graphics": {
-      "line_width": 1.1,
-      "opacity": 0.076,
-      "overlay": "crosshair",
-      "panel_radius": 58
-    },
-    "layouts": [
-      "left",
-      "asymmetric"
-    ],
-    "motion": {
-      "ease": "linear",
-      "name": "orbit",
-      "strength": 0.48000000000000004
-    },
-    "overlap_ratio": 0.18,
-    "theme": {
-      "accent": "#edae78",
-      "background": "#0c1424",
-      "font": "sans",
-      "foreground": "#e7effb",
-      "secondary": "#688bc0",
-      "surface": "#1c2a42"
-    },
-    "transitions": [
-      "soft-wipe",
-      "center-wipe",
-      "lens"
-    ],
-    "typography": {
-      "leading": 1.17,
-      "scale": 0.9,
-      "tracking": 0.45,
-      "weight_offset": 40
-    }
+  "palette": {
+    "accent": "#edae78",
+    "background": "#0c1424",
+    "font": "sans",
+    "foreground": "#e7effb",
+    "secondary": "#688bc0",
+    "surface": "#1c2a42"
   },
-  "schema_version": "1.0",
-  "summary": "轨道数据：place a main metric inside an ordered orbital system. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+  "typography": {
+    "leading": 1.17,
+    "scale": 0.9,
+    "tracking": 0.45,
+    "weight_offset": 40
+  },
+  "motion": {
+    "ease": "linear",
+    "name": "orbit",
+    "strength": 0.48000000000000004
+  },
+  "graphics": {
+    "line_width": 1.1,
+    "opacity": 0.076,
+    "overlay": "crosshair",
+    "panel_radius": 58
+  }
 }

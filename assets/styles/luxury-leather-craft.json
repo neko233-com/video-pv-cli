@@ -1,18 +1,15 @@
 {
-  "avoid": [
-    "unmotivated decorative motion",
-    "unreadable small copy",
-    "invented product or gameplay proof"
-  ],
-  "beat_plan": [
-    "Hook: stitched detail",
-    "Establish: follow a seam-sized detail before returning to the whole form",
-    "Prove: use an approved local capture or truthful designed-motion detail",
-    "Payoff: material honesty with one clear final identity"
-  ],
-  "best_for": [
-    "luxury promotional video",
-    "product or character identity reveal"
+  "schema": "web2video/style/1",
+  "id": "luxury-leather-craft",
+  "name": "皮革匠作",
+  "family": "luxury",
+  "keywords": [
+    "stitched detail",
+    "handcrafted texture",
+    "warm shadow",
+    "close framing",
+    "patient gesture",
+    "material honesty"
   ],
   "direction": {
     "camera": "Guide attention with stitched detail; use a deliberate hold, a measured approach and a stable payoff.",
@@ -23,65 +20,34 @@
     "sound": "Create a restrained rhythm around patient gesture; place licensed accents on intentional cuts and keep speech clear.",
     "typography": "Use stitched detail,handcrafted texture,warm shadow,close framing,patient gesture,material honesty as hierarchy cues; keep display copy short and body copy readable at final delivery size."
   },
-  "family": "luxury",
-  "id": "luxury-leather-craft",
-  "keywords": [
-    "stitched detail",
-    "handcrafted texture",
-    "warm shadow",
-    "close framing",
-    "patient gesture",
-    "material honesty"
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
   ],
-  "name": "皮革匠作",
-  "reference_ids": [
-    "hyperframes-creative",
-    "hyperframes-product-launch",
-    "video-shotcraft",
-    "product-demo-video"
-  ],
-  "render": {
-    "backgrounds": [
-      "solid",
-      "silk"
-    ],
-    "base_template": "keynote-material-obsidian",
-    "graphics": {
-      "line_width": 0.8,
-      "opacity": 0.121,
-      "overlay": "none",
-      "panel_radius": 41
-    },
-    "layouts": [
-      "center",
-      "left"
-    ],
-    "motion": {
-      "ease": "swift",
-      "name": "none",
-      "strength": 0.8300000000000001
-    },
-    "overlap_ratio": 0.18,
-    "theme": {
-      "accent": "#c69c6d",
-      "background": "#201510",
-      "font": "display",
-      "foreground": "#f3e5d1",
-      "secondary": "#8d664b",
-      "surface": "#3b281e"
-    },
-    "transitions": [
-      "light-sweep",
-      "crossfade",
-      "iris"
-    ],
-    "typography": {
-      "leading": 1.17,
-      "scale": 1.0250000000000001,
-      "tracking": 0,
-      "weight_offset": 110
-    }
+  "palette": {
+    "accent": "#c69c6d",
+    "background": "#201510",
+    "font": "display",
+    "foreground": "#f3e5d1",
+    "secondary": "#8d664b",
+    "surface": "#3b281e"
   },
-  "schema_version": "1.0",
-  "summary": "皮革匠作：follow a seam-sized detail before returning to the whole form. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+  "typography": {
+    "leading": 1.17,
+    "scale": 1.0250000000000001,
+    "tracking": 0,
+    "weight_offset": 110
+  },
+  "motion": {
+    "ease": "swift",
+    "name": "none",
+    "strength": 0.8300000000000001
+  },
+  "graphics": {
+    "line_width": 0.8,
+    "opacity": 0.121,
+    "overlay": "none",
+    "panel_radius": 41
+  }
 }

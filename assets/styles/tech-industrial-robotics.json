@@ -1,18 +1,15 @@
 {
-  "avoid": [
-    "unmotivated decorative motion",
-    "unreadable small copy",
-    "invented product or gameplay proof"
-  ],
-  "beat_plan": [
-    "Hook: industrial rhythm",
-    "Establish: anchor a heavy product mass with functional marks",
-    "Prove: use an approved local capture or truthful designed-motion detail",
-    "Payoff: workshop precision with one clear final identity"
-  ],
-  "best_for": [
-    "tech promotional video",
-    "product or character identity reveal"
+  "schema": "web2video/style/1",
+  "id": "tech-industrial-robotics",
+  "name": "工业机械",
+  "family": "tech",
+  "keywords": [
+    "industrial rhythm",
+    "warning accent",
+    "structural mass",
+    "measured joint",
+    "hard boundary",
+    "workshop precision"
   ],
   "direction": {
     "camera": "Guide attention with industrial rhythm; use a deliberate hold, a measured approach and a stable payoff.",
@@ -23,65 +20,34 @@
     "sound": "Create a restrained rhythm around hard boundary; place licensed accents on intentional cuts and keep speech clear.",
     "typography": "Use industrial rhythm,warning accent,structural mass,measured joint,hard boundary,workshop precision as hierarchy cues; keep display copy short and body copy readable at final delivery size."
   },
-  "family": "tech",
-  "id": "tech-industrial-robotics",
-  "keywords": [
-    "industrial rhythm",
-    "warning accent",
-    "structural mass",
-    "measured joint",
-    "hard boundary",
-    "workshop precision"
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
   ],
-  "name": "工业机械",
-  "reference_ids": [
-    "hyperframes-creative",
-    "hyperframes-product-launch",
-    "video-shotcraft",
-    "product-demo-video"
-  ],
-  "render": {
-    "backgrounds": [
-      "aurora",
-      "silk"
-    ],
-    "base_template": "keynote-material-midnight",
-    "graphics": {
-      "line_width": 0.8,
-      "opacity": 0.11199999999999999,
-      "overlay": "none",
-      "panel_radius": 37
-    },
-    "layouts": [
-      "center",
-      "left"
-    ],
-    "motion": {
-      "ease": "swift",
-      "name": "none",
-      "strength": 0.76
-    },
-    "overlap_ratio": 0.15500000000000003,
-    "theme": {
-      "accent": "#f2bf56",
-      "background": "#1c2023",
-      "font": "sans",
-      "foreground": "#f1f0e8",
-      "secondary": "#9ba8b0",
-      "surface": "#353c40"
-    },
-    "transitions": [
-      "soft-wipe",
-      "center-wipe",
-      "lens"
-    ],
-    "typography": {
-      "leading": 1.17,
-      "scale": 1,
-      "tracking": 0,
-      "weight_offset": 120
-    }
+  "palette": {
+    "accent": "#f2bf56",
+    "background": "#1c2023",
+    "font": "sans",
+    "foreground": "#f1f0e8",
+    "secondary": "#9ba8b0",
+    "surface": "#353c40"
   },
-  "schema_version": "1.0",
-  "summary": "工业机械：anchor a heavy product mass with functional marks. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+  "typography": {
+    "leading": 1.17,
+    "scale": 1,
+    "tracking": 0,
+    "weight_offset": 120
+  },
+  "motion": {
+    "ease": "swift",
+    "name": "none",
+    "strength": 0.76
+  },
+  "graphics": {
+    "line_width": 0.8,
+    "opacity": 0.11199999999999999,
+    "overlay": "none",
+    "panel_radius": 37
+  }
 }

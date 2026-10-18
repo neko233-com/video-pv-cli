@@ -1,18 +1,15 @@
 {
-  "avoid": [
-    "unmotivated decorative motion",
-    "unreadable small copy",
-    "invented product or gameplay proof"
-  ],
-  "beat_plan": [
-    "Hook: airy composition",
-    "Establish: keep weight near the center and generous light margins",
-    "Prove: use an approved local capture or truthful designed-motion detail",
-    "Payoff: soft geometry with one clear final identity"
-  ],
-  "best_for": [
-    "keynote promotional video",
-    "product or character identity reveal"
+  "schema": "web2video/style/1",
+  "id": "keynote-ultralight",
+  "name": "轻盈留白",
+  "family": "keynote",
+  "keywords": [
+    "airy composition",
+    "thin strokes",
+    "small label",
+    "slow float",
+    "pale space",
+    "soft geometry"
   ],
   "direction": {
     "camera": "Guide attention with airy composition; use a deliberate hold, a measured approach and a stable payoff.",
@@ -23,65 +20,34 @@
     "sound": "Create a restrained rhythm around pale space; place licensed accents on intentional cuts and keep speech clear.",
     "typography": "Use airy composition,thin strokes,small label,slow float,pale space,soft geometry as hierarchy cues; keep display copy short and body copy readable at final delivery size."
   },
-  "family": "keynote",
-  "id": "keynote-ultralight",
-  "keywords": [
-    "airy composition",
-    "thin strokes",
-    "small label",
-    "slow float",
-    "pale space",
-    "soft geometry"
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
   ],
-  "name": "轻盈留白",
-  "reference_ids": [
-    "hyperframes-creative",
-    "hyperframes-product-launch",
-    "video-shotcraft",
-    "product-demo-video"
-  ],
-  "render": {
-    "backgrounds": [
-      "caustics",
-      "fluid"
-    ],
-    "base_template": "keynote-features-porcelain",
-    "graphics": {
-      "line_width": 1.4,
-      "opacity": 0.10300000000000001,
-      "overlay": "corner-ticks",
-      "panel_radius": 12
-    },
-    "layouts": [
-      "center",
-      "left"
-    ],
-    "motion": {
-      "ease": "inOutCubic",
-      "name": "float",
-      "strength": 0.6900000000000001
-    },
-    "overlap_ratio": 0.13,
-    "theme": {
-      "accent": "#6d7e8c",
-      "background": "#f7f6f2",
-      "font": "sans",
-      "foreground": "#3c4449",
-      "secondary": "#bac4ca",
-      "surface": "#ffffff"
-    },
-    "transitions": [
-      "blur-cross",
-      "crossfade",
-      "zoom-in"
-    ],
-    "typography": {
-      "leading": 1.23,
-      "scale": 0.9750000000000001,
-      "tracking": 0.9,
-      "weight_offset": 40
-    }
+  "palette": {
+    "accent": "#6d7e8c",
+    "background": "#f7f6f2",
+    "font": "sans",
+    "foreground": "#3c4449",
+    "secondary": "#bac4ca",
+    "surface": "#ffffff"
   },
-  "schema_version": "1.0",
-  "summary": "轻盈留白：keep weight near the center and generous light margins. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+  "typography": {
+    "leading": 1.23,
+    "scale": 0.9750000000000001,
+    "tracking": 0.9,
+    "weight_offset": 40
+  },
+  "motion": {
+    "ease": "inOutCubic",
+    "name": "float",
+    "strength": 0.6900000000000001
+  },
+  "graphics": {
+    "line_width": 1.4,
+    "opacity": 0.10300000000000001,
+    "overlay": "corner-ticks",
+    "panel_radius": 12
+  }
 }

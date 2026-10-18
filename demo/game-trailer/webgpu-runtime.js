@@ -3,13 +3,13 @@ export async function createGPUShader(canvas, shaderPath, {textures={}}={}) {
  if(!globalThis.isSecureContext||!navigator.gpu)throw new Error('PV_WEBGPU_UNAVAILABLE: use a WebGPU-capable Chromium on localhost/HTTPS');
  const adapter=await navigator.gpu.requestAdapter();
  if(!adapter)throw new Error('PV_WEBGPU_NO_ADAPTER');
- const device=await adapter.requestDevice({label:'video-pv-cli WebGPU'});
+ const device=await adapter.requestDevice({label:'web2video WebGPU'});
  let fatal;
  const fail=reason=>{fatal=new Error(reason);queueMicrotask(()=>{throw fatal;});};
  device.addEventListener('uncapturederror',event=>{event.preventDefault();fail('PV_WEBGPU_VALIDATION: '+event.error.message);});
  device.lost.then(info=>fail(`PV_WEBGPU_DEVICE_LOST: ${info.reason}: ${info.message}`));
  async function source(path,parents=[]) {
-  const url=new URL(path,location.href);
+  const url=new URL(path,document.baseURI);
   if(url.origin!==location.origin)throw new Error('WGSL resources must be local');
   if(parents.includes(url.href)||parents.length>24)throw new Error('WGSL include cycle/depth limit');
   const response=await fetch(url);if(!response.ok)throw new Error(`WGSL load failed: ${url.pathname}`);
@@ -32,7 +32,7 @@ export async function createGPUShader(canvas, shaderPath, {textures={}}={}) {
  const bindings=new Map();
  for(const [name,input] of Object.entries(textures)){
   let source=input;
-  if(typeof input==='string'){const url=new URL(input,location.href);if(url.origin!==location.origin)throw new Error('GPU textures must be local');source=new Image();source.src=url.href;await source.decode();}
+  if(typeof input==='string'){const url=new URL(input,document.baseURI);if(url.origin!==location.origin)throw new Error('GPU textures must be local');source=new Image();source.src=url.href;await source.decode();}
   const texture=device.createTexture({label:name,size:[source.width,source.height],format:'rgba8unorm',usage:GPUTextureUsage.TEXTURE_BINDING|GPUTextureUsage.COPY_DST|GPUTextureUsage.RENDER_ATTACHMENT});
   bindings.set(name,{texture,width:source.width,height:source.height});
   if(typeof input==='string')device.queue.copyExternalImageToTexture({source},{texture,premultipliedAlpha:false},[source.width,source.height]);

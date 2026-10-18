@@ -1,0 +1,30 @@
+[
+  {
+    "case": "keynote-product",
+    "repeat_runs": 2,
+    "unchanged": true,
+    "files": 22,
+    "tree_sha256": "078a9fdd73f57a36cdad08f0637a600c3d4f9eabd83fa72f84ec1218fcfc8a1c"
+  },
+  {
+    "case": "anime-character",
+    "repeat_runs": 2,
+    "unchanged": true,
+    "files": 19,
+    "tree_sha256": "ffd5beb23eb9cb096f29059f38c80ed0db70514cb6c15c38056747d610411328"
+  },
+  {
+    "case": "game-trailer",
+    "repeat_runs": 2,
+    "unchanged": true,
+    "files": 19,
+    "tree_sha256": "404817bac44898ccc00934b2f0ff10781d3dc55a1f0818f44937544fbd792e72"
+  },
+  {
+    "case": "website-background",
+    "repeat_runs": 2,
+    "unchanged": true,
+    "files": 19,
+    "tree_sha256": "9fbd9ef12b0758c78426f1384cf8f70d18864dcd8b5c34c4f15741f42edc6734"
+  }
+]

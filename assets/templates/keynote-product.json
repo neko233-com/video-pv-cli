@@ -1,0 +1,9 @@
+{
+  "schema": "web2video/project/1", "title": "AURA — Made to move", "template": "keynote-product", "style": "luxury-chrome-sculpture", "width": 1920, "height": 1080, "fps": 30, "loop": false,
+  "scenes": [
+    {"id":"reveal","duration":3.5,"layout":"hero","kicker":"INTRODUCING AURA","title":"Play.\nBeautifully.","subtitle":"A concept in portable play.","image":"assets/product.png","zoom":1.03,"x":0.5,"y":0.5,"transition":"crossfade"},
+    {"id":"material","duration":3,"layout":"detail","kicker":"DESIGNED AROUND YOU","title":"Every detail.\nConsidered.","subtitle":"Sculpted controls. Quiet confidence.","image":"assets/product.png","zoom":1.6,"x":0.78,"y":0.62,"transition":"light-sweep"},
+    {"id":"statement","duration":2.5,"layout":"statement","kicker":"LESS BETWEEN YOU AND PLAY","title":"MADE\nTO MOVE.","subtitle":"","image":"assets/product.png","zoom":1.13,"x":0.55,"y":0.6,"transition":"dip-black"},
+    {"id":"signature","duration":3,"layout":"hero","kicker":"AURA / CONCEPT FILM","title":"Your next\ngreat escape.","subtitle":"Take your world with you.","image":"assets/product.png","zoom":1,"x":0.5,"y":0.5,"transition":"crossfade"}
+  ]
+}

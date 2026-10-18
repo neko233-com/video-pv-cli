@@ -1,18 +1,15 @@
 {
-  "avoid": [
-    "unmotivated decorative motion",
-    "unreadable small copy",
-    "invented product or gameplay proof"
-  ],
-  "beat_plan": [
-    "Hook: wood grain",
-    "Establish: lead from a material-sized crop to a crafted whole",
-    "Prove: use an approved local capture or truthful designed-motion detail",
-    "Payoff: human scale with one clear final identity"
-  ],
-  "best_for": [
-    "organic promotional video",
-    "product or character identity reveal"
+  "schema": "web2video/style/1",
+  "id": "organic-wood-craft",
+  "name": "木作温度",
+  "family": "organic",
+  "keywords": [
+    "wood grain",
+    "crafted detail",
+    "warm shadow",
+    "material honesty",
+    "patient macro",
+    "human scale"
   ],
   "direction": {
     "camera": "Guide attention with wood grain; use a deliberate hold, a measured approach and a stable payoff.",
@@ -23,65 +20,34 @@
     "sound": "Create a restrained rhythm around patient macro; place licensed accents on intentional cuts and keep speech clear.",
     "typography": "Use wood grain,crafted detail,warm shadow,material honesty,patient macro,human scale as hierarchy cues; keep display copy short and body copy readable at final delivery size."
   },
-  "family": "organic",
-  "id": "organic-wood-craft",
-  "keywords": [
-    "wood grain",
-    "crafted detail",
-    "warm shadow",
-    "material honesty",
-    "patient macro",
-    "human scale"
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
   ],
-  "name": "木作温度",
-  "reference_ids": [
-    "hyperframes-creative",
-    "hyperframes-product-launch",
-    "video-shotcraft",
-    "product-demo-video"
-  ],
-  "render": {
-    "backgrounds": [
-      "aurora",
-      "mesh"
-    ],
-    "base_template": "keynote-gallery-sakura",
-    "graphics": {
-      "line_width": 1.4,
-      "opacity": 0.08499999999999999,
-      "overlay": "registration",
-      "panel_radius": 39
-    },
-    "layouts": [
-      "left",
-      "right"
-    ],
-    "motion": {
-      "ease": "spring",
-      "name": "pull-out",
-      "strength": 0.55
-    },
-    "overlap_ratio": 0.08,
-    "theme": {
-      "accent": "#c3a276",
-      "background": "#2b2119",
-      "font": "sans",
-      "foreground": "#f0e6d2",
-      "secondary": "#9e7e56",
-      "surface": "#49382a"
-    },
-    "transitions": [
-      "noise-dissolve",
-      "ripple",
-      "soft-wipe"
-    ],
-    "typography": {
-      "leading": 1.05,
-      "scale": 0.925,
-      "tracking": 0.9,
-      "weight_offset": -40
-    }
+  "palette": {
+    "accent": "#c3a276",
+    "background": "#2b2119",
+    "font": "sans",
+    "foreground": "#f0e6d2",
+    "secondary": "#9e7e56",
+    "surface": "#49382a"
   },
-  "schema_version": "1.0",
-  "summary": "木作温度：lead from a material-sized crop to a crafted whole. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+  "typography": {
+    "leading": 1.05,
+    "scale": 0.925,
+    "tracking": 0.9,
+    "weight_offset": -40
+  },
+  "motion": {
+    "ease": "spring",
+    "name": "pull-out",
+    "strength": 0.55
+  },
+  "graphics": {
+    "line_width": 1.4,
+    "opacity": 0.08499999999999999,
+    "overlay": "registration",
+    "panel_radius": 39
+  }
 }

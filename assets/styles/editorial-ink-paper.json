@@ -1,18 +1,15 @@
 {
-  "avoid": [
-    "unmotivated decorative motion",
-    "unreadable small copy",
-    "invented product or gameplay proof"
-  ],
-  "beat_plan": [
-    "Hook: paper grain",
-    "Establish: build a tactile print composition with a dominant headline",
-    "Prove: use an approved local capture or truthful designed-motion detail",
-    "Payoff: crafted margin with one clear final identity"
-  ],
-  "best_for": [
-    "editorial promotional video",
-    "product or character identity reveal"
+  "schema": "web2video/style/1",
+  "id": "editorial-ink-paper",
+  "name": "纸墨印象",
+  "family": "editorial",
+  "keywords": [
+    "paper grain",
+    "ink contrast",
+    "printed label",
+    "warm restraint",
+    "cut rhythm",
+    "crafted margin"
   ],
   "direction": {
     "camera": "Guide attention with paper grain; use a deliberate hold, a measured approach and a stable payoff.",
@@ -23,65 +20,34 @@
     "sound": "Create a restrained rhythm around cut rhythm; place licensed accents on intentional cuts and keep speech clear.",
     "typography": "Use paper grain,ink contrast,printed label,warm restraint,cut rhythm,crafted margin as hierarchy cues; keep display copy short and body copy readable at final delivery size."
   },
-  "family": "editorial",
-  "id": "editorial-ink-paper",
-  "keywords": [
-    "paper grain",
-    "ink contrast",
-    "printed label",
-    "warm restraint",
-    "cut rhythm",
-    "crafted margin"
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
   ],
-  "name": "纸墨印象",
-  "reference_ids": [
-    "hyperframes-creative",
-    "hyperframes-product-launch",
-    "video-shotcraft",
-    "product-demo-video"
-  ],
-  "render": {
-    "backgrounds": [
-      "silk",
-      "rings"
-    ],
-    "base_template": "keynote-features-monochrome",
-    "graphics": {
-      "line_width": 0.8,
-      "opacity": 0.057999999999999996,
-      "overlay": "letterbox",
-      "panel_radius": 43
-    },
-    "layouts": [
-      "left",
-      "center"
-    ],
-    "motion": {
-      "ease": "spring",
-      "name": "drift-up",
-      "strength": 0.34
-    },
-    "overlap_ratio": 0.13,
-    "theme": {
-      "accent": "#74604b",
-      "background": "#e8e1d2",
-      "font": "sans",
-      "foreground": "#292622",
-      "secondary": "#ab987e",
-      "surface": "#f5f0e4"
-    },
-    "transitions": [
-      "cut",
-      "page-turn",
-      "crossfade"
-    ],
-    "typography": {
-      "leading": 1.11,
-      "scale": 0.8500000000000001,
-      "tracking": 0,
-      "weight_offset": 30
-    }
+  "palette": {
+    "accent": "#74604b",
+    "background": "#e8e1d2",
+    "font": "sans",
+    "foreground": "#292622",
+    "secondary": "#ab987e",
+    "surface": "#f5f0e4"
   },
-  "schema_version": "1.0",
-  "summary": "纸墨印象：build a tactile print composition with a dominant headline. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+  "typography": {
+    "leading": 1.11,
+    "scale": 0.8500000000000001,
+    "tracking": 0,
+    "weight_offset": 30
+  },
+  "motion": {
+    "ease": "spring",
+    "name": "drift-up",
+    "strength": 0.34
+  },
+  "graphics": {
+    "line_width": 0.8,
+    "opacity": 0.057999999999999996,
+    "overlay": "letterbox",
+    "panel_radius": 43
+  }
 }

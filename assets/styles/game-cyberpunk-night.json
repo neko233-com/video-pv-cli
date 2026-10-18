@@ -1,18 +1,15 @@
 {
-  "avoid": [
-    "unmotivated decorative motion",
-    "unreadable small copy",
-    "invented product or gameplay proof"
-  ],
-  "beat_plan": [
-    "Hook: wet neon",
-    "Establish: hold one readable subject against a layered night city",
-    "Prove: use an approved local capture or truthful designed-motion detail",
-    "Payoff: sharp pulse with one clear final identity"
-  ],
-  "best_for": [
-    "game promotional video",
-    "product or character identity reveal"
+  "schema": "web2video/style/1",
+  "id": "game-cyberpunk-night",
+  "name": "赛博夜城",
+  "family": "game",
+  "keywords": [
+    "wet neon",
+    "urban depth",
+    "chromatic edge",
+    "signal noise",
+    "night silhouette",
+    "sharp pulse"
   ],
   "direction": {
     "camera": "Guide attention with wet neon; use a deliberate hold, a measured approach and a stable payoff.",
@@ -23,65 +20,34 @@
     "sound": "Create a restrained rhythm around night silhouette; place licensed accents on intentional cuts and keep speech clear.",
     "typography": "Use wet neon,urban depth,chromatic edge,signal noise,night silhouette,sharp pulse as hierarchy cues; keep display copy short and body copy readable at final delivery size."
   },
-  "family": "game",
-  "id": "game-cyberpunk-night",
-  "keywords": [
-    "wet neon",
-    "urban depth",
-    "chromatic edge",
-    "signal noise",
-    "night silhouette",
-    "sharp pulse"
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
   ],
-  "name": "赛博夜城",
-  "reference_ids": [
-    "hyperframes-creative",
-    "hyperframes-product-launch",
-    "video-shotcraft",
-    "product-demo-video"
-  ],
-  "render": {
-    "backgrounds": [
-      "aurora",
-      "caustics"
-    ],
-    "base_template": "game-world-midnight",
-    "graphics": {
-      "line_width": 1.1,
-      "opacity": 0.057999999999999996,
-      "overlay": "crosshair",
-      "panel_radius": 50
-    },
-    "layouts": [
-      "left",
-      "asymmetric"
-    ],
-    "motion": {
-      "ease": "linear",
-      "name": "orbit",
-      "strength": 0.34
-    },
-    "overlap_ratio": 0.13,
-    "theme": {
-      "accent": "#f178b4",
-      "background": "#100d20",
-      "font": "sans",
-      "foreground": "#f1ecff",
-      "secondary": "#5fd4e0",
-      "surface": "#271e3b"
-    },
-    "transitions": [
-      "cut",
-      "chromatic",
-      "shutter"
-    ],
-    "typography": {
-      "leading": 1.17,
-      "scale": 0.8500000000000001,
-      "tracking": 0.45,
-      "weight_offset": 60
-    }
+  "palette": {
+    "accent": "#f178b4",
+    "background": "#100d20",
+    "font": "sans",
+    "foreground": "#f1ecff",
+    "secondary": "#5fd4e0",
+    "surface": "#271e3b"
   },
-  "schema_version": "1.0",
-  "summary": "赛博夜城：hold one readable subject against a layered night city. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+  "typography": {
+    "leading": 1.17,
+    "scale": 0.8500000000000001,
+    "tracking": 0.45,
+    "weight_offset": 60
+  },
+  "motion": {
+    "ease": "linear",
+    "name": "orbit",
+    "strength": 0.34
+  },
+  "graphics": {
+    "line_width": 1.1,
+    "opacity": 0.057999999999999996,
+    "overlay": "crosshair",
+    "panel_radius": 50
+  }
 }

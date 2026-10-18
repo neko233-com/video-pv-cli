@@ -1,18 +1,15 @@
 {
-  "avoid": [
-    "unmotivated decorative motion",
-    "unreadable small copy",
-    "invented product or gameplay proof"
-  ],
-  "beat_plan": [
-    "Hook: negative space",
-    "Establish: one hero isolated inside a wide empty field",
-    "Prove: use an approved local capture or truthful designed-motion detail",
-    "Payoff: slow release with one clear final identity"
-  ],
-  "best_for": [
-    "keynote promotional video",
-    "product or character identity reveal"
+  "schema": "web2video/style/1",
+  "id": "keynote-silent-reveal",
+  "name": "静场揭幕",
+  "family": "keynote",
+  "keywords": [
+    "negative space",
+    "restrained reveal",
+    "hero silhouette",
+    "single promise",
+    "quiet stage",
+    "slow release"
   ],
   "direction": {
     "camera": "Guide attention with negative space; use a deliberate hold, a measured approach and a stable payoff.",
@@ -23,65 +20,34 @@
     "sound": "Create a restrained rhythm around quiet stage; place licensed accents on intentional cuts and keep speech clear.",
     "typography": "Use negative space,restrained reveal,hero silhouette,single promise,quiet stage,slow release as hierarchy cues; keep display copy short and body copy readable at final delivery size."
   },
-  "family": "keynote",
-  "id": "keynote-silent-reveal",
-  "keywords": [
-    "negative space",
-    "restrained reveal",
-    "hero silhouette",
-    "single promise",
-    "quiet stage",
-    "slow release"
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
   ],
-  "name": "静场揭幕",
-  "reference_ids": [
-    "hyperframes-creative",
-    "hyperframes-product-launch",
-    "video-shotcraft",
-    "product-demo-video"
-  ],
-  "render": {
-    "backgrounds": [
-      "solid",
-      "mesh"
-    ],
-    "base_template": "keynote-product-porcelain",
-    "graphics": {
-      "line_width": 0.8,
-      "opacity": 0.04,
-      "overlay": "none",
-      "panel_radius": 0
-    },
-    "layouts": [
-      "center",
-      "left"
-    ],
-    "motion": {
-      "ease": "inOutCubic",
-      "name": "none",
-      "strength": 0.2
-    },
-    "overlap_ratio": 0.08,
-    "theme": {
-      "accent": "#245fe7",
-      "background": "#f5f6f8",
-      "font": "sans",
-      "foreground": "#16191e",
-      "secondary": "#b4caff",
-      "surface": "#ffffff"
-    },
-    "transitions": [
-      "crossfade",
-      "blur-cross",
-      "zoom-in"
-    ],
-    "typography": {
-      "leading": 1.05,
-      "scale": 0.8,
-      "tracking": 0,
-      "weight_offset": -100
-    }
+  "palette": {
+    "accent": "#245fe7",
+    "background": "#f5f6f8",
+    "font": "sans",
+    "foreground": "#16191e",
+    "secondary": "#b4caff",
+    "surface": "#ffffff"
   },
-  "schema_version": "1.0",
-  "summary": "静场揭幕：one hero isolated inside a wide empty field. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+  "typography": {
+    "leading": 1.05,
+    "scale": 0.8,
+    "tracking": 0,
+    "weight_offset": -100
+  },
+  "motion": {
+    "ease": "inOutCubic",
+    "name": "none",
+    "strength": 0.2
+  },
+  "graphics": {
+    "line_width": 0.8,
+    "opacity": 0.04,
+    "overlay": "none",
+    "panel_radius": 0
+  }
 }

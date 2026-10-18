@@ -1,18 +1,15 @@
 {
-  "avoid": [
-    "unmotivated decorative motion",
-    "unreadable small copy",
-    "invented product or gameplay proof"
-  ],
-  "beat_plan": [
-    "Hook: chrome mass",
-    "Establish: treat a product form as a gallery sculpture",
-    "Prove: use an approved local capture or truthful designed-motion detail",
-    "Payoff: black pedestal with one clear final identity"
-  ],
-  "best_for": [
-    "luxury promotional video",
-    "product or character identity reveal"
+  "schema": "web2video/style/1",
+  "id": "luxury-chrome-sculpture",
+  "name": "铬面雕塑",
+  "family": "luxury",
+  "keywords": [
+    "chrome mass",
+    "sculptural form",
+    "curved reflection",
+    "gallery space",
+    "slow orbit",
+    "black pedestal"
   ],
   "direction": {
     "camera": "Guide attention with chrome mass; use a deliberate hold, a measured approach and a stable payoff.",
@@ -23,65 +20,34 @@
     "sound": "Create a restrained rhythm around slow orbit; place licensed accents on intentional cuts and keep speech clear.",
     "typography": "Use chrome mass,sculptural form,curved reflection,gallery space,slow orbit,black pedestal as hierarchy cues; keep display copy short and body copy readable at final delivery size."
   },
-  "family": "luxury",
-  "id": "luxury-chrome-sculpture",
-  "keywords": [
-    "chrome mass",
-    "sculptural form",
-    "curved reflection",
-    "gallery space",
-    "slow orbit",
-    "black pedestal"
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
   ],
-  "name": "铬面雕塑",
-  "reference_ids": [
-    "hyperframes-creative",
-    "hyperframes-product-launch",
-    "video-shotcraft",
-    "product-demo-video"
-  ],
-  "render": {
-    "backgrounds": [
-      "rings",
-      "particles"
-    ],
-    "base_template": "keynote-material-obsidian",
-    "graphics": {
-      "line_width": 2,
-      "opacity": 0.067,
-      "overlay": "halftone",
-      "panel_radius": 40
-    },
-    "layouts": [
-      "asymmetric",
-      "left"
-    ],
-    "motion": {
-      "ease": "settle",
-      "name": "drift-right",
-      "strength": 0.41000000000000003
-    },
-    "overlap_ratio": 0.15500000000000003,
-    "theme": {
-      "accent": "#5e7188",
-      "background": "#dfe4e8",
-      "font": "display",
-      "foreground": "#202a35",
-      "secondary": "#9bafc2",
-      "surface": "#f4f7fa"
-    },
-    "transitions": [
-      "light-sweep",
-      "crossfade",
-      "iris"
-    ],
-    "typography": {
-      "leading": 1.05,
-      "scale": 0.875,
-      "tracking": 1.8,
-      "weight_offset": -10
-    }
+  "palette": {
+    "accent": "#5e7188",
+    "background": "#dfe4e8",
+    "font": "display",
+    "foreground": "#202a35",
+    "secondary": "#9bafc2",
+    "surface": "#f4f7fa"
   },
-  "schema_version": "1.0",
-  "summary": "铬面雕塑：treat a product form as a gallery sculpture. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+  "typography": {
+    "leading": 1.05,
+    "scale": 0.875,
+    "tracking": 1.8,
+    "weight_offset": -10
+  },
+  "motion": {
+    "ease": "settle",
+    "name": "drift-right",
+    "strength": 0.41000000000000003
+  },
+  "graphics": {
+    "line_width": 2,
+    "opacity": 0.067,
+    "overlay": "halftone",
+    "panel_radius": 40
+  }
 }

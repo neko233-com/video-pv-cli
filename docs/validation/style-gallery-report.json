@@ -1,8 +1,0 @@
-{
-  "passed": true,
-  "cases": 100,
-  "canonical_evidence": "work/catalog-validation",
-  "files": 5,
-  "catalog_sha256": "0bb6c7f0c045276eea130111c745dd9784c677b0f48b95f43e6a070173dc88d1",
-  "idempotent": true
-}

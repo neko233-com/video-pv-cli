@@ -3,577 +3,446 @@ package main
 import (
 	"bytes"
 	"encoding/json"
+	"flag"
 	"fmt"
+	"html/template"
 	"io"
+	"io/fs"
 	"math"
 	"os"
 	"path/filepath"
 	"regexp"
+	"sort"
+	"strconv"
 	"strings"
 )
 
-type ProjectFile struct {
-	SchemaVersion string      `json:"schema_version"`
-	Project       ProjectInfo `json:"project"`
-	Assets        []Asset     `json:"assets"`
-	Claims        []Claim     `json:"claims"`
-	Shots         []Shot      `json:"shots"`
-	Delivery      Delivery    `json:"delivery"`
-	Review        Review      `json:"review"`
+type Scene struct {
+	ID         string  `json:"id"`
+	Duration   float64 `json:"duration"`
+	Start      float64 `json:"start"`
+	Layout     string  `json:"layout"`
+	Kicker     string  `json:"kicker"`
+	Title      string  `json:"title"`
+	Subtitle   string  `json:"subtitle"`
+	Image      string  `json:"image"`
+	Zoom       float64 `json:"zoom"`
+	X          float64 `json:"x"`
+	Y          float64 `json:"y"`
+	Transition string  `json:"transition"`
+	Style      string  `json:"style,omitempty"`
+}
+type Project struct {
+	Schema      string                     `json:"schema"`
+	Title       string                     `json:"title"`
+	Template    string                     `json:"template"`
+	Style       string                     `json:"style"`
+	Width       int                        `json:"width"`
+	Height      int                        `json:"height"`
+	FPS         int                        `json:"fps"`
+	Loop        bool                       `json:"loop"`
+	Scenes      []Scene                    `json:"scenes"`
+	Duration    float64                    `json:"duration,omitempty"`
+	Transitions map[string]json.RawMessage `json:"transitions,omitempty"`
+	Looks       map[string]json.RawMessage `json:"looks,omitempty"`
 }
 
-type ProjectInfo struct {
-	Title            string   `json:"title"`
-	Type             string   `json:"type"`
-	DurationSeconds  float64  `json:"duration_seconds"`
-	Width            int      `json:"width"`
-	Height           int      `json:"height"`
-	FPS              float64  `json:"fps"`
-	AspectRatio      string   `json:"aspect_ratio,omitempty"`
-	Platforms        []string `json:"platforms"`
-	Language         string   `json:"language"`
-	AudioRequired    bool     `json:"audio_required"`
-	CaptionsRequired bool     `json:"captions_required"`
-}
+var identifier = regexp.MustCompile(`^[a-z][a-z0-9-]{0,79}$`)
 
-type Asset struct {
-	ID           string `json:"id"`
-	Path         string `json:"path"`
-	Role         string `json:"role"`
-	Source       string `json:"source"`
-	RightsStatus string `json:"rights_status"`
-	Status       string `json:"status"`
-	Attribution  string `json:"attribution,omitempty"`
+func decodeStrict(raw []byte, value any) error {
+	if err := rejectDuplicateKeys(raw); err != nil {
+		return err
+	}
+	d := json.NewDecoder(bytes.NewReader(raw))
+	d.DisallowUnknownFields()
+	if err := d.Decode(value); err != nil {
+		return err
+	}
+	if d.Decode(new(any)) != io.EOF {
+		return fmt.Errorf("trailing JSON content")
+	}
+	return nil
 }
-
-type Claim struct {
-	ID               string   `json:"id"`
-	Text             string   `json:"text"`
-	EvidenceAssetIDs []string `json:"evidence_asset_ids"`
-}
-
-type Shot struct {
-	ID                string   `json:"id"`
-	StartSeconds      float64  `json:"start_seconds"`
-	EndSeconds        float64  `json:"end_seconds"`
-	Beat              string   `json:"beat"`
-	Role              string   `json:"role"`
-	VisualDescription string   `json:"visual_description"`
-	AssetIDs          []string `json:"asset_ids"`
-	ClaimIDs          []string `json:"claim_ids"`
-	Status            string   `json:"status"`
-}
-
-type Delivery struct {
-	PixelFormat string `json:"pixel_format,omitempty"`
-	Container   string `json:"container,omitempty"`
-	VideoPath   string `json:"video_path"`
-	VideoCodec  string `json:"video_codec,omitempty"`
-	AudioCodec  string `json:"audio_codec,omitempty"`
-}
-
-type Review struct {
-	CreativeApproved bool   `json:"creative_approved"`
-	Reviewer         string `json:"reviewer"`
-	ApprovedAt       string `json:"approved_at"`
-}
-
-type Check struct {
-	Code    string `json:"code"`
-	Status  string `json:"status"`
-	Message string `json:"message"`
-}
-
-type MediaSummary struct {
-	VideoStreams         int     `json:"video_streams,omitempty"`
-	AudioStreams         int     `json:"audio_streams,omitempty"`
-	AudioDurationSeconds float64 `json:"audio_duration_seconds,omitempty"`
-	AudioStartSeconds    float64 `json:"audio_start_seconds,omitempty"`
-	PixelFormat          string  `json:"pixel_format,omitempty"`
-	VideoDurationSeconds float64 `json:"video_duration_seconds,omitempty"`
-	Frames               int64   `json:"frames,omitempty"`
-	Path                 string  `json:"path"`
-	Container            string  `json:"container"`
-	VideoCodec           string  `json:"video_codec"`
-	AudioCodec           string  `json:"audio_codec,omitempty"`
-	Width                int     `json:"width"`
-	Height               int     `json:"height"`
-	FPS                  float64 `json:"fps"`
-	DurationSeconds      float64 `json:"duration_seconds"`
-}
-
-type Report struct {
-	SourceSHA256 string        `json:"source_sha256,omitempty"`
-	ProjectTitle string        `json:"project_title"`
-	ReleaseMode  bool          `json:"release_mode"`
-	Passed       bool          `json:"passed"`
-	ReleaseReady bool          `json:"release_ready"`
-	Checks       []Check       `json:"checks"`
-	Media        *MediaSummary `json:"media,omitempty"`
-	MP4          *MP4Integrity `json:"mp4,omitempty"`
-}
-
-func (r *Report) add(code, status, message string) {
-	r.Checks = append(r.Checks, Check{Code: code, Status: status, Message: message})
-}
-
-func (r *Report) finish(release bool) {
-	r.ReleaseMode = release
-	r.Passed = true
-	for _, check := range r.Checks {
-		if check.Status == "fail" {
-			r.Passed = false
-			break
+func readProject(root string) (Project, error) {
+	var p Project
+	raw, err := os.ReadFile(filepath.Join(root, "project.json"))
+	if err != nil {
+		return p, err
+	}
+	if err = decodeStrict(raw, &p); err != nil {
+		return p, err
+	}
+	if p.Schema != "web2video/project/1" || p.Title == "" || !identifier.MatchString(p.Style) {
+		return p, fmt.Errorf("invalid project schema, title or style")
+	}
+	if p.Width < 64 || p.Width > 7680 || p.Height < 64 || p.Height > 7680 || p.Width%2 != 0 || p.Height%2 != 0 || p.FPS < 1 || p.FPS > 120 {
+		return p, fmt.Errorf("even dimensions 64..7680 and fps 1..120 required")
+	}
+	if len(p.Scenes) == 0 || len(p.Scenes) > 200 {
+		return p, fmt.Errorf("1..200 scenes required")
+	}
+	if p.Loop && len(p.Scenes) != 1 {
+		return p, fmt.Errorf("seamless loop requires a single periodic scene")
+	}
+	seen := map[string]bool{}
+	p.Duration = 0
+	p.Transitions = map[string]json.RawMessage{}
+	p.Looks = nil
+	for i := range p.Scenes {
+		s := &p.Scenes[i]
+		if !identifier.MatchString(s.ID) || seen[s.ID] {
+			return p, fmt.Errorf("invalid/duplicate scene id: %s", s.ID)
 		}
+		seen[s.ID] = true
+		if !finitePositive(s.Duration) || s.Duration < 1.5 || s.Duration > 600 || !finitePositive(s.Zoom) || s.Zoom < 1 || s.Zoom > 5 || math.IsNaN(s.X) || math.IsNaN(s.Y) || s.X < 0 || s.X > 1 || s.Y < 0 || s.Y > 1 {
+			return p, fmt.Errorf("invalid scene timing/crop: %s", s.ID)
+		}
+		if !contains([]string{"hero", "detail", "statement", "character", "ambient"}, s.Layout) {
+			return p, fmt.Errorf("unknown layout: %s", s.Layout)
+		}
+		path, e := projectFilePath(root, s.Image)
+		if e != nil {
+			return p, e
+		}
+		info, e := os.Stat(path)
+		if e != nil || !info.Mode().IsRegular() {
+			return p, fmt.Errorf("missing image: %s", s.Image)
+		}
+		if !identifier.MatchString(s.Transition) {
+			return p, fmt.Errorf("invalid transition")
+		}
+		transition, e := bundled.ReadFile("assets/catalog/transitions/" + s.Transition + ".json")
+		if e != nil {
+			return p, fmt.Errorf("unknown transition: %s", s.Transition)
+		}
+		p.Transitions[s.Transition] = transition
+		s.Start = p.Duration
+		p.Duration += s.Duration
 	}
-	r.ReleaseReady = release && r.Passed
+	return p, nil
 }
 
-func validateManifest(path string, release bool) (ProjectFile, Report) {
-	project := ProjectFile{}
-	report := Report{ProjectTitle: filepath.Base(filepath.Dir(path))}
-	data, err := os.ReadFile(path)
+func runLibrary(kind string, args []string, out, errOut io.Writer) int {
+	f := flag.NewFlagSet(kind, flag.ContinueOnError)
+	f.SetOutput(errOut)
+	show := f.String("show", "", "print one JSON data file")
+	if code := parseFlags(f, args); code >= 0 {
+		return code
+	}
+	folder := "assets/" + kind
+	if *show != "" {
+		if !identifier.MatchString(*show) {
+			return commandError(errOut, fmt.Errorf("invalid identifier"))
+		}
+		raw, err := bundled.ReadFile(folder + "/" + *show + ".json")
+		if err != nil {
+			return commandError(errOut, err)
+		}
+		_, _ = out.Write(raw)
+		return 0
+	}
+	entries, err := fs.ReadDir(bundled, folder)
 	if err != nil {
-		report.add("manifest.read", "fail", "could not read manifest: "+err.Error())
-		return project, report
+		return commandError(errOut, err)
 	}
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	if err := rejectDuplicateKeys(data); err != nil {
-		report.add("manifest.json", "fail", err.Error())
-		return project, report
+	for _, entry := range entries {
+		fmt.Fprintln(out, strings.TrimSuffix(entry.Name(), ".json"))
 	}
-	decoder.DisallowUnknownFields()
-	if err := decoder.Decode(&project); err != nil {
-		report.add("manifest.json", "fail", "invalid manifest JSON: "+err.Error())
-		return project, report
-	}
-	if err := decoder.Decode(new(any)); err != io.EOF {
-		report.add("manifest.trailing_data", "fail", "manifest must contain exactly one JSON value")
-		return project, report
-	}
-	if strings.TrimSpace(project.Project.Title) != "" {
-		report.ProjectTitle = project.Project.Title
-	}
-	report.add("manifest.json", "pass", "manifest JSON is valid and contains no unknown fields")
-	root, err := filepath.EvalSymlinks(filepath.Dir(path))
-	if err != nil {
-		root, _ = filepath.Abs(filepath.Dir(path))
-	}
-	validateProjectFields(project, &report, release)
-	validateAssets(root, project.Assets, &report, release)
-	validateTemplateFiles(root, project, &report)
-	validateClaimsAndShots(project, &report, release)
-	validateCaptions(root, project, &report, release)
-	validateReview(project.Review, &report, release)
-	validateDeliveryPath(root, project.Delivery.VideoPath, &report)
-	return project, report
+	return 0
 }
-
-func validateProjectFields(project ProjectFile, report *Report, release bool) {
-	var problems []string
-	if project.SchemaVersion != "1.0" {
-		problems = append(problems, "schema_version must be 1.0")
+func runInit(args []string, out, errOut io.Writer) int {
+	f := flag.NewFlagSet("init", flag.ContinueOnError)
+	f.SetOutput(errOut)
+	dir := f.String("dir", "", "new project directory")
+	name := f.String("template", "keynote-product", "authored template name")
+	style := f.String("style", "", "override style preset")
+	if code := parseFlags(f, args); code >= 0 {
+		return code
 	}
-	if strings.TrimSpace(project.Project.Title) == "" {
-		problems = append(problems, "project.title is required")
+	if *dir == "" || !identifier.MatchString(*name) {
+		return commandError(errOut, fmt.Errorf("--dir and valid --template required"))
 	}
-	switch project.Project.Type {
-	case "game", "character", "product":
-	default:
-		problems = append(problems, "project.type must be game, character, or product")
+	target, err := filepath.Abs(*dir)
+	if err != nil {
+		return commandError(errOut, err)
 	}
-	if !finitePositive(project.Project.DurationSeconds) {
-		problems = append(problems, "project.duration_seconds must be a finite number greater than zero")
+	if _, err = os.Lstat(target); !os.IsNotExist(err) {
+		return commandError(errOut, fmt.Errorf("init requires a new directory: %s", target))
 	}
-	if project.Project.Width <= 0 || project.Project.Height <= 0 {
-		problems = append(problems, "project.width and project.height must be greater than zero")
+	raw, err := bundled.ReadFile("assets/templates/" + *name + ".json")
+	if err != nil {
+		return commandError(errOut, err)
 	}
-	if !finitePositive(project.Project.FPS) || project.Project.FPS > 240 {
-		problems = append(problems, "project.fps must be greater than zero and no more than 240")
+	var p Project
+	if err = json.Unmarshal(raw, &p); err != nil {
+		return commandError(errOut, err)
 	}
-	if len(project.Project.Platforms) == 0 && release {
-		problems = append(problems, "release mode requires at least one target platform")
+	if *style != "" {
+		p.Style = *style
 	}
-	if strings.TrimSpace(project.Project.Language) == "" && release {
-		problems = append(problems, "release mode requires a language")
+	parent := filepath.Dir(target)
+	if err = os.MkdirAll(parent, 0755); err != nil {
+		return commandError(errOut, err)
 	}
-	if project.Project.AspectRatio != "" {
-		ratio, ok := parseRatio(project.Project.AspectRatio)
+	stage, err := os.MkdirTemp(parent, ".web2video-init-")
+	if err != nil {
+		return commandError(errOut, err)
+	}
+	defer os.RemoveAll(stage)
+	sources := map[string]string{"assets/product.png": "assets/shared/product.png", "assets/world.png": "assets/shared/world.png", "assets/character.png": "assets/character/astral-knight.png"}
+	for _, s := range p.Scenes {
+		source, ok := sources[s.Image]
 		if !ok {
-			problems = append(problems, "project.aspect_ratio must use W:H form, for example 16:9")
-		} else if project.Project.Width > 0 && project.Project.Height > 0 {
-			actual := float64(project.Project.Width) / float64(project.Project.Height)
-			if math.Abs(actual-ratio)/ratio > 0.02 {
-				problems = append(problems, "project.aspect_ratio does not agree with width and height within 2 percent")
-			}
+			return commandError(errOut, fmt.Errorf("unknown embedded image"))
+		}
+		data, e := bundled.ReadFile(source)
+		if e != nil {
+			return commandError(errOut, e)
+		}
+		if e = writeFileAtomic(filepath.Join(stage, filepath.FromSlash(s.Image)), data); e != nil {
+			return commandError(errOut, e)
 		}
 	}
-	if len(problems) != 0 {
-		report.add("project.spec", "fail", strings.Join(problems, "; "))
-	} else {
-		report.add("project.spec", "pass", "project type and output specifications are valid")
+	raw, _ = json.MarshalIndent(p, "", "  ")
+	if err = writeFileAtomic(filepath.Join(stage, "project.json"), append(raw, '\n')); err != nil {
+		return commandError(errOut, err)
 	}
+	if err = writeFileAtomic(filepath.Join(stage, ".gitignore"), []byte(".web2video/\n.hyperframes/\nnode_modules/\nrenders/\n*.[mM][pP]4\n")); err != nil {
+		return commandError(errOut, err)
+	}
+	if err = buildProject(stage); err != nil {
+		return commandError(errOut, err)
+	}
+	if err = os.Rename(stage, target); err != nil {
+		return commandError(errOut, err)
+	}
+	fmt.Fprintln(out, "Created:", target)
+	return 0
 }
-
-func validateAssets(root string, assets []Asset, report *Report, release bool) {
-	ids := make(map[string]Asset, len(assets))
-	for i, asset := range assets {
-		prefix := fmt.Sprintf("assets[%d]", i)
-		if strings.TrimSpace(asset.ID) == "" {
-			report.add("asset.id", "fail", prefix+" has an empty id")
-			continue
-		}
-		if _, exists := ids[asset.ID]; exists {
-			report.add("asset.duplicate_id", "fail", "duplicate asset id: "+asset.ID)
-			continue
-		}
-		ids[asset.ID] = asset
-		if strings.TrimSpace(asset.Source) == "" {
-			report.add("asset.source", "fail", "asset "+asset.ID+" has no source/provenance note")
-		}
-		if strings.TrimSpace(asset.Role) == "" {
-			report.add("asset.role", "fail", "asset "+asset.ID+" has no role")
-		}
-		switch asset.RightsStatus {
-		case "cleared", "pending", "restricted", "unknown":
-		default:
-			report.add("asset.rights_value", "fail", "asset "+asset.ID+" has an invalid rights_status")
-		}
-		switch asset.Status {
-		case "planned", "draft", "approved", "rejected":
-		default:
-			report.add("asset.status_value", "fail", "asset "+asset.ID+" has an invalid status")
-		}
-		if asset.Path == "" {
-			if asset.Status == "approved" || release {
-				report.add("asset.path", "fail", "approved/release asset "+asset.ID+" must have a local path")
-			}
-		} else if filePath, err := projectFilePath(root, asset.Path); err != nil {
-			report.add("asset.path", "fail", "asset "+asset.ID+": "+err.Error())
-		} else if info, err := os.Stat(filePath); err != nil {
-			report.add("asset.missing", "fail", "asset "+asset.ID+" file not found: "+asset.Path)
-		} else if info.IsDir() || info.Size() == 0 {
-			report.add("asset.not_file", "fail", "asset "+asset.ID+" must point to a non-empty file")
-		}
-		if release {
-			if asset.Status != "approved" {
-				report.add("asset.not_approved", "fail", "asset "+asset.ID+" is not approved")
-			}
-			if asset.RightsStatus != "cleared" {
-				report.add("asset.rights_uncleared", "fail", "asset "+asset.ID+" rights status is "+asset.RightsStatus)
-			}
-		}
+func runBuild(args []string, out, errOut io.Writer) int {
+	f := flag.NewFlagSet("build", flag.ContinueOnError)
+	f.SetOutput(errOut)
+	root := f.String("project", ".", "project directory")
+	if code := parseFlags(f, args); code >= 0 {
+		return code
 	}
-	if len(assets) == 0 {
-		status := "pass"
-		message := "no source assets are declared"
-		if release {
-			status, message = "fail", "release mode requires declared source assets"
-		}
-		report.add("assets.count", status, message)
-	} else {
-		report.add("assets.count", "pass", fmt.Sprintf("%d source assets declared", len(assets)))
+	if err := buildProject(*root); err != nil {
+		return commandError(errOut, err)
 	}
+	fmt.Fprintln(out, "Built native HyperFrames composition:", filepath.Join(*root, "index.html"))
+	return 0
 }
-
-func validateClaimsAndShots(project ProjectFile, report *Report, release bool) {
-	assetIDs := make(map[string]Asset, len(project.Assets))
-	for _, asset := range project.Assets {
-		assetIDs[asset.ID] = asset
-	}
-	claimIDs := make(map[string]Claim, len(project.Claims))
-	for _, claim := range project.Claims {
-		if strings.TrimSpace(claim.ID) == "" {
-			report.add("claim.id", "fail", "a claim has an empty id")
-			continue
-		}
-		if _, exists := claimIDs[claim.ID]; exists {
-			report.add("claim.duplicate_id", "fail", "duplicate claim id: "+claim.ID)
-			continue
-		}
-		claimIDs[claim.ID] = claim
-		if strings.TrimSpace(claim.Text) == "" {
-			report.add("claim.text", "fail", "claim "+claim.ID+" has no text")
-		}
-		if release && len(claim.EvidenceAssetIDs) == 0 {
-			report.add("claim.evidence_required", "fail", "claim "+claim.ID+" has no evidence asset")
-		}
-		for _, id := range claim.EvidenceAssetIDs {
-			if _, ok := assetIDs[id]; !ok {
-				report.add("claim.evidence_missing", "fail", "claim "+claim.ID+" refers to unknown evidence asset "+id)
-			}
-		}
-	}
-
-	shotIDs := make(map[string]struct{}, len(project.Shots))
-	usedAssets := make(map[string]bool, len(assetIDs))
-	usedClaims := make(map[string]bool, len(claimIDs))
-	var previousEnd float64
-	timelineProblems := 0
-	if len(project.Shots) == 0 {
-		report.add("timeline.empty", "fail", "at least one shot is required")
-	}
-	for i, shot := range project.Shots {
-		if strings.TrimSpace(shot.ID) == "" {
-			report.add("shot.id", "fail", fmt.Sprintf("shots[%d] has an empty id", i))
-		} else if _, exists := shotIDs[shot.ID]; exists {
-			report.add("shot.duplicate_id", "fail", "duplicate shot id: "+shot.ID)
-		} else {
-			shotIDs[shot.ID] = struct{}{}
-		}
-		if !finiteNonNegative(shot.StartSeconds) || !finitePositive(shot.EndSeconds) || shot.EndSeconds <= shot.StartSeconds {
-			report.add("shot.time", "fail", "shot "+shot.ID+" must have finite, positive start/end times with end after start")
-			timelineProblems++
-		} else {
-			if i == 0 && shot.StartSeconds > 0.05 {
-				status := "warning"
-				if release {
-					status = "fail"
-				}
-				report.add("timeline.leading_gap", status, "timeline starts after 0 seconds")
-				timelineProblems++
-			}
-			if i > 0 {
-				if shot.StartSeconds < previousEnd-0.001 {
-					report.add("timeline.overlap", "fail", "shot "+shot.ID+" overlaps or is out of order")
-					timelineProblems++
-				} else if shot.StartSeconds > previousEnd+0.05 {
-					status := "warning"
-					if release {
-						status = "fail"
-					}
-					report.add("timeline.gap", status, fmt.Sprintf("gap of %.3f seconds before shot %s", shot.StartSeconds-previousEnd, shot.ID))
-					timelineProblems++
-				}
-			}
-			if shot.EndSeconds > project.Project.DurationSeconds+0.05 && finitePositive(project.Project.DurationSeconds) {
-				report.add("timeline.overshoot", "fail", "shot "+shot.ID+" ends after the target runtime")
-				timelineProblems++
-			}
-			previousEnd = shot.EndSeconds
-		}
-		if strings.TrimSpace(shot.Beat) == "" || strings.TrimSpace(shot.VisualDescription) == "" {
-			report.add("shot.direction", "fail", "shot "+shot.ID+" needs a beat and visual_description")
-		}
-		switch shot.Status {
-		case "planned", "draft", "approved", "needs_revision":
-		default:
-			report.add("shot.status_value", "fail", "shot "+shot.ID+" has an invalid status")
-		}
-		if release && shot.Status != "approved" {
-			report.add("shot.not_approved", "fail", "shot "+shot.ID+" is not approved")
-		}
-		if release && len(shot.AssetIDs) == 0 {
-			report.add("shot.asset_required", "fail", "release shot "+shot.ID+" has no source asset")
-		}
-		for _, id := range shot.AssetIDs {
-			if _, ok := assetIDs[id]; !ok {
-				report.add("shot.asset_missing", "fail", "shot "+shot.ID+" refers to unknown asset "+id)
-			} else {
-				usedAssets[id] = true
-			}
-		}
-		for _, id := range shot.ClaimIDs {
-			claim, ok := claimIDs[id]
-			if !ok {
-				report.add("shot.claim_missing", "fail", "shot "+shot.ID+" refers to unknown claim "+id)
-				continue
-			}
-			usedClaims[id] = true
-			if len(claim.EvidenceAssetIDs) > 0 && !intersects(shot.AssetIDs, claim.EvidenceAssetIDs) {
-				report.add("claim.shot_evidence_mismatch", "fail", "shot "+shot.ID+" communicates claim "+id+" but uses none of its evidence assets")
-			}
-		}
-	}
-	if len(project.Shots) > 0 && finitePositive(project.Project.DurationSeconds) {
-		last := project.Shots[len(project.Shots)-1].EndSeconds
-		tolerance := math.Max(0.25, 1.0/math.Max(project.Project.FPS, 1))
-		if math.Abs(last-project.Project.DurationSeconds) > tolerance {
-			status := "warning"
-			if release {
-				status = "fail"
-			}
-			report.add("timeline.runtime_mismatch", status, fmt.Sprintf("last shot ends at %.3f seconds; target runtime is %.3f seconds", last, project.Project.DurationSeconds))
-			timelineProblems++
-		}
-	}
-	for _, claim := range project.Claims {
-		if !usedClaims[claim.ID] {
-			status := "warning"
-			if release {
-				status = "fail"
-			}
-			report.add("claim.unused", status, "claim is not assigned to any shot: "+claim.ID)
-		}
-	}
-	for id := range assetIDs {
-		if !usedAssets[id] {
-			report.add("asset.unused", "warning", "asset is not assigned to a shot: "+id)
-		}
-	}
-	if timelineProblems == 0 && len(project.Shots) > 0 {
-		report.add("timeline.coverage", "pass", "shot order and timeline coverage are valid")
-	}
-}
-
-func validateReview(review Review, report *Report, release bool) {
-	if !release {
-		return
-	}
-	var problems []string
-	if !review.CreativeApproved {
-		problems = append(problems, "creative_approved must be true")
-	}
-	if strings.TrimSpace(review.Reviewer) == "" {
-		problems = append(problems, "reviewer is required")
-	}
-	if !isReleaseTimestamp(review.ApprovedAt) {
-		problems = append(problems, "approved_at must be an RFC 3339 timestamp")
-	}
-	if len(problems) > 0 {
-		report.add("review.attestation", "fail", strings.Join(problems, "; "))
-	} else {
-		report.add("review.attestation", "pass", "human review attestation is recorded")
-	}
-}
-
-func validateDeliveryPath(root, path string, report *Report) {
-	if path == "" {
-		report.add("delivery.path", "warning", "delivery.video_path is empty")
-		return
-	}
-	if _, err := projectOutputPath(root, path); err != nil {
-		report.add("delivery.path", "fail", err.Error())
-		return
-	}
-	report.add("delivery.path", "pass", "delivery path is contained in the project directory")
-}
-
-func validateCaptions(root string, project ProjectFile, report *Report, release bool) {
-	captionCount := 0
-	for _, asset := range project.Assets {
-		if asset.Role != "caption" || asset.Path == "" {
-			continue
-		}
-		captionCount++
-		path, err := projectFilePath(root, asset.Path)
-		if err != nil {
-			continue
-		}
-		data, err := os.ReadFile(path)
-		if err != nil {
-			continue
-		}
-		cues, err := parseCaptions(string(data), filepath.Ext(path))
-		if err != nil {
-			report.add("caption.syntax", "fail", "caption asset "+asset.ID+": "+err.Error())
-			continue
-		}
-		for i, cue := range cues {
-			if cue.End <= cue.Start {
-				report.add("caption.duration", "fail", fmt.Sprintf("caption asset %s cue %d has non-positive duration", asset.ID, i+1))
-			}
-			if cue.Start < 0 || cue.End > project.Project.DurationSeconds+0.05 {
-				report.add("caption.bounds", "fail", fmt.Sprintf("caption asset %s cue %d falls outside the target runtime", asset.ID, i+1))
-			}
-			if i > 0 && cue.Start < cues[i-1].End {
-				report.add("caption.overlap", "fail", fmt.Sprintf("caption asset %s cue %d overlaps the previous cue", asset.ID, i+1))
-			}
-		}
-		report.add("caption.syntax", "pass", fmt.Sprintf("caption asset %s has %d valid cues", asset.ID, len(cues)))
-	}
-	if project.Project.CaptionsRequired && captionCount == 0 {
-		status := "warning"
-		if release {
-			status = "fail"
-		}
-		report.add("caption.required", status, "captions are required but no local caption asset is declared")
-	} else if captionCount == 0 {
-		report.add("caption.absent", "warning", "no caption asset was found; review accessibility needs")
-	}
-}
-
-var ratioPattern = regexp.MustCompile(`^\s*(\d+)\s*:\s*(\d+)\s*$`)
-
-func parseRatio(value string) (float64, bool) {
-	parts := ratioPattern.FindStringSubmatch(value)
-	if len(parts) != 3 {
-		return 0, false
-	}
-	var width, height float64
-	if _, err := fmt.Sscanf(parts[1], "%f", &width); err != nil || !finitePositive(width) {
-		return 0, false
-	}
-	if _, err := fmt.Sscanf(parts[2], "%f", &height); err != nil || !finitePositive(height) {
-		return 0, false
-	}
-	return width / height, true
-}
-
-func projectFilePath(root, path string) (string, error) {
-	if filepath.IsAbs(path) {
-		return "", fmt.Errorf("asset path must be relative to the project directory: %s", path)
-	}
-	return confinedPath(root, path)
-}
-
-func projectOutputPath(root, path string) (string, error) {
-	if filepath.IsAbs(path) {
-		return "", fmt.Errorf("delivery.video_path must be relative to the project directory")
-	}
-	return confinedPath(root, path)
-}
-
-func confinedPath(root, path string) (string, error) {
-	cleaned := filepath.Clean(filepath.FromSlash(path))
-	if cleaned == "." || cleaned == "" {
-		return "", fmt.Errorf("path must name a file")
-	}
-	candidate := filepath.Join(root, cleaned)
-	rel, err := filepath.Rel(root, candidate)
-	if err != nil || rel == ".." || strings.HasPrefix(rel, ".."+string(filepath.Separator)) {
-		return "", fmt.Errorf("path escapes the project directory: %s", path)
-	}
-	resolvedRoot, err := filepath.EvalSymlinks(root)
+func buildProject(root string) error {
+	p, err := readProject(root)
 	if err != nil {
-		resolvedRoot = root
+		return err
 	}
-	for existing := candidate; ; existing = filepath.Dir(existing) {
-		resolvedPath, resolveErr := filepath.EvalSymlinks(existing)
-		if resolveErr == nil {
-			resolvedRel, relErr := filepath.Rel(resolvedRoot, resolvedPath)
-			if relErr != nil || resolvedRel == ".." || strings.HasPrefix(resolvedRel, ".."+string(filepath.Separator)) {
-				return "", fmt.Errorf("path resolves outside the project directory: %s", path)
+	styleRaw, err := bundled.ReadFile("assets/styles/" + p.Style + ".json")
+	if err != nil {
+		return err
+	}
+	var style struct {
+		Palette struct {
+			Accent string `json:"accent"`
+		}
+	}
+	if err = json.Unmarshal(styleRaw, &style); err != nil {
+		return err
+	}
+	p.Looks = map[string]json.RawMessage{p.Style: styleRaw}
+	for _, scene := range p.Scenes {
+		if scene.Style != "" {
+			if !identifier.MatchString(scene.Style) {
+				return fmt.Errorf("invalid scene style")
 			}
-			break
-		}
-		if !os.IsNotExist(resolveErr) {
-			return "", fmt.Errorf("could not resolve project path %s: %w", path, resolveErr)
-		}
-		parent := filepath.Dir(existing)
-		if parent == existing {
-			break
+			look, e := bundled.ReadFile("assets/styles/" + scene.Style + ".json")
+			if e != nil {
+				return e
+			}
+			p.Looks[scene.Style] = look
 		}
 	}
-	return candidate, nil
+	raw, _ := json.Marshal(p)
+	source, _ := bundled.ReadFile("assets/runtime/index.html")
+	tpl, err := template.New("index").Parse(string(source))
+	if err != nil {
+		return err
+	}
+	var html bytes.Buffer
+	view := struct {
+		Project
+		Accent    string
+		JSON      template.JS
+		Script    template.JS
+		StyleJSON template.JS
+	}{p, style.Palette.Accent, template.JS(raw), "", template.JS(styleRaw)}
+	js, err := bundled.ReadFile("assets/runtime/composition.js")
+	if err != nil {
+		return err
+	}
+	view.Script = template.JS(js)
+	if err = tpl.Execute(&html, view); err != nil {
+		return err
+	}
+	files := map[string][]byte{"index.html": stableElementIDs(html.Bytes()), "style.json": styleRaw}
+	for _, name := range []string{"composition.js", "composition.css"} {
+		files[name], err = bundled.ReadFile("assets/runtime/" + name)
+		if err != nil {
+			return err
+		}
+	}
+	for _, name := range []string{"catalog.wgsl", "library.wgsl", "webgpu-runtime.js"} {
+		files[name], err = bundled.ReadFile("assets/shaders/" + name)
+		if err != nil {
+			return err
+		}
+	}
+	for _, name := range []string{"manrope.ttf", "cinzel.ttf", "MANROPE-OFL.txt", "FONT-OFL.txt"} {
+		files[name], err = bundled.ReadFile("assets/shared/" + name)
+		if err != nil {
+			return err
+		}
+	}
+	runtimeDir, err := runtimeRoot()
+	if err != nil {
+		return err
+	}
+	files["gsap.min.js"], err = os.ReadFile(filepath.Join(runtimeDir, "node_modules", "gsap", "dist", "gsap.min.js"))
+	if err != nil {
+		return fmt.Errorf("run web2video setup first: %w", err)
+	}
+	for name, data := range files {
+		old, e := os.ReadFile(filepath.Join(root, name))
+		if e == nil && bytes.Equal(old, data) {
+			continue
+		}
+		if err = writeFileAtomic(filepath.Join(root, name), data); err != nil {
+			return err
+		}
+	}
+	return nil
 }
 
-func finitePositive(value float64) bool {
-	return value > 0 && !math.IsNaN(value) && !math.IsInf(value, 0)
-}
-func finiteNonNegative(value float64) bool {
-	return value >= 0 && !math.IsNaN(value) && !math.IsInf(value, 0)
+// Studio otherwise stamps random IDs into the source on first preview.
+// Stamp only markup, before the first script, so JS comparisons stay untouched.
+func stableElementIDs(raw []byte) []byte {
+	end := bytes.Index(raw, []byte("<script"))
+	if end < 0 {
+		end = len(raw)
+	}
+	counter := 0
+	tags := regexp.MustCompile(`<([A-Za-z][A-Za-z0-9:-]*)(\s[^<>]*?)?>`)
+	prefix := tags.ReplaceAllFunc(raw[:end], func(tag []byte) []byte {
+		if bytes.Contains(tag, []byte("data-hf-id=")) {
+			return tag
+		}
+		counter++
+		space := bytes.IndexAny(tag, " \t\r\n>")
+		id := []byte(` data-hf-id="hf-w2v-` + strconv.Itoa(counter) + `"`)
+		result := append([]byte(nil), tag[:space]...)
+		result = append(result, id...)
+		return append(result, tag[space:]...)
+	})
+	return append(prefix, raw[end:]...)
 }
 
-func intersects(left, right []string) bool {
-	values := make(map[string]struct{}, len(left))
-	for _, value := range left {
-		values[value] = struct{}{}
+// Static policy is an early gate; the browser guard enforces canvas API use at runtime.
+func validateComposition(root string) error {
+	raw, err := os.ReadFile(filepath.Join(root, "index.html"))
+	if err != nil {
+		return fmt.Errorf("missing index.html; run web2video build: %w", err)
 	}
-	for _, value := range right {
-		if _, ok := values[value]; ok {
-			return true
+	if !bytes.Contains(raw, []byte("data-composition-id=")) {
+		return fmt.Errorf("index.html is not a HyperFrames composition")
+	}
+	return filepath.WalkDir(root, func(path string, d fs.DirEntry, e error) error {
+		if e != nil {
+			return e
 		}
+		if d.IsDir() {
+			if path != root && ownedDir(d.Name()) {
+				return filepath.SkipDir
+			}
+			return nil
+		}
+		if d.Type()&os.ModeSymlink != 0 {
+			return fmt.Errorf("symlinks are not accepted in render sources: %s", path)
+		}
+		ext := strings.ToLower(filepath.Ext(path))
+		if ext != ".js" && ext != ".html" {
+			return nil
+		}
+		if d.Name() == "composition.js" || d.Name() == "gsap.min.js" {
+			return nil
+		}
+		b, e := os.ReadFile(path)
+		if e != nil {
+			return e
+		}
+		for _, bad := range []string{"getContext('webgl", "getContext(\"webgl", "shader-transition", "page-side-compositing"} {
+			if bytes.Contains(b, []byte(bad)) {
+				return fmt.Errorf("WebGL component forbidden: %s", path)
+			}
+		}
+		return nil
+	})
+}
+func ownedDir(name string) bool {
+	return contains([]string{".git", ".web2video", ".hyperframes", "node_modules", "renders", "out", "deliverables", "qa"}, name)
+}
+func sourceFingerprint(root string) (string, error) {
+	var paths []string
+	err := filepath.WalkDir(root, func(path string, d fs.DirEntry, e error) error {
+		if e != nil {
+			return e
+		}
+		if d.IsDir() {
+			if path != root && ownedDir(d.Name()) {
+				return filepath.SkipDir
+			}
+			return nil
+		}
+		if d.Type()&os.ModeSymlink != 0 {
+			return fmt.Errorf("source symlink: %s", path)
+		}
+		paths = append(paths, path)
+		return nil
+	})
+	if err != nil {
+		return "", err
 	}
-	return false
+	sort.Strings(paths)
+	var b strings.Builder
+	for _, path := range paths {
+		rel, _ := filepath.Rel(root, path)
+		sum, e := fileSHA256(path)
+		if e != nil {
+			return "", e
+		}
+		fmt.Fprintf(&b, "%s %s\n", filepath.ToSlash(rel), sum)
+	}
+	return hashBytes([]byte(b.String())), nil
+}
+
+func validateCompiledProject(root string, p Project) error {
+	raw, err := os.ReadFile(filepath.Join(root, "index.html"))
+	if err != nil {
+		return err
+	}
+	match := regexp.MustCompile(`(?s)<script\b[^>]*id="project-data"[^>]*>(.*?)</script>`).FindSubmatch(raw)
+	if len(match) != 2 {
+		return fmt.Errorf("project.json exists but compiled project-data is missing; run web2video build")
+	}
+	var compiled Project
+	if err = json.Unmarshal(match[1], &compiled); err != nil {
+		return err
+	}
+	compiled.Looks = nil
+	p.Looks = nil
+	actual, _ := json.Marshal(compiled)
+	expected, _ := json.Marshal(p)
+	if !bytes.Equal(actual, expected) {
+		return fmt.Errorf("project.json differs from compiled HTML; run web2video build before rendering")
+	}
+	return nil
 }

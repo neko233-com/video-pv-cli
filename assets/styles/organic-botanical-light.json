@@ -1,18 +1,15 @@
 {
-  "avoid": [
-    "unmotivated decorative motion",
-    "unreadable small copy",
-    "invented product or gameplay proof"
-  ],
-  "beat_plan": [
-    "Hook: botanical shadow",
-    "Establish: allow organic shadows to lead toward one quiet subject",
-    "Prove: use an approved local capture or truthful designed-motion detail",
-    "Payoff: tactile calm with one clear final identity"
-  ],
-  "best_for": [
-    "organic promotional video",
-    "product or character identity reveal"
+  "schema": "web2video/style/1",
+  "id": "organic-botanical-light",
+  "name": "植物微光",
+  "family": "organic",
+  "keywords": [
+    "botanical shadow",
+    "living curve",
+    "warm paper",
+    "soft daylight",
+    "gentle growth",
+    "tactile calm"
   ],
   "direction": {
     "camera": "Guide attention with botanical shadow; use a deliberate hold, a measured approach and a stable payoff.",
@@ -23,65 +20,34 @@
     "sound": "Create a restrained rhythm around gentle growth; place licensed accents on intentional cuts and keep speech clear.",
     "typography": "Use botanical shadow,living curve,warm paper,soft daylight,gentle growth,tactile calm as hierarchy cues; keep display copy short and body copy readable at final delivery size."
   },
-  "family": "organic",
-  "id": "organic-botanical-light",
-  "keywords": [
-    "botanical shadow",
-    "living curve",
-    "warm paper",
-    "soft daylight",
-    "gentle growth",
-    "tactile calm"
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
   ],
-  "name": "植物微光",
-  "reference_ids": [
-    "hyperframes-creative",
-    "hyperframes-product-launch",
-    "video-shotcraft",
-    "product-demo-video"
-  ],
-  "render": {
-    "backgrounds": [
-      "prism",
-      "fluid"
-    ],
-    "base_template": "keynote-material-porcelain",
-    "graphics": {
-      "line_width": 1.4,
-      "opacity": 0.04,
-      "overlay": "corner-ticks",
-      "panel_radius": 49
-    },
-    "layouts": [
-      "center",
-      "left"
-    ],
-    "motion": {
-      "ease": "inOutCubic",
-      "name": "float",
-      "strength": 0.2
-    },
-    "overlap_ratio": 0.08,
-    "theme": {
-      "accent": "#69875a",
-      "background": "#edf0e3",
-      "font": "sans",
-      "foreground": "#30432f",
-      "secondary": "#b5a079",
-      "surface": "#fbfff4"
-    },
-    "transitions": [
-      "ripple",
-      "noise-dissolve",
-      "soft-wipe"
-    ],
-    "typography": {
-      "leading": 1.23,
-      "scale": 0.8,
-      "tracking": 0.9,
-      "weight_offset": 110
-    }
+  "palette": {
+    "accent": "#69875a",
+    "background": "#edf0e3",
+    "font": "sans",
+    "foreground": "#30432f",
+    "secondary": "#b5a079",
+    "surface": "#fbfff4"
   },
-  "schema_version": "1.0",
-  "summary": "植物微光：allow organic shadows to lead toward one quiet subject. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+  "typography": {
+    "leading": 1.23,
+    "scale": 0.8,
+    "tracking": 0.9,
+    "weight_offset": 110
+  },
+  "motion": {
+    "ease": "inOutCubic",
+    "name": "float",
+    "strength": 0.2
+  },
+  "graphics": {
+    "line_width": 1.4,
+    "opacity": 0.04,
+    "overlay": "corner-ticks",
+    "panel_radius": 49
+  }
 }

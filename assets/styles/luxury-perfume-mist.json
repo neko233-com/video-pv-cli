@@ -1,18 +1,15 @@
 {
-  "avoid": [
-    "unmotivated decorative motion",
-    "unreadable small copy",
-    "invented product or gameplay proof"
-  ],
-  "beat_plan": [
-    "Hook: translucent bottle",
-    "Establish: one translucent volume emerges from a quiet atmospheric field",
-    "Prove: use an approved local capture or truthful designed-motion detail",
-    "Payoff: lingering tail with one clear final identity"
-  ],
-  "best_for": [
-    "luxury promotional video",
-    "product or character identity reveal"
+  "schema": "web2video/style/1",
+  "id": "luxury-perfume-mist",
+  "name": "香氛薄雾",
+  "family": "luxury",
+  "keywords": [
+    "translucent bottle",
+    "soft mist",
+    "editorial silence",
+    "amber glint",
+    "delicate reveal",
+    "lingering tail"
   ],
   "direction": {
     "camera": "Guide attention with translucent bottle; use a deliberate hold, a measured approach and a stable payoff.",
@@ -23,65 +20,34 @@
     "sound": "Create a restrained rhythm around delicate reveal; place licensed accents on intentional cuts and keep speech clear.",
     "typography": "Use translucent bottle,soft mist,editorial silence,amber glint,delicate reveal,lingering tail as hierarchy cues; keep display copy short and body copy readable at final delivery size."
   },
-  "family": "luxury",
-  "id": "luxury-perfume-mist",
-  "keywords": [
-    "translucent bottle",
-    "soft mist",
-    "editorial silence",
-    "amber glint",
-    "delicate reveal",
-    "lingering tail"
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
   ],
-  "name": "香氛薄雾",
-  "reference_ids": [
-    "hyperframes-creative",
-    "hyperframes-product-launch",
-    "video-shotcraft",
-    "product-demo-video"
-  ],
-  "render": {
-    "backgrounds": [
-      "caustics",
-      "rings"
-    ],
-    "base_template": "keynote-product-obsidian",
-    "graphics": {
-      "line_width": 0.8,
-      "opacity": 0.076,
-      "overlay": "letterbox",
-      "panel_radius": 51
-    },
-    "layouts": [
-      "left",
-      "center"
-    ],
-    "motion": {
-      "ease": "spring",
-      "name": "drift-up",
-      "strength": 0.48000000000000004
-    },
-    "overlap_ratio": 0.18,
-    "theme": {
-      "accent": "#d2a271",
-      "background": "#231812",
-      "font": "display",
-      "foreground": "#f4e7d2",
-      "secondary": "#a87e61",
-      "surface": "#3c2a20"
-    },
-    "transitions": [
-      "crossfade",
-      "light-sweep",
-      "iris"
-    ],
-    "typography": {
-      "leading": 1.11,
-      "scale": 0.9,
-      "tracking": 0,
-      "weight_offset": 10
-    }
+  "palette": {
+    "accent": "#d2a271",
+    "background": "#231812",
+    "font": "display",
+    "foreground": "#f4e7d2",
+    "secondary": "#a87e61",
+    "surface": "#3c2a20"
   },
-  "schema_version": "1.0",
-  "summary": "香氛薄雾：one translucent volume emerges from a quiet atmospheric field. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+  "typography": {
+    "leading": 1.11,
+    "scale": 0.9,
+    "tracking": 0,
+    "weight_offset": 10
+  },
+  "motion": {
+    "ease": "spring",
+    "name": "drift-up",
+    "strength": 0.48000000000000004
+  },
+  "graphics": {
+    "line_width": 0.8,
+    "opacity": 0.076,
+    "overlay": "letterbox",
+    "panel_radius": 51
+  }
 }

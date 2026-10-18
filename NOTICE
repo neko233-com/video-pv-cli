@@ -1,29 +1,32 @@
-video-pv-cli
-Original Go CLI, templates and shader helpers: Apache License 2.0.
+web2video
+Copyright 2026 web2video contributors
 
-The Cinzel font is distributed under the SIL Open Font License 1.1.
-Its copyright and full license are retained in assets/starter/FONT-OFL.txt.
-Source: https://github.com/google/fonts/tree/main/ofl/cinzel
+Original Go application, templates, style data and WGSL helpers are distributed
+under the repository Apache-2.0 LICENSE.
 
-The Manrope font is distributed under the SIL Open Font License 1.1.
-Its full license is retained in assets/starter/MANROPE-OFL.txt.
-Source: https://github.com/google/fonts/tree/main/ofl/manrope
+The render engine is HyperFrames 0.8.171 by HeyGen and its contributors,
+Apache-2.0: https://github.com/heygen-com/hyperframes
+It is installed separately from npm. On Windows, web2video applies the exact
+SHA-256 guarded browser argument compatibility change documented in
+engine_windows_bridge.go and docs/architecture.md (upstream issue #5775).
+Two additional guarded opt-out hooks in engine_artifact_bridge.go disable
+implicit revision/artifact recording for wrapper verification commands.
+The upstream package's copyright notices and licenses remain installed.
 
-The sample character illustration is generated artwork. Its generation prompt,
-provenance and release-review status are documented in
-assets/character/ASSET-SOURCES.md. The code license does not assert copyright
-status or override the image provider's applicable terms.
+GSAP 3.14.2 is installed separately from npm and copied into authored projects.
+Its own license applies: https://gsap.com/standard-license/
+Do not assume the repository Apache-2.0 license replaces GSAP's license.
 
-Multiplane is installed separately from npm and retains its Apache-2.0 license.
-Local modification: video-pv-cli applies a SHA-256 guarded WebGPU queue barrier
-to Multiplane 0.3.10 src/capture.mjs before rendering. Its original package,
-copyright and licenses remain installed. Bridge ID and source hash are recorded
-in every render report. The bridge is implemented in webgpu_bridge.go.
-FFmpeg is installed separately; preserve the selected build's licensing terms.
-Third-party shader libraries described in the references are optional and are
-not redistributed as part of the original WGSL helper.
+Manrope and Cinzel are SIL Open Font License fonts. Their license texts are
+included beside the fonts and copied into each generated project.
 
-Workflow research: HyperFrames (heygen-com), video-shotcraft, ai-product-video,
-product-demo-video-skill. These are linked research references; no code or style
-data from them is redistributed. The 100 style recipes are original. See
-references/web-video-frameworks.md for sources and integration scope.
+Generated example artwork is documented in assets/shared/ASSET-SOURCES.md and
+assets/character/ASSET-SOURCES.md. The code license does not assert the artwork's
+copyright status or replace the generation provider's applicable terms.
+
+FFmpeg and Chrome Headless Shell are installed separately. Their respective
+builds retain their own license notices. No Microsoft DLLs are redistributed.
+
+HyperFrames authoring/runtime documentation informed the new native composition
+contract. The 100 style direction recipes and 76 WGSL parameter presets are
+original project data. Multiplane is no longer a dependency of web2video.

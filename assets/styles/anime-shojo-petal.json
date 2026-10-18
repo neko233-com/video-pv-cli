@@ -1,18 +1,15 @@
 {
-  "avoid": [
-    "unmotivated decorative motion",
-    "unreadable small copy",
-    "invented product or gameplay proof"
-  ],
-  "beat_plan": [
-    "Hook: petal drift",
-    "Establish: frame a character inside airy botanical negative space",
-    "Prove: use an approved local capture or truthful designed-motion detail",
-    "Payoff: gentle reveal with one clear final identity"
-  ],
-  "best_for": [
-    "anime promotional video",
-    "product or character identity reveal"
+  "schema": "web2video/style/1",
+  "id": "anime-shojo-petal",
+  "name": "花瓣少女",
+  "family": "anime",
+  "keywords": [
+    "petal drift",
+    "delicate type",
+    "pastel depth",
+    "soft emotion",
+    "light bloom",
+    "gentle reveal"
   ],
   "direction": {
     "camera": "Guide attention with petal drift; use a deliberate hold, a measured approach and a stable payoff.",
@@ -23,65 +20,34 @@
     "sound": "Create a restrained rhythm around light bloom; place licensed accents on intentional cuts and keep speech clear.",
     "typography": "Use petal drift,delicate type,pastel depth,soft emotion,light bloom,gentle reveal as hierarchy cues; keep display copy short and body copy readable at final delivery size."
   },
-  "family": "anime",
-  "id": "anime-shojo-petal",
-  "keywords": [
-    "petal drift",
-    "delicate type",
-    "pastel depth",
-    "soft emotion",
-    "light bloom",
-    "gentle reveal"
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
   ],
-  "name": "花瓣少女",
-  "reference_ids": [
-    "hyperframes-creative",
-    "hyperframes-product-launch",
-    "video-shotcraft",
-    "product-demo-video"
-  ],
-  "render": {
-    "backgrounds": [
-      "grid",
-      "caustics"
-    ],
-    "base_template": "character-story-sakura",
-    "graphics": {
-      "line_width": 1.1,
-      "opacity": 0.049,
-      "overlay": "crosshair",
-      "panel_radius": 46
-    },
-    "layouts": [
-      "left",
-      "asymmetric"
-    ],
-    "motion": {
-      "ease": "linear",
-      "name": "orbit",
-      "strength": 0.27
-    },
-    "overlap_ratio": 0.10500000000000001,
-    "theme": {
-      "accent": "#a85c80",
-      "background": "#faedf1",
-      "font": "display",
-      "foreground": "#563d4d",
-      "secondary": "#b899be",
-      "surface": "#fff8fa"
-    },
-    "transitions": [
-      "prism",
-      "ink",
-      "crossfade"
-    ],
-    "typography": {
-      "leading": 1.17,
-      "scale": 0.8250000000000001,
-      "tracking": 0.45,
-      "weight_offset": 70
-    }
+  "palette": {
+    "accent": "#a85c80",
+    "background": "#faedf1",
+    "font": "display",
+    "foreground": "#563d4d",
+    "secondary": "#b899be",
+    "surface": "#fff8fa"
   },
-  "schema_version": "1.0",
-  "summary": "花瓣少女：frame a character inside airy botanical negative space. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+  "typography": {
+    "leading": 1.17,
+    "scale": 0.8250000000000001,
+    "tracking": 0.45,
+    "weight_offset": 70
+  },
+  "motion": {
+    "ease": "linear",
+    "name": "orbit",
+    "strength": 0.27
+  },
+  "graphics": {
+    "line_width": 1.1,
+    "opacity": 0.049,
+    "overlay": "crosshair",
+    "panel_radius": 46
+  }
 }

@@ -1,0 +1,64 @@
+{
+  "schema": "web2video/project/1",
+  "title": "ASTERIA — The last orbit",
+  "template": "anime-character",
+  "style": "anime-celestial-heroine",
+  "width": 1920,
+  "height": 1080,
+  "fps": 30,
+  "loop": false,
+  "scenes": [
+    {
+      "id": "identity",
+      "duration": 3.5,
+      "layout": "character",
+      "kicker": "CHARACTER ARCHIVE / 001",
+      "title": "ASTERIA",
+      "subtitle": "Keeper of the last orbit",
+      "image": "assets/character.png",
+      "zoom": 1.05,
+      "x": 0.68,
+      "y": 0.4,
+      "transition": "crossfade"
+    },
+    {
+      "id": "resolve",
+      "duration": 3,
+      "layout": "detail",
+      "kicker": "A VOW WRITTEN IN STARLIGHT",
+      "title": "Even stars\nremember.",
+      "subtitle": "One voice against the endless night.",
+      "image": "assets/character.png",
+      "zoom": 1.7,
+      "x": 0.67,
+      "y": 0.25,
+      "transition": "iris"
+    },
+    {
+      "id": "world",
+      "duration": 2.5,
+      "layout": "hero",
+      "kicker": "THE LAST ORBIT",
+      "title": "A world\nworth saving.",
+      "subtitle": "Beyond the sky, her story begins.",
+      "image": "assets/world.png",
+      "zoom": 1.04,
+      "x": 0.5,
+      "y": 0.5,
+      "transition": "light-sweep"
+    },
+    {
+      "id": "signature",
+      "duration": 3,
+      "layout": "character",
+      "kicker": "ORIGINAL CHARACTER / CONCEPT PV",
+      "title": "ASTERIA",
+      "subtitle": "Let the stars guide you home.",
+      "image": "assets/character.png",
+      "zoom": 1.02,
+      "x": 0.65,
+      "y": 0.4,
+      "transition": "crossfade"
+    }
+  ]
+}

@@ -1,18 +1,15 @@
 {
-  "avoid": [
-    "unmotivated decorative motion",
-    "unreadable small copy",
-    "invented product or gameplay proof"
-  ],
-  "beat_plan": [
-    "Hook: observed detail",
-    "Establish: favor readable real-world captures with understated labels",
-    "Prove: use an approved local capture or truthful designed-motion detail",
-    "Payoff: quiet humanity with one clear final identity"
-  ],
-  "best_for": [
-    "cinema promotional video",
-    "product or character identity reveal"
+  "schema": "web2video/style/1",
+  "id": "cinema-urban-documentary",
+  "name": "都市纪实",
+  "family": "cinema",
+  "keywords": [
+    "observed detail",
+    "documentary crop",
+    "neutral type",
+    "city rhythm",
+    "proof sequence",
+    "quiet humanity"
   ],
   "direction": {
     "camera": "Guide attention with observed detail; use a deliberate hold, a measured approach and a stable payoff.",
@@ -23,65 +20,34 @@
     "sound": "Create a restrained rhythm around proof sequence; place licensed accents on intentional cuts and keep speech clear.",
     "typography": "Use observed detail,documentary crop,neutral type,city rhythm,proof sequence,quiet humanity as hierarchy cues; keep display copy short and body copy readable at final delivery size."
   },
-  "family": "cinema",
-  "id": "cinema-urban-documentary",
-  "keywords": [
-    "observed detail",
-    "documentary crop",
-    "neutral type",
-    "city rhythm",
-    "proof sequence",
-    "quiet humanity"
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
   ],
-  "name": "都市纪实",
-  "reference_ids": [
-    "hyperframes-creative",
-    "hyperframes-product-launch",
-    "video-shotcraft",
-    "product-demo-video"
-  ],
-  "render": {
-    "backgrounds": [
-      "horizon",
-      "silk"
-    ],
-    "base_template": "character-story-midnight",
-    "graphics": {
-      "line_width": 0.8,
-      "opacity": 0.076,
-      "overlay": "none",
-      "panel_radius": 21
-    },
-    "layouts": [
-      "center",
-      "left"
-    ],
-    "motion": {
-      "ease": "swift",
-      "name": "none",
-      "strength": 0.48000000000000004
-    },
-    "overlap_ratio": 0.18,
-    "theme": {
-      "accent": "#667f89",
-      "background": "#e5e3de",
-      "font": "display",
-      "foreground": "#323638",
-      "secondary": "#aa9780",
-      "surface": "#f7f6f2"
-    },
-    "transitions": [
-      "dip-black",
-      "crossfade",
-      "exposure"
-    ],
-    "typography": {
-      "leading": 1.17,
-      "scale": 0.9,
-      "tracking": 0,
-      "weight_offset": -90
-    }
+  "palette": {
+    "accent": "#667f89",
+    "background": "#e5e3de",
+    "font": "display",
+    "foreground": "#323638",
+    "secondary": "#aa9780",
+    "surface": "#f7f6f2"
   },
-  "schema_version": "1.0",
-  "summary": "都市纪实：favor readable real-world captures with understated labels. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+  "typography": {
+    "leading": 1.17,
+    "scale": 0.9,
+    "tracking": 0,
+    "weight_offset": -90
+  },
+  "motion": {
+    "ease": "swift",
+    "name": "none",
+    "strength": 0.48000000000000004
+  },
+  "graphics": {
+    "line_width": 0.8,
+    "opacity": 0.076,
+    "overlay": "none",
+    "panel_radius": 21
+  }
 }

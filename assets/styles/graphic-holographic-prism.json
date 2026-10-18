@@ -1,18 +1,15 @@
 {
-  "avoid": [
-    "unmotivated decorative motion",
-    "unreadable small copy",
-    "invented product or gameplay proof"
-  ],
-  "beat_plan": [
-    "Hook: holographic edge",
-    "Establish: hold a calm central silhouette inside a controlled prismatic field",
-    "Prove: use an approved local capture or truthful designed-motion detail",
-    "Payoff: slow tilt with one clear final identity"
-  ],
-  "best_for": [
-    "graphic promotional video",
-    "product or character identity reveal"
+  "schema": "web2video/style/1",
+  "id": "graphic-holographic-prism",
+  "name": "全息棱镜",
+  "family": "graphic",
+  "keywords": [
+    "holographic edge",
+    "prism split",
+    "iridescent field",
+    "clean silhouette",
+    "futuristic sheen",
+    "slow tilt"
   ],
   "direction": {
     "camera": "Guide attention with holographic edge; use a deliberate hold, a measured approach and a stable payoff.",
@@ -23,65 +20,34 @@
     "sound": "Create a restrained rhythm around futuristic sheen; place licensed accents on intentional cuts and keep speech clear.",
     "typography": "Use holographic edge,prism split,iridescent field,clean silhouette,futuristic sheen,slow tilt as hierarchy cues; keep display copy short and body copy readable at final delivery size."
   },
-  "family": "graphic",
-  "id": "graphic-holographic-prism",
-  "keywords": [
-    "holographic edge",
-    "prism split",
-    "iridescent field",
-    "clean silhouette",
-    "futuristic sheen",
-    "slow tilt"
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
   ],
-  "name": "全息棱镜",
-  "reference_ids": [
-    "hyperframes-creative",
-    "hyperframes-product-launch",
-    "video-shotcraft",
-    "product-demo-video"
-  ],
-  "render": {
-    "backgrounds": [
-      "prism",
-      "rings"
-    ],
-    "base_template": "keynote-type-sakura",
-    "graphics": {
-      "line_width": 1.4,
-      "opacity": 0.121,
-      "overlay": "corner-ticks",
-      "panel_radius": 25
-    },
-    "layouts": [
-      "center",
-      "left"
-    ],
-    "motion": {
-      "ease": "swift",
-      "name": "float",
-      "strength": 0.8300000000000001
-    },
-    "overlap_ratio": 0.18,
-    "theme": {
-      "accent": "#98d9e1",
-      "background": "#121c30",
-      "font": "sans",
-      "foreground": "#edf5ff",
-      "secondary": "#c5a4e0",
-      "surface": "#273953"
-    },
-    "transitions": [
-      "diagonal",
-      "split",
-      "pixelate"
-    ],
-    "typography": {
-      "leading": 1.11,
-      "scale": 1.0250000000000001,
-      "tracking": 0.9,
-      "weight_offset": 70
-    }
+  "palette": {
+    "accent": "#98d9e1",
+    "background": "#121c30",
+    "font": "sans",
+    "foreground": "#edf5ff",
+    "secondary": "#c5a4e0",
+    "surface": "#273953"
   },
-  "schema_version": "1.0",
-  "summary": "全息棱镜：hold a calm central silhouette inside a controlled prismatic field. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+  "typography": {
+    "leading": 1.11,
+    "scale": 1.0250000000000001,
+    "tracking": 0.9,
+    "weight_offset": 70
+  },
+  "motion": {
+    "ease": "swift",
+    "name": "float",
+    "strength": 0.8300000000000001
+  },
+  "graphics": {
+    "line_width": 1.4,
+    "opacity": 0.121,
+    "overlay": "corner-ticks",
+    "panel_radius": 25
+  }
 }

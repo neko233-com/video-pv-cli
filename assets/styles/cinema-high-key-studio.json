@@ -1,18 +1,15 @@
 {
-  "avoid": [
-    "unmotivated decorative motion",
-    "unreadable small copy",
-    "invented product or gameplay proof"
-  ],
-  "beat_plan": [
-    "Hook: high key",
-    "Establish: isolate the subject inside a bright seamless studio",
-    "Prove: use an approved local capture or truthful designed-motion detail",
-    "Payoff: confident space with one clear final identity"
-  ],
-  "best_for": [
-    "cinema promotional video",
-    "product or character identity reveal"
+  "schema": "web2video/style/1",
+  "id": "cinema-high-key-studio",
+  "name": "高调摄影棚",
+  "family": "cinema",
+  "keywords": [
+    "high key",
+    "white infinity",
+    "clean shadow",
+    "product clarity",
+    "soft edge",
+    "confident space"
   ],
   "direction": {
     "camera": "Guide attention with high key; use a deliberate hold, a measured approach and a stable payoff.",
@@ -23,65 +20,34 @@
     "sound": "Create a restrained rhythm around soft edge; place licensed accents on intentional cuts and keep speech clear.",
     "typography": "Use high key,white infinity,clean shadow,product clarity,soft edge,confident space as hierarchy cues; keep display copy short and body copy readable at final delivery size."
   },
-  "family": "cinema",
-  "id": "cinema-high-key-studio",
-  "keywords": [
-    "high key",
-    "white infinity",
-    "clean shadow",
-    "product clarity",
-    "soft edge",
-    "confident space"
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
   ],
-  "name": "高调摄影棚",
-  "reference_ids": [
-    "hyperframes-creative",
-    "hyperframes-product-launch",
-    "video-shotcraft",
-    "product-demo-video"
-  ],
-  "render": {
-    "backgrounds": [
-      "solid",
-      "mesh"
-    ],
-    "base_template": "game-world-graphite",
-    "graphics": {
-      "line_width": 1.4,
-      "opacity": 0.094,
-      "overlay": "registration",
-      "panel_radius": 43
-    },
-    "layouts": [
-      "left",
-      "right"
-    ],
-    "motion": {
-      "ease": "spring",
-      "name": "pull-out",
-      "strength": 0.6200000000000001
-    },
-    "overlap_ratio": 0.10500000000000001,
-    "theme": {
-      "accent": "#6e889c",
-      "background": "#f5f4ef",
-      "font": "display",
-      "foreground": "#363c42",
-      "secondary": "#b1bcc3",
-      "surface": "#ffffff"
-    },
-    "transitions": [
-      "dip-black",
-      "crossfade",
-      "exposure"
-    ],
-    "typography": {
-      "leading": 1.05,
-      "scale": 0.9500000000000001,
-      "tracking": 0.9,
-      "weight_offset": -50
-    }
+  "palette": {
+    "accent": "#6e889c",
+    "background": "#f5f4ef",
+    "font": "display",
+    "foreground": "#363c42",
+    "secondary": "#b1bcc3",
+    "surface": "#ffffff"
   },
-  "schema_version": "1.0",
-  "summary": "高调摄影棚：isolate the subject inside a bright seamless studio. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+  "typography": {
+    "leading": 1.05,
+    "scale": 0.9500000000000001,
+    "tracking": 0.9,
+    "weight_offset": -50
+  },
+  "motion": {
+    "ease": "spring",
+    "name": "pull-out",
+    "strength": 0.6200000000000001
+  },
+  "graphics": {
+    "line_width": 1.4,
+    "opacity": 0.094,
+    "overlay": "registration",
+    "panel_radius": 43
+  }
 }

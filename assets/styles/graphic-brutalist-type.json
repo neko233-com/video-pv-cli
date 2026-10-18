@@ -1,18 +1,15 @@
 {
-  "avoid": [
-    "unmotivated decorative motion",
-    "unreadable small copy",
-    "invented product or gameplay proof"
-  ],
-  "beat_plan": [
-    "Hook: brutalist scale",
-    "Establish: let one oversized unpolished headline carry the frame",
-    "Prove: use an approved local capture or truthful designed-motion detail",
-    "Payoff: graphic weight with one clear final identity"
-  ],
-  "best_for": [
-    "graphic promotional video",
-    "product or character identity reveal"
+  "schema": "web2video/style/1",
+  "id": "graphic-brutalist-type",
+  "name": "粗野字体",
+  "family": "graphic",
+  "keywords": [
+    "brutalist scale",
+    "raw type",
+    "hard margin",
+    "bare structure",
+    "forceful cut",
+    "graphic weight"
   ],
   "direction": {
     "camera": "Guide attention with brutalist scale; use a deliberate hold, a measured approach and a stable payoff.",
@@ -23,65 +20,34 @@
     "sound": "Create a restrained rhythm around forceful cut; place licensed accents on intentional cuts and keep speech clear.",
     "typography": "Use brutalist scale,raw type,hard margin,bare structure,forceful cut,graphic weight as hierarchy cues; keep display copy short and body copy readable at final delivery size."
   },
-  "family": "graphic",
-  "id": "graphic-brutalist-type",
-  "keywords": [
-    "brutalist scale",
-    "raw type",
-    "hard margin",
-    "bare structure",
-    "forceful cut",
-    "graphic weight"
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
   ],
-  "name": "粗野字体",
-  "reference_ids": [
-    "hyperframes-creative",
-    "hyperframes-product-launch",
-    "video-shotcraft",
-    "product-demo-video"
-  ],
-  "render": {
-    "backgrounds": [
-      "caustics",
-      "grid"
-    ],
-    "base_template": "brand-logo-aurora",
-    "graphics": {
-      "line_width": 0.8,
-      "opacity": 0.10300000000000001,
-      "overlay": "letterbox",
-      "panel_radius": 3
-    },
-    "layouts": [
-      "left",
-      "center"
-    ],
-    "motion": {
-      "ease": "outExpo",
-      "name": "drift-up",
-      "strength": 0.6900000000000001
-    },
-    "overlap_ratio": 0.13,
-    "theme": {
-      "accent": "#954333",
-      "background": "#d9d7ce",
-      "font": "sans",
-      "foreground": "#17191d",
-      "secondary": "#757d88",
-      "surface": "#f2efe5"
-    },
-    "transitions": [
-      "diagonal",
-      "split",
-      "pixelate"
-    ],
-    "typography": {
-      "leading": 1.23,
-      "scale": 0.9750000000000001,
-      "tracking": 0,
-      "weight_offset": 30
-    }
+  "palette": {
+    "accent": "#954333",
+    "background": "#d9d7ce",
+    "font": "sans",
+    "foreground": "#17191d",
+    "secondary": "#757d88",
+    "surface": "#f2efe5"
   },
-  "schema_version": "1.0",
-  "summary": "粗野字体：let one oversized unpolished headline carry the frame. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+  "typography": {
+    "leading": 1.23,
+    "scale": 0.9750000000000001,
+    "tracking": 0,
+    "weight_offset": 30
+  },
+  "motion": {
+    "ease": "outExpo",
+    "name": "drift-up",
+    "strength": 0.6900000000000001
+  },
+  "graphics": {
+    "line_width": 0.8,
+    "opacity": 0.10300000000000001,
+    "overlay": "letterbox",
+    "panel_radius": 3
+  }
 }

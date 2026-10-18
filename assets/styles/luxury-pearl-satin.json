@@ -1,18 +1,15 @@
 {
-  "avoid": [
-    "unmotivated decorative motion",
-    "unreadable small copy",
-    "invented product or gameplay proof"
-  ],
-  "beat_plan": [
-    "Hook: pearl white",
-    "Establish: soft layered planes cradle a restrained product close-up",
-    "Prove: use an approved local capture or truthful designed-motion detail",
-    "Payoff: delicate serif with one clear final identity"
-  ],
-  "best_for": [
-    "luxury promotional video",
-    "product or character identity reveal"
+  "schema": "web2video/style/1",
+  "id": "luxury-pearl-satin",
+  "name": "珍珠缎光",
+  "family": "luxury",
+  "keywords": [
+    "pearl white",
+    "satin fold",
+    "soft specular",
+    "intimate macro",
+    "graceful drift",
+    "delicate serif"
   ],
   "direction": {
     "camera": "Guide attention with pearl white; use a deliberate hold, a measured approach and a stable payoff.",
@@ -23,65 +20,34 @@
     "sound": "Create a restrained rhythm around graceful drift; place licensed accents on intentional cuts and keep speech clear.",
     "typography": "Use pearl white,satin fold,soft specular,intimate macro,graceful drift,delicate serif as hierarchy cues; keep display copy short and body copy readable at final delivery size."
   },
-  "family": "luxury",
-  "id": "luxury-pearl-satin",
-  "keywords": [
-    "pearl white",
-    "satin fold",
-    "soft specular",
-    "intimate macro",
-    "graceful drift",
-    "delicate serif"
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
   ],
-  "name": "珍珠缎光",
-  "reference_ids": [
-    "hyperframes-creative",
-    "hyperframes-product-launch",
-    "video-shotcraft",
-    "product-demo-video"
-  ],
-  "render": {
-    "backgrounds": [
-      "grid",
-      "nebula"
-    ],
-    "base_template": "keynote-product-obsidian",
-    "graphics": {
-      "line_width": 1.4,
-      "opacity": 0.049,
-      "overlay": "registration",
-      "panel_radius": 18
-    },
-    "layouts": [
-      "left",
-      "right"
-    ],
-    "motion": {
-      "ease": "inOutQuint",
-      "name": "pull-out",
-      "strength": 0.27
-    },
-    "overlap_ratio": 0.10500000000000001,
-    "theme": {
-      "accent": "#8b655d",
-      "background": "#f4f0e9",
-      "font": "display",
-      "foreground": "#342c2b",
-      "secondary": "#ccb4a7",
-      "surface": "#fffdf8"
-    },
-    "transitions": [
-      "light-sweep",
-      "crossfade",
-      "iris"
-    ],
-    "typography": {
-      "leading": 1.17,
-      "scale": 0.8250000000000001,
-      "tracking": 0.9,
-      "weight_offset": -50
-    }
+  "palette": {
+    "accent": "#8b655d",
+    "background": "#f4f0e9",
+    "font": "display",
+    "foreground": "#342c2b",
+    "secondary": "#ccb4a7",
+    "surface": "#fffdf8"
   },
-  "schema_version": "1.0",
-  "summary": "珍珠缎光：soft layered planes cradle a restrained product close-up. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+  "typography": {
+    "leading": 1.17,
+    "scale": 0.8250000000000001,
+    "tracking": 0.9,
+    "weight_offset": -50
+  },
+  "motion": {
+    "ease": "inOutQuint",
+    "name": "pull-out",
+    "strength": 0.27
+  },
+  "graphics": {
+    "line_width": 1.4,
+    "opacity": 0.049,
+    "overlay": "registration",
+    "panel_radius": 18
+  }
 }

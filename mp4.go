@@ -213,7 +213,7 @@ func inspectMP4Integrity(path, ffprobe string, media MediaSummary) (*MP4Integrit
 
 func runMP4(args []string, stdout, stderr io.Writer) int {
 	if len(args) == 0 || args[0] != "verify" {
-		fmt.Fprintln(stderr, "Usage: video-pv-cli mp4 verify --input video.mp4 [--report report.json] [--silent] [--require-audio] [--fast-start]")
+		fmt.Fprintln(stderr, "Usage: web2video verify --input video.mp4 [--report report.json] [--silent] [--require-audio] [--fast-start]")
 		return 2
 	}
 	f := flag.NewFlagSet("mp4 verify", flag.ContinueOnError)

@@ -1,7 +1,0 @@
-interface:
-  display_name: "PV Production"
-  short_description: "Create and verify game, character, and product PVs"
-  default_prompt: "Use $pv-production to plan a game, character, or product PV and deliver a reviewed, validated package."
-
-policy:
-  allow_implicit_invocation: true

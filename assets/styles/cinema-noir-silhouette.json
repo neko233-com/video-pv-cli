@@ -1,18 +1,15 @@
 {
-  "avoid": [
-    "unmotivated decorative motion",
-    "unreadable small copy",
-    "invented product or gameplay proof"
-  ],
-  "beat_plan": [
-    "Hook: noir geometry",
-    "Establish: tell the beat through one strong silhouette and its shadow",
-    "Prove: use an approved local capture or truthful designed-motion detail",
-    "Payoff: formal contrast with one clear final identity"
-  ],
-  "best_for": [
-    "cinema promotional video",
-    "product or character identity reveal"
+  "schema": "web2video/style/1",
+  "id": "cinema-noir-silhouette",
+  "name": "黑色剪影",
+  "family": "cinema",
+  "keywords": [
+    "noir geometry",
+    "hard shadow",
+    "single silhouette",
+    "quiet suspense",
+    "low key",
+    "formal contrast"
   ],
   "direction": {
     "camera": "Guide attention with noir geometry; use a deliberate hold, a measured approach and a stable payoff.",
@@ -23,65 +20,34 @@
     "sound": "Create a restrained rhythm around low key; place licensed accents on intentional cuts and keep speech clear.",
     "typography": "Use noir geometry,hard shadow,single silhouette,quiet suspense,low key,formal contrast as hierarchy cues; keep display copy short and body copy readable at final delivery size."
   },
-  "family": "cinema",
-  "id": "cinema-noir-silhouette",
-  "keywords": [
-    "noir geometry",
-    "hard shadow",
-    "single silhouette",
-    "quiet suspense",
-    "low key",
-    "formal contrast"
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
   ],
-  "name": "黑色剪影",
-  "reference_ids": [
-    "hyperframes-creative",
-    "hyperframes-product-launch",
-    "video-shotcraft",
-    "product-demo-video"
-  ],
-  "render": {
-    "backgrounds": [
-      "caustics",
-      "fluid"
-    ],
-    "base_template": "character-story-midnight",
-    "graphics": {
-      "line_width": 1.4,
-      "opacity": 0.049,
-      "overlay": "corner-ticks",
-      "panel_radius": 53
-    },
-    "layouts": [
-      "center",
-      "left"
-    ],
-    "motion": {
-      "ease": "inOutCubic",
-      "name": "float",
-      "strength": 0.27
-    },
-    "overlap_ratio": 0.10500000000000001,
-    "theme": {
-      "accent": "#bdbeb7",
-      "background": "#0b0c0e",
-      "font": "display",
-      "foreground": "#e6e5df",
-      "secondary": "#737779",
-      "surface": "#232629"
-    },
-    "transitions": [
-      "crossfade",
-      "dip-black",
-      "exposure"
-    ],
-    "typography": {
-      "leading": 1.23,
-      "scale": 0.8250000000000001,
-      "tracking": 0.9,
-      "weight_offset": 100
-    }
+  "palette": {
+    "accent": "#bdbeb7",
+    "background": "#0b0c0e",
+    "font": "display",
+    "foreground": "#e6e5df",
+    "secondary": "#737779",
+    "surface": "#232629"
   },
-  "schema_version": "1.0",
-  "summary": "黑色剪影：tell the beat through one strong silhouette and its shadow. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+  "typography": {
+    "leading": 1.23,
+    "scale": 0.8250000000000001,
+    "tracking": 0.9,
+    "weight_offset": 100
+  },
+  "motion": {
+    "ease": "inOutCubic",
+    "name": "float",
+    "strength": 0.27
+  },
+  "graphics": {
+    "line_width": 1.4,
+    "opacity": 0.049,
+    "overlay": "corner-ticks",
+    "panel_radius": 53
+  }
 }

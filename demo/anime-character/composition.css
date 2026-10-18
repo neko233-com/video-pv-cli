@@ -1,0 +1,12 @@
+@font-face{font-family:Manrope;src:url('manrope.ttf')}@font-face{font-family:Cinzel;src:url('cinzel.ttf')}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#08090d;color:#fff;font-family:Manrope,sans-serif}
+#root{position:relative;width:100%;height:100%;overflow:hidden;container-type:inline-size;background:#08090d}
+#stage{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}.clip{position:absolute;inset:0;overflow:hidden}
+.scene-shell{position:absolute;inset:0;padding:6.8cqw 7.2cqw;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(90deg,var(--shade),var(--shade-soft) 46%,transparent 74%);color:var(--foreground)}
+.kicker{font-size:.83cqw;letter-spacing:.28em;font-weight:600;color:var(--foreground);opacity:.8;margin:0 0 2cqw;width:fit-content}
+h1{font-weight:500;font-size:calc(6.3cqw * var(--type-scale));letter-spacing:-.055em;line-height:var(--leading);margin:0;white-space:pre-line;max-width:72%;width:fit-content;text-shadow:0 2px 28px #0002}
+.subtitle{font-size:1.12cqw;letter-spacing:.025em;line-height:1.7;margin:2.2cqw 0 0;color:var(--foreground);opacity:.85;max-width:40%}
+.rule{width:3cqw;height:1px;background:var(--accent);margin-bottom:2cqw;transform-origin:left}
+.folio{position:absolute;left:7.2%;bottom:5%;font-size:.62cqw;letter-spacing:.2em;color:#c9cdd3}
+.character h1{font-family:Cinzel,serif;font-size:calc(7cqw * var(--type-scale));letter-spacing:.02em}.statement .scene-shell{background:var(--shade)}.statement h1{font-size:calc(9.2cqw * var(--type-scale));font-weight:700;line-height:.95;max-width:100%;letter-spacing:-.06em}
+.detail h1{font-size:5.2cqw}.ambient .scene-shell{background:none;padding:0}

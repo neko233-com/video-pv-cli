@@ -1,0 +1,21 @@
+{
+  "schema": "web2video/release-validation/1",
+  "date": "2026-10-19",
+  "version": "1.0.0",
+  "target": "windows/amd64",
+  "reproducible": true,
+  "allowlist": [
+    "web2video.exe",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ],
+  "mp4_entries": 0,
+  "packaged_cli_qa_command": "web2video qa --media --gpu --catalog",
+  "packaged_cli_qa_passed": true,
+  "loop_midpoint_motion_test_passed": true,
+  "race_passed": true,
+  "race_gpu_integrations": false,
+  "binary_sha256": "190deb8ec57b35a17ec61e46cf382118665971941819788030a3d62ff391771a",
+  "zip_sha256": "71ac38f118f13ab50b474c5d92e0ba49254181aeafcc6534dcb7551985a3ba86"
+}

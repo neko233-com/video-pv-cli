@@ -1,18 +1,15 @@
 {
-  "avoid": [
-    "unmotivated decorative motion",
-    "unreadable small copy",
-    "invented product or gameplay proof"
-  ],
-  "beat_plan": [
-    "Hook: organic lattice",
-    "Establish: organize an organic field around a clear central signal",
-    "Prove: use an approved local capture or truthful designed-motion detail",
-    "Payoff: natural order with one clear final identity"
-  ],
-  "best_for": [
-    "organic promotional video",
-    "product or character identity reveal"
+  "schema": "web2video/style/1",
+  "id": "organic-living-mesh",
+  "name": "生长网格",
+  "family": "organic",
+  "keywords": [
+    "organic lattice",
+    "coherent flow",
+    "soft signal",
+    "adaptive geometry",
+    "gentle pulse",
+    "natural order"
   ],
   "direction": {
     "camera": "Guide attention with organic lattice; use a deliberate hold, a measured approach and a stable payoff.",
@@ -23,65 +20,34 @@
     "sound": "Create a restrained rhythm around gentle pulse; place licensed accents on intentional cuts and keep speech clear.",
     "typography": "Use organic lattice,coherent flow,soft signal,adaptive geometry,gentle pulse,natural order as hierarchy cues; keep display copy short and body copy readable at final delivery size."
   },
-  "family": "organic",
-  "id": "organic-living-mesh",
-  "keywords": [
-    "organic lattice",
-    "coherent flow",
-    "soft signal",
-    "adaptive geometry",
-    "gentle pulse",
-    "natural order"
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
   ],
-  "name": "生长网格",
-  "reference_ids": [
-    "hyperframes-creative",
-    "hyperframes-product-launch",
-    "video-shotcraft",
-    "product-demo-video"
-  ],
-  "render": {
-    "backgrounds": [
-      "rings",
-      "particles"
-    ],
-    "base_template": "keynote-material-porcelain",
-    "graphics": {
-      "line_width": 1.1,
-      "opacity": 0.121,
-      "overlay": "crosshair",
-      "panel_radius": 18
-    },
-    "layouts": [
-      "left",
-      "asymmetric"
-    ],
-    "motion": {
-      "ease": "inOutQuint",
-      "name": "orbit",
-      "strength": 0.8300000000000001
-    },
-    "overlap_ratio": 0.18,
-    "theme": {
-      "accent": "#608d70",
-      "background": "#e6ece3",
-      "font": "sans",
-      "foreground": "#344a3b",
-      "secondary": "#a1b79b",
-      "surface": "#f9fff6"
-    },
-    "transitions": [
-      "noise-dissolve",
-      "ripple",
-      "soft-wipe"
-    ],
-    "typography": {
-      "leading": 1.05,
-      "scale": 1.0250000000000001,
-      "tracking": 0.45,
-      "weight_offset": 40
-    }
+  "palette": {
+    "accent": "#608d70",
+    "background": "#e6ece3",
+    "font": "sans",
+    "foreground": "#344a3b",
+    "secondary": "#a1b79b",
+    "surface": "#f9fff6"
   },
-  "schema_version": "1.0",
-  "summary": "生长网格：organize an organic field around a clear central signal. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+  "typography": {
+    "leading": 1.05,
+    "scale": 1.0250000000000001,
+    "tracking": 0.45,
+    "weight_offset": 40
+  },
+  "motion": {
+    "ease": "inOutQuint",
+    "name": "orbit",
+    "strength": 0.8300000000000001
+  },
+  "graphics": {
+    "line_width": 1.1,
+    "opacity": 0.121,
+    "overlay": "crosshair",
+    "panel_radius": 18
+  }
 }

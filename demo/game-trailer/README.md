@@ -1,14 +1,11 @@
-# STELLAR ECHO · 奇幻概念预告
+# game-trailer
 
-1920×1080 / 30fps，约 11.4 秒。`game-epic-fantasy` 风格：暖金暗场、章节节拍、动作面板、转场冲击与片名落版。示例复用原创角色立绘，画面明确属于概念设计，不代表实际玩法或实机表现。
+Independent native HyperFrames / WebGPU source project.
 
-在仓库根目录运行：
+Edit project.json, then run from the repository root:
 
-```powershell
-go run . setup --shared
-go run . render --project demo/game-trailer
-go run . bundle --project demo/game-trailer --target mp4
-go run . mp4 verify --input demo/game-trailer/deliverables/mp4/video.mp4 --silent --fast-start
-```
+    go run . build --project demo/game-trailer
+    go run . preview --project demo/game-trailer
+    go run . render --project demo/game-trailer
 
-制作真实宣传片时接入已授权的游戏实录/场景图片、配乐与可验证的声明；保持镜头证据和审片记录。MP4 不提交。
+The generated MP4 is renders/master.mp4 and is ignored by Git. Use the HTTP preview URL; file:// is unsupported. See the root README for verification and style commands. Artwork is fictional generated concept imagery; see assets/shared/ASSET-SOURCES.md at repository root.

@@ -50,7 +50,7 @@ func inspectMedia(path, ffprobe string) (*MediaSummary, error) {
 			return nil, fmt.Errorf("ffprobe timed out after 30 seconds for %s", path)
 		}
 		if _, ok := err.(*exec.Error); ok {
-			return nil, fmt.Errorf("ffprobe executable %q could not be started; run video-pv-cli --doctor to inspect FFmpeg availability", ffprobe)
+			return nil, fmt.Errorf("ffprobe executable %q could not be started; run web2video doctor to inspect FFmpeg availability", ffprobe)
 		}
 		message := strings.TrimSpace(stderr.String())
 		if message == "" {
@@ -138,7 +138,7 @@ func decodeMedia(path, ffmpeg string) error {
 			return fmt.Errorf("full decode timed out after 10 minutes for %s", path)
 		}
 		if _, ok := err.(*exec.Error); ok {
-			return fmt.Errorf("ffmpeg executable %q could not be started; run video-pv-cli --doctor to inspect FFmpeg availability", ffmpeg)
+			return fmt.Errorf("ffmpeg executable %q could not be started; run web2video doctor to inspect FFmpeg availability", ffmpeg)
 		}
 		message := strings.TrimSpace(stderr.String())
 		if message == "" {
@@ -164,53 +164,4 @@ func parseFrameRate(value string) float64 {
 		return 0
 	}
 	return fps
-}
-
-func compareMedia(report *Report, project ProjectFile, media MediaSummary) {
-	var problems []string
-	if expected := project.Delivery.PixelFormat; expected != "" && media.PixelFormat != expected {
-		problems = append(problems, fmt.Sprintf("pixel format is %s; expected %s", media.PixelFormat, expected))
-	}
-	if expected := strings.ToLower(strings.TrimSpace(project.Delivery.Container)); expected != "" && !containsCSVValue(media.Container, expected) {
-		problems = append(problems, fmt.Sprintf("container is %s; expected %s", displayValue(media.Container), expected))
-	}
-	if media.Width != project.Project.Width || media.Height != project.Project.Height {
-		problems = append(problems, fmt.Sprintf("resolution is %dx%d; expected %dx%d", media.Width, media.Height, project.Project.Width, project.Project.Height))
-	}
-	if math.Abs(media.FPS-project.Project.FPS) > 0.1 {
-		problems = append(problems, fmt.Sprintf("frame rate is %.3g fps; expected %.3g fps", media.FPS, project.Project.FPS))
-	}
-	tolerance := math.Max(0.25, 2/math.Max(project.Project.FPS, 1))
-	if math.Abs(media.DurationSeconds-project.Project.DurationSeconds) > tolerance {
-		problems = append(problems, fmt.Sprintf("duration is %.3g s; expected %.3g s (tolerance %.3g s)", media.DurationSeconds, project.Project.DurationSeconds, tolerance))
-	}
-	if media.VideoDurationSeconds > 0 && math.Abs(media.VideoDurationSeconds-project.Project.DurationSeconds) > tolerance {
-		problems = append(problems, "video stream duration differs from target (container/audio duration cannot stand in for video)")
-	}
-	if media.Frames > 0 && math.Abs(float64(media.Frames)-math.Round(project.Project.DurationSeconds*project.Project.FPS)) > 2 {
-		problems = append(problems, "encoded video frame count differs from target")
-	}
-	if expected := strings.ToLower(strings.TrimSpace(project.Delivery.VideoCodec)); expected != "" && !strings.EqualFold(media.VideoCodec, expected) {
-		problems = append(problems, fmt.Sprintf("video codec is %s; expected %s", media.VideoCodec, expected))
-	}
-	if project.Project.AudioRequired && media.AudioCodec == "" {
-		problems = append(problems, "an audio stream is required but none was found")
-	}
-	if expected := strings.ToLower(strings.TrimSpace(project.Delivery.AudioCodec)); expected != "" && !strings.EqualFold(media.AudioCodec, expected) {
-		problems = append(problems, fmt.Sprintf("audio codec is %s; expected %s", displayValue(media.AudioCodec), expected))
-	}
-	if len(problems) > 0 {
-		report.add("media.spec", "fail", strings.Join(problems, "; "))
-	} else {
-		report.add("media.spec", "pass", "final media matches the declared technical specifications")
-	}
-}
-
-func containsCSVValue(values, expected string) bool {
-	for _, value := range strings.Split(values, ",") {
-		if strings.EqualFold(strings.TrimSpace(value), expected) {
-			return true
-		}
-	}
-	return false
 }

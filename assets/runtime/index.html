@@ -1,0 +1,8 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{{.Title}}</title><link rel="stylesheet" href="composition.css"></head><body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="{{.Duration}}" data-width="{{.Width}}" data-height="{{.Height}}" data-fps="{{.FPS}}" data-requires-webgpu style="--accent:{{.Accent}}">
+<canvas id="stage" aria-hidden="true" data-layout-allow-overflow></canvas>
+{{range .Scenes}}<section id="{{.ID}}" class="clip {{.Layout}}" data-start="{{.Start}}" data-duration="{{.Duration}}" data-track-index="1"><div class="scene-shell">{{if .Title}}<div class="rule"></div><p class="kicker">{{.Kicker}}</p><h1>{{.Title}}</h1><p class="subtitle">{{.Subtitle}}</p>{{end}}</div></section>{{end}}
+</div>
+<script id="project-data" type="application/json">{{.JSON}}</script><script id="style-data" type="application/json">{{.StyleJSON}}</script><script src="gsap.min.js"></script><script>{{.Script}}</script>
+</body></html>

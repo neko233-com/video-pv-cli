@@ -1,18 +1,15 @@
 {
-  "avoid": [
-    "unmotivated decorative motion",
-    "unreadable small copy",
-    "invented product or gameplay proof"
-  ],
-  "beat_plan": [
-    "Hook: lens anatomy",
-    "Establish: use concentric framing to move attention between whole and detail",
-    "Prove: use an approved local capture or truthful designed-motion detail",
-    "Payoff: scientific elegance with one clear final identity"
-  ],
-  "best_for": [
-    "tech promotional video",
-    "product or character identity reveal"
+  "schema": "web2video/style/1",
+  "id": "tech-optical-lens",
+  "name": "光学透镜",
+  "family": "tech",
+  "keywords": [
+    "lens anatomy",
+    "concentric focus",
+    "optical refraction",
+    "crisp edge",
+    "slow focus",
+    "scientific elegance"
   ],
   "direction": {
     "camera": "Guide attention with lens anatomy; use a deliberate hold, a measured approach and a stable payoff.",
@@ -23,65 +20,34 @@
     "sound": "Create a restrained rhythm around slow focus; place licensed accents on intentional cuts and keep speech clear.",
     "typography": "Use lens anatomy,concentric focus,optical refraction,crisp edge,slow focus,scientific elegance as hierarchy cues; keep display copy short and body copy readable at final delivery size."
   },
-  "family": "tech",
-  "id": "tech-optical-lens",
-  "keywords": [
-    "lens anatomy",
-    "concentric focus",
-    "optical refraction",
-    "crisp edge",
-    "slow focus",
-    "scientific elegance"
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
   ],
-  "name": "光学透镜",
-  "reference_ids": [
-    "hyperframes-creative",
-    "hyperframes-product-launch",
-    "video-shotcraft",
-    "product-demo-video"
-  ],
-  "render": {
-    "backgrounds": [
-      "nebula",
-      "solid"
-    ],
-    "base_template": "keynote-features-graphite",
-    "graphics": {
-      "line_width": 1.1,
-      "opacity": 0.121,
-      "overlay": "frame",
-      "panel_radius": 48
-    },
-    "layouts": [
-      "asymmetric",
-      "center"
-    ],
-    "motion": {
-      "ease": "settle",
-      "name": "push-in",
-      "strength": 0.8300000000000001
-    },
-    "overlap_ratio": 0.18,
-    "theme": {
-      "accent": "#8bd6cf",
-      "background": "#06151b",
-      "font": "sans",
-      "foreground": "#e8f6f5",
-      "secondary": "#5a92a7",
-      "surface": "#173039"
-    },
-    "transitions": [
-      "center-wipe",
-      "soft-wipe",
-      "lens"
-    ],
-    "typography": {
-      "leading": 1.23,
-      "scale": 1.0250000000000001,
-      "tracking": 0.45,
-      "weight_offset": 140
-    }
+  "palette": {
+    "accent": "#8bd6cf",
+    "background": "#06151b",
+    "font": "sans",
+    "foreground": "#e8f6f5",
+    "secondary": "#5a92a7",
+    "surface": "#173039"
   },
-  "schema_version": "1.0",
-  "summary": "光学透镜：use concentric framing to move attention between whole and detail. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+  "typography": {
+    "leading": 1.23,
+    "scale": 1.0250000000000001,
+    "tracking": 0.45,
+    "weight_offset": 140
+  },
+  "motion": {
+    "ease": "settle",
+    "name": "push-in",
+    "strength": 0.8300000000000001
+  },
+  "graphics": {
+    "line_width": 1.1,
+    "opacity": 0.121,
+    "overlay": "frame",
+    "panel_radius": 48
+  }
 }

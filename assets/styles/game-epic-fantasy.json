@@ -1,18 +1,15 @@
 {
-  "avoid": [
-    "unmotivated decorative motion",
-    "unreadable small copy",
-    "invented product or gameplay proof"
-  ],
-  "beat_plan": [
-    "Hook: mythic scale",
-    "Establish: a small hero silhouette faces a monumental world",
-    "Prove: use an approved local capture or truthful designed-motion detail",
-    "Payoff: monumental title with one clear final identity"
-  ],
-  "best_for": [
-    "game promotional video",
-    "product or character identity reveal"
+  "schema": "web2video/style/1",
+  "id": "game-epic-fantasy",
+  "name": "史诗奇幻",
+  "family": "game",
+  "keywords": [
+    "mythic scale",
+    "ruined horizon",
+    "gold embers",
+    "hero silhouette",
+    "slow escalation",
+    "monumental title"
   ],
   "direction": {
     "camera": "Guide attention with mythic scale; use a deliberate hold, a measured approach and a stable payoff.",
@@ -23,65 +20,34 @@
     "sound": "Create a restrained rhythm around slow escalation; place licensed accents on intentional cuts and keep speech clear.",
     "typography": "Use mythic scale,ruined horizon,gold embers,hero silhouette,slow escalation,monumental title as hierarchy cues; keep display copy short and body copy readable at final delivery size."
   },
-  "family": "game",
-  "id": "game-epic-fantasy",
-  "keywords": [
-    "mythic scale",
-    "ruined horizon",
-    "gold embers",
-    "hero silhouette",
-    "slow escalation",
-    "monumental title"
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
   ],
-  "name": "史诗奇幻",
-  "reference_ids": [
-    "hyperframes-creative",
-    "hyperframes-product-launch",
-    "video-shotcraft",
-    "product-demo-video"
-  ],
-  "render": {
-    "backgrounds": [
-      "solid",
-      "particles"
-    ],
-    "base_template": "game-launch-midnight",
-    "graphics": {
-      "line_width": 2,
-      "opacity": 0.04,
-      "overlay": "halftone",
-      "panel_radius": 28
-    },
-    "layouts": [
-      "asymmetric",
-      "left"
-    ],
-    "motion": {
-      "ease": "settle",
-      "name": "drift-right",
-      "strength": 0.2
-    },
-    "overlap_ratio": 0.08,
-    "theme": {
-      "accent": "#d6b274",
-      "background": "#14110d",
-      "font": "sans",
-      "foreground": "#f7edda",
-      "secondary": "#a47a4e",
-      "surface": "#30251b"
-    },
-    "transitions": [
-      "cut",
-      "chromatic",
-      "shutter"
-    ],
-    "typography": {
-      "leading": 1.05,
-      "scale": 0.8,
-      "tracking": 1.8,
-      "weight_offset": 20
-    }
+  "palette": {
+    "accent": "#d6b274",
+    "background": "#14110d",
+    "font": "sans",
+    "foreground": "#f7edda",
+    "secondary": "#a47a4e",
+    "surface": "#30251b"
   },
-  "schema_version": "1.0",
-  "summary": "史诗奇幻：a small hero silhouette faces a monumental world. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+  "typography": {
+    "leading": 1.05,
+    "scale": 0.8,
+    "tracking": 1.8,
+    "weight_offset": 20
+  },
+  "motion": {
+    "ease": "settle",
+    "name": "drift-right",
+    "strength": 0.2
+  },
+  "graphics": {
+    "line_width": 2,
+    "opacity": 0.04,
+    "overlay": "halftone",
+    "panel_radius": 28
+  }
 }

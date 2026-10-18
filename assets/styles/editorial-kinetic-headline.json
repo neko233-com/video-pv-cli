@@ -1,18 +1,15 @@
 {
-  "avoid": [
-    "unmotivated decorative motion",
-    "unreadable small copy",
-    "invented product or gameplay proof"
-  ],
-  "beat_plan": [
-    "Hook: kinetic headline",
-    "Establish: stage a short headline as a succession of large words",
-    "Prove: use an approved local capture or truthful designed-motion detail",
-    "Payoff: readable pause with one clear final identity"
-  ],
-  "best_for": [
-    "editorial promotional video",
-    "product or character identity reveal"
+  "schema": "web2video/style/1",
+  "id": "editorial-kinetic-headline",
+  "name": "动态头条",
+  "family": "editorial",
+  "keywords": [
+    "kinetic headline",
+    "word ladder",
+    "staggered rhythm",
+    "high contrast",
+    "sharp arrival",
+    "readable pause"
   ],
   "direction": {
     "camera": "Guide attention with kinetic headline; use a deliberate hold, a measured approach and a stable payoff.",
@@ -23,65 +20,34 @@
     "sound": "Create a restrained rhythm around sharp arrival; place licensed accents on intentional cuts and keep speech clear.",
     "typography": "Use kinetic headline,word ladder,staggered rhythm,high contrast,sharp arrival,readable pause as hierarchy cues; keep display copy short and body copy readable at final delivery size."
   },
-  "family": "editorial",
-  "id": "editorial-kinetic-headline",
-  "keywords": [
-    "kinetic headline",
-    "word ladder",
-    "staggered rhythm",
-    "high contrast",
-    "sharp arrival",
-    "readable pause"
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
   ],
-  "name": "动态头条",
-  "reference_ids": [
-    "hyperframes-creative",
-    "hyperframes-product-launch",
-    "video-shotcraft",
-    "product-demo-video"
-  ],
-  "render": {
-    "backgrounds": [
-      "grid",
-      "silk"
-    ],
-    "base_template": "keynote-gallery-porcelain",
-    "graphics": {
-      "line_width": 0.8,
-      "opacity": 0.10300000000000001,
-      "overlay": "none",
-      "panel_radius": 33
-    },
-    "layouts": [
-      "center",
-      "left"
-    ],
-    "motion": {
-      "ease": "swift",
-      "name": "none",
-      "strength": 0.6900000000000001
-    },
-    "overlap_ratio": 0.13,
-    "theme": {
-      "accent": "#f0c65b",
-      "background": "#16171b",
-      "font": "sans",
-      "foreground": "#f8f5ec",
-      "secondary": "#a3a8b2",
-      "surface": "#303239"
-    },
-    "transitions": [
-      "page-turn",
-      "cut",
-      "crossfade"
-    ],
-    "typography": {
-      "leading": 1.17,
-      "scale": 0.9750000000000001,
-      "tracking": 0,
-      "weight_offset": 130
-    }
+  "palette": {
+    "accent": "#f0c65b",
+    "background": "#16171b",
+    "font": "sans",
+    "foreground": "#f8f5ec",
+    "secondary": "#a3a8b2",
+    "surface": "#303239"
   },
-  "schema_version": "1.0",
-  "summary": "动态头条：stage a short headline as a succession of large words. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+  "typography": {
+    "leading": 1.17,
+    "scale": 0.9750000000000001,
+    "tracking": 0,
+    "weight_offset": 130
+  },
+  "motion": {
+    "ease": "swift",
+    "name": "none",
+    "strength": 0.6900000000000001
+  },
+  "graphics": {
+    "line_width": 0.8,
+    "opacity": 0.10300000000000001,
+    "overlay": "none",
+    "panel_radius": 33
+  }
 }

@@ -1,18 +1,15 @@
 {
-  "avoid": [
-    "unmotivated decorative motion",
-    "unreadable small copy",
-    "invented product or gameplay proof"
-  ],
-  "beat_plan": [
-    "Hook: scoreboard hierarchy",
-    "Establish: make the result or competitive objective the dominant information",
-    "Prove: use an approved local capture or truthful designed-motion detail",
-    "Payoff: competitive energy with one clear final identity"
-  ],
-  "best_for": [
-    "game promotional video",
-    "product or character identity reveal"
+  "schema": "web2video/style/1",
+  "id": "game-esports-scorecard",
+  "name": "电竞赛报",
+  "family": "game",
+  "keywords": [
+    "scoreboard hierarchy",
+    "team contrast",
+    "numeric punch",
+    "fast precision",
+    "bracket order",
+    "competitive energy"
   ],
   "direction": {
     "camera": "Guide attention with scoreboard hierarchy; use a deliberate hold, a measured approach and a stable payoff.",
@@ -23,65 +20,34 @@
     "sound": "Create a restrained rhythm around bracket order; place licensed accents on intentional cuts and keep speech clear.",
     "typography": "Use scoreboard hierarchy,team contrast,numeric punch,fast precision,bracket order,competitive energy as hierarchy cues; keep display copy short and body copy readable at final delivery size."
   },
-  "family": "game",
-  "id": "game-esports-scorecard",
-  "keywords": [
-    "scoreboard hierarchy",
-    "team contrast",
-    "numeric punch",
-    "fast precision",
-    "bracket order",
-    "competitive energy"
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
   ],
-  "name": "电竞赛报",
-  "reference_ids": [
-    "hyperframes-creative",
-    "hyperframes-product-launch",
-    "video-shotcraft",
-    "product-demo-video"
-  ],
-  "render": {
-    "backgrounds": [
-      "prism",
-      "aurora"
-    ],
-    "base_template": "game-combat-ember",
-    "graphics": {
-      "line_width": 1.7,
-      "opacity": 0.121,
-      "overlay": "scanlines",
-      "panel_radius": 62
-    },
-    "layouts": [
-      "left",
-      "asymmetric"
-    ],
-    "motion": {
-      "ease": "linear",
-      "name": "drift-left",
-      "strength": 0.8300000000000001
-    },
-    "overlap_ratio": 0.18,
-    "theme": {
-      "accent": "#9bc4ff",
-      "background": "#111422",
-      "font": "sans",
-      "foreground": "#f1f4fc",
-      "secondary": "#df8c94",
-      "surface": "#262d46"
-    },
-    "transitions": [
-      "chromatic",
-      "cut",
-      "shutter"
-    ],
-    "typography": {
-      "leading": 1.11,
-      "scale": 1.0250000000000001,
-      "tracking": 1.35,
-      "weight_offset": -50
-    }
+  "palette": {
+    "accent": "#9bc4ff",
+    "background": "#111422",
+    "font": "sans",
+    "foreground": "#f1f4fc",
+    "secondary": "#df8c94",
+    "surface": "#262d46"
   },
-  "schema_version": "1.0",
-  "summary": "电竞赛报：make the result or competitive objective the dominant information. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+  "typography": {
+    "leading": 1.11,
+    "scale": 1.0250000000000001,
+    "tracking": 1.35,
+    "weight_offset": -50
+  },
+  "motion": {
+    "ease": "linear",
+    "name": "drift-left",
+    "strength": 0.8300000000000001
+  },
+  "graphics": {
+    "line_width": 1.7,
+    "opacity": 0.121,
+    "overlay": "scanlines",
+    "panel_radius": 62
+  }
 }

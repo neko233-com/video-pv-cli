@@ -12,7 +12,8 @@
 *.test
 *.test.exe
 coverage.out
-*.mp4
+# Generated MP4 exports at every depth, including mixed-case extensions.
+*.[mM][pP]4
 /demo/*/node_modules/
 /demo/*/out/
 /demo/*/renders/

@@ -1,0 +1,13 @@
+{
+  "schema": "video-pv-cli/windows-race/1",
+  "passed": true,
+  "cgo_enabled": 1,
+  "compiler": "gcc",
+  "test_pass_events": 105,
+  "test_skip_events": 1,
+  "skipped_tests": [
+    "TestIntegrationShaderMP4AndFailureGates"
+  ],
+  "scope": "Go race detector with CPU/media fixtures; GPU fixture verified separately",
+  "concurrent_report_test": "24 writers, plus ten repeated runs"
+}

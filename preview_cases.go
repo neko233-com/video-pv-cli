@@ -18,6 +18,21 @@ type BrowserCase struct {
 func browserAtlas(templates map[string]TemplateData, transitions map[string]TransitionData) (AtlasData, []BrowserCase) {
 	atlas := AtlasData{Kind: "atlas", ID: "edge-catalog-audit", Width: 1920, Height: 1080, FPS: 30}
 	rows := []BrowserCase{}
+	styles, _ := readStyles(templates, transitions)
+	styleIDs := []string{}
+	for id := range styles {
+		styleIDs = append(styleIDs, id)
+	}
+	sort.Strings(styleIDs)
+	for _, id := range styleIDs {
+		s := styles[id]
+		t := applyStyle(templates[s.Render.BaseTemplate], s)
+		for i, at := range []float64{0, templateDuration(t) / 2, templateDuration(t) - 1/t.FPS, 0} {
+			frame := len(rows)
+			atlas.Cases = append(atlas.Cases, AtlasCase{ID: fmt.Sprintf("style/%s/%d", id, i), Template: t, Time: at})
+			rows = append(rows, BrowserCase{Kind: "style", ID: id, Time: at, Frame: frame, Repeat: i == 3, AllowUniform: templateUniformTransition(t, at, transitions)})
+		}
+	}
 	keys := []string{}
 	for id := range templates {
 		keys = append(keys, id)

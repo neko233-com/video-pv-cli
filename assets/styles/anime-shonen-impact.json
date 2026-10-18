@@ -1,0 +1,87 @@
+{
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
+  ],
+  "beat_plan": [
+    "Hook: speed lines",
+    "Establish: let the character silhouette and name share one decisive action line",
+    "Prove: use an approved local capture or truthful designed-motion detail",
+    "Payoff: energetic cut with one clear final identity"
+  ],
+  "best_for": [
+    "anime promotional video",
+    "product or character identity reveal"
+  ],
+  "direction": {
+    "camera": "Guide attention with speed lines; use a deliberate hold, a measured approach and a stable payoff.",
+    "composition": "let the character silhouette and name share one decisive action line; keep one dominant focal hierarchy and legible supporting evidence.",
+    "editing": "Open with bold name; alternate proof and breathing room, then resolve with energetic cut.",
+    "lighting": "hard warm rim; preserve subject contour and separate it from the supporting field.",
+    "materials": "cel-shaded armor and graphic impact marks; actual material appearance comes from approved imagery or a real 3D asset.",
+    "sound": "Create a restrained rhythm around angular action; place licensed accents on intentional cuts and keep speech clear.",
+    "typography": "Use speed lines,bold name,impact pause,high contrast,angular action,energetic cut as hierarchy cues; keep display copy short and body copy readable at final delivery size."
+  },
+  "family": "anime",
+  "id": "anime-shonen-impact",
+  "keywords": [
+    "speed lines",
+    "bold name",
+    "impact pause",
+    "high contrast",
+    "angular action",
+    "energetic cut"
+  ],
+  "name": "热血冲线",
+  "reference_ids": [
+    "hyperframes-creative",
+    "hyperframes-product-launch",
+    "video-shotcraft",
+    "product-demo-video"
+  ],
+  "render": {
+    "backgrounds": [
+      "particles",
+      "fluid"
+    ],
+    "base_template": "character-profile-midnight",
+    "graphics": {
+      "line_width": 1.4,
+      "opacity": 0.057999999999999996,
+      "overlay": "corner-ticks",
+      "panel_radius": 57
+    },
+    "layouts": [
+      "center",
+      "left"
+    ],
+    "motion": {
+      "ease": "inOutCubic",
+      "name": "float",
+      "strength": 0.34
+    },
+    "overlap_ratio": 0.13,
+    "theme": {
+      "accent": "#f4b064",
+      "background": "#1d1011",
+      "font": "display",
+      "foreground": "#fff0da",
+      "secondary": "#ed7358",
+      "surface": "#3c211d"
+    },
+    "transitions": [
+      "ink",
+      "prism",
+      "crossfade"
+    ],
+    "typography": {
+      "leading": 1.23,
+      "scale": 0.8500000000000001,
+      "tracking": 0.9,
+      "weight_offset": 90
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "热血冲线：let the character silhouette and name share one decisive action line. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+}

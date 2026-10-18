@@ -1,0 +1,87 @@
+{
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
+  ],
+  "beat_plan": [
+    "Hook: typographic monument",
+    "Establish: make a small number of words the main visual subject",
+    "Prove: use an approved local capture or truthful designed-motion detail",
+    "Payoff: graphic stop with one clear final identity"
+  ],
+  "best_for": [
+    "editorial promotional video",
+    "product or character identity reveal"
+  ],
+  "direction": {
+    "camera": "Guide attention with typographic monument; use a deliberate hold, a measured approach and a stable payoff.",
+    "composition": "make a small number of words the main visual subject; keep one dominant focal hierarchy and legible supporting evidence.",
+    "editing": "Open with poster scale; alternate proof and breathing room, then resolve with graphic stop.",
+    "lighting": "flat poster fill; preserve subject contour and separate it from the supporting field.",
+    "materials": "solid pigment and letterform edges; actual material appearance comes from approved imagery or a real 3D asset.",
+    "sound": "Create a restrained rhythm around clear accent; place licensed accents on intentional cuts and keep speech clear.",
+    "typography": "Use typographic monument,poster scale,word contrast,bold geometry,clear accent,graphic stop as hierarchy cues; keep display copy short and body copy readable at final delivery size."
+  },
+  "family": "editorial",
+  "id": "editorial-typographic-poster",
+  "keywords": [
+    "typographic monument",
+    "poster scale",
+    "word contrast",
+    "bold geometry",
+    "clear accent",
+    "graphic stop"
+  ],
+  "name": "字体海报",
+  "reference_ids": [
+    "hyperframes-creative",
+    "hyperframes-product-launch",
+    "video-shotcraft",
+    "product-demo-video"
+  ],
+  "render": {
+    "backgrounds": [
+      "solid",
+      "caustics"
+    ],
+    "base_template": "keynote-type-porcelain",
+    "graphics": {
+      "line_width": 1.1,
+      "opacity": 0.067,
+      "overlay": "crosshair",
+      "panel_radius": 54
+    },
+    "layouts": [
+      "left",
+      "asymmetric"
+    ],
+    "motion": {
+      "ease": "linear",
+      "name": "orbit",
+      "strength": 0.41000000000000003
+    },
+    "overlap_ratio": 0.15500000000000003,
+    "theme": {
+      "accent": "#344e87",
+      "background": "#e3dbce",
+      "font": "sans",
+      "foreground": "#23242a",
+      "secondary": "#a59683",
+      "surface": "#f6efe2"
+    },
+    "transitions": [
+      "page-turn",
+      "cut",
+      "crossfade"
+    ],
+    "typography": {
+      "leading": 1.17,
+      "scale": 0.875,
+      "tracking": 0.45,
+      "weight_offset": 50
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "字体海报：make a small number of words the main visual subject. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+}

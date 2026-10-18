@@ -1,0 +1,87 @@
+{
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
+  ],
+  "beat_plan": [
+    "Hook: clinical clarity",
+    "Establish: present one verified measurement in a spacious clinical frame",
+    "Prove: use an approved local capture or truthful designed-motion detail",
+    "Payoff: soft blue with one clear final identity"
+  ],
+  "best_for": [
+    "tech promotional video",
+    "product or character identity reveal"
+  ],
+  "direction": {
+    "camera": "Guide attention with clinical clarity; use a deliberate hold, a measured approach and a stable payoff.",
+    "composition": "present one verified measurement in a spacious clinical frame; keep one dominant focal hierarchy and legible supporting evidence.",
+    "editing": "Open with white field; alternate proof and breathing room, then resolve with soft blue.",
+    "lighting": "shadowless studio wash; preserve subject contour and separate it from the supporting field.",
+    "materials": "sterile polymer and clear glass; actual material appearance comes from approved imagery or a real 3D asset.",
+    "sound": "Create a restrained rhythm around trustworthy scale; place licensed accents on intentional cuts and keep speech clear.",
+    "typography": "Use clinical clarity,white field,calm data,hygienic geometry,trustworthy scale,soft blue as hierarchy cues; keep display copy short and body copy readable at final delivery size."
+  },
+  "family": "tech",
+  "id": "tech-medical-clean",
+  "keywords": [
+    "clinical clarity",
+    "white field",
+    "calm data",
+    "hygienic geometry",
+    "trustworthy scale",
+    "soft blue"
+  ],
+  "name": "洁净精密",
+  "reference_ids": [
+    "hyperframes-creative",
+    "hyperframes-product-launch",
+    "video-shotcraft",
+    "product-demo-video"
+  ],
+  "render": {
+    "backgrounds": [
+      "silk",
+      "fluid"
+    ],
+    "base_template": "keynote-material-midnight",
+    "graphics": {
+      "line_width": 1.4,
+      "opacity": 0.08499999999999999,
+      "overlay": "corner-ticks",
+      "panel_radius": 4
+    },
+    "layouts": [
+      "center",
+      "left"
+    ],
+    "motion": {
+      "ease": "inOutCubic",
+      "name": "float",
+      "strength": 0.55
+    },
+    "overlap_ratio": 0.08,
+    "theme": {
+      "accent": "#367a99",
+      "background": "#f1f7f9",
+      "font": "sans",
+      "foreground": "#1d3d4e",
+      "secondary": "#8dbfc7",
+      "surface": "#ffffff"
+    },
+    "transitions": [
+      "center-wipe",
+      "soft-wipe",
+      "lens"
+    ],
+    "typography": {
+      "leading": 1.23,
+      "scale": 0.925,
+      "tracking": 0.9,
+      "weight_offset": 60
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "洁净精密：present one verified measurement in a spacious clinical frame. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+}

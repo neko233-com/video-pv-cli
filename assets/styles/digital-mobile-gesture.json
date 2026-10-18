@@ -1,0 +1,87 @@
+{
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
+  ],
+  "beat_plan": [
+    "Hook: mobile viewport",
+    "Establish: use one mobile-sized screen and one explicit interaction route",
+    "Prove: use an approved local capture or truthful designed-motion detail",
+    "Payoff: light depth with one clear final identity"
+  ],
+  "best_for": [
+    "digital promotional video",
+    "product or character identity reveal"
+  ],
+  "direction": {
+    "camera": "Guide attention with mobile viewport; use a deliberate hold, a measured approach and a stable payoff.",
+    "composition": "use one mobile-sized screen and one explicit interaction route; keep one dominant focal hierarchy and legible supporting evidence.",
+    "editing": "Open with gesture path; alternate proof and breathing room, then resolve with light depth.",
+    "lighting": "soft mobile studio; preserve subject contour and separate it from the supporting field.",
+    "materials": "rounded glass and clean polymer; actual material appearance comes from approved imagery or a real 3D asset.",
+    "sound": "Create a restrained rhythm around screen continuity; place licensed accents on intentional cuts and keep speech clear.",
+    "typography": "Use mobile viewport,gesture path,close framing,clear tap,screen continuity,light depth as hierarchy cues; keep display copy short and body copy readable at final delivery size."
+  },
+  "family": "digital",
+  "id": "digital-mobile-gesture",
+  "keywords": [
+    "mobile viewport",
+    "gesture path",
+    "close framing",
+    "clear tap",
+    "screen continuity",
+    "light depth"
+  ],
+  "name": "移动手势",
+  "reference_ids": [
+    "hyperframes-creative",
+    "hyperframes-product-launch",
+    "video-shotcraft",
+    "product-demo-video"
+  ],
+  "render": {
+    "backgrounds": [
+      "caustics",
+      "aurora"
+    ],
+    "base_template": "keynote-product-graphite",
+    "graphics": {
+      "line_width": 1.7,
+      "opacity": 0.076,
+      "overlay": "scanlines",
+      "panel_radius": 42
+    },
+    "layouts": [
+      "left",
+      "asymmetric"
+    ],
+    "motion": {
+      "ease": "linear",
+      "name": "drift-left",
+      "strength": 0.48000000000000004
+    },
+    "overlap_ratio": 0.18,
+    "theme": {
+      "accent": "#7c6ba5",
+      "background": "#f0edf5",
+      "font": "sans",
+      "foreground": "#373149",
+      "secondary": "#af9fc9",
+      "surface": "#ffffff"
+    },
+    "transitions": [
+      "push-left",
+      "zoom-in",
+      "crossfade"
+    ],
+    "typography": {
+      "leading": 1.11,
+      "scale": 0.9,
+      "tracking": 1.35,
+      "weight_offset": 0
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "移动手势：use one mobile-sized screen and one explicit interaction route. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+}

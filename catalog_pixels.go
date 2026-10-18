@@ -66,6 +66,10 @@ func (g *catalogPixelGate) checkBatch(project string, cases []AtlasCase) error {
 		return fmt.Errorf("missing stills job")
 	}
 	rows := []pixelEvidence{}
+	_, transitions, err := readCatalog()
+	if err != nil {
+		return err
+	}
 	for i, c := range cases {
 		path := filepath.Join(stills, fmt.Sprintf("t-%.2f.png", float64(i)/6))
 		if !filepath.IsAbs(path) {
@@ -101,7 +105,8 @@ func (g *catalogPixelGate) checkBatch(project string, cases []AtlasCase) error {
 			}
 		}
 		std := math.Sqrt(math.Max(0, square/n-(sum/n)*(sum/n)))
-		if c.Transition == "" && std < .5 {
+		allowUniform := templateUniformTransition(c.Template, c.Time, transitions)
+		if c.Transition == "" && !allowUniform && std < .5 {
 			return fmt.Errorf("%s: suspiciously blank output (luma stddev %.4f)", c.ID, std)
 		}
 		raw, _ := os.ReadFile(path)

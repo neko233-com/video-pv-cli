@@ -1,0 +1,87 @@
+{
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
+  ],
+  "beat_plan": [
+    "Hook: deep black",
+    "Establish: a narrow luminous object sits inside a large dark field",
+    "Prove: use an approved local capture or truthful designed-motion detail",
+    "Payoff: formal symmetry with one clear final identity"
+  ],
+  "best_for": [
+    "luxury promotional video",
+    "product or character identity reveal"
+  ],
+  "direction": {
+    "camera": "Guide attention with deep black; use a deliberate hold, a measured approach and a stable payoff.",
+    "composition": "a narrow luminous object sits inside a large dark field; keep one dominant focal hierarchy and legible supporting evidence.",
+    "editing": "Open with gold edge; alternate proof and breathing room, then resolve with formal symmetry.",
+    "lighting": "thin warm rim; preserve subject contour and separate it from the supporting field.",
+    "materials": "obsidian and brushed gold; actual material appearance comes from approved imagery or a real 3D asset.",
+    "sound": "Create a restrained rhythm around slow dissolve; place licensed accents on intentional cuts and keep speech clear.",
+    "typography": "Use deep black,gold edge,jewel silence,wide tracking,slow dissolve,formal symmetry as hierarchy cues; keep display copy short and body copy readable at final delivery size."
+  },
+  "family": "luxury",
+  "id": "luxury-obsidian-gold",
+  "keywords": [
+    "deep black",
+    "gold edge",
+    "jewel silence",
+    "wide tracking",
+    "slow dissolve",
+    "formal symmetry"
+  ],
+  "name": "曜石鎏金",
+  "reference_ids": [
+    "hyperframes-creative",
+    "hyperframes-product-launch",
+    "video-shotcraft",
+    "product-demo-video"
+  ],
+  "render": {
+    "backgrounds": [
+      "nebula",
+      "aurora"
+    ],
+    "base_template": "keynote-material-obsidian",
+    "graphics": {
+      "line_width": 1.1,
+      "opacity": 0.04,
+      "overlay": "frame",
+      "panel_radius": 7
+    },
+    "layouts": [
+      "asymmetric",
+      "center"
+    ],
+    "motion": {
+      "ease": "outExpo",
+      "name": "push-in",
+      "strength": 0.2
+    },
+    "overlap_ratio": 0.08,
+    "theme": {
+      "accent": "#d2b576",
+      "background": "#090b10",
+      "font": "display",
+      "foreground": "#f6f0df",
+      "secondary": "#8b806b",
+      "surface": "#171a21"
+    },
+    "transitions": [
+      "crossfade",
+      "light-sweep",
+      "iris"
+    ],
+    "typography": {
+      "leading": 1.11,
+      "scale": 0.8,
+      "tracking": 0.45,
+      "weight_offset": -70
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "曜石鎏金：a narrow luminous object sits inside a large dark field. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+}

@@ -1,0 +1,87 @@
+{
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
+  ],
+  "beat_plan": [
+    "Hook: mechanical detail",
+    "Establish: expand one small mechanism to a monumental focal point",
+    "Prove: use an approved local capture or truthful designed-motion detail",
+    "Payoff: measured rotation with one clear final identity"
+  ],
+  "best_for": [
+    "luxury promotional video",
+    "product or character identity reveal"
+  ],
+  "direction": {
+    "camera": "Guide attention with mechanical detail; use a deliberate hold, a measured approach and a stable payoff.",
+    "composition": "expand one small mechanism to a monumental focal point; keep one dominant focal hierarchy and legible supporting evidence.",
+    "editing": "Open with radial index; alternate proof and breathing room, then resolve with measured rotation.",
+    "lighting": "grazing watchmaker light; preserve subject contour and separate it from the supporting field.",
+    "materials": "steel and sapphire crystal; actual material appearance comes from approved imagery or a real 3D asset.",
+    "sound": "Create a restrained rhythm around metal edge; place licensed accents on intentional cuts and keep speech clear.",
+    "typography": "Use mechanical detail,radial index,precision macro,patient hold,metal edge,measured rotation as hierarchy cues; keep display copy short and body copy readable at final delivery size."
+  },
+  "family": "luxury",
+  "id": "luxury-watch-macro",
+  "keywords": [
+    "mechanical detail",
+    "radial index",
+    "precision macro",
+    "patient hold",
+    "metal edge",
+    "measured rotation"
+  ],
+  "name": "精密时计",
+  "reference_ids": [
+    "hyperframes-creative",
+    "hyperframes-product-launch",
+    "video-shotcraft",
+    "product-demo-video"
+  ],
+  "render": {
+    "backgrounds": [
+      "particles",
+      "grid"
+    ],
+    "base_template": "keynote-gallery-graphite",
+    "graphics": {
+      "line_width": 1.7,
+      "opacity": 0.057999999999999996,
+      "overlay": "scanlines",
+      "panel_radius": 29
+    },
+    "layouts": [
+      "left",
+      "asymmetric"
+    ],
+    "motion": {
+      "ease": "swift",
+      "name": "drift-left",
+      "strength": 0.34
+    },
+    "overlap_ratio": 0.13,
+    "theme": {
+      "accent": "#bdc6c4",
+      "background": "#111417",
+      "font": "display",
+      "foreground": "#edf0ec",
+      "secondary": "#807c6d",
+      "surface": "#252b2d"
+    },
+    "transitions": [
+      "crossfade",
+      "light-sweep",
+      "iris"
+    ],
+    "typography": {
+      "leading": 1.23,
+      "scale": 0.8500000000000001,
+      "tracking": 1.35,
+      "weight_offset": -30
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "精密时计：expand one small mechanism to a monumental focal point. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+}

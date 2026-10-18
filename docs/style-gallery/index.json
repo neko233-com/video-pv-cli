@@ -1,0 +1,1802 @@
+[
+  {
+    "id": "anime-celestial-heroine",
+    "name": "星辉角色",
+    "family": "anime",
+    "keywords": [
+      "celestial motif",
+      "delicate rim",
+      "hero portrait",
+      "quiet resolve",
+      "orbital detail",
+      "lyrical reveal"
+    ],
+    "source_png": "batch-067/renders/jobs/pv-1792330215435319100/stills/t-4.67.png",
+    "source_png_sha256": "fd2d20678b17985d3f93a0d554394d1d390eb9199c7c90a33b1c2660f773af5d",
+    "X": 0,
+    "Y": 0,
+    "Index": 1
+  },
+  {
+    "id": "anime-idol-neon-stage",
+    "name": "偶像霓台",
+    "family": "anime",
+    "keywords": [
+      "stage color",
+      "lightstick rhythm",
+      "bright silhouette",
+      "lyrical type",
+      "controlled sparkle",
+      "chorus lift"
+    ],
+    "source_png": "batch-068/renders/jobs/pv-1792330253968848500/stills/t-0.17.png",
+    "source_png_sha256": "8e5d9e4d4f0fce51e71db5abb493ca10e283780d0eb8eaa7737df985b89eefb0",
+    "X": 14.285714285714286,
+    "Y": 0,
+    "Index": 2
+  },
+  {
+    "id": "anime-magical-girl-prism",
+    "name": "棱彩变身",
+    "family": "anime",
+    "keywords": [
+      "prismatic accent",
+      "hero emblem",
+      "bright confidence",
+      "layered reveal",
+      "crystal motif",
+      "lyrical rhythm"
+    ],
+    "source_png": "batch-068/renders/jobs/pv-1792330253968848500/stills/t-1.00.png",
+    "source_png_sha256": "04ff82d442ff3ec7c9fdf7a29fb03e1f5432807a8daf3a6fd26ba102545da90f",
+    "X": 28.571428571428573,
+    "Y": 0,
+    "Index": 3
+  },
+  {
+    "id": "anime-mecha-blueprint",
+    "name": "机甲设定",
+    "family": "anime",
+    "keywords": [
+      "blueprint crop",
+      "mechanical annotation",
+      "character dossier",
+      "cool edge",
+      "technical rhythm",
+      "precise reveal"
+    ],
+    "source_png": "batch-068/renders/jobs/pv-1792330253968848500/stills/t-1.83.png",
+    "source_png_sha256": "ac34b58369e8351822dc19464fc5a381070815e53633dc23e66c5eba4fc2d1ff",
+    "X": 42.857142857142854,
+    "Y": 0,
+    "Index": 4
+  },
+  {
+    "id": "anime-samurai-ink",
+    "name": "墨刃武者",
+    "family": "anime",
+    "keywords": [
+      "ink silhouette",
+      "sharp diagonal",
+      "red seal",
+      "measured strike",
+      "brush texture",
+      "quiet tension"
+    ],
+    "source_png": "batch-068/renders/jobs/pv-1792330253968848500/stills/t-2.67.png",
+    "source_png_sha256": "8a8441217b1e3b6d5fd3283dd308a4d9ce8c972926a913355681a2c8a4e5b645",
+    "X": 57.142857142857146,
+    "Y": 0,
+    "Index": 5
+  },
+  {
+    "id": "anime-shojo-petal",
+    "name": "花瓣少女",
+    "family": "anime",
+    "keywords": [
+      "petal drift",
+      "delicate type",
+      "pastel depth",
+      "soft emotion",
+      "light bloom",
+      "gentle reveal"
+    ],
+    "source_png": "batch-068/renders/jobs/pv-1792330253968848500/stills/t-3.50.png",
+    "source_png_sha256": "4a998dcd105ca8e3c5dca32820fa7fc516ee157a2bc571edef9cccd04b0125fe",
+    "X": 71.42857142857143,
+    "Y": 0,
+    "Index": 6
+  },
+  {
+    "id": "anime-shonen-impact",
+    "name": "热血冲线",
+    "family": "anime",
+    "keywords": [
+      "speed lines",
+      "bold name",
+      "impact pause",
+      "high contrast",
+      "angular action",
+      "energetic cut"
+    ],
+    "source_png": "batch-068/renders/jobs/pv-1792330253968848500/stills/t-4.33.png",
+    "source_png_sha256": "bb4d0dcb45d795de16d15c335e89dd5d0f3be5c0bd7409f6869f866851e2628d",
+    "X": 85.71428571428571,
+    "Y": 0,
+    "Index": 7
+  },
+  {
+    "id": "anime-summer-solstice",
+    "name": "夏至物语",
+    "family": "anime",
+    "keywords": [
+      "summer haze",
+      "blue distance",
+      "warm skin light",
+      "airy title",
+      "gentle camera",
+      "youthful memory"
+    ],
+    "source_png": "batch-068/renders/jobs/pv-1792330253968848500/stills/t-5.17.png",
+    "source_png_sha256": "2476192b2041faa2d628df648788b69403eb436aa63905dc0e65470c60988097",
+    "X": 100,
+    "Y": 0,
+    "Index": 8
+  },
+  {
+    "id": "anime-visual-novel-noir",
+    "name": "夜谈叙事",
+    "family": "anime",
+    "keywords": [
+      "noir portrait",
+      "quiet dialogue",
+      "deep shadow",
+      "serif title",
+      "slow memory",
+      "small light"
+    ],
+    "source_png": "batch-069/renders/jobs/pv-1792330300001651300/stills/t-0.67.png",
+    "source_png_sha256": "2a903c6eac7e760f6b5055de9b391cade0c2cb02449e738958663d57ffe3c2c7",
+    "X": 0,
+    "Y": 8.333333333333334,
+    "Index": 9
+  },
+  {
+    "id": "anime-watercolor-memory",
+    "name": "水彩记忆",
+    "family": "anime",
+    "keywords": [
+      "watercolor edge",
+      "paper atmosphere",
+      "gentle memory",
+      "soft contour",
+      "poetic pause",
+      "restrained color"
+    ],
+    "source_png": "batch-069/renders/jobs/pv-1792330300001651300/stills/t-1.50.png",
+    "source_png_sha256": "f24316c4ccd7d955a329414c7619ace998849a376df2a95d7bba1b3ff803472b",
+    "X": 14.285714285714286,
+    "Y": 8.333333333333334,
+    "Index": 10
+  },
+  {
+    "id": "cinema-abstract-title",
+    "name": "抽象片头",
+    "family": "cinema",
+    "keywords": [
+      "abstract geometry",
+      "title sequence",
+      "layered symbol",
+      "graphic mystery",
+      "precise rhythm",
+      "controlled texture"
+    ],
+    "source_png": "batch-069/renders/jobs/pv-1792330300001651300/stills/t-2.33.png",
+    "source_png_sha256": "ea48568f2836bb35751c6b339d46605468480205270a2c738bebbba8fdb1b7db",
+    "X": 28.571428571428573,
+    "Y": 8.333333333333334,
+    "Index": 11
+  },
+  {
+    "id": "cinema-anamorphic-night",
+    "name": "宽银夜景",
+    "family": "cinema",
+    "keywords": [
+      "wide frame",
+      "anamorphic suggestion",
+      "night contrast",
+      "low horizon",
+      "slow pursuit",
+      "thin light"
+    ],
+    "source_png": "batch-069/renders/jobs/pv-1792330300001651300/stills/t-3.17.png",
+    "source_png_sha256": "b12d0dedc8aa0e94374444326789c267736795c38adc2fdf7865c083990da5ac",
+    "X": 42.857142857142854,
+    "Y": 8.333333333333334,
+    "Index": 12
+  },
+  {
+    "id": "cinema-desert-epic",
+    "name": "沙海史诗",
+    "family": "cinema",
+    "keywords": [
+      "desert scale",
+      "amber haze",
+      "monumental title",
+      "slow horizon",
+      "hard sun",
+      "sparse subject"
+    ],
+    "source_png": "batch-069/renders/jobs/pv-1792330300001651300/stills/t-4.00.png",
+    "source_png_sha256": "e818e40c8227025a714614bc9ef22813fa8dbfa481308c61c34dfb54309189bd",
+    "X": 57.142857142857146,
+    "Y": 8.333333333333334,
+    "Index": 13
+  },
+  {
+    "id": "cinema-film-grain-35mm",
+    "name": "胶片余韵",
+    "family": "cinema",
+    "keywords": [
+      "analog mood",
+      "film grain",
+      "soft shoulder",
+      "warm shadow",
+      "patient cut",
+      "photographic frame"
+    ],
+    "source_png": "batch-069/renders/jobs/pv-1792330300001651300/stills/t-4.83.png",
+    "source_png_sha256": "411f05fea6ea48ee70b411101e70a36eb10eca232b2a7cccb01300c8f0ef1f5e",
+    "X": 71.42857142857143,
+    "Y": 8.333333333333334,
+    "Index": 14
+  },
+  {
+    "id": "cinema-high-key-studio",
+    "name": "高调摄影棚",
+    "family": "cinema",
+    "keywords": [
+      "high key",
+      "white infinity",
+      "clean shadow",
+      "product clarity",
+      "soft edge",
+      "confident space"
+    ],
+    "source_png": "batch-070/renders/jobs/pv-1792330360565623900/stills/t-0.33.png",
+    "source_png_sha256": "32529164dd1275800127d17a7fec9c4533b1204be6be111c5f34d1a1ab5ab0cf",
+    "X": 85.71428571428571,
+    "Y": 8.333333333333334,
+    "Index": 15
+  },
+  {
+    "id": "cinema-noir-silhouette",
+    "name": "黑色剪影",
+    "family": "cinema",
+    "keywords": [
+      "noir geometry",
+      "hard shadow",
+      "single silhouette",
+      "quiet suspense",
+      "low key",
+      "formal contrast"
+    ],
+    "source_png": "batch-070/renders/jobs/pv-1792330360565623900/stills/t-1.17.png",
+    "source_png_sha256": "01d590c5e7708c2f61856157df7f274d9158002b633fb52a778e589a5a153ef5",
+    "X": 100,
+    "Y": 8.333333333333334,
+    "Index": 16
+  },
+  {
+    "id": "cinema-oceanic-deep",
+    "name": "深海幽蓝",
+    "family": "cinema",
+    "keywords": [
+      "ocean depth",
+      "submerged light",
+      "slow drift",
+      "deep blue",
+      "caustic rhythm",
+      "quiet pressure"
+    ],
+    "source_png": "batch-070/renders/jobs/pv-1792330360565623900/stills/t-2.00.png",
+    "source_png_sha256": "035d1d00a21165990084a0288d44b67fd3e789b62f59c49133a522074afcb7c8",
+    "X": 0,
+    "Y": 16.666666666666668,
+    "Index": 17
+  },
+  {
+    "id": "cinema-red-room",
+    "name": "绯红密室",
+    "family": "cinema",
+    "keywords": [
+      "red field",
+      "psychological tension",
+      "hard silhouette",
+      "small highlight",
+      "slow pressure",
+      "dramatic cut"
+    ],
+    "source_png": "batch-070/renders/jobs/pv-1792330360565623900/stills/t-2.83.png",
+    "source_png_sha256": "c8698f24c74b46f99f2beb3bba2c4642a7cd10a706f135efa4ebe01516b3b85c",
+    "X": 14.285714285714286,
+    "Y": 16.666666666666668,
+    "Index": 18
+  },
+  {
+    "id": "cinema-slow-burn",
+    "name": "缓燃悬念",
+    "family": "cinema",
+    "keywords": [
+      "patient hold",
+      "deep shadow",
+      "delayed reveal",
+      "small movement",
+      "quiet tension",
+      "measured payoff"
+    ],
+    "source_png": "batch-070/renders/jobs/pv-1792330360565623900/stills/t-3.67.png",
+    "source_png_sha256": "c58e7028372ab6a85cb4f00995961e0aa236abdbd6c05ed8bc7c49f8c7cb3df2",
+    "X": 28.571428571428573,
+    "Y": 16.666666666666668,
+    "Index": 19
+  },
+  {
+    "id": "cinema-urban-documentary",
+    "name": "都市纪实",
+    "family": "cinema",
+    "keywords": [
+      "observed detail",
+      "documentary crop",
+      "neutral type",
+      "city rhythm",
+      "proof sequence",
+      "quiet humanity"
+    ],
+    "source_png": "batch-070/renders/jobs/pv-1792330360565623900/stills/t-4.50.png",
+    "source_png_sha256": "f4a60c0cd10e40c0c5b917e373be1815601a5ba4fa1a50422122b0e878ae399c",
+    "X": 42.857142857142854,
+    "Y": 16.666666666666668,
+    "Index": 20
+  },
+  {
+    "id": "digital-code-to-value",
+    "name": "代码到价值",
+    "family": "digital",
+    "keywords": [
+      "code proof",
+      "developer rhythm",
+      "terminal contrast",
+      "visible result",
+      "concise headline",
+      "technical trust"
+    ],
+    "source_png": "batch-071/renders/jobs/pv-1792330418781821300/stills/t-0.00.png",
+    "source_png_sha256": "ab1763f4bd3bbba527ed5de5dca2852bd36948f900ce4fd4f37e5530b7dd586d",
+    "X": 57.142857142857146,
+    "Y": 16.666666666666668,
+    "Index": 21
+  },
+  {
+    "id": "digital-commerce-premium",
+    "name": "精品电商",
+    "family": "digital",
+    "keywords": [
+      "product fidelity",
+      "clear offer",
+      "tactile detail",
+      "calm comparison",
+      "trustworthy scale",
+      "quiet premium"
+    ],
+    "source_png": "batch-071/renders/jobs/pv-1792330418781821300/stills/t-0.83.png",
+    "source_png_sha256": "f9c140da8dcb6e0e4608fc2cf215fb4d65e46e49e853d7fe68846a9426042e32",
+    "X": 71.42857142857143,
+    "Y": 16.666666666666668,
+    "Index": 22
+  },
+  {
+    "id": "digital-creator-toolkit",
+    "name": "创作工具",
+    "family": "digital",
+    "keywords": [
+      "creative output",
+      "tool detail",
+      "layered workspace",
+      "craft rhythm",
+      "visible result",
+      "playful precision"
+    ],
+    "source_png": "batch-071/renders/jobs/pv-1792330418781821300/stills/t-1.67.png",
+    "source_png_sha256": "c1704a3818f9dcb8b842b72a7a5d0c7159c8ea1bfe2df6e499e329c944b89a59",
+    "X": 85.71428571428571,
+    "Y": 16.666666666666668,
+    "Index": 23
+  },
+  {
+    "id": "digital-dashboard-signal",
+    "name": "仪表信号",
+    "family": "digital",
+    "keywords": [
+      "dashboard focus",
+      "large metric",
+      "quiet grid",
+      "credible data",
+      "signal hierarchy",
+      "precise callout"
+    ],
+    "source_png": "batch-071/renders/jobs/pv-1792330418781821300/stills/t-2.50.png",
+    "source_png_sha256": "bbe320c872cd414dc361f3ec1b2eaca4565101d95f88ba01af1180ffa80bf3a2",
+    "X": 100,
+    "Y": 16.666666666666668,
+    "Index": 24
+  },
+  {
+    "id": "digital-data-story",
+    "name": "数据叙事",
+    "family": "digital",
+    "keywords": [
+      "data narrative",
+      "one takeaway",
+      "clear comparison",
+      "ordered reveal",
+      "credible scale",
+      "editorial chart"
+    ],
+    "source_png": "batch-071/renders/jobs/pv-1792330418781821300/stills/t-3.33.png",
+    "source_png_sha256": "3a74d9d3dfd2ea00e88bd60ddbb45538ffc22555ee27b12913291b77dd6ee59c",
+    "X": 0,
+    "Y": 25,
+    "Index": 25
+  },
+  {
+    "id": "digital-mobile-gesture",
+    "name": "移动手势",
+    "family": "digital",
+    "keywords": [
+      "mobile viewport",
+      "gesture path",
+      "close framing",
+      "clear tap",
+      "screen continuity",
+      "light depth"
+    ],
+    "source_png": "batch-071/renders/jobs/pv-1792330418781821300/stills/t-4.17.png",
+    "source_png_sha256": "2f84c4cbd5b15fad0cbc5a997801d5860666eef070da68659ce3b181c7fbafb3",
+    "X": 14.285714285714286,
+    "Y": 25,
+    "Index": 26
+  },
+  {
+    "id": "digital-saas-clean",
+    "name": "清晰软件",
+    "family": "digital",
+    "keywords": [
+      "real interface",
+      "clean hierarchy",
+      "calm workspace",
+      "benefit headline",
+      "readable proof",
+      "focused cursor"
+    ],
+    "source_png": "batch-071/renders/jobs/pv-1792330418781821300/stills/t-5.00.png",
+    "source_png_sha256": "8504478f9890da6bb6984884b873e20736ec133a3baf102c8d0e05071d87fa32",
+    "X": 28.571428571428573,
+    "Y": 25,
+    "Index": 27
+  },
+  {
+    "id": "digital-scientific-discovery",
+    "name": "科学发现",
+    "family": "digital",
+    "keywords": [
+      "scientific clarity",
+      "experimental proof",
+      "ordered diagram",
+      "precise label",
+      "quiet wonder",
+      "measured reveal"
+    ],
+    "source_png": "batch-072/renders/jobs/pv-1792330451540045400/stills/t-0.50.png",
+    "source_png_sha256": "805dd45a4c8c19101020d086a6e54a19a808af6564c3f0d478793594d9141db0",
+    "X": 42.857142857142854,
+    "Y": 25,
+    "Index": 28
+  },
+  {
+    "id": "digital-startup-launch",
+    "name": "新创发布",
+    "family": "digital",
+    "keywords": [
+      "concise promise",
+      "confident launch",
+      "bold headline",
+      "fast proof",
+      "clean payoff",
+      "controlled energy"
+    ],
+    "source_png": "batch-072/renders/jobs/pv-1792330451540045400/stills/t-1.33.png",
+    "source_png_sha256": "acf7569f54ee6b30c7ea7a9a84dc112579c6cb6afb9442fca69c52071f55c7b0",
+    "X": 57.142857142857146,
+    "Y": 25,
+    "Index": 29
+  },
+  {
+    "id": "digital-workflow-proof",
+    "name": "工作流证明",
+    "family": "digital",
+    "keywords": [
+      "stepwise workflow",
+      "visible action",
+      "before after",
+      "clear consequence",
+      "proof rail",
+      "measured zoom"
+    ],
+    "source_png": "batch-072/renders/jobs/pv-1792330451540045400/stills/t-2.17.png",
+    "source_png_sha256": "caffe976b6d6c02c958aa36beaff2663e8598e4bc0c2bb4800425ac8b1f77278",
+    "X": 71.42857142857143,
+    "Y": 25,
+    "Index": 30
+  },
+  {
+    "id": "editorial-architectural-index",
+    "name": "建筑索引",
+    "family": "editorial",
+    "keywords": [
+      "architectural order",
+      "index labels",
+      "thin frame",
+      "measured spacing",
+      "neutral mass",
+      "quiet rhythm"
+    ],
+    "source_png": "batch-072/renders/jobs/pv-1792330451540045400/stills/t-3.00.png",
+    "source_png_sha256": "347501e5f5fcbce30cb05488041cadc3a1504da11e28cec6586c447946fe3735",
+    "X": 85.71428571428571,
+    "Y": 25,
+    "Index": 31
+  },
+  {
+    "id": "editorial-archive-contact",
+    "name": "档案接触表",
+    "family": "editorial",
+    "keywords": [
+      "contact sheet",
+      "archive numbering",
+      "photographic rhythm",
+      "small annotation",
+      "measured crop",
+      "documentary restraint"
+    ],
+    "source_png": "batch-072/renders/jobs/pv-1792330451540045400/stills/t-3.83.png",
+    "source_png_sha256": "ae2e24475f34d3e8e21d0ca153cacdf8d727bb86d023ebc860775feae23d98b0",
+    "X": 100,
+    "Y": 25,
+    "Index": 32
+  },
+  {
+    "id": "editorial-cutout-collage",
+    "name": "剪贴拼版",
+    "family": "editorial",
+    "keywords": [
+      "cutout image",
+      "layered paper",
+      "offset crop",
+      "tactile collage",
+      "playful juxtaposition",
+      "editorial glue"
+    ],
+    "source_png": "batch-072/renders/jobs/pv-1792330451540045400/stills/t-4.67.png",
+    "source_png_sha256": "f5e96ab9104c7fc7f7941b86113a7acb4d54f8fa0fde313dfe77ffa60a78d37c",
+    "X": 0,
+    "Y": 33.333333333333336,
+    "Index": 33
+  },
+  {
+    "id": "editorial-ink-paper",
+    "name": "纸墨印象",
+    "family": "editorial",
+    "keywords": [
+      "paper grain",
+      "ink contrast",
+      "printed label",
+      "warm restraint",
+      "cut rhythm",
+      "crafted margin"
+    ],
+    "source_png": "batch-073/renders/jobs/pv-1792330484903390100/stills/t-0.17.png",
+    "source_png_sha256": "8e948ffdf13f884ae3daae5191db439eb64af49d5cd406d18e5931fb8fab7c8c",
+    "X": 14.285714285714286,
+    "Y": 33.333333333333336,
+    "Index": 34
+  },
+  {
+    "id": "editorial-kinetic-headline",
+    "name": "动态头条",
+    "family": "editorial",
+    "keywords": [
+      "kinetic headline",
+      "word ladder",
+      "staggered rhythm",
+      "high contrast",
+      "sharp arrival",
+      "readable pause"
+    ],
+    "source_png": "batch-073/renders/jobs/pv-1792330484903390100/stills/t-1.00.png",
+    "source_png_sha256": "4da9cdcb194078ba25a6ca0932b1f7b22e82476f6ff6664ebf0582ac41221a90",
+    "X": 28.571428571428573,
+    "Y": 33.333333333333336,
+    "Index": 35
+  },
+  {
+    "id": "editorial-line-art-explainer",
+    "name": "线描讲解",
+    "family": "editorial",
+    "keywords": [
+      "line drawing",
+      "diagram logic",
+      "sparse color",
+      "stepwise proof",
+      "readable annotation",
+      "gentle reveal"
+    ],
+    "source_png": "batch-073/renders/jobs/pv-1792330484903390100/stills/t-1.83.png",
+    "source_png_sha256": "af57a3ed9884ee660a5817eaff2fbe38091712df62dcd0e54cf3338f59c00075",
+    "X": 42.857142857142854,
+    "Y": 33.333333333333336,
+    "Index": 36
+  },
+  {
+    "id": "editorial-magazine-serif",
+    "name": "杂志衬线",
+    "family": "editorial",
+    "keywords": [
+      "magazine spread",
+      "expressive serif",
+      "generous margin",
+      "large image",
+      "editorial pause",
+      "thin rule"
+    ],
+    "source_png": "batch-073/renders/jobs/pv-1792330484903390100/stills/t-2.67.png",
+    "source_png_sha256": "882af11a1ea600e15cc0e95ba4c99e757e2b2c3432377a67e1e954610813626a",
+    "X": 57.142857142857146,
+    "Y": 33.333333333333336,
+    "Index": 37
+  },
+  {
+    "id": "editorial-newspaper-sequence",
+    "name": "报刊序列",
+    "family": "editorial",
+    "keywords": [
+      "headline rail",
+      "column rhythm",
+      "archive tone",
+      "strong hierarchy",
+      "monochrome field",
+      "sequential proof"
+    ],
+    "source_png": "batch-073/renders/jobs/pv-1792330484903390100/stills/t-3.50.png",
+    "source_png_sha256": "528d58db6eb468c3d44e1ccb022c552b814dde625bffb793f8efcade729bd491",
+    "X": 71.42857142857143,
+    "Y": 33.333333333333336,
+    "Index": 38
+  },
+  {
+    "id": "editorial-swiss-grid",
+    "name": "瑞士网格",
+    "family": "editorial",
+    "keywords": [
+      "swiss grid",
+      "objective type",
+      "baseline rhythm",
+      "asymmetric balance",
+      "clear numbering",
+      "precise rules"
+    ],
+    "source_png": "batch-073/renders/jobs/pv-1792330484903390100/stills/t-4.33.png",
+    "source_png_sha256": "1e7b6539514d526fc6bbf67d39681163f28aa49feb828fdc3df0e0f6fccd389b",
+    "X": 85.71428571428571,
+    "Y": 33.333333333333336,
+    "Index": 39
+  },
+  {
+    "id": "editorial-typographic-poster",
+    "name": "字体海报",
+    "family": "editorial",
+    "keywords": [
+      "typographic monument",
+      "poster scale",
+      "word contrast",
+      "bold geometry",
+      "clear accent",
+      "graphic stop"
+    ],
+    "source_png": "batch-073/renders/jobs/pv-1792330484903390100/stills/t-5.17.png",
+    "source_png_sha256": "731c4f761822e968347bd2d8c55320ace5a81fcd984402cf55872c61a9758d86",
+    "X": 100,
+    "Y": 33.333333333333336,
+    "Index": 40
+  },
+  {
+    "id": "game-cozy-world",
+    "name": "治愈世界",
+    "family": "game",
+    "keywords": [
+      "soft adventure",
+      "warm dawn",
+      "rounded shapes",
+      "gentle drift",
+      "friendly scale",
+      "open horizon"
+    ],
+    "source_png": "batch-074/renders/jobs/pv-1792330515898144400/stills/t-0.67.png",
+    "source_png_sha256": "feff62e20178bc4da72ddc3c637ae5b7a2e9d7b1e9b715c24d223fa74f950395",
+    "X": 0,
+    "Y": 41.666666666666664,
+    "Index": 41
+  },
+  {
+    "id": "game-cyberpunk-night",
+    "name": "赛博夜城",
+    "family": "game",
+    "keywords": [
+      "wet neon",
+      "urban depth",
+      "chromatic edge",
+      "signal noise",
+      "night silhouette",
+      "sharp pulse"
+    ],
+    "source_png": "batch-074/renders/jobs/pv-1792330515898144400/stills/t-1.50.png",
+    "source_png_sha256": "0b38685eb0c9d830136af934bfb6d86fb06d6801f2ce949c58329d03c6aa32bc",
+    "X": 14.285714285714286,
+    "Y": 41.666666666666664,
+    "Index": 42
+  },
+  {
+    "id": "game-dark-soulslike",
+    "name": "暗黑残境",
+    "family": "game",
+    "keywords": [
+      "oppressive scale",
+      "ash palette",
+      "lonely figure",
+      "low key",
+      "slow threat",
+      "weighty impact"
+    ],
+    "source_png": "batch-074/renders/jobs/pv-1792330515898144400/stills/t-2.33.png",
+    "source_png_sha256": "e500595223e7308a1b4bbd79c5dfec349e46fd7395990c1dcf60f5f0d1cd47ae",
+    "X": 28.571428571428573,
+    "Y": 41.666666666666664,
+    "Index": 43
+  },
+  {
+    "id": "game-epic-fantasy",
+    "name": "史诗奇幻",
+    "family": "game",
+    "keywords": [
+      "mythic scale",
+      "ruined horizon",
+      "gold embers",
+      "hero silhouette",
+      "slow escalation",
+      "monumental title"
+    ],
+    "source_png": "batch-074/renders/jobs/pv-1792330515898144400/stills/t-3.17.png",
+    "source_png_sha256": "f160256d7191edd63a1327d8f202fc80405749309b2fc56b08b5a2ad110054b2",
+    "X": 42.857142857142854,
+    "Y": 41.666666666666664,
+    "Index": 44
+  },
+  {
+    "id": "game-esports-scorecard",
+    "name": "电竞赛报",
+    "family": "game",
+    "keywords": [
+      "scoreboard hierarchy",
+      "team contrast",
+      "numeric punch",
+      "fast precision",
+      "bracket order",
+      "competitive energy"
+    ],
+    "source_png": "batch-074/renders/jobs/pv-1792330515898144400/stills/t-4.00.png",
+    "source_png_sha256": "90e68f2ee1f9a69c6f86877017670ff9671f33b3880e3ba2e507db9d650b13cf",
+    "X": 57.142857142857146,
+    "Y": 41.666666666666664,
+    "Index": 45
+  },
+  {
+    "id": "game-mecha-arsenal",
+    "name": "机甲武库",
+    "family": "game",
+    "keywords": [
+      "mechanical mass",
+      "hangar reveal",
+      "assembly grid",
+      "industrial labels",
+      "heavy pause",
+      "precision flash"
+    ],
+    "source_png": "batch-074/renders/jobs/pv-1792330515898144400/stills/t-4.83.png",
+    "source_png_sha256": "8e9b0ec8c49d75edc5360e845bcd3d776ba58ee2a43c9fbc27e999bc8efe2c85",
+    "X": 71.42857142857143,
+    "Y": 41.666666666666664,
+    "Index": 46
+  },
+  {
+    "id": "game-openworld-dawn",
+    "name": "旷野破晓",
+    "family": "game",
+    "keywords": [
+      "openworld vista",
+      "atmospheric layers",
+      "dawn horizon",
+      "slow reveal",
+      "scale contrast",
+      "inviting depth"
+    ],
+    "source_png": "batch-075/renders/jobs/pv-1792330553778292000/stills/t-0.33.png",
+    "source_png_sha256": "55f58004678831c512f4c86ef920d6a931ca391191cd96b2baaa38003103195f",
+    "X": 85.71428571428571,
+    "Y": 41.666666666666664,
+    "Index": 47
+  },
+  {
+    "id": "game-racing-redline",
+    "name": "竞速红线",
+    "family": "game",
+    "keywords": [
+      "speed framing",
+      "low camera",
+      "red accent",
+      "hard cut",
+      "directional force",
+      "clean telemetry"
+    ],
+    "source_png": "batch-075/renders/jobs/pv-1792330553778292000/stills/t-1.17.png",
+    "source_png_sha256": "6222ab608b34802f05c55585198510ca106103edae2856a5b1e129dc7f552974",
+    "X": 100,
+    "Y": 41.666666666666664,
+    "Index": 48
+  },
+  {
+    "id": "game-roguelike-impact",
+    "name": "肉鸽冲击",
+    "family": "game",
+    "keywords": [
+      "impact rhythm",
+      "graphic silhouette",
+      "compressed action",
+      "bold accent",
+      "quick contrast",
+      "readable hit"
+    ],
+    "source_png": "batch-075/renders/jobs/pv-1792330553778292000/stills/t-2.00.png",
+    "source_png_sha256": "568ecf8e064c654f6527c37dfd45d76fb7be9c1fb27e2d49d36d0ef71d9b2abc",
+    "X": 0,
+    "Y": 50,
+    "Index": 49
+  },
+  {
+    "id": "game-sci-fi-tactical",
+    "name": "科幻战术",
+    "family": "game",
+    "keywords": [
+      "tactical framing",
+      "telemetry marks",
+      "cold metal",
+      "controlled tension",
+      "precise cut",
+      "mission clarity"
+    ],
+    "source_png": "batch-075/renders/jobs/pv-1792330553778292000/stills/t-2.83.png",
+    "source_png_sha256": "07a5793d6d755b72c678b76ffeb79e98fbf4304149e8e100c6a9985e3fbbe843",
+    "X": 14.285714285714286,
+    "Y": 50,
+    "Index": 50
+  },
+  {
+    "id": "graphic-acid-rave",
+    "name": "酸性狂想",
+    "family": "graphic",
+    "keywords": [
+      "acid color",
+      "extreme type",
+      "night pulse",
+      "synthetic contour",
+      "club energy",
+      "sharp cut"
+    ],
+    "source_png": "batch-075/renders/jobs/pv-1792330553778292000/stills/t-3.67.png",
+    "source_png_sha256": "02ace97ea38881206de9945cbba8ccf2fa42869fc0c3e2ba5892299bb83c9a9e",
+    "X": 28.571428571428573,
+    "Y": 50,
+    "Index": 51
+  },
+  {
+    "id": "graphic-bauhaus-motion",
+    "name": "包豪斯运动",
+    "family": "graphic",
+    "keywords": [
+      "primary geometry",
+      "functional type",
+      "bold axis",
+      "measured motion",
+      "graphic balance",
+      "clean edge"
+    ],
+    "source_png": "batch-075/renders/jobs/pv-1792330553778292000/stills/t-4.50.png",
+    "source_png_sha256": "773c07416e35d46c1be4803028e6b5ae86cca7e15caba604d96713977a096a27",
+    "X": 42.857142857142854,
+    "Y": 50,
+    "Index": 52
+  },
+  {
+    "id": "graphic-brutalist-type",
+    "name": "粗野字体",
+    "family": "graphic",
+    "keywords": [
+      "brutalist scale",
+      "raw type",
+      "hard margin",
+      "bare structure",
+      "forceful cut",
+      "graphic weight"
+    ],
+    "source_png": "batch-076/renders/jobs/pv-1792330589112640700/stills/t-0.00.png",
+    "source_png_sha256": "731430a4dae6d202690439bdc6e973b20caa526d1331616027ea71ede1b2f209",
+    "X": 57.142857142857146,
+    "Y": 50,
+    "Index": 53
+  },
+  {
+    "id": "graphic-holographic-prism",
+    "name": "全息棱镜",
+    "family": "graphic",
+    "keywords": [
+      "holographic edge",
+      "prism split",
+      "iridescent field",
+      "clean silhouette",
+      "futuristic sheen",
+      "slow tilt"
+    ],
+    "source_png": "batch-076/renders/jobs/pv-1792330589112640700/stills/t-0.83.png",
+    "source_png_sha256": "6423ef129b36ba98cf8de3d97d657d8f842a4f1042ab25b066799ba6363603f7",
+    "X": 71.42857142857143,
+    "Y": 50,
+    "Index": 54
+  },
+  {
+    "id": "graphic-memphis-play",
+    "name": "孟菲斯游戏",
+    "family": "graphic",
+    "keywords": [
+      "memphis geometry",
+      "playful offset",
+      "bold dots",
+      "color rhythm",
+      "graphic bounce",
+      "clear silhouette"
+    ],
+    "source_png": "batch-076/renders/jobs/pv-1792330589112640700/stills/t-1.67.png",
+    "source_png_sha256": "ef88320dd7622136485207e86319a168274329523b636cfdeef26b04751db19e",
+    "X": 85.71428571428571,
+    "Y": 50,
+    "Index": 55
+  },
+  {
+    "id": "graphic-neo-brutal-blocks",
+    "name": "新粗野块面",
+    "family": "graphic",
+    "keywords": [
+      "thick boundary",
+      "offset block",
+      "poster hierarchy",
+      "punchy accent",
+      "clear grid",
+      "graphic snap"
+    ],
+    "source_png": "batch-076/renders/jobs/pv-1792330589112640700/stills/t-2.50.png",
+    "source_png_sha256": "7a77525f58e1617e7ed68237664cebcb6c32cd9c1fbee48bc24e2e0dad7bd556",
+    "X": 100,
+    "Y": 50,
+    "Index": 56
+  },
+  {
+    "id": "graphic-pop-print",
+    "name": "波普印刷",
+    "family": "graphic",
+    "keywords": [
+      "pop contrast",
+      "halftone texture",
+      "poster type",
+      "comic framing",
+      "bold crop",
+      "graphic hit"
+    ],
+    "source_png": "batch-076/renders/jobs/pv-1792330589112640700/stills/t-3.33.png",
+    "source_png_sha256": "fa977cb2fe1b1c7439b9897f83e03a6d7e5b050f88221cf6c1876923fe9262c3",
+    "X": 0,
+    "Y": 58.333333333333336,
+    "Index": 57
+  },
+  {
+    "id": "graphic-retrofuturism",
+    "name": "复古未来",
+    "family": "graphic",
+    "keywords": [
+      "retro console",
+      "space-age curve",
+      "optimistic signal",
+      "geometric label",
+      "clean orbit",
+      "warm future"
+    ],
+    "source_png": "batch-076/renders/jobs/pv-1792330589112640700/stills/t-4.17.png",
+    "source_png_sha256": "40abc990cfe4cfb2eeda00005c82c47579bb4ce8e4db7f97cabc45bbbf04e9b9",
+    "X": 14.285714285714286,
+    "Y": 58.333333333333336,
+    "Index": 58
+  },
+  {
+    "id": "graphic-riso-spot",
+    "name": "孔版专色",
+    "family": "graphic",
+    "keywords": [
+      "riso texture",
+      "spot color",
+      "print misregister",
+      "editorial warmth",
+      "graphic grain",
+      "flat layering"
+    ],
+    "source_png": "batch-076/renders/jobs/pv-1792330589112640700/stills/t-5.00.png",
+    "source_png_sha256": "5dbbbf326bf9cf6c212972de9982f2c5ecc9b6cf8da24645713300581c49be0e",
+    "X": 28.571428571428573,
+    "Y": 58.333333333333336,
+    "Index": 59
+  },
+  {
+    "id": "graphic-vaporwave-dusk",
+    "name": "蒸汽暮色",
+    "family": "graphic",
+    "keywords": [
+      "vaporwave dusk",
+      "retro grid",
+      "pastel neon",
+      "slow horizon",
+      "nostalgic geometry",
+      "soft glow"
+    ],
+    "source_png": "batch-077/renders/jobs/pv-1792330620463476600/stills/t-0.50.png",
+    "source_png_sha256": "08344f335915d53e09f80915d3ce01b4f02a6a12d1330f086d96c69d0ecc8fc2",
+    "X": 42.857142857142854,
+    "Y": 58.333333333333336,
+    "Index": 60
+  },
+  {
+    "id": "keynote-bento-proof",
+    "name": "模块证据",
+    "family": "keynote",
+    "keywords": [
+      "modular proof",
+      "bento grid",
+      "feature hierarchy",
+      "measured rhythm",
+      "readable labels",
+      "ordered reveal"
+    ],
+    "source_png": "batch-077/renders/jobs/pv-1792330620463476600/stills/t-1.33.png",
+    "source_png_sha256": "d679e4d06f952c31632d523f61663e9854e58e887acea756d34c6aa9732a4262",
+    "X": 57.142857142857146,
+    "Y": 58.333333333333336,
+    "Index": 61
+  },
+  {
+    "id": "keynote-camera-window",
+    "name": "视窗推镜",
+    "family": "keynote",
+    "keywords": [
+      "camera aperture",
+      "framed reveal",
+      "screen detail",
+      "depth cue",
+      "smooth zoom",
+      "focus exchange"
+    ],
+    "source_png": "batch-077/renders/jobs/pv-1792330620463476600/stills/t-2.17.png",
+    "source_png_sha256": "3616615410314f707fa9e980cafec1577ebfd9a50b29ba8f26656dd8b63db52e",
+    "X": 71.42857142857143,
+    "Y": 58.333333333333336,
+    "Index": 62
+  },
+  {
+    "id": "keynote-color-field",
+    "name": "纯色主场",
+    "family": "keynote",
+    "keywords": [
+      "color field",
+      "saturated backdrop",
+      "isolated product",
+      "graphic contrast",
+      "measured cut",
+      "one accent"
+    ],
+    "source_png": "batch-077/renders/jobs/pv-1792330620463476600/stills/t-3.00.png",
+    "source_png_sha256": "777558677945bf366c25f118e8f9af129525e1fb0b2813e30e4854e4f7d7fa55",
+    "X": 85.71428571428571,
+    "Y": 58.333333333333336,
+    "Index": 63
+  },
+  {
+    "id": "keynote-material-closeup",
+    "name": "材质微距",
+    "family": "keynote",
+    "keywords": [
+      "macro detail",
+      "surface fidelity",
+      "material proof",
+      "slow push",
+      "tactile light",
+      "quiet specification"
+    ],
+    "source_png": "batch-077/renders/jobs/pv-1792330620463476600/stills/t-3.83.png",
+    "source_png_sha256": "5b72ae2fa4eb33f95f7c9df959dd78319f88e37a01d64b753a30f5cbbd423ba7",
+    "X": 100,
+    "Y": 58.333333333333336,
+    "Index": 64
+  },
+  {
+    "id": "keynote-monochrome-stage",
+    "name": "黑白舞台",
+    "family": "keynote",
+    "keywords": [
+      "monochrome",
+      "architectural balance",
+      "hard silhouette",
+      "editorial rhythm",
+      "confident hold",
+      "clean horizon"
+    ],
+    "source_png": "batch-077/renders/jobs/pv-1792330620463476600/stills/t-4.67.png",
+    "source_png_sha256": "08bc7045b7cd6953362c8913a1323c1ed95213918aa2c6c84ed68d6820f40614",
+    "X": 0,
+    "Y": 66.66666666666667,
+    "Index": 65
+  },
+  {
+    "id": "keynote-one-more-reveal",
+    "name": "压轴再揭",
+    "family": "keynote",
+    "keywords": [
+      "delayed payoff",
+      "chapter break",
+      "final silhouette",
+      "measured silence",
+      "scale shift",
+      "hero return"
+    ],
+    "source_png": "batch-078/renders/jobs/pv-1792330655948562700/stills/t-0.17.png",
+    "source_png_sha256": "c3344f7c373bf6e9fe4ad0808e3ca24b35df5d1f6429670d09ce12c78402f385",
+    "X": 14.285714285714286,
+    "Y": 66.66666666666667,
+    "Index": 66
+  },
+  {
+    "id": "keynote-performance-pulse",
+    "name": "性能脉冲",
+    "family": "keynote",
+    "keywords": [
+      "numeric emphasis",
+      "performance beat",
+      "precise hit",
+      "short contrast",
+      "clean spec",
+      "confident cadence"
+    ],
+    "source_png": "batch-078/renders/jobs/pv-1792330655948562700/stills/t-1.00.png",
+    "source_png_sha256": "2410c0071b7d295c087b4e12d987730dcb352a7a575d3f24017826a350a07fec",
+    "X": 28.571428571428573,
+    "Y": 66.66666666666667,
+    "Index": 67
+  },
+  {
+    "id": "keynote-silent-reveal",
+    "name": "静场揭幕",
+    "family": "keynote",
+    "keywords": [
+      "negative space",
+      "restrained reveal",
+      "hero silhouette",
+      "single promise",
+      "quiet stage",
+      "slow release"
+    ],
+    "source_png": "batch-078/renders/jobs/pv-1792330655948562700/stills/t-1.83.png",
+    "source_png_sha256": "e361abacb9f97e492a1087268c7c9f57424727292a3b57ddae722a1daec95f86",
+    "X": 42.857142857142854,
+    "Y": 66.66666666666667,
+    "Index": 68
+  },
+  {
+    "id": "keynote-spatial-type",
+    "name": "空间文字",
+    "family": "keynote",
+    "keywords": [
+      "oversized type",
+      "depth planes",
+      "spatial hierarchy",
+      "word choreography",
+      "precise pause",
+      "controlled parallax"
+    ],
+    "source_png": "batch-078/renders/jobs/pv-1792330655948562700/stills/t-2.67.png",
+    "source_png_sha256": "f6c84ab1bcb47251862e1b8529d4c682efde796806fdd544e10a369be5afc1e4",
+    "X": 57.142857142857146,
+    "Y": 66.66666666666667,
+    "Index": 69
+  },
+  {
+    "id": "keynote-ultralight",
+    "name": "轻盈留白",
+    "family": "keynote",
+    "keywords": [
+      "airy composition",
+      "thin strokes",
+      "small label",
+      "slow float",
+      "pale space",
+      "soft geometry"
+    ],
+    "source_png": "batch-078/renders/jobs/pv-1792330655948562700/stills/t-3.50.png",
+    "source_png_sha256": "6facb07467d1617636054274ab08e20013630d2d2310b5aa226032d0e82d2ff3",
+    "X": 71.42857142857143,
+    "Y": 66.66666666666667,
+    "Index": 70
+  },
+  {
+    "id": "luxury-automotive-night",
+    "name": "夜行车语",
+    "family": "luxury",
+    "keywords": [
+      "night silhouette",
+      "long highlight",
+      "low horizon",
+      "controlled speed",
+      "red tail",
+      "wide frame"
+    ],
+    "source_png": "batch-078/renders/jobs/pv-1792330655948562700/stills/t-4.33.png",
+    "source_png_sha256": "6c868e0ae91c42d2f70b7d237acb10bdd6a3a92bb7c736622387717be22efcca",
+    "X": 85.71428571428571,
+    "Y": 66.66666666666667,
+    "Index": 71
+  },
+  {
+    "id": "luxury-ceramic-gallery",
+    "name": "陶瓷展厅",
+    "family": "luxury",
+    "keywords": [
+      "ceramic curve",
+      "museum spacing",
+      "soft shadow",
+      "neutral field",
+      "still-life balance",
+      "slow arc"
+    ],
+    "source_png": "batch-078/renders/jobs/pv-1792330655948562700/stills/t-5.17.png",
+    "source_png_sha256": "cb6ecbcf8faaf98846ca6d528d158057f370298ebe96f57f49456c50f13188a9",
+    "X": 100,
+    "Y": 66.66666666666667,
+    "Index": 72
+  },
+  {
+    "id": "luxury-chrome-sculpture",
+    "name": "铬面雕塑",
+    "family": "luxury",
+    "keywords": [
+      "chrome mass",
+      "sculptural form",
+      "curved reflection",
+      "gallery space",
+      "slow orbit",
+      "black pedestal"
+    ],
+    "source_png": "batch-079/renders/jobs/pv-1792330689289426000/stills/t-0.67.png",
+    "source_png_sha256": "2f42a0c2c7656877d5fb798a4cb097ffecbf9d751f187bf36884ec016f5b5bbf",
+    "X": 0,
+    "Y": 75,
+    "Index": 73
+  },
+  {
+    "id": "luxury-fashion-editorial",
+    "name": "时装版面",
+    "family": "luxury",
+    "keywords": [
+      "fashion crop",
+      "asymmetric margin",
+      "serif headline",
+      "confident cut",
+      "textile depth",
+      "editorial pose"
+    ],
+    "source_png": "batch-079/renders/jobs/pv-1792330689289426000/stills/t-1.50.png",
+    "source_png_sha256": "0f98111d3589eec68ea81986efc428db38731dcabf46a2b8601e7d78bed8e2f6",
+    "X": 14.285714285714286,
+    "Y": 75,
+    "Index": 74
+  },
+  {
+    "id": "luxury-jewelry-caustic",
+    "name": "珠宝折光",
+    "family": "luxury",
+    "keywords": [
+      "faceted glint",
+      "caustic pattern",
+      "miniature scale",
+      "precise sparkle",
+      "quiet contrast",
+      "velvet field"
+    ],
+    "source_png": "batch-079/renders/jobs/pv-1792330689289426000/stills/t-2.33.png",
+    "source_png_sha256": "b0f8fac2c0f43eadcf1eb24077d376e66c4c0e3bdfa8118eda9d2cdf7f2b183d",
+    "X": 28.571428571428573,
+    "Y": 75,
+    "Index": 75
+  },
+  {
+    "id": "luxury-leather-craft",
+    "name": "皮革匠作",
+    "family": "luxury",
+    "keywords": [
+      "stitched detail",
+      "handcrafted texture",
+      "warm shadow",
+      "close framing",
+      "patient gesture",
+      "material honesty"
+    ],
+    "source_png": "batch-079/renders/jobs/pv-1792330689289426000/stills/t-3.17.png",
+    "source_png_sha256": "af9f4c33b8aa5d9647552392abe0626bdd0ffcbe58244d9e0b08fbdc563ee879",
+    "X": 42.857142857142854,
+    "Y": 75,
+    "Index": 76
+  },
+  {
+    "id": "luxury-obsidian-gold",
+    "name": "曜石鎏金",
+    "family": "luxury",
+    "keywords": [
+      "deep black",
+      "gold edge",
+      "jewel silence",
+      "wide tracking",
+      "slow dissolve",
+      "formal symmetry"
+    ],
+    "source_png": "batch-079/renders/jobs/pv-1792330689289426000/stills/t-4.00.png",
+    "source_png_sha256": "36d74074a233178d01f07f0603b93020176f6f60c500078ef58a452bc26dc8d8",
+    "X": 57.142857142857146,
+    "Y": 75,
+    "Index": 77
+  },
+  {
+    "id": "luxury-pearl-satin",
+    "name": "珍珠缎光",
+    "family": "luxury",
+    "keywords": [
+      "pearl white",
+      "satin fold",
+      "soft specular",
+      "intimate macro",
+      "graceful drift",
+      "delicate serif"
+    ],
+    "source_png": "batch-079/renders/jobs/pv-1792330689289426000/stills/t-4.83.png",
+    "source_png_sha256": "45bc37d91001424e90d08b747a3778448be6836da8d1b0f6846de3f9760ea16b",
+    "X": 71.42857142857143,
+    "Y": 75,
+    "Index": 78
+  },
+  {
+    "id": "luxury-perfume-mist",
+    "name": "香氛薄雾",
+    "family": "luxury",
+    "keywords": [
+      "translucent bottle",
+      "soft mist",
+      "editorial silence",
+      "amber glint",
+      "delicate reveal",
+      "lingering tail"
+    ],
+    "source_png": "batch-080/renders/jobs/pv-1792330737768522100/stills/t-0.33.png",
+    "source_png_sha256": "8af7b213a2e158bd6b101e25d8da526aeeabfb837a48ac3e0b31e0fb6549da51",
+    "X": 85.71428571428571,
+    "Y": 75,
+    "Index": 79
+  },
+  {
+    "id": "luxury-watch-macro",
+    "name": "精密时计",
+    "family": "luxury",
+    "keywords": [
+      "mechanical detail",
+      "radial index",
+      "precision macro",
+      "patient hold",
+      "metal edge",
+      "measured rotation"
+    ],
+    "source_png": "batch-080/renders/jobs/pv-1792330737768522100/stills/t-1.17.png",
+    "source_png_sha256": "f8e5e32cb3c0b832e63096bb0cdfa556284d7978eba2aabfe8ab05c3486d8457",
+    "X": 100,
+    "Y": 75,
+    "Index": 80
+  },
+  {
+    "id": "organic-botanical-light",
+    "name": "植物微光",
+    "family": "organic",
+    "keywords": [
+      "botanical shadow",
+      "living curve",
+      "warm paper",
+      "soft daylight",
+      "gentle growth",
+      "tactile calm"
+    ],
+    "source_png": "batch-080/renders/jobs/pv-1792330737768522100/stills/t-2.00.png",
+    "source_png_sha256": "edc284801c17f141754f508fc8ba92dc8f22299656161fdb2d205192cca09a20",
+    "X": 0,
+    "Y": 83.33333333333333,
+    "Index": 81
+  },
+  {
+    "id": "organic-fluid-ink",
+    "name": "流墨扩散",
+    "family": "organic",
+    "keywords": [
+      "fluid ink",
+      "organic edge",
+      "controlled spread",
+      "paper contrast",
+      "quiet motion",
+      "expressive form"
+    ],
+    "source_png": "batch-080/renders/jobs/pv-1792330737768522100/stills/t-2.83.png",
+    "source_png_sha256": "6dfcf8c257cf9144f8f7e7638fa01d3f33051c324e937812a61cc34835474be4",
+    "X": 14.285714285714286,
+    "Y": 83.33333333333333,
+    "Index": 82
+  },
+  {
+    "id": "organic-ice-crystal",
+    "name": "冰晶秩序",
+    "family": "organic",
+    "keywords": [
+      "ice facet",
+      "cold clarity",
+      "prismatic edge",
+      "slow glint",
+      "quiet geometry",
+      "blue white"
+    ],
+    "source_png": "batch-080/renders/jobs/pv-1792330737768522100/stills/t-3.67.png",
+    "source_png_sha256": "cd37ff6aafc9d5870a9e4d6f43b68a176db92515c79e1d8f66b2a033b10cd9a1",
+    "X": 28.571428571428573,
+    "Y": 83.33333333333333,
+    "Index": 83
+  },
+  {
+    "id": "organic-living-mesh",
+    "name": "生长网格",
+    "family": "organic",
+    "keywords": [
+      "organic lattice",
+      "coherent flow",
+      "soft signal",
+      "adaptive geometry",
+      "gentle pulse",
+      "natural order"
+    ],
+    "source_png": "batch-080/renders/jobs/pv-1792330737768522100/stills/t-4.50.png",
+    "source_png_sha256": "6b23c416091abf8db63c67ce1755e1cdbf7ce6d8d89789581b05b3e9d3a6ae3d",
+    "X": 42.857142857142854,
+    "Y": 83.33333333333333,
+    "Index": 84
+  },
+  {
+    "id": "organic-sandstone",
+    "name": "砂岩暖境",
+    "family": "organic",
+    "keywords": [
+      "sandstone mass",
+      "warm neutrality",
+      "weathered texture",
+      "architectural calm",
+      "soft horizon",
+      "slow reveal"
+    ],
+    "source_png": "batch-081/renders/jobs/pv-1792330773293960000/stills/t-0.00.png",
+    "source_png_sha256": "924113b2a4e2e47990f10ae26bbe5f8b75c803b16da3d8e9e951f654787ecb70",
+    "X": 57.142857142857146,
+    "Y": 83.33333333333333,
+    "Index": 85
+  },
+  {
+    "id": "organic-silk-fold",
+    "name": "丝绸褶光",
+    "family": "organic",
+    "keywords": [
+      "silk fold",
+      "soft gradient",
+      "tactile depth",
+      "gentle orbit",
+      "quiet sheen",
+      "flowing contour"
+    ],
+    "source_png": "batch-081/renders/jobs/pv-1792330773293960000/stills/t-0.83.png",
+    "source_png_sha256": "efbb2bee5bd2389dbdf68d4d6b8951bfb432d582bb8b93edf0222048decca352",
+    "X": 71.42857142857143,
+    "Y": 83.33333333333333,
+    "Index": 86
+  },
+  {
+    "id": "organic-smoke-sculpture",
+    "name": "烟雾雕形",
+    "family": "organic",
+    "keywords": [
+      "smoke volume",
+      "soft silhouette",
+      "airy depth",
+      "slow curl",
+      "low key",
+      "quiet emergence"
+    ],
+    "source_png": "batch-081/renders/jobs/pv-1792330773293960000/stills/t-1.67.png",
+    "source_png_sha256": "700bf27aaf5a81b72f37dbc202bf88e8758e305cf935b2fe0c0b72a7dc5c244c",
+    "X": 85.71428571428571,
+    "Y": 83.33333333333333,
+    "Index": 87
+  },
+  {
+    "id": "organic-underwater-caustics",
+    "name": "水下光纹",
+    "family": "organic",
+    "keywords": [
+      "caustic field",
+      "liquid rhythm",
+      "clear depth",
+      "slow refraction",
+      "cool calm",
+      "soft boundary"
+    ],
+    "source_png": "batch-081/renders/jobs/pv-1792330773293960000/stills/t-2.50.png",
+    "source_png_sha256": "c51ce12dd9f447d45200a19aec3c558732e1396d996e80518e09a42e25e48186",
+    "X": 100,
+    "Y": 83.33333333333333,
+    "Index": 88
+  },
+  {
+    "id": "organic-water-drop",
+    "name": "一滴清透",
+    "family": "organic",
+    "keywords": [
+      "single droplet",
+      "clean refraction",
+      "macro intimacy",
+      "soft blue",
+      "quiet precision",
+      "clear field"
+    ],
+    "source_png": "batch-081/renders/jobs/pv-1792330773293960000/stills/t-3.33.png",
+    "source_png_sha256": "8d134a57381b592fe407e2d96b79bf58948aec6be5ca337096d016db3dea10b9",
+    "X": 0,
+    "Y": 91.66666666666667,
+    "Index": 89
+  },
+  {
+    "id": "organic-wood-craft",
+    "name": "木作温度",
+    "family": "organic",
+    "keywords": [
+      "wood grain",
+      "crafted detail",
+      "warm shadow",
+      "material honesty",
+      "patient macro",
+      "human scale"
+    ],
+    "source_png": "batch-081/renders/jobs/pv-1792330773293960000/stills/t-4.17.png",
+    "source_png_sha256": "72a52e425d0a32ea9dc3a135a164553953912ade2cb3f27a4ddc2bfd8128e93c",
+    "X": 14.285714285714286,
+    "Y": 91.66666666666667,
+    "Index": 90
+  },
+  {
+    "id": "tech-device-exploded",
+    "name": "分层器件",
+    "family": "tech",
+    "keywords": [
+      "exploded hierarchy",
+      "component stack",
+      "assembly order",
+      "precise spacing",
+      "mechanical clarity",
+      "depth separation"
+    ],
+    "source_png": "batch-081/renders/jobs/pv-1792330773293960000/stills/t-5.00.png",
+    "source_png_sha256": "fcabb6f28462a028a73defdd42f28dbf2aa5f2145f9a9eb6166a310c08f4c5f6",
+    "X": 28.571428571428573,
+    "Y": 91.66666666666667,
+    "Index": 91
+  },
+  {
+    "id": "tech-energy-flow",
+    "name": "能量流线",
+    "family": "tech",
+    "keywords": [
+      "directed flow",
+      "charged contour",
+      "high contrast",
+      "measured surge",
+      "technical reveal",
+      "signal trail"
+    ],
+    "source_png": "batch-082/renders/jobs/pv-1792330808815912600/stills/t-0.50.png",
+    "source_png_sha256": "6dd55341e1134e6d25b1ff52a2747e862ef724181c7ed0bc19ae320185b82e0d",
+    "X": 42.857142857142854,
+    "Y": 91.66666666666667,
+    "Index": 92
+  },
+  {
+    "id": "tech-glass-interface",
+    "name": "玻璃界面",
+    "family": "tech",
+    "keywords": [
+      "layered interface",
+      "frosted plane",
+      "soft depth",
+      "thin boundary",
+      "focus handoff",
+      "clear control"
+    ],
+    "source_png": "batch-082/renders/jobs/pv-1792330808815912600/stills/t-1.33.png",
+    "source_png_sha256": "772e29d08fb03cba6d8408155962fca76c0b920b0860089d6839d0b39690de2c",
+    "X": 57.142857142857146,
+    "Y": 91.66666666666667,
+    "Index": 93
+  },
+  {
+    "id": "tech-graphite-terminal",
+    "name": "石墨终端",
+    "family": "tech",
+    "keywords": [
+      "terminal contrast",
+      "code rhythm",
+      "dark graphite",
+      "signal green",
+      "precise cursor",
+      "developer clarity"
+    ],
+    "source_png": "batch-082/renders/jobs/pv-1792330808815912600/stills/t-2.17.png",
+    "source_png_sha256": "30b7643bbca5e92174de96a9ab60ab8cc33c1947d73e7835fb35cd5c2ff108bd",
+    "X": 71.42857142857143,
+    "Y": 91.66666666666667,
+    "Index": 94
+  },
+  {
+    "id": "tech-industrial-robotics",
+    "name": "工业机械",
+    "family": "tech",
+    "keywords": [
+      "industrial rhythm",
+      "warning accent",
+      "structural mass",
+      "measured joint",
+      "hard boundary",
+      "workshop precision"
+    ],
+    "source_png": "batch-082/renders/jobs/pv-1792330808815912600/stills/t-3.00.png",
+    "source_png_sha256": "ca69734237cfb34853fb6e5aecaeb3ca5b96b5a0b186e9f9b9c2863dbee6cbea",
+    "X": 85.71428571428571,
+    "Y": 91.66666666666667,
+    "Index": 95
+  },
+  {
+    "id": "tech-medical-clean",
+    "name": "洁净精密",
+    "family": "tech",
+    "keywords": [
+      "clinical clarity",
+      "white field",
+      "calm data",
+      "hygienic geometry",
+      "trustworthy scale",
+      "soft blue"
+    ],
+    "source_png": "batch-082/renders/jobs/pv-1792330808815912600/stills/t-3.83.png",
+    "source_png_sha256": "1f4216fa92ecfb7aa0cabd6d6bf95bb39571ab56ace99e9be4616d5700262a54",
+    "X": 100,
+    "Y": 91.66666666666667,
+    "Index": 96
+  },
+  {
+    "id": "tech-neural-lattice",
+    "name": "神经晶格",
+    "family": "tech",
+    "keywords": [
+      "neural structure",
+      "network depth",
+      "coherent nodes",
+      "signal travel",
+      "quiet futurism",
+      "emergent pattern"
+    ],
+    "source_png": "batch-082/renders/jobs/pv-1792330808815912600/stills/t-4.67.png",
+    "source_png_sha256": "ac413d8edfeb127c0b610b08a2a5f90030bc0a5e545513e6f628cee9b47f5f7d",
+    "X": 0,
+    "Y": 100,
+    "Index": 97
+  },
+  {
+    "id": "tech-optical-lens",
+    "name": "光学透镜",
+    "family": "tech",
+    "keywords": [
+      "lens anatomy",
+      "concentric focus",
+      "optical refraction",
+      "crisp edge",
+      "slow focus",
+      "scientific elegance"
+    ],
+    "source_png": "batch-083/renders/jobs/pv-1792330843056720400/stills/t-0.17.png",
+    "source_png_sha256": "82500bc455a2f28fc1a38ac0d564b97f54b3753f153a3e108a627332ccda0e4a",
+    "X": 14.285714285714286,
+    "Y": 100,
+    "Index": 98
+  },
+  {
+    "id": "tech-orbital-data",
+    "name": "轨道数据",
+    "family": "tech",
+    "keywords": [
+      "orbit diagram",
+      "radial hierarchy",
+      "telemetry ring",
+      "measured rotation",
+      "clean numerals",
+      "spatial signal"
+    ],
+    "source_png": "batch-083/renders/jobs/pv-1792330843056720400/stills/t-1.00.png",
+    "source_png_sha256": "d91faa9e913e77500590d29531c6d5b4f26bd85a16cb71ae6dfcb1167952363a",
+    "X": 28.571428571428573,
+    "Y": 100,
+    "Index": 99
+  },
+  {
+    "id": "tech-schematic-precision",
+    "name": "工程图谱",
+    "family": "tech",
+    "keywords": [
+      "schematic lines",
+      "dimension marks",
+      "technical grid",
+      "exact alignment",
+      "calibrated motion",
+      "clear evidence"
+    ],
+    "source_png": "batch-083/renders/jobs/pv-1792330843056720400/stills/t-1.83.png",
+    "source_png_sha256": "ef703c0797400080eb9fb71e1b29c1834b5cddb33563fda83a6662bc234e383b",
+    "X": 42.857142857142854,
+    "Y": 100,
+    "Index": 100
+  }
+]

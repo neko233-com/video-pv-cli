@@ -1,0 +1,349 @@
+{
+  "schema_version": "1.0",
+  "id": "keynote-product-porcelain",
+  "name": "发布会 · 产品揭幕 / 瓷白",
+  "category": "keynote",
+  "description": "Independent editable cinematic sequence; theme, copy, images, scene rhythm and transitions live in this JSON. Fictional sample content, not product/gameplay evidence.",
+  "project_title": "AURA",
+  "width": 1920,
+  "height": 1080,
+  "fps": 30,
+  "loop": false,
+  "theme": {
+    "background": "#f5f6f8",
+    "foreground": "#16191e",
+    "accent": "#245fe7",
+    "secondary": "#b4caff",
+    "surface": "#ffffff",
+    "font": "sans"
+  },
+  "scenes": [
+    {
+      "id": "scene-01",
+      "type": "hero-device",
+      "duration": 3.6,
+      "title": "{{title}}",
+      "subtitle": "Design. Motion. Possibility.",
+      "overline": "ORIGINAL MOTION STUDY",
+      "image": "",
+      "background": "solid",
+      "layout": "center",
+      "items": [
+        {
+          "title": "Form",
+          "body": "Refined from every angle.",
+          "value": "01"
+        },
+        {
+          "title": "Light",
+          "body": "A controlled focal point.",
+          "value": "02"
+        },
+        {
+          "title": "Motion",
+          "body": "Every beat with intention.",
+          "value": "03"
+        },
+        {
+          "title": "Detail",
+          "body": "Make the important visible.",
+          "value": "04"
+        }
+      ],
+      "motion": {
+        "name": "none",
+        "strength": 0.2,
+        "ease": "inOutCubic"
+      },
+      "transition": "crossfade",
+      "transition_duration": 0.28800000000000003
+    },
+    {
+      "id": "scene-02",
+      "type": "macro",
+      "duration": 4,
+      "title": "Crafted to the last detail.",
+      "subtitle": "Design. Motion. Possibility.",
+      "overline": "ORIGINAL MOTION STUDY",
+      "image": "",
+      "background": "mesh",
+      "layout": "left",
+      "items": [
+        {
+          "title": "Form",
+          "body": "Refined from every angle.",
+          "value": "01"
+        },
+        {
+          "title": "Light",
+          "body": "A controlled focal point.",
+          "value": "02"
+        },
+        {
+          "title": "Motion",
+          "body": "Every beat with intention.",
+          "value": "03"
+        },
+        {
+          "title": "Detail",
+          "body": "Make the important visible.",
+          "value": "04"
+        }
+      ],
+      "motion": {
+        "name": "none",
+        "strength": 0.2,
+        "ease": "inOutCubic"
+      },
+      "transition": "blur-cross",
+      "transition_duration": 0.32
+    },
+    {
+      "id": "scene-03",
+      "type": "feature-focus",
+      "duration": 4.4,
+      "title": "One idea. Beautifully clear.",
+      "subtitle": "Design. Motion. Possibility.",
+      "overline": "ORIGINAL MOTION STUDY",
+      "image": "",
+      "background": "solid",
+      "layout": "center",
+      "items": [
+        {
+          "title": "Form",
+          "body": "Refined from every angle.",
+          "value": "01"
+        },
+        {
+          "title": "Light",
+          "body": "A controlled focal point.",
+          "value": "02"
+        },
+        {
+          "title": "Motion",
+          "body": "Every beat with intention.",
+          "value": "03"
+        },
+        {
+          "title": "Detail",
+          "body": "Make the important visible.",
+          "value": "04"
+        }
+      ],
+      "motion": {
+        "name": "none",
+        "strength": 0.2,
+        "ease": "inOutCubic"
+      },
+      "transition": "zoom-in",
+      "transition_duration": 0.35200000000000004
+    },
+    {
+      "id": "scene-04",
+      "type": "bento",
+      "duration": 3.6,
+      "title": "Everything, in harmony.",
+      "subtitle": "Design. Motion. Possibility.",
+      "overline": "ORIGINAL MOTION STUDY",
+      "image": "",
+      "background": "mesh",
+      "layout": "left",
+      "items": [
+        {
+          "title": "Form",
+          "body": "Refined from every angle.",
+          "value": "01"
+        },
+        {
+          "title": "Light",
+          "body": "A controlled focal point.",
+          "value": "02"
+        },
+        {
+          "title": "Motion",
+          "body": "Every beat with intention.",
+          "value": "03"
+        },
+        {
+          "title": "Detail",
+          "body": "Make the important visible.",
+          "value": "04"
+        }
+      ],
+      "motion": {
+        "name": "none",
+        "strength": 0.2,
+        "ease": "inOutCubic"
+      },
+      "transition": "crossfade",
+      "transition_duration": 0.28800000000000003
+    },
+    {
+      "id": "scene-05",
+      "type": "spec-grid",
+      "duration": 4,
+      "title": "{{title}}",
+      "subtitle": "Design. Motion. Possibility.",
+      "overline": "ORIGINAL MOTION STUDY",
+      "image": "",
+      "background": "solid",
+      "layout": "center",
+      "items": [
+        {
+          "title": "Form",
+          "body": "Refined from every angle.",
+          "value": "01"
+        },
+        {
+          "title": "Light",
+          "body": "A controlled focal point.",
+          "value": "02"
+        },
+        {
+          "title": "Motion",
+          "body": "Every beat with intention.",
+          "value": "03"
+        },
+        {
+          "title": "Detail",
+          "body": "Make the important visible.",
+          "value": "04"
+        }
+      ],
+      "motion": {
+        "name": "none",
+        "strength": 0.2,
+        "ease": "inOutCubic"
+      },
+      "transition": "blur-cross",
+      "transition_duration": 0.32
+    },
+    {
+      "id": "scene-06",
+      "type": "endcard",
+      "duration": 4.4,
+      "title": "{{title}}",
+      "subtitle": "A FICTIONAL CONCEPT / SOURCE-EDITABLE TEMPLATE",
+      "overline": "ORIGINAL MOTION STUDY",
+      "image": "",
+      "background": "mesh",
+      "layout": "left",
+      "items": [
+        {
+          "title": "Form",
+          "body": "Refined from every angle.",
+          "value": "01"
+        },
+        {
+          "title": "Light",
+          "body": "A controlled focal point.",
+          "value": "02"
+        },
+        {
+          "title": "Motion",
+          "body": "Every beat with intention.",
+          "value": "03"
+        },
+        {
+          "title": "Detail",
+          "body": "Make the important visible.",
+          "value": "04"
+        }
+      ],
+      "motion": {
+        "name": "none",
+        "strength": 0.2,
+        "ease": "inOutCubic"
+      },
+      "transition": "zoom-in",
+      "transition_duration": 0
+    }
+  ],
+  "style": {
+    "schema_version": "1.0",
+    "id": "keynote-silent-reveal",
+    "name": "静场揭幕",
+    "family": "keynote",
+    "summary": "静场揭幕：one hero isolated inside a wide empty field. Original direction recipe; real footage and bespoke assets determine final visual fidelity.",
+    "keywords": [
+      "negative space",
+      "restrained reveal",
+      "hero silhouette",
+      "single promise",
+      "quiet stage",
+      "slow release"
+    ],
+    "avoid": [
+      "unmotivated decorative motion",
+      "unreadable small copy",
+      "invented product or gameplay proof"
+    ],
+    "best_for": [
+      "keynote promotional video",
+      "product or character identity reveal"
+    ],
+    "direction": {
+      "composition": "one hero isolated inside a wide empty field; keep one dominant focal hierarchy and legible supporting evidence.",
+      "typography": "Use negative space,restrained reveal,hero silhouette,single promise,quiet stage,slow release as hierarchy cues; keep display copy short and body copy readable at final delivery size.",
+      "lighting": "soft overhead pool; preserve subject contour and separate it from the supporting field.",
+      "materials": "matte aluminum and diffused glass; actual material appearance comes from approved imagery or a real 3D asset.",
+      "camera": "Guide attention with negative space; use a deliberate hold, a measured approach and a stable payoff.",
+      "editing": "Open with restrained reveal; alternate proof and breathing room, then resolve with slow release.",
+      "sound": "Create a restrained rhythm around quiet stage; place licensed accents on intentional cuts and keep speech clear."
+    },
+    "beat_plan": [
+      "Hook: negative space",
+      "Establish: one hero isolated inside a wide empty field",
+      "Prove: use an approved local capture or truthful designed-motion detail",
+      "Payoff: slow release with one clear final identity"
+    ],
+    "reference_ids": [
+      "hyperframes-creative",
+      "hyperframes-product-launch",
+      "video-shotcraft",
+      "product-demo-video"
+    ],
+    "render": {
+      "base_template": "keynote-product-porcelain",
+      "theme": {
+        "background": "#f5f6f8",
+        "foreground": "#16191e",
+        "accent": "#245fe7",
+        "secondary": "#b4caff",
+        "surface": "#ffffff",
+        "font": "sans"
+      },
+      "backgrounds": [
+        "solid",
+        "mesh"
+      ],
+      "layouts": [
+        "center",
+        "left"
+      ],
+      "motion": {
+        "name": "none",
+        "strength": 0.2,
+        "ease": "inOutCubic"
+      },
+      "transitions": [
+        "crossfade",
+        "blur-cross",
+        "zoom-in"
+      ],
+      "overlap_ratio": 0.08,
+      "typography": {
+        "scale": 0.8,
+        "weight_offset": -100,
+        "tracking": 0,
+        "leading": 1.05
+      },
+      "graphics": {
+        "panel_radius": 0,
+        "overlay": "none",
+        "opacity": 0.04,
+        "line_width": 0.8
+      }
+    }
+  }
+}

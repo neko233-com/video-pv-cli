@@ -1,0 +1,87 @@
+{
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
+  ],
+  "beat_plan": [
+    "Hook: ceramic curve",
+    "Establish: arrange one rounded form with museum-like breathing room",
+    "Prove: use an approved local capture or truthful designed-motion detail",
+    "Payoff: slow arc with one clear final identity"
+  ],
+  "best_for": [
+    "luxury promotional video",
+    "product or character identity reveal"
+  ],
+  "direction": {
+    "camera": "Guide attention with ceramic curve; use a deliberate hold, a measured approach and a stable payoff.",
+    "composition": "arrange one rounded form with museum-like breathing room; keep one dominant focal hierarchy and legible supporting evidence.",
+    "editing": "Open with museum spacing; alternate proof and breathing room, then resolve with slow arc.",
+    "lighting": "north-window softness; preserve subject contour and separate it from the supporting field.",
+    "materials": "unglazed ceramic and plaster; actual material appearance comes from approved imagery or a real 3D asset.",
+    "sound": "Create a restrained rhythm around still-life balance; place licensed accents on intentional cuts and keep speech clear.",
+    "typography": "Use ceramic curve,museum spacing,soft shadow,neutral field,still-life balance,slow arc as hierarchy cues; keep display copy short and body copy readable at final delivery size."
+  },
+  "family": "luxury",
+  "id": "luxury-ceramic-gallery",
+  "keywords": [
+    "ceramic curve",
+    "museum spacing",
+    "soft shadow",
+    "neutral field",
+    "still-life balance",
+    "slow arc"
+  ],
+  "name": "陶瓷展厅",
+  "reference_ids": [
+    "hyperframes-creative",
+    "hyperframes-product-launch",
+    "video-shotcraft",
+    "product-demo-video"
+  ],
+  "render": {
+    "backgrounds": [
+      "silk",
+      "horizon"
+    ],
+    "base_template": "keynote-gallery-graphite",
+    "graphics": {
+      "line_width": 2,
+      "opacity": 0.11199999999999999,
+      "overlay": "dot-field",
+      "panel_radius": 30
+    },
+    "layouts": [
+      "left",
+      "right"
+    ],
+    "motion": {
+      "ease": "inOutQuint",
+      "name": "rise",
+      "strength": 0.76
+    },
+    "overlap_ratio": 0.15500000000000003,
+    "theme": {
+      "accent": "#7a856d",
+      "background": "#ede9df",
+      "font": "display",
+      "foreground": "#343832",
+      "secondary": "#b7ac94",
+      "surface": "#faf7ee"
+    },
+    "transitions": [
+      "crossfade",
+      "light-sweep",
+      "iris"
+    ],
+    "typography": {
+      "leading": 1.11,
+      "scale": 1,
+      "tracking": 1.8,
+      "weight_offset": 90
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "陶瓷展厅：arrange one rounded form with museum-like breathing room. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+}

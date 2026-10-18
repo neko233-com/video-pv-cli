@@ -1,0 +1,87 @@
+{
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
+  ],
+  "beat_plan": [
+    "Hook: delayed payoff",
+    "Establish: hold the main reveal until the last large composition",
+    "Prove: use an approved local capture or truthful designed-motion detail",
+    "Payoff: hero return with one clear final identity"
+  ],
+  "best_for": [
+    "keynote promotional video",
+    "product or character identity reveal"
+  ],
+  "direction": {
+    "camera": "Guide attention with delayed payoff; use a deliberate hold, a measured approach and a stable payoff.",
+    "composition": "hold the main reveal until the last large composition; keep one dominant focal hierarchy and legible supporting evidence.",
+    "editing": "Open with chapter break; alternate proof and breathing room, then resolve with hero return.",
+    "lighting": "dark-to-light rim; preserve subject contour and separate it from the supporting field.",
+    "materials": "unbroken metal and calm reflections; actual material appearance comes from approved imagery or a real 3D asset.",
+    "sound": "Create a restrained rhythm around scale shift; place licensed accents on intentional cuts and keep speech clear.",
+    "typography": "Use delayed payoff,chapter break,final silhouette,measured silence,scale shift,hero return as hierarchy cues; keep display copy short and body copy readable at final delivery size."
+  },
+  "family": "keynote",
+  "id": "keynote-one-more-reveal",
+  "keywords": [
+    "delayed payoff",
+    "chapter break",
+    "final silhouette",
+    "measured silence",
+    "scale shift",
+    "hero return"
+  ],
+  "name": "压轴再揭",
+  "reference_ids": [
+    "hyperframes-creative",
+    "hyperframes-product-launch",
+    "video-shotcraft",
+    "product-demo-video"
+  ],
+  "render": {
+    "backgrounds": [
+      "prism",
+      "horizon"
+    ],
+    "base_template": "keynote-gallery-porcelain",
+    "graphics": {
+      "line_width": 2,
+      "opacity": 0.121,
+      "overlay": "dot-field",
+      "panel_radius": 34
+    },
+    "layouts": [
+      "left",
+      "right"
+    ],
+    "motion": {
+      "ease": "inOutQuint",
+      "name": "rise",
+      "strength": 0.8300000000000001
+    },
+    "overlap_ratio": 0.18,
+    "theme": {
+      "accent": "#c8daff",
+      "background": "#05070a",
+      "font": "sans",
+      "foreground": "#f1f2f5",
+      "secondary": "#6a7792",
+      "surface": "#151b27"
+    },
+    "transitions": [
+      "blur-cross",
+      "crossfade",
+      "zoom-in"
+    ],
+    "typography": {
+      "leading": 1.11,
+      "scale": 1.0250000000000001,
+      "tracking": 1.8,
+      "weight_offset": 80
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "压轴再揭：hold the main reveal until the last large composition. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+}

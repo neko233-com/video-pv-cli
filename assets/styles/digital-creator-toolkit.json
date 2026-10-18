@@ -1,0 +1,87 @@
+{
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
+  ],
+  "beat_plan": [
+    "Hook: creative output",
+    "Establish: let a real output dominate while tools support its creation story",
+    "Prove: use an approved local capture or truthful designed-motion detail",
+    "Payoff: playful precision with one clear final identity"
+  ],
+  "best_for": [
+    "digital promotional video",
+    "product or character identity reveal"
+  ],
+  "direction": {
+    "camera": "Guide attention with creative output; use a deliberate hold, a measured approach and a stable payoff.",
+    "composition": "let a real output dominate while tools support its creation story; keep one dominant focal hierarchy and legible supporting evidence.",
+    "editing": "Open with tool detail; alternate proof and breathing room, then resolve with playful precision.",
+    "lighting": "soft creative studio; preserve subject contour and separate it from the supporting field.",
+    "materials": "paper-like panels and colorful output surfaces; actual material appearance comes from approved imagery or a real 3D asset.",
+    "sound": "Create a restrained rhythm around visible result; place licensed accents on intentional cuts and keep speech clear.",
+    "typography": "Use creative output,tool detail,layered workspace,craft rhythm,visible result,playful precision as hierarchy cues; keep display copy short and body copy readable at final delivery size."
+  },
+  "family": "digital",
+  "id": "digital-creator-toolkit",
+  "keywords": [
+    "creative output",
+    "tool detail",
+    "layered workspace",
+    "craft rhythm",
+    "visible result",
+    "playful precision"
+  ],
+  "name": "创作工具",
+  "reference_ids": [
+    "hyperframes-creative",
+    "hyperframes-product-launch",
+    "video-shotcraft",
+    "product-demo-video"
+  ],
+  "render": {
+    "backgrounds": [
+      "prism",
+      "grid"
+    ],
+    "base_template": "keynote-features-porcelain",
+    "graphics": {
+      "line_width": 0.8,
+      "opacity": 0.094,
+      "overlay": "letterbox",
+      "panel_radius": 64
+    },
+    "layouts": [
+      "left",
+      "center"
+    ],
+    "motion": {
+      "ease": "outExpo",
+      "name": "drift-up",
+      "strength": 0.6200000000000001
+    },
+    "overlap_ratio": 0.10500000000000001,
+    "theme": {
+      "accent": "#ad6955",
+      "background": "#f4e9df",
+      "font": "sans",
+      "foreground": "#473c38",
+      "secondary": "#b7a278",
+      "surface": "#fffaf4"
+    },
+    "transitions": [
+      "push-left",
+      "zoom-in",
+      "crossfade"
+    ],
+    "typography": {
+      "leading": 1.23,
+      "scale": 0.9500000000000001,
+      "tracking": 0,
+      "weight_offset": 40
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "创作工具：let a real output dominate while tools support its creation story. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+}

@@ -22,3 +22,8 @@ in every render report. The bridge is implemented in webgpu_bridge.go.
 FFmpeg is installed separately; preserve the selected build's licensing terms.
 Third-party shader libraries described in the references are optional and are
 not redistributed as part of the original WGSL helper.
+
+Workflow research: HyperFrames (heygen-com), video-shotcraft, ai-product-video,
+product-demo-video-skill. These are linked research references; no code or style
+data from them is redistributed. The 100 style recipes are original. See
+references/web-video-frameworks.md for sources and integration scope.

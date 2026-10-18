@@ -19,7 +19,10 @@ Usage: video-pv-cli <command> [options]
   skill    Install or pack the bundled pv-production agent skill
   catalog  List, inspect, validate and locally verify data templates/transitions
   preview  Open a local catalog verification workbench for Edge/browser review
-  bundle   Package a verified MP4 for a website background or Unity UI surface
+  bundle   Package a verified MP4 or inert website background
+  style    List, inspect, apply and verify 100 data-driven visual styles
+  mp4      Verify a standalone MP4: structure, timestamps, frames, codecs and decode
+  qa       Run repeatable Windows tests, GPU failure gates and optional deep catalog
   version  Print the CLI version
 
 Run a command with --help for its options. Rendering needs Node.js >=24.
@@ -48,6 +51,12 @@ Go 1.27 builds the CLI; check without media needs no external runtime.`)
 		return runPreview(args[1:], stdout, stderr)
 	case "bundle":
 		return runBundle(args[1:], stdout, stderr)
+	case "style":
+		return runStyle(args[1:], stdout, stderr)
+	case "mp4":
+		return runMP4(args[1:], stdout, stderr)
+	case "qa":
+		return runQA(args[1:], stdout, stderr)
 	default:
 		if strings.HasPrefix(args[0], "-") {
 			return runCheck(args, stdout, stderr)

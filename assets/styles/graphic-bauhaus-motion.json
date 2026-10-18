@@ -1,0 +1,87 @@
+{
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
+  ],
+  "beat_plan": [
+    "Hook: primary geometry",
+    "Establish: build the frame from a small set of balanced primary forms",
+    "Prove: use an approved local capture or truthful designed-motion detail",
+    "Payoff: clean edge with one clear final identity"
+  ],
+  "best_for": [
+    "graphic promotional video",
+    "product or character identity reveal"
+  ],
+  "direction": {
+    "camera": "Guide attention with primary geometry; use a deliberate hold, a measured approach and a stable payoff.",
+    "composition": "build the frame from a small set of balanced primary forms; keep one dominant focal hierarchy and legible supporting evidence.",
+    "editing": "Open with functional type; alternate proof and breathing room, then resolve with clean edge.",
+    "lighting": "flat geometric light; preserve subject contour and separate it from the supporting field.",
+    "materials": "solid pigment and crisp paper; actual material appearance comes from approved imagery or a real 3D asset.",
+    "sound": "Create a restrained rhythm around graphic balance; place licensed accents on intentional cuts and keep speech clear.",
+    "typography": "Use primary geometry,functional type,bold axis,measured motion,graphic balance,clean edge as hierarchy cues; keep display copy short and body copy readable at final delivery size."
+  },
+  "family": "graphic",
+  "id": "graphic-bauhaus-motion",
+  "keywords": [
+    "primary geometry",
+    "functional type",
+    "bold axis",
+    "measured motion",
+    "graphic balance",
+    "clean edge"
+  ],
+  "name": "包豪斯运动",
+  "reference_ids": [
+    "hyperframes-creative",
+    "hyperframes-product-launch",
+    "video-shotcraft",
+    "product-demo-video"
+  ],
+  "render": {
+    "backgrounds": [
+      "mesh",
+      "horizon"
+    ],
+    "base_template": "brand-logo-aurora",
+    "graphics": {
+      "line_width": 2,
+      "opacity": 0.049,
+      "overlay": "dot-field",
+      "panel_radius": 2
+    },
+    "layouts": [
+      "left",
+      "right"
+    ],
+    "motion": {
+      "ease": "inOutQuint",
+      "name": "rise",
+      "strength": 0.27
+    },
+    "overlap_ratio": 0.10500000000000001,
+    "theme": {
+      "accent": "#bb493d",
+      "background": "#efe7d7",
+      "font": "display",
+      "foreground": "#272727",
+      "secondary": "#4d7396",
+      "surface": "#fff9ed"
+    },
+    "transitions": [
+      "diagonal",
+      "split",
+      "pixelate"
+    ],
+    "typography": {
+      "leading": 1.11,
+      "scale": 0.8250000000000001,
+      "tracking": 1.8,
+      "weight_offset": -90
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "包豪斯运动：build the frame from a small set of balanced primary forms. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+}

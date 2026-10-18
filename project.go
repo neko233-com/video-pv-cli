@@ -85,6 +85,10 @@ type Check struct {
 }
 
 type MediaSummary struct {
+	VideoStreams         int     `json:"video_streams,omitempty"`
+	AudioStreams         int     `json:"audio_streams,omitempty"`
+	AudioDurationSeconds float64 `json:"audio_duration_seconds,omitempty"`
+	AudioStartSeconds    float64 `json:"audio_start_seconds,omitempty"`
 	PixelFormat          string  `json:"pixel_format,omitempty"`
 	VideoDurationSeconds float64 `json:"video_duration_seconds,omitempty"`
 	Frames               int64   `json:"frames,omitempty"`
@@ -99,12 +103,14 @@ type MediaSummary struct {
 }
 
 type Report struct {
+	SourceSHA256 string        `json:"source_sha256,omitempty"`
 	ProjectTitle string        `json:"project_title"`
 	ReleaseMode  bool          `json:"release_mode"`
 	Passed       bool          `json:"passed"`
 	ReleaseReady bool          `json:"release_ready"`
 	Checks       []Check       `json:"checks"`
 	Media        *MediaSummary `json:"media,omitempty"`
+	MP4          *MP4Integrity `json:"mp4,omitempty"`
 }
 
 func (r *Report) add(code, status, message string) {

@@ -1,0 +1,87 @@
+{
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
+  ],
+  "beat_plan": [
+    "Hook: data narrative",
+    "Establish: give one factual comparison the visual weight of a headline",
+    "Prove: use an approved local capture or truthful designed-motion detail",
+    "Payoff: editorial chart with one clear final identity"
+  ],
+  "best_for": [
+    "digital promotional video",
+    "product or character identity reveal"
+  ],
+  "direction": {
+    "camera": "Guide attention with data narrative; use a deliberate hold, a measured approach and a stable payoff.",
+    "composition": "give one factual comparison the visual weight of a headline; keep one dominant focal hierarchy and legible supporting evidence.",
+    "editing": "Open with one takeaway; alternate proof and breathing room, then resolve with editorial chart.",
+    "lighting": "flat readable graphic light; preserve subject contour and separate it from the supporting field.",
+    "materials": "clean chart surfaces and controlled signal color; actual material appearance comes from approved imagery or a real 3D asset.",
+    "sound": "Create a restrained rhythm around credible scale; place licensed accents on intentional cuts and keep speech clear.",
+    "typography": "Use data narrative,one takeaway,clear comparison,ordered reveal,credible scale,editorial chart as hierarchy cues; keep display copy short and body copy readable at final delivery size."
+  },
+  "family": "digital",
+  "id": "digital-data-story",
+  "keywords": [
+    "data narrative",
+    "one takeaway",
+    "clear comparison",
+    "ordered reveal",
+    "credible scale",
+    "editorial chart"
+  ],
+  "name": "数据叙事",
+  "reference_ids": [
+    "hyperframes-creative",
+    "hyperframes-product-launch",
+    "video-shotcraft",
+    "product-demo-video"
+  ],
+  "render": {
+    "backgrounds": [
+      "solid",
+      "caustics"
+    ],
+    "base_template": "keynote-features-porcelain",
+    "graphics": {
+      "line_width": 1.7,
+      "opacity": 0.121,
+      "overlay": "contours",
+      "panel_radius": 32
+    },
+    "layouts": [
+      "center",
+      "asymmetric"
+    ],
+    "motion": {
+      "ease": "settle",
+      "name": "tilt",
+      "strength": 0.8300000000000001
+    },
+    "overlap_ratio": 0.18,
+    "theme": {
+      "accent": "#597692",
+      "background": "#f0eee7",
+      "font": "sans",
+      "foreground": "#303940",
+      "secondary": "#b6a07b",
+      "surface": "#ffffff"
+    },
+    "transitions": [
+      "zoom-in",
+      "push-left",
+      "crossfade"
+    ],
+    "typography": {
+      "leading": 1.17,
+      "scale": 1.0250000000000001,
+      "tracking": 1.35,
+      "weight_offset": 100
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "数据叙事：give one factual comparison the visual weight of a headline. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+}

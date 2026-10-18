@@ -1,0 +1,11 @@
+{
+  "schema": "video-pv-cli/catalog-data-update/1",
+  "changed": "style palettes only",
+  "previous_catalog_sha256": "b0f115c2705ca4953a53d4517c56fd4778edad6281e9ac0f4c3715a6cbd1c0ac",
+  "current_catalog_sha256": "0bb6c7f0c045276eea130111c745dd9784c677b0f48b95f43e6a070173dc88d1",
+  "completed_cases_revalidated": 1760,
+  "completed_case_data_comparison": "exact serialized case equality",
+  "png_input_hashes_rechecked": true,
+  "mp4s_redecoded": true,
+  "renderer_change_allowed": false
+}

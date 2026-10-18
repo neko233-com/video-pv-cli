@@ -1,0 +1,87 @@
+{
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
+  ],
+  "beat_plan": [
+    "Hook: pop contrast",
+    "Establish: make one bold image crop collide with a short poster headline",
+    "Prove: use an approved local capture or truthful designed-motion detail",
+    "Payoff: graphic hit with one clear final identity"
+  ],
+  "best_for": [
+    "graphic promotional video",
+    "product or character identity reveal"
+  ],
+  "direction": {
+    "camera": "Guide attention with pop contrast; use a deliberate hold, a measured approach and a stable payoff.",
+    "composition": "make one bold image crop collide with a short poster headline; keep one dominant focal hierarchy and legible supporting evidence.",
+    "editing": "Open with halftone texture; alternate proof and breathing room, then resolve with graphic hit.",
+    "lighting": "high graphic contrast; preserve subject contour and separate it from the supporting field.",
+    "materials": "screenprint ink and comic paper; actual material appearance comes from approved imagery or a real 3D asset.",
+    "sound": "Create a restrained rhythm around bold crop; place licensed accents on intentional cuts and keep speech clear.",
+    "typography": "Use pop contrast,halftone texture,poster type,comic framing,bold crop,graphic hit as hierarchy cues; keep display copy short and body copy readable at final delivery size."
+  },
+  "family": "graphic",
+  "id": "graphic-pop-print",
+  "keywords": [
+    "pop contrast",
+    "halftone texture",
+    "poster type",
+    "comic framing",
+    "bold crop",
+    "graphic hit"
+  ],
+  "name": "波普印刷",
+  "reference_ids": [
+    "hyperframes-creative",
+    "hyperframes-product-launch",
+    "video-shotcraft",
+    "product-demo-video"
+  ],
+  "render": {
+    "backgrounds": [
+      "aurora",
+      "silk"
+    ],
+    "base_template": "social-teaser-ember",
+    "graphics": {
+      "line_width": 0.8,
+      "opacity": 0.057999999999999996,
+      "overlay": "none",
+      "panel_radius": 13
+    },
+    "layouts": [
+      "center",
+      "left"
+    ],
+    "motion": {
+      "ease": "swift",
+      "name": "none",
+      "strength": 0.34
+    },
+    "overlap_ratio": 0.13,
+    "theme": {
+      "accent": "#ad3e61",
+      "background": "#efe0a8",
+      "font": "sans",
+      "foreground": "#2e2637",
+      "secondary": "#426d9d",
+      "surface": "#fff1c8"
+    },
+    "transitions": [
+      "split",
+      "diagonal",
+      "pixelate"
+    ],
+    "typography": {
+      "leading": 1.17,
+      "scale": 0.8500000000000001,
+      "tracking": 0,
+      "weight_offset": -70
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "波普印刷：make one bold image crop collide with a short poster headline. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+}

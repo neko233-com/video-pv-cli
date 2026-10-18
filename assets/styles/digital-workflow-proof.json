@@ -1,0 +1,87 @@
+{
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
+  ],
+  "beat_plan": [
+    "Hook: stepwise workflow",
+    "Establish: show one action and its observable consequence at readable scale",
+    "Prove: use an approved local capture or truthful designed-motion detail",
+    "Payoff: measured zoom with one clear final identity"
+  ],
+  "best_for": [
+    "digital promotional video",
+    "product or character identity reveal"
+  ],
+  "direction": {
+    "camera": "Guide attention with stepwise workflow; use a deliberate hold, a measured approach and a stable payoff.",
+    "composition": "show one action and its observable consequence at readable scale; keep one dominant focal hierarchy and legible supporting evidence.",
+    "editing": "Open with visible action; alternate proof and breathing room, then resolve with measured zoom.",
+    "lighting": "even interface fill; preserve subject contour and separate it from the supporting field.",
+    "materials": "crisp UI surfaces and sparse annotations; actual material appearance comes from approved imagery or a real 3D asset.",
+    "sound": "Create a restrained rhythm around proof rail; place licensed accents on intentional cuts and keep speech clear.",
+    "typography": "Use stepwise workflow,visible action,before after,clear consequence,proof rail,measured zoom as hierarchy cues; keep display copy short and body copy readable at final delivery size."
+  },
+  "family": "digital",
+  "id": "digital-workflow-proof",
+  "keywords": [
+    "stepwise workflow",
+    "visible action",
+    "before after",
+    "clear consequence",
+    "proof rail",
+    "measured zoom"
+  ],
+  "name": "工作流证明",
+  "reference_ids": [
+    "hyperframes-creative",
+    "hyperframes-product-launch",
+    "video-shotcraft",
+    "product-demo-video"
+  ],
+  "render": {
+    "backgrounds": [
+      "grid",
+      "silk"
+    ],
+    "base_template": "keynote-product-graphite",
+    "graphics": {
+      "line_width": 0.8,
+      "opacity": 0.049,
+      "overlay": "none",
+      "panel_radius": 9
+    },
+    "layouts": [
+      "center",
+      "left"
+    ],
+    "motion": {
+      "ease": "swift",
+      "name": "none",
+      "strength": 0.27
+    },
+    "overlap_ratio": 0.10500000000000001,
+    "theme": {
+      "accent": "#427c86",
+      "background": "#edf2f4",
+      "font": "display",
+      "foreground": "#273b43",
+      "secondary": "#9abbbd",
+      "surface": "#ffffff"
+    },
+    "transitions": [
+      "zoom-in",
+      "push-left",
+      "crossfade"
+    ],
+    "typography": {
+      "leading": 1.17,
+      "scale": 0.8250000000000001,
+      "tracking": 0,
+      "weight_offset": -60
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "工作流证明：show one action and its observable consequence at readable scale. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+}

@@ -1,0 +1,26 @@
+{
+  "schema": "video-pv-cli/edge-repeat/1",
+  "passed": true,
+  "passes": 2,
+  "cases_per_pass": 1368,
+  "pixel_mismatches": 0,
+  "source_fingerprints_equal": true,
+  "catalog_sha256": "0bb6c7f0c045276eea130111c745dd9784c677b0f48b95f43e6a070173dc88d1",
+  "gpu": {
+    "backend": "webgpu",
+    "shaderLanguage": "wgsl",
+    "vendor": "nvidia",
+    "architecture": "blackwell",
+    "device": "",
+    "description": "",
+    "isFallbackAdapter": false,
+    "features": [
+      "core-features-and-limits"
+    ]
+  },
+  "first_started": "2026-10-18T13:25:13.841Z",
+  "first_finished": "2026-10-18T13:35:07.041Z",
+  "second_started": "2026-10-18T13:44:04.111Z",
+  "second_finished": "2026-10-18T13:51:33.509Z",
+  "repeat_checks_per_pass": 304
+}

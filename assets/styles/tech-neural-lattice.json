@@ -1,0 +1,87 @@
+{
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
+  ],
+  "beat_plan": [
+    "Hook: neural structure",
+    "Establish: organize visible information as a legible node lattice",
+    "Prove: use an approved local capture or truthful designed-motion detail",
+    "Payoff: emergent pattern with one clear final identity"
+  ],
+  "best_for": [
+    "tech promotional video",
+    "product or character identity reveal"
+  ],
+  "direction": {
+    "camera": "Guide attention with neural structure; use a deliberate hold, a measured approach and a stable payoff.",
+    "composition": "organize visible information as a legible node lattice; keep one dominant focal hierarchy and legible supporting evidence.",
+    "editing": "Open with network depth; alternate proof and breathing room, then resolve with emergent pattern.",
+    "lighting": "cool volumetric suggestion; preserve subject contour and separate it from the supporting field.",
+    "materials": "luminous fibers and dark glass; actual material appearance comes from approved imagery or a real 3D asset.",
+    "sound": "Create a restrained rhythm around quiet futurism; place licensed accents on intentional cuts and keep speech clear.",
+    "typography": "Use neural structure,network depth,coherent nodes,signal travel,quiet futurism,emergent pattern as hierarchy cues; keep display copy short and body copy readable at final delivery size."
+  },
+  "family": "tech",
+  "id": "tech-neural-lattice",
+  "keywords": [
+    "neural structure",
+    "network depth",
+    "coherent nodes",
+    "signal travel",
+    "quiet futurism",
+    "emergent pattern"
+  ],
+  "name": "神经晶格",
+  "reference_ids": [
+    "hyperframes-creative",
+    "hyperframes-product-launch",
+    "video-shotcraft",
+    "product-demo-video"
+  ],
+  "render": {
+    "backgrounds": [
+      "prism",
+      "rings"
+    ],
+    "base_template": "keynote-features-graphite",
+    "graphics": {
+      "line_width": 0.8,
+      "opacity": 0.067,
+      "overlay": "letterbox",
+      "panel_radius": 47
+    },
+    "layouts": [
+      "left",
+      "center"
+    ],
+    "motion": {
+      "ease": "spring",
+      "name": "drift-up",
+      "strength": 0.41000000000000003
+    },
+    "overlap_ratio": 0.15500000000000003,
+    "theme": {
+      "accent": "#be9cff",
+      "background": "#141026",
+      "font": "sans",
+      "foreground": "#f0edff",
+      "secondary": "#75d4d0",
+      "surface": "#2c2342"
+    },
+    "transitions": [
+      "center-wipe",
+      "soft-wipe",
+      "lens"
+    ],
+    "typography": {
+      "leading": 1.11,
+      "scale": 0.875,
+      "tracking": 0,
+      "weight_offset": 20
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "神经晶格：organize visible information as a legible node lattice. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+}

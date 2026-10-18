@@ -1,0 +1,87 @@
+{
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
+  ],
+  "beat_plan": [
+    "Hook: scientific clarity",
+    "Establish: move from one observed detail to a legible explanatory structure",
+    "Prove: use an approved local capture or truthful designed-motion detail",
+    "Payoff: measured reveal with one clear final identity"
+  ],
+  "best_for": [
+    "digital promotional video",
+    "product or character identity reveal"
+  ],
+  "direction": {
+    "camera": "Guide attention with scientific clarity; use a deliberate hold, a measured approach and a stable payoff.",
+    "composition": "move from one observed detail to a legible explanatory structure; keep one dominant focal hierarchy and legible supporting evidence.",
+    "editing": "Open with experimental proof; alternate proof and breathing room, then resolve with measured reveal.",
+    "lighting": "cool lab-like fill; preserve subject contour and separate it from the supporting field.",
+    "materials": "clear glass and precise technical marks; actual material appearance comes from approved imagery or a real 3D asset.",
+    "sound": "Create a restrained rhythm around quiet wonder; place licensed accents on intentional cuts and keep speech clear.",
+    "typography": "Use scientific clarity,experimental proof,ordered diagram,precise label,quiet wonder,measured reveal as hierarchy cues; keep display copy short and body copy readable at final delivery size."
+  },
+  "family": "digital",
+  "id": "digital-scientific-discovery",
+  "keywords": [
+    "scientific clarity",
+    "experimental proof",
+    "ordered diagram",
+    "precise label",
+    "quiet wonder",
+    "measured reveal"
+  ],
+  "name": "科学发现",
+  "reference_ids": [
+    "hyperframes-creative",
+    "hyperframes-product-launch",
+    "video-shotcraft",
+    "product-demo-video"
+  ],
+  "render": {
+    "backgrounds": [
+      "silk",
+      "rings"
+    ],
+    "base_template": "keynote-gallery-porcelain",
+    "graphics": {
+      "line_width": 1.4,
+      "opacity": 0.11199999999999999,
+      "overlay": "corner-ticks",
+      "panel_radius": 21
+    },
+    "layouts": [
+      "center",
+      "left"
+    ],
+    "motion": {
+      "ease": "swift",
+      "name": "float",
+      "strength": 0.76
+    },
+    "overlap_ratio": 0.15500000000000003,
+    "theme": {
+      "accent": "#497f95",
+      "background": "#eaf1f2",
+      "font": "sans",
+      "foreground": "#263f4a",
+      "secondary": "#8eb7bf",
+      "surface": "#fbffff"
+    },
+    "transitions": [
+      "push-left",
+      "zoom-in",
+      "crossfade"
+    ],
+    "typography": {
+      "leading": 1.11,
+      "scale": 1,
+      "tracking": 0.9,
+      "weight_offset": 80
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "科学发现：move from one observed detail to a legible explanatory structure. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+}

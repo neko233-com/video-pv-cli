@@ -11,6 +11,7 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
+	"reflect"
 	"strconv"
 	"strings"
 	"testing"
@@ -93,6 +94,19 @@ func TestSkillInstallAndArchiveAreUsableModules(t *testing.T) {
 	}
 	marker := filepath.Join(target, "custom-note")
 	_ = os.WriteFile(marker, []byte("keep"), 0600)
+	before := snapshotFiles(t, root)
+	if err := installSkill(target, false, &output); err != nil {
+		t.Fatal(err)
+	}
+	if err := installSkill(target, true, &output); err != nil {
+		t.Fatal(err)
+	}
+	if !reflect.DeepEqual(before, snapshotFiles(t, root)) {
+		t.Fatal("unchanged install created files or backups")
+	}
+	skillFile := filepath.Join(target, "SKILL.md")
+	data, _ := os.ReadFile(skillFile)
+	_ = os.WriteFile(skillFile, append(data, []byte("\nlocal edit\n")...), 0600)
 	if err := installSkill(target, false, &output); err == nil {
 		t.Fatal("existing install was overwritten")
 	}
@@ -106,6 +120,13 @@ func TestSkillInstallAndArchiveAreUsableModules(t *testing.T) {
 	if data, err := os.ReadFile(filepath.Join(backups[0], "custom-note")); err != nil || string(data) != "keep" {
 		t.Fatal("custom data not preserved")
 	}
+	before = snapshotFiles(t, root)
+	if err := installSkill(target, true, &output); err != nil {
+		t.Fatal(err)
+	}
+	if !reflect.DeepEqual(before, snapshotFiles(t, root)) {
+		t.Fatal("repeat forced install left artifacts")
+	}
 	archive := filepath.Join(root, "skill.zip")
 	if err := packSkill(archive); err != nil {
 		t.Fatal(err)
@@ -113,20 +134,51 @@ func TestSkillInstallAndArchiveAreUsableModules(t *testing.T) {
 	if err := packSkill(archive); err == nil {
 		t.Fatal("existing archive overwritten")
 	}
+	secondArchive := filepath.Join(root, "second.zip")
+	if err := packSkill(secondArchive); err != nil {
+		t.Fatal(err)
+	}
+	firstHash, _ := fileSHA256(archive)
+	secondHash, _ := fileSHA256(secondArchive)
+	if firstHash != secondHash {
+		t.Fatal("skill archive is nondeterministic")
+	}
 	reader, err := zip.OpenReader(archive)
 	if err != nil {
 		t.Fatal(err)
 	}
 	defer reader.Close()
 	found := map[string]bool{}
+	styles := 0
 	for _, file := range reader.File {
 		found[file.Name] = true
+		if strings.HasPrefix(file.Name, "pv-production/assets/styles/") && strings.HasSuffix(file.Name, ".json") {
+			styles++
+		}
+		if strings.HasSuffix(file.Name, ".cs") || strings.HasSuffix(strings.ToLower(file.Name), ".mp4") {
+			t.Fatal("engine script or exported video packaged")
+		}
 		if strings.Contains(file.Name, "node_modules") || strings.Contains(file.Name, "work/") {
 			t.Fatal("unexpected development artifacts in package")
 		}
 	}
+	if styles != 100 {
+		t.Fatal("style data missing from skill archive", styles)
+	}
+	for _, name := range []string{"keynote-product", "anime-character", "game-trailer", "website-background"} {
+		for _, source := range []string{"README.md", "template.json", "pv-project.json", "pv.html", "catalog.wgsl"} {
+			if !found["pv-production/demo/"+name+"/"+source] {
+				t.Fatal("demo source missing from skill archive", name, source)
+			}
+		}
+	}
 	if !found["pv-production/SKILL.md"] || !found["pv-production/assets/starter/catalog.wgsl"] {
 		t.Fatal("archive missing skill or shader")
+	}
+	for _, path := range []string{"tools/stylegallery/main.go", "tools/stylegallery/main_test.go", "tools/stylegen/main.go", "tools/stylegen/palettes.txt"} {
+		if !found["pv-production/"+path] {
+			t.Fatal("archive missing catalog maintenance tool", path)
+		}
 	}
 }
 

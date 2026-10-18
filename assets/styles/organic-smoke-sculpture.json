@@ -1,0 +1,87 @@
+{
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
+  ],
+  "beat_plan": [
+    "Hook: smoke volume",
+    "Establish: allow one soft volume to reveal an anchored silhouette",
+    "Prove: use an approved local capture or truthful designed-motion detail",
+    "Payoff: quiet emergence with one clear final identity"
+  ],
+  "best_for": [
+    "organic promotional video",
+    "product or character identity reveal"
+  ],
+  "direction": {
+    "camera": "Guide attention with smoke volume; use a deliberate hold, a measured approach and a stable payoff.",
+    "composition": "allow one soft volume to reveal an anchored silhouette; keep one dominant focal hierarchy and legible supporting evidence.",
+    "editing": "Open with soft silhouette; alternate proof and breathing room, then resolve with quiet emergence.",
+    "lighting": "backlit smoke glow; preserve subject contour and separate it from the supporting field.",
+    "materials": "fine vapor and matte dark stone; actual material appearance comes from approved imagery or a real 3D asset.",
+    "sound": "Create a restrained rhythm around low key; place licensed accents on intentional cuts and keep speech clear.",
+    "typography": "Use smoke volume,soft silhouette,airy depth,slow curl,low key,quiet emergence as hierarchy cues; keep display copy short and body copy readable at final delivery size."
+  },
+  "family": "organic",
+  "id": "organic-smoke-sculpture",
+  "keywords": [
+    "smoke volume",
+    "soft silhouette",
+    "airy depth",
+    "slow curl",
+    "low key",
+    "quiet emergence"
+  ],
+  "name": "烟雾雕形",
+  "reference_ids": [
+    "hyperframes-creative",
+    "hyperframes-product-launch",
+    "video-shotcraft",
+    "product-demo-video"
+  ],
+  "render": {
+    "backgrounds": [
+      "particles",
+      "grid"
+    ],
+    "base_template": "keynote-gallery-sakura",
+    "graphics": {
+      "line_width": 0.8,
+      "opacity": 0.11199999999999999,
+      "overlay": "letterbox",
+      "panel_radius": 7
+    },
+    "layouts": [
+      "left",
+      "center"
+    ],
+    "motion": {
+      "ease": "outExpo",
+      "name": "drift-up",
+      "strength": 0.76
+    },
+    "overlap_ratio": 0.15500000000000003,
+    "theme": {
+      "accent": "#a4bac9",
+      "background": "#171c23",
+      "font": "sans",
+      "foreground": "#e7ecf1",
+      "secondary": "#7b93ac",
+      "surface": "#303b47"
+    },
+    "transitions": [
+      "ripple",
+      "noise-dissolve",
+      "soft-wipe"
+    ],
+    "typography": {
+      "leading": 1.23,
+      "scale": 1,
+      "tracking": 0,
+      "weight_offset": 20
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "烟雾雕形：allow one soft volume to reveal an anchored silhouette. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+}

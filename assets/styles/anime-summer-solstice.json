@@ -1,0 +1,87 @@
+{
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
+  ],
+  "beat_plan": [
+    "Hook: summer haze",
+    "Establish: give the portrait a wide summer horizon and light typography",
+    "Prove: use an approved local capture or truthful designed-motion detail",
+    "Payoff: youthful memory with one clear final identity"
+  ],
+  "best_for": [
+    "anime promotional video",
+    "product or character identity reveal"
+  ],
+  "direction": {
+    "camera": "Guide attention with summer haze; use a deliberate hold, a measured approach and a stable payoff.",
+    "composition": "give the portrait a wide summer horizon and light typography; keep one dominant focal hierarchy and legible supporting evidence.",
+    "editing": "Open with blue distance; alternate proof and breathing room, then resolve with youthful memory.",
+    "lighting": "late-afternoon warmth; preserve subject contour and separate it from the supporting field.",
+    "materials": "sunlit fabric and clear sky; actual material appearance comes from approved imagery or a real 3D asset.",
+    "sound": "Create a restrained rhythm around gentle camera; place licensed accents on intentional cuts and keep speech clear.",
+    "typography": "Use summer haze,blue distance,warm skin light,airy title,gentle camera,youthful memory as hierarchy cues; keep display copy short and body copy readable at final delivery size."
+  },
+  "family": "anime",
+  "id": "anime-summer-solstice",
+  "keywords": [
+    "summer haze",
+    "blue distance",
+    "warm skin light",
+    "airy title",
+    "gentle camera",
+    "youthful memory"
+  ],
+  "name": "夏至物语",
+  "reference_ids": [
+    "hyperframes-creative",
+    "hyperframes-product-launch",
+    "video-shotcraft",
+    "product-demo-video"
+  ],
+  "render": {
+    "backgrounds": [
+      "solid",
+      "nebula"
+    ],
+    "base_template": "character-reveal-midnight",
+    "graphics": {
+      "line_width": 2,
+      "opacity": 0.121,
+      "overlay": "halftone",
+      "panel_radius": 4
+    },
+    "layouts": [
+      "asymmetric",
+      "left"
+    ],
+    "motion": {
+      "ease": "inOutCubic",
+      "name": "drift-right",
+      "strength": 0.8300000000000001
+    },
+    "overlap_ratio": 0.18,
+    "theme": {
+      "accent": "#51859f",
+      "background": "#dceff4",
+      "font": "display",
+      "foreground": "#294550",
+      "secondary": "#d2ad7d",
+      "surface": "#f6fcf8"
+    },
+    "transitions": [
+      "prism",
+      "ink",
+      "crossfade"
+    ],
+    "typography": {
+      "leading": 1.17,
+      "scale": 1.0250000000000001,
+      "tracking": 1.8,
+      "weight_offset": -20
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "夏至物语：give the portrait a wide summer horizon and light typography. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+}

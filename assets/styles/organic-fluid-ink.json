@@ -1,0 +1,87 @@
+{
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
+  ],
+  "beat_plan": [
+    "Hook: fluid ink",
+    "Establish: a single flowing boundary reveals a compact focal subject",
+    "Prove: use an approved local capture or truthful designed-motion detail",
+    "Payoff: expressive form with one clear final identity"
+  ],
+  "best_for": [
+    "organic promotional video",
+    "product or character identity reveal"
+  ],
+  "direction": {
+    "camera": "Guide attention with fluid ink; use a deliberate hold, a measured approach and a stable payoff.",
+    "composition": "a single flowing boundary reveals a compact focal subject; keep one dominant focal hierarchy and legible supporting evidence.",
+    "editing": "Open with organic edge; alternate proof and breathing room, then resolve with expressive form.",
+    "lighting": "flat paper light; preserve subject contour and separate it from the supporting field.",
+    "materials": "pigment in water and cream stock; actual material appearance comes from approved imagery or a real 3D asset.",
+    "sound": "Create a restrained rhythm around quiet motion; place licensed accents on intentional cuts and keep speech clear.",
+    "typography": "Use fluid ink,organic edge,controlled spread,paper contrast,quiet motion,expressive form as hierarchy cues; keep display copy short and body copy readable at final delivery size."
+  },
+  "family": "organic",
+  "id": "organic-fluid-ink",
+  "keywords": [
+    "fluid ink",
+    "organic edge",
+    "controlled spread",
+    "paper contrast",
+    "quiet motion",
+    "expressive form"
+  ],
+  "name": "流墨扩散",
+  "reference_ids": [
+    "hyperframes-creative",
+    "hyperframes-product-launch",
+    "video-shotcraft",
+    "product-demo-video"
+  ],
+  "render": {
+    "backgrounds": [
+      "silk",
+      "horizon"
+    ],
+    "base_template": "keynote-gallery-sakura",
+    "graphics": {
+      "line_width": 2,
+      "opacity": 0.057999999999999996,
+      "overlay": "dot-field",
+      "panel_radius": 6
+    },
+    "layouts": [
+      "left",
+      "right"
+    ],
+    "motion": {
+      "ease": "inOutQuint",
+      "name": "rise",
+      "strength": 0.34
+    },
+    "overlap_ratio": 0.13,
+    "theme": {
+      "accent": "#4f7988",
+      "background": "#eee9dc",
+      "font": "sans",
+      "foreground": "#2e3940",
+      "secondary": "#a28d78",
+      "surface": "#fcf7eb"
+    },
+    "transitions": [
+      "ripple",
+      "noise-dissolve",
+      "soft-wipe"
+    ],
+    "typography": {
+      "leading": 1.11,
+      "scale": 0.8500000000000001,
+      "tracking": 1.8,
+      "weight_offset": -100
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "流墨扩散：a single flowing boundary reveals a compact focal subject. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+}

@@ -1,0 +1,87 @@
+{
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
+  ],
+  "beat_plan": [
+    "Hook: ocean depth",
+    "Establish: surround the hero with layered dark blue depth",
+    "Prove: use an approved local capture or truthful designed-motion detail",
+    "Payoff: quiet pressure with one clear final identity"
+  ],
+  "best_for": [
+    "cinema promotional video",
+    "product or character identity reveal"
+  ],
+  "direction": {
+    "camera": "Guide attention with ocean depth; use a deliberate hold, a measured approach and a stable payoff.",
+    "composition": "surround the hero with layered dark blue depth; keep one dominant focal hierarchy and legible supporting evidence.",
+    "editing": "Open with submerged light; alternate proof and breathing room, then resolve with quiet pressure.",
+    "lighting": "filtered underwater shafts; preserve subject contour and separate it from the supporting field.",
+    "materials": "deep water and translucent glass; actual material appearance comes from approved imagery or a real 3D asset.",
+    "sound": "Create a restrained rhythm around caustic rhythm; place licensed accents on intentional cuts and keep speech clear.",
+    "typography": "Use ocean depth,submerged light,slow drift,deep blue,caustic rhythm,quiet pressure as hierarchy cues; keep display copy short and body copy readable at final delivery size."
+  },
+  "family": "cinema",
+  "id": "cinema-oceanic-deep",
+  "keywords": [
+    "ocean depth",
+    "submerged light",
+    "slow drift",
+    "deep blue",
+    "caustic rhythm",
+    "quiet pressure"
+  ],
+  "name": "深海幽蓝",
+  "reference_ids": [
+    "hyperframes-creative",
+    "hyperframes-product-launch",
+    "video-shotcraft",
+    "product-demo-video"
+  ],
+  "render": {
+    "backgrounds": [
+      "prism",
+      "horizon"
+    ],
+    "base_template": "game-world-graphite",
+    "graphics": {
+      "line_width": 2,
+      "opacity": 0.067,
+      "overlay": "dot-field",
+      "panel_radius": 10
+    },
+    "layouts": [
+      "left",
+      "right"
+    ],
+    "motion": {
+      "ease": "inOutQuint",
+      "name": "rise",
+      "strength": 0.41000000000000003
+    },
+    "overlap_ratio": 0.15500000000000003,
+    "theme": {
+      "accent": "#79c4d7",
+      "background": "#061922",
+      "font": "display",
+      "foreground": "#e2f0f4",
+      "secondary": "#5f8fad",
+      "surface": "#15333f"
+    },
+    "transitions": [
+      "crossfade",
+      "dip-black",
+      "exposure"
+    ],
+    "typography": {
+      "leading": 1.11,
+      "scale": 0.875,
+      "tracking": 1.8,
+      "weight_offset": 140
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "深海幽蓝：surround the hero with layered dark blue depth. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+}

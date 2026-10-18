@@ -117,6 +117,8 @@ func websiteDeliveryHandler(root, origin string, fallback http.Handler) (http.Ha
 			audit, _ := bundled.ReadFile("assets/preview/delivery.html")
 			data = bytes.Replace(data, []byte("</html>"), append(audit, []byte("</html>")...), 1)
 			data = bytes.Replace(data, []byte("<style>"), []byte(`<base href="/delivery/"><style>`), 1)
+			// Keep the foreground anchor on the audit page despite the media base URL.
+			data = bytes.ReplaceAll(data, []byte(`href="#details"`), []byte(`href="/delivery-audit#details"`))
 			w.Header().Set("Content-Type", "text/html; charset=utf-8")
 			w.Header().Set("Cache-Control", "no-store")
 			_, _ = w.Write(data)
@@ -170,6 +172,8 @@ func prepareOwnedEvidence(root, schema string) error {
 }
 
 func newPreviewHandler(runtimeRoot, output, origin string, templates map[string]TemplateData, transitions map[string]TransitionData) http.Handler {
+	styles, _ := readStyles(templates, transitions)
+	sourceDigests := previewSourceDigests()
 	atlas, browserCases := browserAtlas(templates, transitions)
 	jsonReply := func(w http.ResponseWriter, value any) {
 		w.Header().Set("Content-Type", "application/json; charset=utf-8")
@@ -243,7 +247,12 @@ func newPreviewHandler(runtimeRoot, output, origin string, templates map[string]
 			}
 			sort.Slice(tpl, func(i, j int) bool { return tpl[i].ID < tpl[j].ID })
 			sort.Slice(tr, func(i, j int) bool { return tr[i].ID < tr[j].ID })
-			jsonReply(w, map[string]any{"templates": tpl, "transitions": tr})
+			styleList := []StylePreset{}
+			for _, s := range styles {
+				styleList = append(styleList, s)
+			}
+			sort.Slice(styleList, func(i, j int) bool { return styleList[i].ID < styleList[j].ID })
+			jsonReply(w, map[string]any{"templates": tpl, "transitions": tr, "styles": styleList, "source_sha256": sourceDigests})
 			return
 		}
 		if r.URL.Path == "/api/browser-cases" {
@@ -256,6 +265,19 @@ func newPreviewHandler(runtimeRoot, output, origin string, templates map[string]
 		if path == "/" {
 			data, err = bundled.ReadFile("assets/preview/index.html")
 			path = "index.html"
+		} else if path == "/gallery" || path == "/gallery/" || path == "/gallery/sprite.png" || path == "/gallery/index.json" {
+			file := "index.html"
+			if strings.HasSuffix(path, "sprite.png") {
+				file = "sprite.png"
+			}
+			if strings.HasSuffix(path, "index.json") {
+				file = "index.json"
+			}
+			data, err = bundled.ReadFile("docs/style-gallery/" + file)
+			path = file
+			if file == "index.html" {
+				data = bytes.Replace(data, []byte("<meta charset="), []byte("<base href=\"/gallery/\"><meta charset="), 1)
+			}
 		} else if strings.HasPrefix(path, "/multiplane/runtime/") {
 			file := strings.TrimPrefix(path, "/multiplane/runtime/")
 			if file != "shot.js" && file != "shot.css" {
@@ -265,7 +287,7 @@ func newPreviewHandler(runtimeRoot, output, origin string, templates map[string]
 			data, err = os.ReadFile(filepath.Join(runtimeRoot, "node_modules", "multiplane", "src", "runtime", file))
 		} else {
 			parts := strings.Split(strings.TrimPrefix(path, "/"), "/")
-			if len(parts) != 3 || (parts[0] != "template" && parts[0] != "transition" && parts[0] != "atlas") {
+			if len(parts) != 3 || (parts[0] != "template" && parts[0] != "transition" && parts[0] != "atlas" && parts[0] != "style") {
 				http.NotFound(w, r)
 				return
 			}
@@ -273,6 +295,12 @@ func newPreviewHandler(runtimeRoot, output, origin string, templates map[string]
 			var ok bool
 			if parts[0] == "atlas" {
 				ok = parts[1] == "all"
+			} else if parts[0] == "style" {
+				var s StylePreset
+				s, ok = styles[parts[1]]
+				if ok {
+					template = applyStyle(templates[s.Render.BaseTemplate], s)
+				}
 			} else if parts[0] == "template" {
 				template, ok = templates[parts[1]]
 			} else if _, ok = transitions[parts[1]]; ok {

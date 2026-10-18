@@ -1,0 +1,87 @@
+{
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
+  ],
+  "beat_plan": [
+    "Hook: terminal contrast",
+    "Establish: use a terminal-sized panel as the proof surface",
+    "Prove: use an approved local capture or truthful designed-motion detail",
+    "Payoff: developer clarity with one clear final identity"
+  ],
+  "best_for": [
+    "tech promotional video",
+    "product or character identity reveal"
+  ],
+  "direction": {
+    "camera": "Guide attention with terminal contrast; use a deliberate hold, a measured approach and a stable payoff.",
+    "composition": "use a terminal-sized panel as the proof surface; keep one dominant focal hierarchy and legible supporting evidence.",
+    "editing": "Open with code rhythm; alternate proof and breathing room, then resolve with developer clarity.",
+    "lighting": "low ambient and screen emission; preserve subject contour and separate it from the supporting field.",
+    "materials": "graphite and phosphor-like marks; actual material appearance comes from approved imagery or a real 3D asset.",
+    "sound": "Create a restrained rhythm around precise cursor; place licensed accents on intentional cuts and keep speech clear.",
+    "typography": "Use terminal contrast,code rhythm,dark graphite,signal green,precise cursor,developer clarity as hierarchy cues; keep display copy short and body copy readable at final delivery size."
+  },
+  "family": "tech",
+  "id": "tech-graphite-terminal",
+  "keywords": [
+    "terminal contrast",
+    "code rhythm",
+    "dark graphite",
+    "signal green",
+    "precise cursor",
+    "developer clarity"
+  ],
+  "name": "石墨终端",
+  "reference_ids": [
+    "hyperframes-creative",
+    "hyperframes-product-launch",
+    "video-shotcraft",
+    "product-demo-video"
+  ],
+  "render": {
+    "backgrounds": [
+      "fluid",
+      "particles"
+    ],
+    "base_template": "keynote-material-midnight",
+    "graphics": {
+      "line_width": 2,
+      "opacity": 0.057999999999999996,
+      "overlay": "halftone",
+      "panel_radius": 36
+    },
+    "layouts": [
+      "asymmetric",
+      "left"
+    ],
+    "motion": {
+      "ease": "settle",
+      "name": "drift-right",
+      "strength": 0.34
+    },
+    "overlap_ratio": 0.13,
+    "theme": {
+      "accent": "#7edbb1",
+      "background": "#0b1412",
+      "font": "sans",
+      "foreground": "#d8f0e5",
+      "secondary": "#5f9c88",
+      "surface": "#1a2c27"
+    },
+    "transitions": [
+      "soft-wipe",
+      "center-wipe",
+      "lens"
+    ],
+    "typography": {
+      "leading": 1.05,
+      "scale": 0.8500000000000001,
+      "tracking": 1.8,
+      "weight_offset": 0
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "石墨终端：use a terminal-sized panel as the proof surface. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+}

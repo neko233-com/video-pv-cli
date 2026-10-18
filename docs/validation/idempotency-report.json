@@ -1,14 +1,17 @@
 {
-  "new_batches": 0,
-  "scope": "full catalog cached rerun",
-  "after": {
-    "sha256": "634123280d5b11522933778229b02cf4311ad2d13e0cce9432bf9b1db720d61e",
-    "files": 4705
-  },
-  "passed": true,
   "schema": "video-pv-cli/idempotency/1",
+  "passed": true,
+  "scope": "full 2640-case catalog cached revalidation after all-case rendering",
   "before": {
-    "sha256": "634123280d5b11522933778229b02cf4311ad2d13e0cce9432bf9b1db720d61e",
-    "files": 4705
-  }
+    "sha256": "899f1f28cbaf76434d5479fdcb5119acb5d37bc585dcaa53b9f08a961a9062b5",
+    "files": 5795
+  },
+  "after": {
+    "sha256": "899f1f28cbaf76434d5479fdcb5119acb5d37bc585dcaa53b9f08a961a9062b5",
+    "files": 5795
+  },
+  "added_files": 0,
+  "removed_files": 0,
+  "changed_files": 0,
+  "new_batches": 0
 }

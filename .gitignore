@@ -12,3 +12,10 @@
 *.test
 *.test.exe
 coverage.out
+*.mp4
+/demo/*/node_modules/
+/demo/*/out/
+/demo/*/renders/
+/demo/*/qa/
+/demo/*/deliverables/
+/demo/*/*.before-sync

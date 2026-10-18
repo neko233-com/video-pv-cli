@@ -57,3 +57,9 @@ Watch the complete export with sound. Also review a contact sheet or sampled fra
 7. Localization, claims, ratings-sensitive content, endorsements, third-party IP, availability, and platform requirements have the right owner approval.
 
 `video-pv-cli check --release` requires a human reviewer attestation in the manifest, but it cannot verify that the review actually occurred. Only set it after completing this checklist and resolving every blocking finding.
+
+## Standalone MP4 and local suite
+
+`mp4 verify --input <file> --report <stable-json>` works without a project or game engine. It records an unchanged source SHA-256; parses bounded MP4 boxes and compatible brands; requires H.264/8-bit yuv420p/even dimensions, one video and optional single AAC track; checks audio start/duration alignment, first keyframe, decoded frame count, finite monotonic PTS, constant cadence and duration agreement; and fully decodes video/audio with FFmpeg error detection. `--fast-start`, `--silent` and `--require-audio` add target constraints. Reports cannot overwrite the input, including hardlink aliases.
+
+`qa windows --source <source-dir> --deep --samples <comma-separated-mp4s>` runs vet, two repetitions of all tests, media fixtures, actual GPU/failure fixtures, strict data validation and optional complete catalog revalidation. Required integration tests must actually pass each repetition; a missing or skipped required test cannot count as success. It replaces fixed owned logs/report files. Use the same `--catalog-out` to reuse source/pixel/media-verified evidence. `--gpu=false` explicitly skips the GPU fixture and reports that scope. Actual Edge pixel/playback checks are separate from this terminal suite.

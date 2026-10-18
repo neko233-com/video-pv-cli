@@ -12,7 +12,6 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
-	"strconv"
 	"strings"
 	"time"
 )
@@ -28,6 +27,7 @@ type DeliveryBundle struct {
 	Loop           bool              `json:"loop"`
 	Clickable      bool              `json:"clickable"`
 	Media          *MediaSummary     `json:"media"`
+	MP4            *MP4Integrity     `json:"mp4"`
 }
 
 func fileSHA256(path string) (string, error) {
@@ -47,14 +47,14 @@ func runBundle(args []string, stdout, stderr io.Writer) int {
 	f := flag.NewFlagSet("bundle", flag.ContinueOnError)
 	f.SetOutput(stderr)
 	project := f.String("project", ".", "source PV project")
-	target := f.String("target", "website", "website or unity")
+	target := f.String("target", "mp4", "mp4 or website; engine-independent media delivery")
 	mediaOverride := f.String("media", "", "source MP4 override")
 	out := f.String("out", "", "owned output directory (default project/deliverables/TARGET)")
 	if code := parseFlags(f, args); code >= 0 {
 		return code
 	}
-	if *target != "website" && *target != "unity" {
-		fmt.Fprintln(stderr, "target must be website or unity")
+	if *target != "website" && *target != "mp4" {
+		fmt.Fprintln(stderr, "target must be mp4 or website")
 		return 2
 	}
 	root, err := filepath.Abs(*project)
@@ -95,7 +95,10 @@ func runBundle(args []string, stdout, stderr io.Writer) int {
 	input, err := inspectMedia(source, tools.FFprobe)
 	if err == nil {
 		compareMedia(&report, p, *input)
-		err = decodeMedia(source, tools.FFmpeg)
+		_, err = inspectMP4Integrity(source, tools.FFprobe, *input)
+		if err == nil {
+			err = decodeMedia(source, tools.FFmpeg)
+		}
 	}
 	if err != nil || reportHasFailures(report) {
 		fmt.Fprintln(stderr, "source MP4 failed media validation", err)
@@ -129,7 +132,7 @@ func runBundle(args []string, stdout, stderr io.Writer) int {
 	}
 	recipe := sha256.New()
 	_, _ = io.WriteString(recipe, version+"/delivery/1/"+*target)
-	for _, name := range []string{"background.html", "PVVideoSurface.cs"} {
+	for _, name := range []string{"background.html"} {
 		data, _ := bundled.ReadFile("assets/delivery/" + name)
 		_, _ = recipe.Write(data)
 	}
@@ -162,8 +165,8 @@ func runBundle(args []string, stdout, stderr io.Writer) int {
 	}
 	defer os.RemoveAll(stage)
 	videoName := "background.mp4"
-	if *target == "unity" {
-		videoName = "StreamingAssets/pv.mp4"
+	if *target == "mp4" {
+		videoName = "video.mp4"
 	}
 	videoPath := filepath.Join(stage, filepath.FromSlash(videoName))
 	if err := os.MkdirAll(filepath.Dir(videoPath), 0755); err != nil {
@@ -204,18 +207,17 @@ func runBundle(args []string, stdout, stderr io.Writer) int {
 			return 1
 		}
 		files = append(files, "background.html")
-	} else {
-		data, _ := bundled.ReadFile("assets/delivery/PVVideoSurface.cs")
-		text := strings.NewReplacer("{{WIDTH}}", strconv.Itoa(p.Project.Width), "{{HEIGHT}}", strconv.Itoa(p.Project.Height)).Replace(string(data))
-		if err := os.WriteFile(filepath.Join(stage, "PVVideoSurface.cs"), []byte(text), 0644); err != nil {
-			fmt.Fprintln(stderr, err)
-			return 1
-		}
-		files = append(files, "PVVideoSurface.cs")
 	}
 	result, err := inspectMedia(videoPath, tools.FFprobe)
+	var integrity *MP4Integrity
 	if err == nil {
-		err = decodeMedia(videoPath, tools.FFmpeg)
+		integrity, err = inspectMP4Integrity(videoPath, tools.FFprobe, *result)
+		if err == nil {
+			err = decodeMedia(videoPath, tools.FFmpeg)
+		}
+		if err == nil && !integrity.FastStart {
+			err = fmt.Errorf("delivery MP4 lacks fast-start")
+		}
 	}
 	if err != nil {
 		fmt.Fprintln(stderr, err)
@@ -237,6 +239,7 @@ func runBundle(args []string, stdout, stderr io.Writer) int {
 		return 1
 	}
 	bundle := DeliveryBundle{Schema: "video-pv-cli/delivery/1", Passed: true, Target: *target, SourceSHA256: sourceHash, ManifestSHA256: manifestHash, RecipeSHA256: recipeHash, Files: map[string]string{}, Loop: *target == "website", Clickable: false, Media: result}
+	bundle.MP4 = integrity
 	for _, rel := range files {
 		path := filepath.Join(stage, filepath.FromSlash(rel))
 		dest, e := projectOutputPath(destination, rel)

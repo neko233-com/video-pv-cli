@@ -1,0 +1,7 @@
+{
+  "name": "video-pv-project",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Local deterministic HTML and native WebGPU WGSL PV project",
+  "dependencies": { "multiplane": "0.3.10" }
+}

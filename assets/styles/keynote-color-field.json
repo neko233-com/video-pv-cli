@@ -1,0 +1,87 @@
+{
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
+  ],
+  "beat_plan": [
+    "Hook: color field",
+    "Establish: one saturated field supports a single contrasting subject",
+    "Prove: use an approved local capture or truthful designed-motion detail",
+    "Payoff: one accent with one clear final identity"
+  ],
+  "best_for": [
+    "keynote promotional video",
+    "product or character identity reveal"
+  ],
+  "direction": {
+    "camera": "Guide attention with color field; use a deliberate hold, a measured approach and a stable payoff.",
+    "composition": "one saturated field supports a single contrasting subject; keep one dominant focal hierarchy and legible supporting evidence.",
+    "editing": "Open with saturated backdrop; alternate proof and breathing room, then resolve with one accent.",
+    "lighting": "even cyclorama; preserve subject contour and separate it from the supporting field.",
+    "materials": "painted enamel and solid pigment; actual material appearance comes from approved imagery or a real 3D asset.",
+    "sound": "Create a restrained rhythm around measured cut; place licensed accents on intentional cuts and keep speech clear.",
+    "typography": "Use color field,saturated backdrop,isolated product,graphic contrast,measured cut,one accent as hierarchy cues; keep display copy short and body copy readable at final delivery size."
+  },
+  "family": "keynote",
+  "id": "keynote-color-field",
+  "keywords": [
+    "color field",
+    "saturated backdrop",
+    "isolated product",
+    "graphic contrast",
+    "measured cut",
+    "one accent"
+  ],
+  "name": "纯色主场",
+  "reference_ids": [
+    "hyperframes-creative",
+    "hyperframes-product-launch",
+    "video-shotcraft",
+    "product-demo-video"
+  ],
+  "render": {
+    "backgrounds": [
+      "grid",
+      "particles"
+    ],
+    "base_template": "keynote-gallery-porcelain",
+    "graphics": {
+      "line_width": 2,
+      "opacity": 0.076,
+      "overlay": "halftone",
+      "panel_radius": 44
+    },
+    "layouts": [
+      "asymmetric",
+      "left"
+    ],
+    "motion": {
+      "ease": "settle",
+      "name": "drift-right",
+      "strength": 0.48000000000000004
+    },
+    "overlap_ratio": 0.18,
+    "theme": {
+      "accent": "#ffe58a",
+      "background": "#1845c8",
+      "font": "sans",
+      "foreground": "#fffdf6",
+      "secondary": "#85c5ff",
+      "surface": "#2b59d9"
+    },
+    "transitions": [
+      "crossfade",
+      "blur-cross",
+      "zoom-in"
+    ],
+    "typography": {
+      "leading": 1.05,
+      "scale": 0.9,
+      "tracking": 1.8,
+      "weight_offset": -20
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "纯色主场：one saturated field supports a single contrasting subject. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+}

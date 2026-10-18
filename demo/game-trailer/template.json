@@ -1,0 +1,349 @@
+{
+  "schema_version": "1.0",
+  "id": "game-launch-midnight",
+  "name": "游戏 · 发售宣传 / 深海",
+  "category": "game",
+  "description": "Independent editable cinematic sequence; theme, copy, images, scene rhythm and transitions live in this JSON. Fictional sample content, not product/gameplay evidence.",
+  "project_title": "STELLAR ECHO",
+  "width": 1920,
+  "height": 1080,
+  "fps": 30,
+  "loop": false,
+  "theme": {
+    "background": "#14110d",
+    "foreground": "#f7edda",
+    "accent": "#d6b274",
+    "secondary": "#a47a4e",
+    "surface": "#30251b",
+    "font": "sans"
+  },
+  "scenes": [
+    {
+      "id": "scene-01",
+      "type": "image-hero",
+      "duration": 2,
+      "title": "{{title}}",
+      "subtitle": "Beyond the fading horizon.",
+      "overline": "CONCEPT TRAILER",
+      "image": "astral-knight.png",
+      "background": "solid",
+      "layout": "asymmetric",
+      "items": [
+        {
+          "title": "Form",
+          "body": "Refined from every angle.",
+          "value": "01"
+        },
+        {
+          "title": "Light",
+          "body": "A controlled focal point.",
+          "value": "02"
+        },
+        {
+          "title": "Motion",
+          "body": "Every beat with intention.",
+          "value": "03"
+        },
+        {
+          "title": "Detail",
+          "body": "Make the important visible.",
+          "value": "04"
+        }
+      ],
+      "motion": {
+        "name": "drift-right",
+        "strength": 0.2,
+        "ease": "settle"
+      },
+      "transition": "cut",
+      "transition_duration": 0
+    },
+    {
+      "id": "scene-02",
+      "type": "chapter",
+      "duration": 2,
+      "title": "THE WORLD BEYOND",
+      "subtitle": "A world waiting to be imagined.",
+      "overline": "CONCEPT TRAILER",
+      "image": "astral-knight.png",
+      "background": "particles",
+      "layout": "left",
+      "items": [
+        {
+          "title": "Form",
+          "body": "Refined from every angle.",
+          "value": "01"
+        },
+        {
+          "title": "Light",
+          "body": "A controlled focal point.",
+          "value": "02"
+        },
+        {
+          "title": "Motion",
+          "body": "Every beat with intention.",
+          "value": "03"
+        },
+        {
+          "title": "Detail",
+          "body": "Make the important visible.",
+          "value": "04"
+        }
+      ],
+      "motion": {
+        "name": "drift-right",
+        "strength": 0.2,
+        "ease": "settle"
+      },
+      "transition": "chromatic",
+      "transition_duration": 0.2
+    },
+    {
+      "id": "scene-03",
+      "type": "action-panel",
+      "duration": 2,
+      "title": "{{title}}",
+      "subtitle": "Designed motion / no gameplay footage.",
+      "overline": "CONCEPT TRAILER",
+      "image": "astral-knight.png",
+      "background": "solid",
+      "layout": "asymmetric",
+      "items": [
+        {
+          "title": "Form",
+          "body": "Refined from every angle.",
+          "value": "01"
+        },
+        {
+          "title": "Light",
+          "body": "A controlled focal point.",
+          "value": "02"
+        },
+        {
+          "title": "Motion",
+          "body": "Every beat with intention.",
+          "value": "03"
+        },
+        {
+          "title": "Detail",
+          "body": "Make the important visible.",
+          "value": "04"
+        }
+      ],
+      "motion": {
+        "name": "drift-right",
+        "strength": 0.2,
+        "ease": "settle"
+      },
+      "transition": "shutter",
+      "transition_duration": 0.2
+    },
+    {
+      "id": "scene-04",
+      "type": "bento",
+      "duration": 2,
+      "title": "Everything, in harmony.",
+      "subtitle": "One last signal.",
+      "overline": "CONCEPT TRAILER",
+      "image": "astral-knight.png",
+      "background": "particles",
+      "layout": "left",
+      "items": [
+        {
+          "title": "Form",
+          "body": "Refined from every angle.",
+          "value": "01"
+        },
+        {
+          "title": "Light",
+          "body": "A controlled focal point.",
+          "value": "02"
+        },
+        {
+          "title": "Motion",
+          "body": "Every beat with intention.",
+          "value": "03"
+        },
+        {
+          "title": "Detail",
+          "body": "Make the important visible.",
+          "value": "04"
+        }
+      ],
+      "motion": {
+        "name": "drift-right",
+        "strength": 0.2,
+        "ease": "settle"
+      },
+      "transition": "cut",
+      "transition_duration": 0
+    },
+    {
+      "id": "scene-05",
+      "type": "title",
+      "duration": 2,
+      "title": "{{title}}",
+      "subtitle": "Follow the echo.",
+      "overline": "CONCEPT TRAILER",
+      "image": "astral-knight.png",
+      "background": "solid",
+      "layout": "asymmetric",
+      "items": [
+        {
+          "title": "Form",
+          "body": "Refined from every angle.",
+          "value": "01"
+        },
+        {
+          "title": "Light",
+          "body": "A controlled focal point.",
+          "value": "02"
+        },
+        {
+          "title": "Motion",
+          "body": "Every beat with intention.",
+          "value": "03"
+        },
+        {
+          "title": "Detail",
+          "body": "Make the important visible.",
+          "value": "04"
+        }
+      ],
+      "motion": {
+        "name": "drift-right",
+        "strength": 0.2,
+        "ease": "settle"
+      },
+      "transition": "chromatic",
+      "transition_duration": 0.2
+    },
+    {
+      "id": "scene-06",
+      "type": "endcard",
+      "duration": 2,
+      "title": "{{title}}",
+      "subtitle": "FICTIONAL GAME CONCEPT / NO RELEASE CLAIM",
+      "overline": "CONCEPT TRAILER",
+      "image": "astral-knight.png",
+      "background": "particles",
+      "layout": "left",
+      "items": [
+        {
+          "title": "Form",
+          "body": "Refined from every angle.",
+          "value": "01"
+        },
+        {
+          "title": "Light",
+          "body": "A controlled focal point.",
+          "value": "02"
+        },
+        {
+          "title": "Motion",
+          "body": "Every beat with intention.",
+          "value": "03"
+        },
+        {
+          "title": "Detail",
+          "body": "Make the important visible.",
+          "value": "04"
+        }
+      ],
+      "motion": {
+        "name": "drift-right",
+        "strength": 0.2,
+        "ease": "settle"
+      },
+      "transition": "shutter",
+      "transition_duration": 0
+    }
+  ],
+  "style": {
+    "schema_version": "1.0",
+    "id": "game-epic-fantasy",
+    "name": "史诗奇幻",
+    "family": "game",
+    "summary": "史诗奇幻：a small hero silhouette faces a monumental world. Original direction recipe; real footage and bespoke assets determine final visual fidelity.",
+    "keywords": [
+      "mythic scale",
+      "ruined horizon",
+      "gold embers",
+      "hero silhouette",
+      "slow escalation",
+      "monumental title"
+    ],
+    "avoid": [
+      "unmotivated decorative motion",
+      "unreadable small copy",
+      "invented product or gameplay proof"
+    ],
+    "best_for": [
+      "game promotional video",
+      "product or character identity reveal"
+    ],
+    "direction": {
+      "composition": "a small hero silhouette faces a monumental world; keep one dominant focal hierarchy and legible supporting evidence.",
+      "typography": "Use mythic scale,ruined horizon,gold embers,hero silhouette,slow escalation,monumental title as hierarchy cues; keep display copy short and body copy readable at final delivery size.",
+      "lighting": "dawn rim and deep atmosphere; preserve subject contour and separate it from the supporting field.",
+      "materials": "weathered stone and worn metal; actual material appearance comes from approved imagery or a real 3D asset.",
+      "camera": "Guide attention with mythic scale; use a deliberate hold, a measured approach and a stable payoff.",
+      "editing": "Open with ruined horizon; alternate proof and breathing room, then resolve with monumental title.",
+      "sound": "Create a restrained rhythm around slow escalation; place licensed accents on intentional cuts and keep speech clear."
+    },
+    "beat_plan": [
+      "Hook: mythic scale",
+      "Establish: a small hero silhouette faces a monumental world",
+      "Prove: use an approved local capture or truthful designed-motion detail",
+      "Payoff: monumental title with one clear final identity"
+    ],
+    "reference_ids": [
+      "hyperframes-creative",
+      "hyperframes-product-launch",
+      "video-shotcraft",
+      "product-demo-video"
+    ],
+    "render": {
+      "base_template": "game-launch-midnight",
+      "theme": {
+        "background": "#14110d",
+        "foreground": "#f7edda",
+        "accent": "#d6b274",
+        "secondary": "#a47a4e",
+        "surface": "#30251b",
+        "font": "sans"
+      },
+      "backgrounds": [
+        "solid",
+        "particles"
+      ],
+      "layouts": [
+        "asymmetric",
+        "left"
+      ],
+      "motion": {
+        "name": "drift-right",
+        "strength": 0.2,
+        "ease": "settle"
+      },
+      "transitions": [
+        "cut",
+        "chromatic",
+        "shutter"
+      ],
+      "overlap_ratio": 0.08,
+      "typography": {
+        "scale": 0.8,
+        "weight_offset": 20,
+        "tracking": 1.8,
+        "leading": 1.05
+      },
+      "graphics": {
+        "panel_radius": 28,
+        "overlay": "halftone",
+        "opacity": 0.04,
+        "line_width": 2
+      }
+    }
+  }
+}

@@ -11,6 +11,7 @@ import (
 	"path/filepath"
 	"reflect"
 	"strings"
+	"sync"
 	"testing"
 )
 
@@ -35,6 +36,41 @@ func snapshotFiles(t *testing.T, root string) map[string]string {
 		t.Fatal(err)
 	}
 	return files
+}
+
+func TestPreviewConcurrentReportsAreAtomicAndLeaveNoStaging(t *testing.T) {
+	templates, transitions, _ := readCatalog()
+	root := t.TempDir()
+	const origin = "http://127.0.0.1:7335"
+	handler := newPreviewHandler(root, root, origin, templates, transitions)
+	var workers sync.WaitGroup
+	errors := make(chan int, 24)
+	for i := 0; i < 24; i++ {
+		workers.Add(1)
+		go func() {
+			defer workers.Done()
+			r := httptest.NewRequest("POST", origin+"/api/report", strings.NewReader(`{"passed":true,"source":"parallel fixture"}`))
+			r.Header.Set("Origin", origin)
+			w := httptest.NewRecorder()
+			handler.ServeHTTP(w, r)
+			if w.Code != 200 {
+				errors <- w.Code
+			}
+		}()
+	}
+	workers.Wait()
+	close(errors)
+	for code := range errors {
+		t.Fatal("concurrent report", code)
+	}
+	raw, err := os.ReadFile(filepath.Join(root, "edge-report.json"))
+	if err != nil || !json.Valid(raw) {
+		t.Fatal("incomplete report", err)
+	}
+	staging, _ := filepath.Glob(filepath.Join(root, ".pv-report-*"))
+	if len(staging) != 0 {
+		t.Fatal("atomic staging leaked", staging)
+	}
 }
 
 func TestEvidenceOwnershipIsStableAndPreservesUnknownFiles(t *testing.T) {
@@ -66,7 +102,7 @@ func TestBrowserAtlasCoversAllPresetsAndRepeats(t *testing.T) {
 		t.Fatal(err)
 	}
 	atlas, rows := browserAtlas(templates, transitions)
-	if len(rows) != 968 || len(atlas.Cases) != len(rows) {
+	if len(rows) != 1368 || len(atlas.Cases) != len(rows) {
 		t.Fatal("incomplete browser atlas")
 	}
 	counts, repeats := map[string]int{}, map[string]int{}
@@ -79,7 +115,7 @@ func TestBrowserAtlasCoversAllPresetsAndRepeats(t *testing.T) {
 		if row.Repeat {
 			repeats[key]++
 		}
-		if row.AllowUniform && !templateUniformTransition(templates[row.ID], row.Time, transitions) {
+		if row.AllowUniform && !templateUniformTransition(atlas.Cases[i].Template, row.Time, transitions) {
 			t.Fatal("blank exemption outside an intentional exposure transition")
 		}
 	}
@@ -90,6 +126,12 @@ func TestBrowserAtlasCoversAllPresetsAndRepeats(t *testing.T) {
 	}
 	for id := range transitions {
 		if counts["transition/"+id] != 6 || repeats["transition/"+id] != 1 {
+			t.Fatal(id)
+		}
+	}
+	styles, _ := readStyles(templates, transitions)
+	for id := range styles {
+		if counts["style/"+id] != 4 || repeats["style/"+id] != 1 {
 			t.Fatal(id)
 		}
 	}
@@ -105,6 +147,9 @@ func TestPreviewRestrictsOriginsMethodsAndPaths(t *testing.T) {
 		code                              int
 	}{
 		{"GET", "/", "127.0.0.1:7335", "", 200},
+		{"GET", "/gallery", "127.0.0.1:7335", "", 200},
+		{"GET", "/gallery/index.json", "127.0.0.1:7335", "", 200},
+		{"GET", "/gallery/../../go.mod", "127.0.0.1:7335", "", 404},
 		{"GET", "/api/browser-cases", "127.0.0.1:7335", "", 200},
 		{"GET", "/atlas/all/catalog-runtime.js", "127.0.0.1:7335", "", 200},
 		{"GET", "/multiplane/runtime/../../package.json", "127.0.0.1:7335", "", 404},
@@ -127,18 +172,16 @@ func TestPreviewRestrictsOriginsMethodsAndPaths(t *testing.T) {
 	}
 }
 
-func TestWebsiteAndUnityDeliveryContracts(t *testing.T) {
+func TestWebsiteAndMP4DeliveryContracts(t *testing.T) {
 	data, _ := bundled.ReadFile("assets/delivery/background.html")
 	for _, required := range []string{"autoplay muted loop playsinline", `tabindex="-1"`, `aria-hidden="true" inert`, "pointer-events:none", "prefers-reduced-motion", "visibilitychange", "poster.png", "video.controls=false"} {
 		if !bytes.Contains(data, []byte(required)) {
 			t.Fatal("background missing", required)
 		}
 	}
-	data, _ = bundled.ReadFile("assets/delivery/PVVideoSurface.cs")
-	for _, required := range []string{"raycastTarget = false", "player.Prepare()", "prepareCompleted -= OnPrepared", "texture.Release()", "Application.streamingAssetsPath", "player.isLooping = loop"} {
-		if !bytes.Contains(data, []byte(required)) {
-			t.Fatal("Unity helper missing", required)
-		}
+	var out bytes.Buffer
+	if realMain([]string{"bundle", "--target", "unity"}, &out, &out) != 2 {
+		t.Fatal("obsolete engine target accepted")
 	}
 }
 
@@ -167,12 +210,30 @@ func TestIntegrationBundleIsIdempotentAndCleansStaging(t *testing.T) {
 		t.Fatalf("fixture: %v %s", err, output)
 	}
 	var out, stderr bytes.Buffer
-	for _, target := range []string{"website", "unity"} {
+	for _, target := range []string{"website", "mp4"} {
 		args := []string{"bundle", "--project", root, "--target", target}
 		if code := realMain(args, &out, &stderr); code != 0 {
 			t.Fatalf("bundle: %d %s", code, stderr.String())
 		}
 		destination := filepath.Join(root, "deliverables", target)
+		var deliveryReport DeliveryBundle
+		deliveryRaw, _ := os.ReadFile(filepath.Join(destination, "bundle-report.json"))
+		if json.Unmarshal(deliveryRaw, &deliveryReport) != nil || deliveryReport.MP4 == nil || !deliveryReport.MP4.FastStart || deliveryReport.MP4.DecodedFrames != 10 {
+			t.Fatal("bundle lacks actual MP4 structure/frame verification")
+		}
+		if target == "mp4" {
+			if deliveryReport.Media.AudioCodec != "aac" {
+				t.Fatal("MP4 bundle lost AAC")
+			}
+			if _, err := os.Stat(filepath.Join(destination, "video.mp4")); err != nil {
+				t.Fatal(err)
+			}
+			for name := range snapshotFiles(t, destination) {
+				if strings.HasSuffix(name, ".cs") || strings.Contains(name, "StreamingAssets") {
+					t.Fatal("engine code in media delivery", name)
+				}
+			}
+		}
 		_ = os.WriteFile(filepath.Join(destination, "user-note"), []byte("keep"), 0600)
 		before := snapshotFiles(t, destination)
 		out.Reset()
@@ -203,6 +264,11 @@ func TestIntegrationBundleIsIdempotentAndCleansStaging(t *testing.T) {
 			handler.ServeHTTP(w, r)
 			if w.Code != 206 || w.Body.Len() != 32 {
 				t.Fatal("MP4 range seeking broken", w.Code)
+			}
+			audit := httptest.NewRecorder()
+			handler.ServeHTTP(audit, httptest.NewRequest("GET", "http://127.0.0.1:7335/delivery-audit", nil))
+			if audit.Code != 200 || !bytes.Contains(audit.Body.Bytes(), []byte(`href="/delivery-audit#details"`)) {
+				t.Fatal("audit foreground anchor resolves into the media directory")
 			}
 			_ = os.WriteFile(filepath.Join(destination, "poster.png"), []byte("tampered"), 0600)
 			if _, err := websiteDeliveryHandler(destination, "http://127.0.0.1:7335", http.NotFoundHandler()); err == nil {

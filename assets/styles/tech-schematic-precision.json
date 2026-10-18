@@ -1,0 +1,87 @@
+{
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
+  ],
+  "beat_plan": [
+    "Hook: schematic lines",
+    "Establish: align the subject to dimension lines and one readable specification",
+    "Prove: use an approved local capture or truthful designed-motion detail",
+    "Payoff: clear evidence with one clear final identity"
+  ],
+  "best_for": [
+    "tech promotional video",
+    "product or character identity reveal"
+  ],
+  "direction": {
+    "camera": "Guide attention with schematic lines; use a deliberate hold, a measured approach and a stable payoff.",
+    "composition": "align the subject to dimension lines and one readable specification; keep one dominant focal hierarchy and legible supporting evidence.",
+    "editing": "Open with dimension marks; alternate proof and breathing room, then resolve with clear evidence.",
+    "lighting": "cool technical fill; preserve subject contour and separate it from the supporting field.",
+    "materials": "etched aluminum and blueprint ink; actual material appearance comes from approved imagery or a real 3D asset.",
+    "sound": "Create a restrained rhythm around calibrated motion; place licensed accents on intentional cuts and keep speech clear.",
+    "typography": "Use schematic lines,dimension marks,technical grid,exact alignment,calibrated motion,clear evidence as hierarchy cues; keep display copy short and body copy readable at final delivery size."
+  },
+  "family": "tech",
+  "id": "tech-schematic-precision",
+  "keywords": [
+    "schematic lines",
+    "dimension marks",
+    "technical grid",
+    "exact alignment",
+    "calibrated motion",
+    "clear evidence"
+  ],
+  "name": "工程图谱",
+  "reference_ids": [
+    "hyperframes-creative",
+    "hyperframes-product-launch",
+    "video-shotcraft",
+    "product-demo-video"
+  ],
+  "render": {
+    "backgrounds": [
+      "rings",
+      "nebula"
+    ],
+    "base_template": "keynote-features-graphite",
+    "graphics": {
+      "line_width": 1.4,
+      "opacity": 0.04,
+      "overlay": "registration",
+      "panel_radius": 14
+    },
+    "layouts": [
+      "left",
+      "right"
+    ],
+    "motion": {
+      "ease": "inOutQuint",
+      "name": "pull-out",
+      "strength": 0.2
+    },
+    "overlap_ratio": 0.08,
+    "theme": {
+      "accent": "#70d1f4",
+      "background": "#071424",
+      "font": "sans",
+      "foreground": "#e8f5ff",
+      "secondary": "#5c8cc8",
+      "surface": "#142e47"
+    },
+    "transitions": [
+      "soft-wipe",
+      "center-wipe",
+      "lens"
+    ],
+    "typography": {
+      "leading": 1.17,
+      "scale": 0.8,
+      "tracking": 0.9,
+      "weight_offset": -40
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "工程图谱：align the subject to dimension lines and one readable specification. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+}

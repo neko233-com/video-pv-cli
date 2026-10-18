@@ -1,6 +1,11 @@
 * text=auto
+.gitattributes text eol=lf
+.gitignore text eol=lf
+NOTICE text eol=lf
+LICENSE text eol=lf
+go.mod text eol=lf
+*.txt text eol=lf
 *.go text eol=lf
-*.cs text eol=lf
 *.md text eol=lf
 *.json text eol=lf
 *.js text eol=lf
@@ -8,6 +13,9 @@
 *.wgsl text eol=lf
 *.yml text eol=lf
 *.yaml text eol=lf
+# Keep authored demo data byte-identical to its recorded render input hashes.
+demo/*/template.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+.pv-gallery-owner text eol=lf
 *.png -text
 *.ttf -text
 *.mp4 -text

@@ -1,0 +1,87 @@
+{
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
+  ],
+  "beat_plan": [
+    "Hook: oppressive scale",
+    "Establish: a lonely focal subject sits under heavy dark negative space",
+    "Prove: use an approved local capture or truthful designed-motion detail",
+    "Payoff: weighty impact with one clear final identity"
+  ],
+  "best_for": [
+    "game promotional video",
+    "product or character identity reveal"
+  ],
+  "direction": {
+    "camera": "Guide attention with oppressive scale; use a deliberate hold, a measured approach and a stable payoff.",
+    "composition": "a lonely focal subject sits under heavy dark negative space; keep one dominant focal hierarchy and legible supporting evidence.",
+    "editing": "Open with ash palette; alternate proof and breathing room, then resolve with weighty impact.",
+    "lighting": "weak amber rim; preserve subject contour and separate it from the supporting field.",
+    "materials": "ash stone and scarred iron; actual material appearance comes from approved imagery or a real 3D asset.",
+    "sound": "Create a restrained rhythm around slow threat; place licensed accents on intentional cuts and keep speech clear.",
+    "typography": "Use oppressive scale,ash palette,lonely figure,low key,slow threat,weighty impact as hierarchy cues; keep display copy short and body copy readable at final delivery size."
+  },
+  "family": "game",
+  "id": "game-dark-soulslike",
+  "keywords": [
+    "oppressive scale",
+    "ash palette",
+    "lonely figure",
+    "low key",
+    "slow threat",
+    "weighty impact"
+  ],
+  "name": "暗黑残境",
+  "reference_ids": [
+    "hyperframes-creative",
+    "hyperframes-product-launch",
+    "video-shotcraft",
+    "product-demo-video"
+  ],
+  "render": {
+    "backgrounds": [
+      "nebula",
+      "fluid"
+    ],
+    "base_template": "game-event-graphite",
+    "graphics": {
+      "line_width": 1.4,
+      "opacity": 0.067,
+      "overlay": "corner-ticks",
+      "panel_radius": 61
+    },
+    "layouts": [
+      "center",
+      "left"
+    ],
+    "motion": {
+      "ease": "inOutCubic",
+      "name": "float",
+      "strength": 0.41000000000000003
+    },
+    "overlap_ratio": 0.15500000000000003,
+    "theme": {
+      "accent": "#b9956f",
+      "background": "#100f0f",
+      "font": "sans",
+      "foreground": "#e5dfd4",
+      "secondary": "#756f68",
+      "surface": "#292522"
+    },
+    "transitions": [
+      "chromatic",
+      "cut",
+      "shutter"
+    ],
+    "typography": {
+      "leading": 1.23,
+      "scale": 0.875,
+      "tracking": 0.9,
+      "weight_offset": 80
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "暗黑残境：a lonely focal subject sits under heavy dark negative space. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+}

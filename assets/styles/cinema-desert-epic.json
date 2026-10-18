@@ -1,0 +1,87 @@
+{
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
+  ],
+  "beat_plan": [
+    "Hook: desert scale",
+    "Establish: reduce the subject to a powerful mark inside a vast field",
+    "Prove: use an approved local capture or truthful designed-motion detail",
+    "Payoff: sparse subject with one clear final identity"
+  ],
+  "best_for": [
+    "cinema promotional video",
+    "product or character identity reveal"
+  ],
+  "direction": {
+    "camera": "Guide attention with desert scale; use a deliberate hold, a measured approach and a stable payoff.",
+    "composition": "reduce the subject to a powerful mark inside a vast field; keep one dominant focal hierarchy and legible supporting evidence.",
+    "editing": "Open with amber haze; alternate proof and breathing room, then resolve with sparse subject.",
+    "lighting": "low desert sun; preserve subject contour and separate it from the supporting field.",
+    "materials": "sandstone and worn bronze; actual material appearance comes from approved imagery or a real 3D asset.",
+    "sound": "Create a restrained rhythm around hard sun; place licensed accents on intentional cuts and keep speech clear.",
+    "typography": "Use desert scale,amber haze,monumental title,slow horizon,hard sun,sparse subject as hierarchy cues; keep display copy short and body copy readable at final delivery size."
+  },
+  "family": "cinema",
+  "id": "cinema-desert-epic",
+  "keywords": [
+    "desert scale",
+    "amber haze",
+    "monumental title",
+    "slow horizon",
+    "hard sun",
+    "sparse subject"
+  ],
+  "name": "沙海史诗",
+  "reference_ids": [
+    "hyperframes-creative",
+    "hyperframes-product-launch",
+    "video-shotcraft",
+    "product-demo-video"
+  ],
+  "render": {
+    "backgrounds": [
+      "fluid",
+      "prism"
+    ],
+    "base_template": "keynote-gallery-obsidian",
+    "graphics": {
+      "line_width": 1.7,
+      "opacity": 0.057999999999999996,
+      "overlay": "contours",
+      "panel_radius": 64
+    },
+    "layouts": [
+      "center",
+      "asymmetric"
+    ],
+    "motion": {
+      "ease": "outExpo",
+      "name": "tilt",
+      "strength": 0.34
+    },
+    "overlap_ratio": 0.13,
+    "theme": {
+      "accent": "#d4ab6e",
+      "background": "#2b2118",
+      "font": "display",
+      "foreground": "#f1e2c2",
+      "secondary": "#9f7e58",
+      "surface": "#483828"
+    },
+    "transitions": [
+      "dip-black",
+      "crossfade",
+      "exposure"
+    ],
+    "typography": {
+      "leading": 1.05,
+      "scale": 0.8500000000000001,
+      "tracking": 1.35,
+      "weight_offset": 120
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "沙海史诗：reduce the subject to a powerful mark inside a vast field. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+}

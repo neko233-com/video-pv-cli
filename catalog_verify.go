@@ -36,6 +36,8 @@ type CatalogEvidence struct {
 	Passed         bool              `json:"passed"`
 	Templates      int               `json:"templates"`
 	Transitions    int               `json:"transitions"`
+	Styles         int               `json:"styles"`
+	StylesOnly     bool              `json:"styles_only"`
 	CaseCount      int               `json:"case_count"`
 	CompletedCases int               `json:"completed_cases"`
 	Mode           string            `json:"mode"`
@@ -109,9 +111,11 @@ func runCatalogVerify(args []string, stdout, stderr io.Writer) int {
 	out := f.String("out", "", "stable local evidence directory (default work/catalog-validation)")
 	mode := f.String("mode", "deep", "deep: every scene at three times; smoke: three times per template")
 	category := f.String("category", "", "optional template category; empty also verifies all transitions")
+	stylesOnly := f.Bool("styles-only", false, "verify the 100 style recipes and styled loop seams")
 	batchSize := f.Int("batch-size", 32, "cases per independent MP4/contact sheet batch (1-64)")
 	limit := f.Int("limit", 0, "development-only case limit; 0 verifies all cases")
 	resume := f.Bool("resume", true, "revalidate and reuse matching completed evidence; preserve failed attempts")
+	revalidateData := f.Bool("revalidate-data", false, "allow changed catalog data only when every completed case is identical; renderer changes always reject")
 	raster := f.String("raster", "gpu", "gpu or software browser rasterization; native WebGPU remains required")
 	if code := parseFlags(f, args); code >= 0 {
 		return code
@@ -132,6 +136,17 @@ func runCatalogVerify(args []string, stdout, stderr io.Writer) int {
 		return 1
 	}
 	cases := catalogCases(templates, transitions, *mode, *category)
+	styles, err := readStyles(templates, transitions)
+	if err != nil {
+		fmt.Fprintln(stderr, err)
+		return 1
+	}
+	if *stylesOnly {
+		cases = nil
+	}
+	if *stylesOnly || *category == "" {
+		cases = append(cases, styleCases(templates, transitions, styles, *mode == "deep")...)
+	}
 	if *limit > 0 && len(cases) > *limit {
 		cases = cases[:*limit]
 	}
@@ -141,6 +156,9 @@ func runCatalogVerify(args []string, stdout, stderr io.Writer) int {
 	}
 	if *out == "" {
 		*out = filepath.Join("work", "catalog-validation")
+		if *stylesOnly {
+			*out = filepath.Join("work", "style-validation")
+		}
 	}
 	root, err := filepath.Abs(*out)
 	if err != nil {
@@ -159,22 +177,29 @@ func runCatalogVerify(args []string, stdout, stderr io.Writer) int {
 	}
 	evidence := CatalogEvidence{Schema: "video-pv-cli/catalog-verification/1", Templates: len(templates), Transitions: len(transitions), CaseCount: len(cases), Mode: *mode, Limited: *limit > 0 || *category != "", Platform: runtime.GOOS + "/" + runtime.GOARCH, GoVersion: runtime.Version(), SourceSHA256: map[string]string{}}
 	evidence.Backend = "webgpu"
+	evidence.Styles = len(styles)
+	evidence.StylesOnly = *stylesOnly
 	evidence.Raster = *raster
 	catalogHash := sha256.New()
-	err = fs.WalkDir(bundled, "assets/catalog", func(path string, d fs.DirEntry, err error) error {
-		if err != nil {
-			return err
-		}
-		if !d.IsDir() {
-			data, e := bundled.ReadFile(path)
-			if e != nil {
-				return e
+	for _, prefix := range []string{"assets/catalog", "assets/styles"} {
+		err = fs.WalkDir(bundled, prefix, func(path string, d fs.DirEntry, err error) error {
+			if err != nil {
+				return err
 			}
-			catalogHash.Write([]byte(path + "\x00"))
-			catalogHash.Write(data)
+			if !d.IsDir() {
+				data, e := bundled.ReadFile(path)
+				if e != nil {
+					return e
+				}
+				catalogHash.Write([]byte(path + "\x00"))
+				catalogHash.Write(data)
+			}
+			return nil
+		})
+		if err != nil {
+			break
 		}
-		return nil
-	})
+	}
 	if err != nil {
 		fmt.Fprintln(stderr, err)
 		return 1
@@ -187,7 +212,7 @@ func runCatalogVerify(args []string, stdout, stderr io.Writer) int {
 	}
 	pixels := newCatalogPixelGate()
 	if *resume && exists {
-		previous, err := resumeCatalogEvidence(root, evidence, cases, pixels, stderr)
+		previous, err := resumeCatalogEvidence(root, evidence, cases, pixels, stderr, *revalidateData)
 		if err != nil {
 			fmt.Fprintln(stderr, err)
 			return 1

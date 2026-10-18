@@ -2,6 +2,7 @@ package main
 
 import (
 	"archive/zip"
+	"bytes"
 	"context"
 	"embed"
 	"encoding/json"
@@ -20,7 +21,7 @@ import (
 	"time"
 )
 
-//go:embed SKILL.md agents/*.yaml references/*.md assets/starter/* assets/character/* assets/catalog assets/preview/* assets/delivery/* docs/*.md docs/validation/*.json *.go go.mod README.md LICENSE NOTICE examples/*
+//go:embed SKILL.md agents/*.yaml references/*.md assets/starter/* assets/character/* assets/catalog assets/styles assets/preview/* assets/delivery/* docs/*.md docs/*.png docs/validation/*.json docs/style-gallery *.go go.mod README.md LICENSE NOTICE examples/* demo/README.md demo/*/*.json demo/*/*.js demo/*/*.wgsl demo/*/*.html demo/*/*.ttf demo/*/*.txt demo/*/*.md demo/*/*.png tools/stylegallery/*.go tools/stylegen/*.go tools/stylegen/*.txt
 var bundled embed.FS
 
 func parseFlags(f *flag.FlagSet, args []string) int {
@@ -44,6 +45,7 @@ func runInit(args []string, stdout, stderr io.Writer) int {
 	kind := f.String("type", "game", "game, character, or product")
 	title := f.String("title", "", "project title override (default uses template copy)")
 	templateID := f.String("template", "", "catalog template ID (catalog list shows all independent presets)")
+	styleID := f.String("style", "", "visual style ID; chooses its base template unless --template is supplied")
 	backgroundOnly := f.Bool("background-only", false, "remove baked copy from a periodic website template")
 	if code := parseFlags(f, args); code >= 0 {
 		return code
@@ -51,6 +53,28 @@ func runInit(args []string, stdout, stderr io.Writer) int {
 	if *kind != "game" && *kind != "character" && *kind != "product" {
 		fmt.Fprintln(stderr, "invalid --type")
 		return 2
+	}
+	var selectedStyle *StylePreset
+	if *styleID != "" {
+		templates, transitions, err := readCatalog()
+		if err != nil {
+			fmt.Fprintln(stderr, err)
+			return 1
+		}
+		styles, err := readStyles(templates, transitions)
+		if err != nil {
+			fmt.Fprintln(stderr, err)
+			return 1
+		}
+		s, ok := styles[*styleID]
+		if !ok {
+			fmt.Fprintln(stderr, "unknown style", *styleID)
+			return 2
+		}
+		selectedStyle = &s
+		if *templateID == "" {
+			*templateID = s.Render.BaseTemplate
+		}
 	}
 	target, err := filepath.Abs(*dir)
 	if err == nil {
@@ -67,6 +91,9 @@ func runInit(args []string, stdout, stderr io.Writer) int {
 			} else if item, ok := templates[*templateID]; !ok {
 				err = fmt.Errorf("unknown template %s", *templateID)
 			} else {
+				if selectedStyle != nil {
+					item = applyStyle(item, *selectedStyle)
+				}
 				if *backgroundOnly {
 					if item.Category != "website" || !item.Loop {
 						fmt.Fprintln(stderr, "background-only requires a periodic website template")
@@ -381,15 +408,19 @@ func runSkill(args []string, stdout, stderr io.Writer) int {
 
 func installSkill(target string, force bool, stdout io.Writer) error {
 	if info, err := os.Lstat(target); err == nil {
-		if !force {
-			return fmt.Errorf("skill already exists: %s; use --force to create a backup and replace", target)
-		}
 		if !info.IsDir() || info.Mode()&os.ModeSymlink != 0 {
 			return errors.New("refusing to replace a non-directory or symlink")
 		}
 		marker, readErr := os.ReadFile(filepath.Join(target, "SKILL.md"))
 		if readErr != nil || !strings.Contains(string(marker), "name: pv-production") {
 			return errors.New("refusing to replace an unrelated directory without a pv-production skill marker")
+		}
+		if skillMatches(target) {
+			fmt.Fprintln(stdout, "Skill is current; reused files and preserved custom content:", target)
+			return nil
+		}
+		if !force {
+			return fmt.Errorf("skill already exists with different files: %s; use --force to create a backup and replace", target)
 		}
 	} else if !os.IsNotExist(err) {
 		return err
@@ -423,6 +454,34 @@ func installSkill(target string, force bool, stdout io.Writer) error {
 		fmt.Fprintln(stdout, "Backup: "+backup)
 	}
 	return nil
+}
+
+func skillMatches(target string) bool {
+	err := fs.WalkDir(bundled, ".", func(name string, d fs.DirEntry, err error) error {
+		if err != nil {
+			return err
+		}
+		if d.IsDir() {
+			return nil
+		}
+		path, err := projectFilePath(target, name)
+		if err != nil {
+			return err
+		}
+		actual, err := os.ReadFile(path)
+		if err != nil {
+			return err
+		}
+		expected, err := bundled.ReadFile(name)
+		if err != nil {
+			return err
+		}
+		if !bytes.Equal(actual, expected) {
+			return fmt.Errorf("different bundled file: %s", name)
+		}
+		return nil
+	})
+	return err == nil
 }
 
 func packSkill(out string) error {

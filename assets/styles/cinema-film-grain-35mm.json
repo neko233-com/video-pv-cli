@@ -1,0 +1,87 @@
+{
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
+  ],
+  "beat_plan": [
+    "Hook: analog mood",
+    "Establish: treat each shot as a deliberate photographic frame",
+    "Prove: use an approved local capture or truthful designed-motion detail",
+    "Payoff: photographic frame with one clear final identity"
+  ],
+  "best_for": [
+    "cinema promotional video",
+    "product or character identity reveal"
+  ],
+  "direction": {
+    "camera": "Guide attention with analog mood; use a deliberate hold, a measured approach and a stable payoff.",
+    "composition": "treat each shot as a deliberate photographic frame; keep one dominant focal hierarchy and legible supporting evidence.",
+    "editing": "Open with film grain; alternate proof and breathing room, then resolve with photographic frame.",
+    "lighting": "soft practical key; preserve subject contour and separate it from the supporting field.",
+    "materials": "film-like texture and warm print; actual material appearance comes from approved imagery or a real 3D asset.",
+    "sound": "Create a restrained rhythm around patient cut; place licensed accents on intentional cuts and keep speech clear.",
+    "typography": "Use analog mood,film grain,soft shoulder,warm shadow,patient cut,photographic frame as hierarchy cues; keep display copy short and body copy readable at final delivery size."
+  },
+  "family": "cinema",
+  "id": "cinema-film-grain-35mm",
+  "keywords": [
+    "analog mood",
+    "film grain",
+    "soft shoulder",
+    "warm shadow",
+    "patient cut",
+    "photographic frame"
+  ],
+  "name": "胶片余韵",
+  "reference_ids": [
+    "hyperframes-creative",
+    "hyperframes-product-launch",
+    "video-shotcraft",
+    "product-demo-video"
+  ],
+  "render": {
+    "backgrounds": [
+      "silk",
+      "solid"
+    ],
+    "base_template": "keynote-gallery-obsidian",
+    "graphics": {
+      "line_width": 1.1,
+      "opacity": 0.08499999999999999,
+      "overlay": "frame",
+      "panel_radius": 32
+    },
+    "layouts": [
+      "asymmetric",
+      "center"
+    ],
+    "motion": {
+      "ease": "settle",
+      "name": "push-in",
+      "strength": 0.55
+    },
+    "overlap_ratio": 0.08,
+    "theme": {
+      "accent": "#c4a078",
+      "background": "#211a16",
+      "font": "display",
+      "foreground": "#efe4d1",
+      "secondary": "#8b8070",
+      "surface": "#3a3027"
+    },
+    "transitions": [
+      "crossfade",
+      "dip-black",
+      "exposure"
+    ],
+    "typography": {
+      "leading": 1.23,
+      "scale": 0.925,
+      "tracking": 0.45,
+      "weight_offset": -70
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "胶片余韵：treat each shot as a deliberate photographic frame. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+}

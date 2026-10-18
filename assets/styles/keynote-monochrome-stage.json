@@ -1,0 +1,87 @@
+{
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
+  ],
+  "beat_plan": [
+    "Hook: monochrome",
+    "Establish: balanced black and white masses around a centered object",
+    "Prove: use an approved local capture or truthful designed-motion detail",
+    "Payoff: clean horizon with one clear final identity"
+  ],
+  "best_for": [
+    "keynote promotional video",
+    "product or character identity reveal"
+  ],
+  "direction": {
+    "camera": "Guide attention with monochrome; use a deliberate hold, a measured approach and a stable payoff.",
+    "composition": "balanced black and white masses around a centered object; keep one dominant focal hierarchy and legible supporting evidence.",
+    "editing": "Open with architectural balance; alternate proof and breathing room, then resolve with clean horizon.",
+    "lighting": "single edge strip; preserve subject contour and separate it from the supporting field.",
+    "materials": "black ceramic and white paper; actual material appearance comes from approved imagery or a real 3D asset.",
+    "sound": "Create a restrained rhythm around confident hold; place licensed accents on intentional cuts and keep speech clear.",
+    "typography": "Use monochrome,architectural balance,hard silhouette,editorial rhythm,confident hold,clean horizon as hierarchy cues; keep display copy short and body copy readable at final delivery size."
+  },
+  "family": "keynote",
+  "id": "keynote-monochrome-stage",
+  "keywords": [
+    "monochrome",
+    "architectural balance",
+    "hard silhouette",
+    "editorial rhythm",
+    "confident hold",
+    "clean horizon"
+  ],
+  "name": "黑白舞台",
+  "reference_ids": [
+    "hyperframes-creative",
+    "hyperframes-product-launch",
+    "video-shotcraft",
+    "product-demo-video"
+  ],
+  "render": {
+    "backgrounds": [
+      "solid",
+      "mesh"
+    ],
+    "base_template": "keynote-features-porcelain",
+    "graphics": {
+      "line_width": 1.4,
+      "opacity": 0.057999999999999996,
+      "overlay": "registration",
+      "panel_radius": 22
+    },
+    "layouts": [
+      "left",
+      "right"
+    ],
+    "motion": {
+      "ease": "inOutQuint",
+      "name": "pull-out",
+      "strength": 0.34
+    },
+    "overlap_ratio": 0.13,
+    "theme": {
+      "accent": "#d6d8df",
+      "background": "#0b0c0f",
+      "font": "sans",
+      "foreground": "#f2f3f4",
+      "secondary": "#828895",
+      "surface": "#202126"
+    },
+    "transitions": [
+      "crossfade",
+      "blur-cross",
+      "zoom-in"
+    ],
+    "typography": {
+      "leading": 1.17,
+      "scale": 0.8500000000000001,
+      "tracking": 0.9,
+      "weight_offset": -60
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "黑白舞台：balanced black and white masses around a centered object. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+}

@@ -17,20 +17,21 @@ Use `/delivery-audit` to observe two actual playback wraps and check mute, loop,
 
 The animated export is authored with WebGPU; the website consumes ordinary MP4 and does not need the authoring renderer.
 
-## Unity character introduction
+## Engine-independent character introduction MP4
 
 ```powershell
-video-pv-cli bundle --project character-pv --target unity
+video-pv-cli bundle --project character-pv --target mp4
+video-pv-cli mp4 verify --input character-pv/deliverables/mp4/video.mp4 --fast-start --report character-pv/qa/mp4-report.json
 ```
 
-Copy `StreamingAssets/pv.mp4` into `Assets/StreamingAssets/pv.mp4`. Add the generated `PVVideoSurface.cs` to a dedicated UI RawImage. It requires VideoPlayer, creates a RenderTexture with export dimensions, prepares before playback and releases resources when disabled. `raycastTarget=false` lets surrounding UI handle input. The loop and audio switches are independent: a character reveal normally plays once with sound; a menu background loops silently.
+The bundle contains `video.mp4`, `poster.png` and a hash report. Import the MP4 using the target application's ordinary media support. No Unity script, SDK, engine project or engine-side test is part of this tool.
 
-This is a handoff example, not engine-side certification. Validate compilation in the target Unity/UGUI version, codec/platform support, texture color space, aspect handling, audio routing, enable/disable lifecycle and memory on target hardware. MP4 uses H.264/yuv420p with optional AAC; engine and OS decoding support varies. See the official [VideoPlayer API](https://docs.unity3d.com/6000.3/Documentation/ScriptReference/Video.VideoPlayer.html) and [loop control](https://docs.unity3d.com/6000.3/Documentation/ScriptReference/Video.VideoPlayer-isLooping.html).
+Portable validation requires one H.264 8-bit yuv420p video stream with even dimensions and optional single AAC audio. It parses MP4 box boundaries/brands, checks the first keyframe, decoded frame count, finite monotonic presentation timestamps, constant cadence, near-zero start and duration agreement, then fully decodes video/audio with FFmpeg error detection. Audio start/duration must be within the documented 0.12/0.25 second tolerances. `--silent`, `--require-audio` and `--fast-start` add delivery constraints; bundles always produce fast-start metadata. These checks establish the media contract, without claiming every engine/platform has been tested.
 
-For other engines, import the MP4 through its supported media player and route its texture to a non-interactive UI/material. This repository does not include tested Unreal/Godot adapters.
+Reports use stable paths and protect the input MP4 against overwrites. The source is read only. A website export is silently remuxed; an engine-independent export preserves optional AAC. Both outputs are inspected and decoded before a successful report.
 
 ## Repeatable output
 
 Delivery directories have ownership markers. Unowned nonempty directories are rejected. Reports record source MP4, manifest, embedded recipe and output hashes. Unchanged reruns validate input and reuse output. Changed owned outputs are regenerated via staging that is removed on success or failure. Unknown files are retained. Keep delivery output separate from source folders and user documents.
 
-Automated tests use temporary projects. Set `PV_MEDIA_INTEGRATION=1` for real FFmpeg website/Unity bundles and run `go test -count=2` to compare file sets/hashes, verify HTTP Range behavior, preserve user notes and check staging cleanup. Browser/catalog evidence uses fixed owned cache directories; retain one current evidence set.
+Automated tests use temporary projects. Set `PV_MEDIA_INTEGRATION=1` for real FFmpeg website/MP4 bundles and run `go test -count=2` to compare file sets/hashes, verify HTTP Range behavior, preserve user notes and check staging cleanup. Browser/catalog evidence uses fixed owned cache directories; retain one current evidence set.

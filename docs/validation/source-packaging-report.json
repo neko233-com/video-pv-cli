@@ -1,0 +1,21 @@
+{
+  "schema": "video-pv-cli/source-packaging/1",
+  "passed": true,
+  "tests": [
+    "TestSkillInstallAndArchiveAreUsableModules",
+    "TestDemoSourcesAreSelfContainedAndDraft"
+  ],
+  "repetitions": 2,
+  "includes": [
+    "four self-contained demo source projects",
+    "100 style data files",
+    "style gallery and maintenance tool sources"
+  ],
+  "excludes": [
+    "exported MP4",
+    "render cache",
+    "node_modules",
+    "engine scripts"
+  ],
+  "scope": "Final packaging change verified separately after full Windows QA started"
+}

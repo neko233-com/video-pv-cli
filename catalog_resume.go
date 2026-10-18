@@ -15,7 +15,7 @@ import (
 
 var catalogBatchName = regexp.MustCompile(`^batch-[0-9]+(-attempt-[0-9]+)?$`)
 
-func resumeCatalogEvidence(root string, expected CatalogEvidence, cases []AtlasCase, pixels *catalogPixelGate, stderr io.Writer) (CatalogEvidence, error) {
+func resumeCatalogEvidence(root string, expected CatalogEvidence, cases []AtlasCase, pixels *catalogPixelGate, stderr io.Writer, revalidateData ...bool) (CatalogEvidence, error) {
 	var prior CatalogEvidence
 	data, err := os.ReadFile(filepath.Join(root, "catalog-report.json"))
 	if err != nil {
@@ -24,7 +24,8 @@ func resumeCatalogEvidence(root string, expected CatalogEvidence, cases []AtlasC
 	if err := decodeStrict(data, &prior); err != nil {
 		return prior, err
 	}
-	if prior.Schema != expected.Schema || prior.CaseCount != expected.CaseCount || prior.Mode != expected.Mode || prior.Limited != expected.Limited || prior.Platform != expected.Platform || prior.Backend != expected.Backend || prior.Raster != expected.Raster || prior.CatalogSHA256 != expected.CatalogSHA256 || !reflect.DeepEqual(prior.SourceSHA256, expected.SourceSHA256) {
+	allowDataUpdate := len(revalidateData) > 0 && revalidateData[0]
+	if prior.Schema != expected.Schema || prior.Styles != expected.Styles || prior.StylesOnly != expected.StylesOnly || prior.CaseCount != expected.CaseCount || prior.Mode != expected.Mode || prior.Limited != expected.Limited || prior.Platform != expected.Platform || prior.Backend != expected.Backend || prior.Raster != expected.Raster || (!allowDataUpdate && prior.CatalogSHA256 != expected.CatalogSHA256) || !reflect.DeepEqual(prior.SourceSHA256, expected.SourceSHA256) {
 		return prior, fmt.Errorf("resume requires identical catalog, renderer sources, platform and sampling options")
 	}
 	completed := 0
@@ -116,6 +117,7 @@ func resumeCatalogEvidence(root string, expected CatalogEvidence, cases []AtlasC
 		return prior, fmt.Errorf("cached aggregate count differs from completed batches")
 	}
 	prior.PixelChecks = pixels.frames
+	prior.CatalogSHA256 = expected.CatalogSHA256
 	prior.EndpointChecks = pixels.endpoints
 	prior.LoopChecks = pixels.loops
 	return prior, nil

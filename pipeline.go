@@ -19,6 +19,7 @@ import (
 	"runtime"
 	"strconv"
 	"strings"
+	"sync"
 	"time"
 )
 
@@ -539,7 +540,12 @@ func writeBuildReport(path string, report BuildReport) error {
 	return writeFileAtomic(path, append(data, '\n'))
 }
 
+var atomicReportMu sync.Mutex
+
 func writeFileAtomic(path string, data []byte) error {
+	// Windows replacement can reject overlapping renames to the same target.
+	atomicReportMu.Lock()
+	defer atomicReportMu.Unlock()
 	if err := os.MkdirAll(filepath.Dir(path), 0755); err != nil {
 		return err
 	}

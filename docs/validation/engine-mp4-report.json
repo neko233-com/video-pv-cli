@@ -1,0 +1,36 @@
+{
+  "source_sha256": "dacd49707b8864df27c2cfed7d31f3a2ddcc72a7aa8be4a4baa92ecc46630739",
+  "project_title": "video.mp4",
+  "release_mode": false,
+  "passed": true,
+  "release_ready": false,
+  "checks": [
+    {
+      "code": "mp4.integrity",
+      "status": "pass",
+      "message": "MP4 structure, H.264/yuv420p, decoded frame count, monotonic timestamps, constant cadence and full decode passed"
+    }
+  ],
+  "media": {
+    "video_streams": 1,
+    "pixel_format": "yuv420p",
+    "video_duration_seconds": 16.8,
+    "frames": 504,
+    "path": "D:\\Code\\Agent-Skill-Projects\\agent-skill-PV-video\\work\\webgpu-character-verified\\deliverables\\mp4\\video.mp4",
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "video_codec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "duration_seconds": 16.8
+  },
+  "mp4": {
+    "brand": "isom",
+    "fast_start": true,
+    "atom_count": 4,
+    "decoded_frames": 504,
+    "first_pts": 0,
+    "last_pts": 16.766667,
+    "max_cadence_error_seconds": 6.666666701946045e-7
+  }
+}

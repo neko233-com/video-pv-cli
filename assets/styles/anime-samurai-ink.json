@@ -1,0 +1,87 @@
+{
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
+  ],
+  "beat_plan": [
+    "Hook: ink silhouette",
+    "Establish: build the reveal around one diagonal blade-like composition",
+    "Prove: use an approved local capture or truthful designed-motion detail",
+    "Payoff: quiet tension with one clear final identity"
+  ],
+  "best_for": [
+    "anime promotional video",
+    "product or character identity reveal"
+  ],
+  "direction": {
+    "camera": "Guide attention with ink silhouette; use a deliberate hold, a measured approach and a stable payoff.",
+    "composition": "build the reveal around one diagonal blade-like composition; keep one dominant focal hierarchy and legible supporting evidence.",
+    "editing": "Open with sharp diagonal; alternate proof and breathing room, then resolve with quiet tension.",
+    "lighting": "stark side key; preserve subject contour and separate it from the supporting field.",
+    "materials": "ink wash and worn steel; actual material appearance comes from approved imagery or a real 3D asset.",
+    "sound": "Create a restrained rhythm around brush texture; place licensed accents on intentional cuts and keep speech clear.",
+    "typography": "Use ink silhouette,sharp diagonal,red seal,measured strike,brush texture,quiet tension as hierarchy cues; keep display copy short and body copy readable at final delivery size."
+  },
+  "family": "anime",
+  "id": "anime-samurai-ink",
+  "keywords": [
+    "ink silhouette",
+    "sharp diagonal",
+    "red seal",
+    "measured strike",
+    "brush texture",
+    "quiet tension"
+  ],
+  "name": "墨刃武者",
+  "reference_ids": [
+    "hyperframes-creative",
+    "hyperframes-product-launch",
+    "video-shotcraft",
+    "product-demo-video"
+  ],
+  "render": {
+    "backgrounds": [
+      "horizon",
+      "mesh"
+    ],
+    "base_template": "character-story-sakura",
+    "graphics": {
+      "line_width": 1.4,
+      "opacity": 0.10300000000000001,
+      "overlay": "registration",
+      "panel_radius": 47
+    },
+    "layouts": [
+      "left",
+      "right"
+    ],
+    "motion": {
+      "ease": "spring",
+      "name": "pull-out",
+      "strength": 0.6900000000000001
+    },
+    "overlap_ratio": 0.13,
+    "theme": {
+      "accent": "#9c413b",
+      "background": "#e6e1d5",
+      "font": "display",
+      "foreground": "#29272a",
+      "secondary": "#8e887b",
+      "surface": "#f6f1e6"
+    },
+    "transitions": [
+      "prism",
+      "ink",
+      "crossfade"
+    ],
+    "typography": {
+      "leading": 1.05,
+      "scale": 0.9750000000000001,
+      "tracking": 0.9,
+      "weight_offset": -60
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "墨刃武者：build the reveal around one diagonal blade-like composition. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+}

@@ -1,0 +1,87 @@
+{
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
+  ],
+  "beat_plan": [
+    "Hook: celestial motif",
+    "Establish: balance a character portrait with a restrained identity title",
+    "Prove: use an approved local capture or truthful designed-motion detail",
+    "Payoff: lyrical reveal with one clear final identity"
+  ],
+  "best_for": [
+    "anime promotional video",
+    "product or character identity reveal"
+  ],
+  "direction": {
+    "camera": "Guide attention with celestial motif; use a deliberate hold, a measured approach and a stable payoff.",
+    "composition": "balance a character portrait with a restrained identity title; keep one dominant focal hierarchy and legible supporting evidence.",
+    "editing": "Open with delicate rim; alternate proof and breathing room, then resolve with lyrical reveal.",
+    "lighting": "moonlit cyan rim; preserve subject contour and separate it from the supporting field.",
+    "materials": "silver ornament and dark satin; actual material appearance comes from approved imagery or a real 3D asset.",
+    "sound": "Create a restrained rhythm around orbital detail; place licensed accents on intentional cuts and keep speech clear.",
+    "typography": "Use celestial motif,delicate rim,hero portrait,quiet resolve,orbital detail,lyrical reveal as hierarchy cues; keep display copy short and body copy readable at final delivery size."
+  },
+  "family": "anime",
+  "id": "anime-celestial-heroine",
+  "keywords": [
+    "celestial motif",
+    "delicate rim",
+    "hero portrait",
+    "quiet resolve",
+    "orbital detail",
+    "lyrical reveal"
+  ],
+  "name": "星辉角色",
+  "reference_ids": [
+    "hyperframes-creative",
+    "hyperframes-product-launch",
+    "video-shotcraft",
+    "product-demo-video"
+  ],
+  "render": {
+    "backgrounds": [
+      "nebula",
+      "rings"
+    ],
+    "base_template": "character-reveal-midnight",
+    "graphics": {
+      "line_width": 0.8,
+      "opacity": 0.04,
+      "overlay": "letterbox",
+      "panel_radius": 35
+    },
+    "layouts": [
+      "left",
+      "center"
+    ],
+    "motion": {
+      "ease": "spring",
+      "name": "drift-up",
+      "strength": 0.2
+    },
+    "overlap_ratio": 0.08,
+    "theme": {
+      "accent": "#98d9fc",
+      "background": "#0b1428",
+      "font": "display",
+      "foreground": "#edf3ff",
+      "secondary": "#cf9ace",
+      "surface": "#1a2640"
+    },
+    "transitions": [
+      "ink",
+      "prism",
+      "crossfade"
+    ],
+    "typography": {
+      "leading": 1.11,
+      "scale": 0.8,
+      "tracking": 0,
+      "weight_offset": 50
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "星辉角色：balance a character portrait with a restrained identity title. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+}

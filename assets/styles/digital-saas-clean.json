@@ -1,0 +1,87 @@
+{
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
+  ],
+  "beat_plan": [
+    "Hook: real interface",
+    "Establish: one real interface proof occupies a large readable panel",
+    "Prove: use an approved local capture or truthful designed-motion detail",
+    "Payoff: focused cursor with one clear final identity"
+  ],
+  "best_for": [
+    "digital promotional video",
+    "product or character identity reveal"
+  ],
+  "direction": {
+    "camera": "Guide attention with real interface; use a deliberate hold, a measured approach and a stable payoff.",
+    "composition": "one real interface proof occupies a large readable panel; keep one dominant focal hierarchy and legible supporting evidence.",
+    "editing": "Open with clean hierarchy; alternate proof and breathing room, then resolve with focused cursor.",
+    "lighting": "clean neutral screen light; preserve subject contour and separate it from the supporting field.",
+    "materials": "soft white panels and thin separators; actual material appearance comes from approved imagery or a real 3D asset.",
+    "sound": "Create a restrained rhythm around readable proof; place licensed accents on intentional cuts and keep speech clear.",
+    "typography": "Use real interface,clean hierarchy,calm workspace,benefit headline,readable proof,focused cursor as hierarchy cues; keep display copy short and body copy readable at final delivery size."
+  },
+  "family": "digital",
+  "id": "digital-saas-clean",
+  "keywords": [
+    "real interface",
+    "clean hierarchy",
+    "calm workspace",
+    "benefit headline",
+    "readable proof",
+    "focused cursor"
+  ],
+  "name": "清晰软件",
+  "reference_ids": [
+    "hyperframes-creative",
+    "hyperframes-product-launch",
+    "video-shotcraft",
+    "product-demo-video"
+  ],
+  "render": {
+    "backgrounds": [
+      "nebula",
+      "horizon"
+    ],
+    "base_template": "keynote-features-porcelain",
+    "graphics": {
+      "line_width": 2,
+      "opacity": 0.04,
+      "overlay": "dot-field",
+      "panel_radius": 63
+    },
+    "layouts": [
+      "left",
+      "right"
+    ],
+    "motion": {
+      "ease": "inOutQuint",
+      "name": "rise",
+      "strength": 0.2
+    },
+    "overlap_ratio": 0.08,
+    "theme": {
+      "accent": "#3166d5",
+      "background": "#f4f6fa",
+      "font": "sans",
+      "foreground": "#182133",
+      "secondary": "#8cb5c4",
+      "surface": "#ffffff"
+    },
+    "transitions": [
+      "push-left",
+      "zoom-in",
+      "crossfade"
+    ],
+    "typography": {
+      "leading": 1.11,
+      "scale": 0.8,
+      "tracking": 1.8,
+      "weight_offset": -80
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "清晰软件：one real interface proof occupies a large readable panel. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+}

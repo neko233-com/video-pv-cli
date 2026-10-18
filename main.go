@@ -12,7 +12,7 @@ import (
 	"time"
 )
 
-const version = "0.2.0"
+const version = "0.3.0"
 
 func main() { os.Exit(realMain(os.Args[1:], os.Stdout, os.Stderr)) }
 
@@ -136,6 +136,15 @@ func runCheck(args []string, stdout, stderr io.Writer) int {
 					report.Media = mediaSummary
 					compareMedia(&report, project, *mediaSummary)
 					if *decode || *release {
+						if strings.EqualFold(filepath.Ext(mediaPath), ".mp4") {
+							var integrityErr error
+							report.MP4, integrityErr = inspectMP4Integrity(mediaPath, tools.FFprobe, *mediaSummary)
+							if integrityErr != nil {
+								report.add("media.mp4", "fail", integrityErr.Error())
+							} else {
+								report.add("media.mp4", "pass", "MP4 atoms, frame timestamps, cadence and decoded frame count are valid")
+							}
+						}
 						if decodeErr := decodeMedia(mediaPath, tools.FFmpeg); decodeErr != nil {
 							report.add("media.decode", "fail", decodeErr.Error())
 						} else {

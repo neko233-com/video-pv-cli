@@ -1,0 +1,87 @@
+{
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
+  ],
+  "beat_plan": [
+    "Hook: riso texture",
+    "Establish: use two deliberate print-like color layers with clear hierarchy",
+    "Prove: use an approved local capture or truthful designed-motion detail",
+    "Payoff: flat layering with one clear final identity"
+  ],
+  "best_for": [
+    "graphic promotional video",
+    "product or character identity reveal"
+  ],
+  "direction": {
+    "camera": "Guide attention with riso texture; use a deliberate hold, a measured approach and a stable payoff.",
+    "composition": "use two deliberate print-like color layers with clear hierarchy; keep one dominant focal hierarchy and legible supporting evidence.",
+    "editing": "Open with spot color; alternate proof and breathing room, then resolve with flat layering.",
+    "lighting": "flat print illumination; preserve subject contour and separate it from the supporting field.",
+    "materials": "porous stock and spot ink; actual material appearance comes from approved imagery or a real 3D asset.",
+    "sound": "Create a restrained rhythm around graphic grain; place licensed accents on intentional cuts and keep speech clear.",
+    "typography": "Use riso texture,spot color,print misregister,editorial warmth,graphic grain,flat layering as hierarchy cues; keep display copy short and body copy readable at final delivery size."
+  },
+  "family": "graphic",
+  "id": "graphic-riso-spot",
+  "keywords": [
+    "riso texture",
+    "spot color",
+    "print misregister",
+    "editorial warmth",
+    "graphic grain",
+    "flat layering"
+  ],
+  "name": "孔版专色",
+  "reference_ids": [
+    "hyperframes-creative",
+    "hyperframes-product-launch",
+    "video-shotcraft",
+    "product-demo-video"
+  ],
+  "render": {
+    "backgrounds": [
+      "rings",
+      "nebula"
+    ],
+    "base_template": "keynote-type-sakura",
+    "graphics": {
+      "line_width": 2,
+      "opacity": 0.094,
+      "overlay": "halftone",
+      "panel_radius": 57
+    },
+    "layouts": [
+      "asymmetric",
+      "left"
+    ],
+    "motion": {
+      "ease": "inOutCubic",
+      "name": "drift-right",
+      "strength": 0.6200000000000001
+    },
+    "overlap_ratio": 0.10500000000000001,
+    "theme": {
+      "accent": "#bb624f",
+      "background": "#e9dfcd",
+      "font": "sans",
+      "foreground": "#34323a",
+      "secondary": "#637fa0",
+      "surface": "#f8f0de"
+    },
+    "transitions": [
+      "split",
+      "diagonal",
+      "pixelate"
+    ],
+    "typography": {
+      "leading": 1.17,
+      "scale": 0.9500000000000001,
+      "tracking": 1.8,
+      "weight_offset": 10
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "孔版专色：use two deliberate print-like color layers with clear hierarchy. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+}

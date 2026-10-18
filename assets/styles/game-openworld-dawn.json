@@ -1,0 +1,87 @@
+{
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
+  ],
+  "beat_plan": [
+    "Hook: openworld vista",
+    "Establish: use foreground and distant horizon to establish explorable scale",
+    "Prove: use an approved local capture or truthful designed-motion detail",
+    "Payoff: inviting depth with one clear final identity"
+  ],
+  "best_for": [
+    "game promotional video",
+    "product or character identity reveal"
+  ],
+  "direction": {
+    "camera": "Guide attention with openworld vista; use a deliberate hold, a measured approach and a stable payoff.",
+    "composition": "use foreground and distant horizon to establish explorable scale; keep one dominant focal hierarchy and legible supporting evidence.",
+    "editing": "Open with atmospheric layers; alternate proof and breathing room, then resolve with inviting depth.",
+    "lighting": "wide dawn glow; preserve subject contour and separate it from the supporting field.",
+    "materials": "grassland haze and weathered rock; actual material appearance comes from approved imagery or a real 3D asset.",
+    "sound": "Create a restrained rhythm around scale contrast; place licensed accents on intentional cuts and keep speech clear.",
+    "typography": "Use openworld vista,atmospheric layers,dawn horizon,slow reveal,scale contrast,inviting depth as hierarchy cues; keep display copy short and body copy readable at final delivery size."
+  },
+  "family": "game",
+  "id": "game-openworld-dawn",
+  "keywords": [
+    "openworld vista",
+    "atmospheric layers",
+    "dawn horizon",
+    "slow reveal",
+    "scale contrast",
+    "inviting depth"
+  ],
+  "name": "旷野破晓",
+  "reference_ids": [
+    "hyperframes-creative",
+    "hyperframes-product-launch",
+    "video-shotcraft",
+    "product-demo-video"
+  ],
+  "render": {
+    "backgrounds": [
+      "fluid",
+      "mesh"
+    ],
+    "base_template": "game-launch-midnight",
+    "graphics": {
+      "line_width": 1.4,
+      "opacity": 0.11199999999999999,
+      "overlay": "registration",
+      "panel_radius": 51
+    },
+    "layouts": [
+      "left",
+      "right"
+    ],
+    "motion": {
+      "ease": "spring",
+      "name": "pull-out",
+      "strength": 0.76
+    },
+    "overlap_ratio": 0.15500000000000003,
+    "theme": {
+      "accent": "#e2bb7a",
+      "background": "#182323",
+      "font": "sans",
+      "foreground": "#f0ede0",
+      "secondary": "#82b3ae",
+      "surface": "#304441"
+    },
+    "transitions": [
+      "cut",
+      "chromatic",
+      "shutter"
+    ],
+    "typography": {
+      "leading": 1.05,
+      "scale": 1,
+      "tracking": 0.9,
+      "weight_offset": -70
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "旷野破晓：use foreground and distant horizon to establish explorable scale. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+}

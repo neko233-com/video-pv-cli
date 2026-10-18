@@ -1,0 +1,87 @@
+{
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
+  ],
+  "beat_plan": [
+    "Hook: modular proof",
+    "Establish: one dominant feature leads a secondary grid of evidence",
+    "Prove: use an approved local capture or truthful designed-motion detail",
+    "Payoff: ordered reveal with one clear final identity"
+  ],
+  "best_for": [
+    "keynote promotional video",
+    "product or character identity reveal"
+  ],
+  "direction": {
+    "camera": "Guide attention with modular proof; use a deliberate hold, a measured approach and a stable payoff.",
+    "composition": "one dominant feature leads a secondary grid of evidence; keep one dominant focal hierarchy and legible supporting evidence.",
+    "editing": "Open with bento grid; alternate proof and breathing room, then resolve with ordered reveal.",
+    "lighting": "flat readable fill; preserve subject contour and separate it from the supporting field.",
+    "materials": "clean white panels and technical glass; actual material appearance comes from approved imagery or a real 3D asset.",
+    "sound": "Create a restrained rhythm around readable labels; place licensed accents on intentional cuts and keep speech clear.",
+    "typography": "Use modular proof,bento grid,feature hierarchy,measured rhythm,readable labels,ordered reveal as hierarchy cues; keep display copy short and body copy readable at final delivery size."
+  },
+  "family": "keynote",
+  "id": "keynote-bento-proof",
+  "keywords": [
+    "modular proof",
+    "bento grid",
+    "feature hierarchy",
+    "measured rhythm",
+    "readable labels",
+    "ordered reveal"
+  ],
+  "name": "模块证据",
+  "reference_ids": [
+    "hyperframes-creative",
+    "hyperframes-product-launch",
+    "video-shotcraft",
+    "product-demo-video"
+  ],
+  "render": {
+    "backgrounds": [
+      "particles",
+      "rings"
+    ],
+    "base_template": "keynote-product-porcelain",
+    "graphics": {
+      "line_width": 0.8,
+      "opacity": 0.08499999999999999,
+      "overlay": "letterbox",
+      "panel_radius": 55
+    },
+    "layouts": [
+      "left",
+      "center"
+    ],
+    "motion": {
+      "ease": "spring",
+      "name": "drift-up",
+      "strength": 0.55
+    },
+    "overlap_ratio": 0.08,
+    "theme": {
+      "accent": "#2760c6",
+      "background": "#eef2f8",
+      "font": "sans",
+      "foreground": "#172238",
+      "secondary": "#9ab9e9",
+      "surface": "#ffffff"
+    },
+    "transitions": [
+      "blur-cross",
+      "crossfade",
+      "zoom-in"
+    ],
+    "typography": {
+      "leading": 1.11,
+      "scale": 0.925,
+      "tracking": 0,
+      "weight_offset": 0
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "模块证据：one dominant feature leads a secondary grid of evidence. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+}

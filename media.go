@@ -30,6 +30,7 @@ type probeStream struct {
 	FrameRate     string `json:"avg_frame_rate"`
 	RealFrameRate string `json:"r_frame_rate"`
 	Duration      string `json:"duration"`
+	Start         string `json:"start_time"`
 }
 
 func inspectMedia(path, ffprobe string) (*MediaSummary, error) {
@@ -37,9 +38,9 @@ func inspectMedia(path, ffprobe string) (*MediaSummary, error) {
 	defer cancel()
 	cmd := exec.CommandContext(ctx, ffprobe,
 		"-v", "error",
-		"-show_entries", "format=duration,format_name:stream=codec_type,codec_name,width,height,avg_frame_rate,r_frame_rate,duration,pix_fmt,nb_frames",
+		"-show_entries", "format=duration,format_name:stream=codec_type,codec_name,width,height,avg_frame_rate,r_frame_rate,duration,start_time,pix_fmt,nb_frames",
 		"-of", "json",
-		"-i", path,
+		"-err_detect", "explode", "-i", path,
 	)
 	var stdout, stderr bytes.Buffer
 	cmd.Stdout = &stdout
@@ -64,6 +65,8 @@ func inspectMedia(path, ffprobe string) (*MediaSummary, error) {
 	var video *probeStream
 	var audioCodec string
 	var streamDuration float64
+	videoStreams, audioStreams := 0, 0
+	var audioDuration, audioStart float64
 	for i := range probe.Streams {
 		stream := &probe.Streams[i]
 		duration, _ := strconv.ParseFloat(stream.Duration, 64)
@@ -72,12 +75,16 @@ func inspectMedia(path, ffprobe string) (*MediaSummary, error) {
 		}
 		switch stream.CodecType {
 		case "video":
+			videoStreams++
 			if video == nil {
 				video = stream
 			}
 		case "audio":
+			audioStreams++
 			if audioCodec == "" {
 				audioCodec = stream.CodecName
+				audioDuration = duration
+				audioStart, _ = strconv.ParseFloat(stream.Start, 64)
 			}
 		}
 	}
@@ -107,6 +114,7 @@ func inspectMedia(path, ffprobe string) (*MediaSummary, error) {
 	}
 	frames, _ := strconv.ParseInt(video.Frames, 10, 64)
 	return &MediaSummary{
+		VideoStreams: videoStreams, AudioStreams: audioStreams, AudioDurationSeconds: audioDuration, AudioStartSeconds: audioStart,
 		PixelFormat: video.PixelFormat, VideoDurationSeconds: videoDuration, Frames: frames,
 		Path: path, Container: probe.Format.Name, VideoCodec: video.CodecName, AudioCodec: audioCodec,
 		Width: video.Width, Height: video.Height, FPS: fps, DurationSeconds: duration,
@@ -118,6 +126,7 @@ func decodeMedia(path, ffmpeg string) error {
 	defer cancel()
 	cmd := exec.CommandContext(ctx, ffmpeg,
 		"-hide_banner", "-v", "error", "-xerror",
+		"-err_detect", "explode",
 		"-i", path,
 		"-map", "0:v?", "-map", "0:a?", "-sn", "-dn",
 		"-f", "null", "-",

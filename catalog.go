@@ -48,18 +48,19 @@ type SceneData struct {
 	TransitionDuration float64     `json:"transition_duration"`
 }
 type TemplateData struct {
-	SchemaVersion string      `json:"schema_version"`
-	ID            string      `json:"id"`
-	Name          string      `json:"name"`
-	Category      string      `json:"category"`
-	Description   string      `json:"description"`
-	ProjectTitle  string      `json:"project_title"`
-	Width         int         `json:"width"`
-	Height        int         `json:"height"`
-	FPS           float64     `json:"fps"`
-	Loop          bool        `json:"loop"`
-	Theme         ThemeData   `json:"theme"`
-	Scenes        []SceneData `json:"scenes"`
+	SchemaVersion string       `json:"schema_version"`
+	ID            string       `json:"id"`
+	Name          string       `json:"name"`
+	Category      string       `json:"category"`
+	Description   string       `json:"description"`
+	ProjectTitle  string       `json:"project_title"`
+	Width         int          `json:"width"`
+	Height        int          `json:"height"`
+	FPS           float64      `json:"fps"`
+	Loop          bool         `json:"loop"`
+	Theme         ThemeData    `json:"theme"`
+	Scenes        []SceneData  `json:"scenes"`
+	Style         *StylePreset `json:"style,omitempty"`
 }
 type TransitionData struct {
 	SchemaVersion string    `json:"schema_version"`
@@ -180,6 +181,11 @@ func validateTransition(id string, t TransitionData) error {
 }
 
 func validateTemplate(t TemplateData, transitions map[string]TransitionData) error {
+	if t.Style != nil {
+		if err := validateStyle(*t.Style, transitions); err != nil {
+			return err
+		}
+	}
 	if t.SchemaVersion != "1.0" || t.ID == "" || t.Name == "" || !contains([]string{"game", "character", "product", "website", "keynote", "social", "brand"}, t.Category) || t.Width < 320 || t.Height < 320 || t.Width%2 != 0 || t.Height%2 != 0 || !finitePositive(t.FPS) || t.FPS > 120 || len(t.Scenes) == 0 {
 		return fmt.Errorf("invalid identity, profile or scenes")
 	}
@@ -315,7 +321,13 @@ func runCatalog(args []string, stdout, stderr io.Writer) int {
 		fmt.Fprintln(stdout, "Synchronized profile and draft shots; previous manifest saved as pv-project.json.before-sync. Review claim-to-shot assignments again.")
 		return 0
 	case "validate":
+		styles, e := readStyles(templates, transitions)
+		if e != nil {
+			fmt.Fprintln(stderr, e)
+			return 1
+		}
 		fmt.Fprintf(stdout, "Valid: %d independent template JSON files, %d transition JSON files, %d scene types, %d backgrounds\n", len(templates), len(transitions), len(sceneTypes), len(backgroundTypes))
+		fmt.Fprintf(stdout, "Styles: %d independent JSON files\n", len(styles))
 		return 0
 	case "list":
 		if *kind == "transitions" {

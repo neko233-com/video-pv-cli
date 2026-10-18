@@ -1,0 +1,25 @@
+{
+  "schema": "video-pv-cli/style-sample/1",
+  "style_id": "keynote-silent-reveal",
+  "passed": true,
+  "verification_full_timeline": true,
+  "verification_samples": 673,
+  "capture_bridge": "multiplane-0.3.10-webgpu-barrier-v1",
+  "input_sha256": {
+    "catalog-runtime.js": "80435b3b5df2267c6f915737fb0660e121e9afe966080dbb8add445a7d3216d9",
+    "catalog.wgsl": "f462334fb734cb93f0a206662c0cd93fc75d8c87419e6c565bee10fae29009ab",
+    "cinzel.ttf": "f4d83d34d1f6c741193e4acf4b3dff9531e5a67b6aa65228d00a7db72a4e0f34",
+    "library.wgsl": "5f187227ed8de38cc296291e826183ade7f4c78b4b65f45f5fcffbb8f52b1acc",
+    "manrope.ttf": "3ae11c49db0455a3cc33e37d380f20fdb8c7f8b41dc07625c177e3d87a9d6ae6",
+    "package-lock.json": "9aebb1dcffe230004d18da60a2180a8282fdfe084559182680df3657e1572995",
+    "package.json": "410710461d700c2934cd9eba20248d4e8966980420265ac23b67635e9f5fd0fc",
+    "pv-project.json": "8e4c2be10b5a1fd7bd701d3baaa38bf9f5d97213c0695e9a7271b484aba6fb68",
+    "pv.html": "0c9353500949fd115a0d646221c51ac32bcee3398dfca932e8e976a56db58300",
+    "template.json": "c189f834506898d57c63c83470b90efd594ae094628b8b75188eb04c15382a66",
+    "transitions.json": "df9db2f4555b6dfbbabc512eeb290dc0806e1d780beb97508e50b4c14abc4f74",
+    "webgpu-runtime.js": "f24a40a3c4d5bdb534c5ff91083674c6010836b5a1222272d77c5bb1325a9354"
+  },
+  "encoded_frames": 673,
+  "encoded_fps": 30,
+  "duration_seconds": 22.433333333333334
+}

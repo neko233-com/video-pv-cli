@@ -1,0 +1,87 @@
+{
+  "avoid": [
+    "unmotivated decorative motion",
+    "unreadable small copy",
+    "invented product or gameplay proof"
+  ],
+  "beat_plan": [
+    "Hook: faceted glint",
+    "Establish: a miniature object becomes a frame-filling faceted subject",
+    "Prove: use an approved local capture or truthful designed-motion detail",
+    "Payoff: velvet field with one clear final identity"
+  ],
+  "best_for": [
+    "luxury promotional video",
+    "product or character identity reveal"
+  ],
+  "direction": {
+    "camera": "Guide attention with faceted glint; use a deliberate hold, a measured approach and a stable payoff.",
+    "composition": "a miniature object becomes a frame-filling faceted subject; keep one dominant focal hierarchy and legible supporting evidence.",
+    "editing": "Open with caustic pattern; alternate proof and breathing room, then resolve with velvet field.",
+    "lighting": "small sharp light; preserve subject contour and separate it from the supporting field.",
+    "materials": "cut crystal and velvet; actual material appearance comes from approved imagery or a real 3D asset.",
+    "sound": "Create a restrained rhythm around quiet contrast; place licensed accents on intentional cuts and keep speech clear.",
+    "typography": "Use faceted glint,caustic pattern,miniature scale,precise sparkle,quiet contrast,velvet field as hierarchy cues; keep display copy short and body copy readable at final delivery size."
+  },
+  "family": "luxury",
+  "id": "luxury-jewelry-caustic",
+  "keywords": [
+    "faceted glint",
+    "caustic pattern",
+    "miniature scale",
+    "precise sparkle",
+    "quiet contrast",
+    "velvet field"
+  ],
+  "name": "珠宝折光",
+  "reference_ids": [
+    "hyperframes-creative",
+    "hyperframes-product-launch",
+    "video-shotcraft",
+    "product-demo-video"
+  ],
+  "render": {
+    "backgrounds": [
+      "horizon",
+      "prism"
+    ],
+    "base_template": "keynote-product-obsidian",
+    "graphics": {
+      "line_width": 1.7,
+      "opacity": 0.10300000000000001,
+      "overlay": "contours",
+      "panel_radius": 19
+    },
+    "layouts": [
+      "center",
+      "asymmetric"
+    ],
+    "motion": {
+      "ease": "outExpo",
+      "name": "tilt",
+      "strength": 0.6900000000000001
+    },
+    "overlap_ratio": 0.13,
+    "theme": {
+      "accent": "#a9d9e9",
+      "background": "#101625",
+      "font": "display",
+      "foreground": "#f0f4ff",
+      "secondary": "#b5a2db",
+      "surface": "#232d42"
+    },
+    "transitions": [
+      "light-sweep",
+      "crossfade",
+      "iris"
+    ],
+    "typography": {
+      "leading": 1.05,
+      "scale": 0.9750000000000001,
+      "tracking": 1.35,
+      "weight_offset": 70
+    }
+  },
+  "schema_version": "1.0",
+  "summary": "珠宝折光：a miniature object becomes a frame-filling faceted subject. Original direction recipe; real footage and bespoke assets determine final visual fidelity."
+}

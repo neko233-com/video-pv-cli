@@ -1,12 +1,43 @@
 package main
 
 import (
+	"crypto/sha256"
+	"encoding/hex"
 	"encoding/json"
 	"io/fs"
 	"path/filepath"
 	"strings"
 	"testing"
 )
+
+func TestDemoRenderEvidenceMatchesDistributedInputs(t *testing.T) {
+	var report struct {
+		Passed bool `json:"passed"`
+		Cases  []struct {
+			Name   string            `json:"name"`
+			Inputs map[string]string `json:"input_sha256"`
+		} `json:"cases"`
+	}
+	raw, err := bundled.ReadFile("docs/validation/demo-report.json")
+	if err != nil || json.Unmarshal(raw, &report) != nil || !report.Passed || len(report.Cases) != 4 {
+		t.Fatal("missing complete demo render evidence", err)
+	}
+	for _, item := range report.Cases {
+		if len(item.Inputs) < 12 {
+			t.Fatal("incomplete render inputs", item.Name)
+		}
+		for relative, want := range item.Inputs {
+			data, err := bundled.ReadFile("demo/" + item.Name + "/" + relative)
+			if err != nil {
+				t.Fatal(err)
+			}
+			digest := sha256.Sum256(data)
+			if hex.EncodeToString(digest[:]) != want {
+				t.Fatal("distributed source differs from verified render input", item.Name, relative)
+			}
+		}
+	}
+}
 
 func TestDemoSourcesAreSelfContainedAndDraft(t *testing.T) {
 	for _, name := range []string{"keynote-product", "anime-character", "game-trailer", "website-background"} {

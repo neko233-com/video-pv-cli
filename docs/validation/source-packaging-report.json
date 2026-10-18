@@ -3,7 +3,8 @@
   "passed": true,
   "tests": [
     "TestSkillInstallAndArchiveAreUsableModules",
-    "TestDemoSourcesAreSelfContainedAndDraft"
+    "TestDemoSourcesAreSelfContainedAndDraft",
+    "TestDemoRenderEvidenceMatchesDistributedInputs"
   ],
   "repetitions": 2,
   "includes": [
@@ -17,5 +18,5 @@
     "node_modules",
     "engine scripts"
   ],
-  "scope": "Final packaging change verified separately after full Windows QA started"
+  "scope": "Final distribution patch: demo input byte hashes, self-contained sources and archive installation checked twice"
 }

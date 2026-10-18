@@ -44,7 +44,7 @@ Shader 选择与许可证见 [shader-production.md](references/shader-production
 
 源代码构建：`go build -o video-pv-cli.exe .`；测试：`go test ./...`。
 
-完整渲染集成测试：先用 `init`、`setup` 准备项目，再设置环境变量 `PV_INTEGRATION_PROJECT` 为该目录，执行 `go test -v -run TestIntegrationShaderMP4AndFailureGates`。测试会生成音频测试信号，验证 MP4 像素格式/帧数/解码，并确认损坏 Shader、非确定动画、未批准发布均被拦截。CI 在 Windows、Linux、macOS 上对游戏/角色模板分别执行它，并保留视频与 QA artifacts。
+完整渲染集成测试：先用 `init`、`setup` 准备项目，再设置环境变量 `PV_INTEGRATION_PROJECT` 为该目录，执行 `go test -v -run TestIntegrationShaderMP4AndFailureGates`。测试会生成音频测试信号，验证 MP4 像素格式/帧数/解码，并确认损坏 Shader、非确定动画、未批准发布均被拦截。验证先在 Windows 本地执行，不使用 GitHub Actions。
 
 游戏官网中使用导出文件时，采用 `muted autoplay loop playsinline` 的视频和独立 poster；减少动态效果模式显示静态 poster。循环边界、手机裁切和网站文字遮罩仍需按实际站点验收。
 
